@@ -1,0 +1,124 @@
+///--------------------
+// PRATRON DE COLORES
+///--------------------
+$texto: #111111;
+$principal: #333333;
+$secundariosB: #3E77C5;
+html {
+    font-size: 15px;
+}
+body {
+    background: #EFEFEF;
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+}
+.encavezado {
+    background: #fff;
+    padding: 0.5rem;
+    -webkit-box-shadow: 0px 20px 72px -12px rgba(0, 0, 0, 0.32);
+    -moz-box-shadow: 0px 20px 72px -12px rgba(0, 0, 0, 0.32);
+    box-shadow: 0px 20px 72px -12px rgba(0, 0, 0, 0.32);
+}
+.encavezado .container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.encavezado .logo img {
+    width: 50px;
+    height: auto;
+}
+.logo2 .container img {
+    margin-top: 10rem;
+}
+
+/*
+Estilos para el boton menu
+*/
+
+.boton-menu {
+    margin: 0;
+    padding: 0.8rem;
+    border: 0;
+    font-size: 2rem;
+    background: transparent;
+    color: #8C8C8C;
+    margin-left: auto;
+    margin-right: 0.8rem;
+}
+
+/*
+Estilo Menu desplegable
+*/
+
+#menu-principal {
+    flex: 1 1 100%;
+}
+#menu-principal ul {
+    padding: 0;
+    list-style: none;
+    margin: 1rem 0 0 0;
+}
+#menu-principal ul a {
+    display: block;
+    padding: .8rem 0;
+    text-align: center;
+    color: #8C8C8C;
+    text-transform: uppercase;
+    border-top: .1px solid #8C8C8C;
+    text-decoration: none;
+}
+#menu-principal ul a:hover {
+    color: #fff;
+}
+#menu-principal ul li:hover {
+    background: $secundariosB;
+}
+#menu-principal ul li:active a {
+    color: $secundariosB;
+}
+.texto-encavezado {
+    //text-align: center;
+    margin-top: 3rem;
+}
+.texto-encavezado .btn-secondary {
+    color: #5CB85C;
+    background-color: transparent;
+    border-color: #5CB85C;
+}
+.flecha_bajar {
+    text-align: center;
+    animation: flecha-animada 2s ease-in-out infinite;
+}
+.flecha_bajar a {
+    display: inline-block;
+    font-size: 5rem;
+    color: #8C8C8C;
+}
+@keyframes flecha-animada {
+    from {
+        transform: translateY(0)
+    }
+    50% {
+        transform: translateY(25px)
+    }
+    to {
+        transform: translateY(0px)
+    }
+}
+.nosotros p {
+    padding: 1rem;
+    text-align: justify;
+}
+.nosotros h1 {
+    height: 100px;
+    background: #fff;
+    text-align: center;
+    height: 70px;
+    padding: 1rem;
+}
+.nosotros .container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
