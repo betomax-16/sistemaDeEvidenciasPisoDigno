@@ -77,23 +77,17 @@ Estilo Menu desplegable
 #menu-principal ul li:active a {
     color: $secundariosB;
 }
-.texto-encavezado {
-    //text-align: center;
-    margin-top: 3rem;
-}
 .texto-encavezado .btn-secondary {
+    margin-top: 1.5rem;
     color: #5CB85C;
     background-color: transparent;
     border-color: #5CB85C;
-}
-.flecha_bajar {
-    text-align: center;
-    animation: flecha-animada 2s ease-in-out infinite;
 }
 .flecha_bajar a {
     display: inline-block;
     font-size: 5rem;
     color: #8C8C8C;
+    animation: flecha-animada 2s ease-in-out infinite;
 }
 @keyframes flecha-animada {
     from {
@@ -106,13 +100,29 @@ Estilo Menu desplegable
         transform: translateY(0px)
     }
 }
+
+/*////////////
+Nosotros
+*/ ///////////
+.nosotros {
+    padding: 1rem;
+}
+.nosotros .linea {
+    background-color: #3277D2;
+    height: 1px;
+}
 .nosotros p {
     padding: 1rem;
     text-align: justify;
+    margin-top: 2rem;
+}
+.nosotros img {
+    width: 10px;
+    height: auto;
 }
 .nosotros h1 {
     height: 100px;
-    background: #fff;
+    //background: #fff;
     text-align: center;
     height: 70px;
     padding: 1rem;
@@ -121,4 +131,99 @@ Estilo Menu desplegable
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+}
+.padre {
+    width: auto;
+    height: auto;
+    //border: 1px solid #000;
+    flex-wrap: wrap;
+    //margin: 0 auto;
+    display: flex;
+    //justify-content: space-around;
+    padding: 1rem;
+}
+.hijo3 img,
+.hijo2 img,
+.hijo1 img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 0px 36px -6px rgba(0, 0, 0, 0.71);
+    -moz-box-shadow: 0px 0px 36px -6px rgba(0, 0, 0, 0.71);
+    box-shadow: 0px 0px 36px -6px rgba(0, 0, 0, 0.71);
+}
+.hijo1 {
+    flex: 1 1 100%;
+    align-self: flex-start;
+    padding: 1rem;
+}
+.hijo2 {
+    flex: 1 1 auto;
+    align-self: flex-start;
+    padding: 1rem;
+}
+.hijo3 {
+    flex: 1 1 auto;
+    align-self: flex-start;
+    padding: 1rem;
+}
+
+/*/////////////
+Mision y Vision
+*/ /////////////
+.mision-vision {
+    width: auto;
+    height: auto;
+    padding: 1rem;
+    //border: 1px solid #000;
+    display: flex;
+    flex-wrap: wrap;
+}
+.mision-vision .linea {
+    background-color: #FE9E0C;
+    height: 1px;
+}
+.mision {
+    flex: 1 1 100%;
+}
+.mision img,
+.vision img {
+    width: 100%;
+    height: auto;
+}
+.vision {
+    flex: 1 1 auto;
+}
+
+/*////////////
+Programas
+*/ ///////////
+.programas {
+    width: auto;
+    height: auto;
+    padding: 1rem;
+    // border: 1px solid #000;
+    display: flex;
+    flex-wrap: wrap;
+    //background: red;
+    align-items: center;
+}
+.programas img {
+    width: 60px;
+    height: 50px;
+}
+.programas container {
+    display: inline;
+}
+.programas h3 {
+    display: inline;
+}
+.piso-digno {
+    align-self: 1 0 100%;
+}
+.despensas {
+    align-self: 0 0 100%;
+}
+.cooperatva {
+    align-self: 0 0 100%;
 }

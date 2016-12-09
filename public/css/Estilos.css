@@ -76,23 +76,18 @@ Estilo Menu desplegable
 #menu-principal ul li:active a {
   color: #3E77C5; }
 
-.texto-encavezado {
-  margin-top: 3rem; }
-
 .texto-encavezado .btn-secondary {
+  margin-top: 1.5rem;
   color: #5CB85C;
   background-color: transparent;
   border-color: #5CB85C; }
 
-.flecha_bajar {
-  text-align: center;
-  -webkit-animation: flecha-animada 2s ease-in-out infinite;
-          animation: flecha-animada 2s ease-in-out infinite; }
-
 .flecha_bajar a {
   display: inline-block;
   font-size: 5rem;
-  color: #8C8C8C; }
+  color: #8C8C8C;
+  -webkit-animation: flecha-animada 2s ease-in-out infinite;
+          animation: flecha-animada 2s ease-in-out infinite; }
 
 @-webkit-keyframes flecha-animada {
   from {
@@ -115,13 +110,27 @@ Estilo Menu desplegable
   to {
     -webkit-transform: translateY(0px);
             transform: translateY(0px); } }
+/*////////////
+Nosotros
+*/
+.nosotros {
+  padding: 1rem; }
+
+.nosotros .linea {
+  background-color: #3277D2;
+  height: 1px; }
+
 .nosotros p {
   padding: 1rem;
-  text-align: justify; }
+  text-align: justify;
+  margin-top: 2rem; }
+
+.nosotros img {
+  width: 10px;
+  height: auto; }
 
 .nosotros h1 {
   height: 100px;
-  background: #fff;
   text-align: center;
   height: 70px;
   padding: 1rem; }
@@ -138,5 +147,135 @@ Estilo Menu desplegable
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap; }
+
+.padre {
+  width: auto;
+  height: auto;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem; }
+
+.hijo3 img,
+.hijo2 img,
+.hijo1 img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0px 0px 36px -6px rgba(0, 0, 0, 0.71); }
+
+.hijo1 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 100%;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  -webkit-align-self: flex-start;
+      -ms-flex-item-align: start;
+          align-self: flex-start;
+  padding: 1rem; }
+
+.hijo2 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-align-self: flex-start;
+      -ms-flex-item-align: start;
+          align-self: flex-start;
+  padding: 1rem; }
+
+.hijo3 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-align-self: flex-start;
+      -ms-flex-item-align: start;
+          align-self: flex-start;
+  padding: 1rem; }
+
+/*/////////////
+Mision y Vision
+*/
+.mision-vision {
+  width: auto;
+  height: auto;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+
+.mision-vision .linea {
+  background-color: #FE9E0C;
+  height: 1px; }
+
+.mision {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 100%;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%; }
+
+.mision img,
+.vision img {
+  width: 100%;
+  height: auto; }
+
+.vision {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto; }
+
+/*////////////
+Programas
+*/
+.programas {
+  width: auto;
+  height: auto;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.programas img {
+  width: 60px;
+  height: 50px; }
+
+.programas container {
+  display: inline; }
+
+.programas h3 {
+  display: inline; }
+
+.piso-digno {
+  -webkit-align-self: 1 0 100%;
+      -ms-flex-item-align: 1 0 100%;
+          align-self: 1 0 100%; }
+
+.despensas {
+  -webkit-align-self: 0 0 100%;
+      -ms-flex-item-align: 0 0 100%;
+          align-self: 0 0 100%; }
+
+.cooperatva {
+  -webkit-align-self: 0 0 100%;
+      -ms-flex-item-align: 0 0 100%;
+          align-self: 0 0 100%; }
 
 /*# sourceMappingURL=Estilos.css.map */

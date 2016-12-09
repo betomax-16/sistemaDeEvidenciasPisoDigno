@@ -53,11 +53,11 @@
         </div>
 
 
-        <div class="texto-encavezado">
+        <div class="texto-encavezado text-center">
             <a href="Contacto.html" class="btn btn-secondary ">Contactanos</a>
         </div>
 
-        <div class="flecha_bajar">
+        <div class="flecha_bajar text-center">
             <a href="#nosotros"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
         </div>
 
@@ -66,19 +66,67 @@
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <section class="nosotros" id="nosotros">
 
+    <section class="nosotros" id="nosotros">
         <header>
-            <div class="nosotros">
+            <div class="nosotros-titulo">
                 <container>
-                    <h1><img src="images/Logo_Nosotros.svg" alt="logo_nosotros "></i><<a name="nosotros"></a>Nosotros</h1>
+                    <h1>Nosotros</h1>
                 </container>
             </div>
         </header>
+        <div class="linea"></div>
 
-        <p>Red Colaborativa es una plataforma dirigida al control y seguimiento detallado de proyectos destinado a eventos, congresos y concursos en los cuales es complicado llevar un control de los mismos, su objetivo fundamental es la busqueda de colaboradores que ayuden a impulsar el desarrollo de calidad e innovación de los proyectos tecnológicos.</p>
+        <p class="text-center">Red Colaborativa es una plataforma dirigida al control y seguimiento detallado de proyectos destinado a eventos, congresos y concursos en los cuales es complicado llevar un control de los mismos, su objetivo fundamental es la busqueda de colaboradores que ayuden a impulsar el desarrollo de calidad e innovación de los proyectos tecnológicos.</p>
+
+        <div class="padre text-center">
+            <div class="hijo1">
+                <img src="images/Nosotros1.jpeg" alt="logo_nosotros1">
+                <span>photo 1</span>
+                <br>
+            </div>
+            <div class="hijo2">
+                <img src="images/Nosotros2.jpeg" alt="logo_nosotros2">
+                <span>photo 2</span>
+            </div>
+            <div class="hijo3">
+                <img src="images/Nosotros3.jpeg" alt="logo_nosotros3">
+                <span>photo 3</span>
+            </div>
+        </div>
     </section>
 
+    <section class="mision-vision text-center">
+        <div class="mision">
+            <h1>Mision</h1>
+            <div class="linea"></div>
+            <br>
+            <p>La misión de Red Colaborativa es ayudar y ser una buena opción para la organización de eventos al crear, publicar, gestionar y difundir todo tipo de proyectos tecnologicos para fomentar e impulsar un entorno colaborativo de investigación tecnológica, científica, etc. A la vez ser una herramienta flexible para adaptarse a eventos de acuerdo a las necesidades, estableciendo así relaciones de comunicación e interacción con otros usuarios.</p>
+            <img src="images/mision.png" alt="Mision">
+
+        </div>
+
+        <div class="vision">
+            <h1>Vision</h1>
+            <div class="linea"></div>
+            <br>
+            <p>Ser la mejor plataforma tecnologica de trabajo colaborativo enfocado a proyectos, impulsando la creatividad, innovacion e invencion de productos o servicios de alta calidad, permitiendo tener un mejor rendimiento productivo, operativo y colaborativo.</p>
+            <img src="images/vision.png" alt="Vision">
+
+        </div>
+    </section>
+    <section class="programas">
+        <div class="piso-digno">
+            <img src="images/LogoPiso.svg" alt="LogoPiso"><a href="#"><h3>Piso Digno</h3></a>
+        </div>
+        <div class="despensas">
+
+            <img src="images/LogoDespensas.svg" alt="LogoDespensa"><a href="#"><h3>Despensas</h3></a>
+        </div>
+        <div class="cooperativa">
+            <h1>Cooperativa</h1>
+        </div>
+    </section>
 
 </body>
 
