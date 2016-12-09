@@ -147,7 +147,7 @@ Nosotros
 /*/////////////
 Lo que hacemos
 */
-.lo-que-hacemos h2 span {
+.lo-que-hacemos span {
   color: #3E77C5; }
 
 .lo-que-hacemos ul,
@@ -171,9 +171,6 @@ Lo que hacemos
 
 .lo-que-hacemos li {
   min-height: 9rem; }
-
-.lo-que-hacemos ul li {
-  min-height: 10rem; }
 
 .lo-que-hacemos .linea {
   background-color: #F08AFF;
@@ -224,10 +221,6 @@ Programas
   color: #fff; }
 
 .programas img {
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 0 80px;
-      -ms-flex: 0 0 80px;
-          flex: 0 0 80px;
   overflow: hidden;
   margin-right: 1rem; }
 
@@ -338,22 +331,14 @@ Medias Queries  |
 @media (min-width: 780px) {
   #menu-principal {
     height: auto !important;
-    display: block;
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 1 auto;
-        -ms-flex: 0 1 auto;
-            flex: 0 1 auto;
-    -webkit-box-ordinal-group: 2;
-    -webkit-order: 1;
-        -ms-flex-order: 1;
-            order: 1;
-    margin-left: auto; }
+    display: block; }
 
   #menu-principal ul {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    margin: 0 0 0 0; }
 
   #menu-principal ul li:hover {
     background: transparent; }
@@ -362,94 +347,6 @@ Medias Queries  |
     padding: .8rem;
     text-transform: capitalize;
     margin: 0 .3rem;
-    border-top: 0;
-    border-bottom: 4px solid transparent;
-    -webkit-transition: all .5s ease;
-            transition: all .5s ease; }
-
-  #menu-principal ul li a:hover,
-  #menu-principal ul li.active a {
-    color: #3E77C5;
-    border-bottom: 4px solid; }
-
-  /*
-  Programas
-  */
-  .programas article {
-    margin: 1rem 0;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    text-align: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center; }
-
-  .programas img {
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 150px;
-        -ms-flex: 0 0 150px;
-            flex: 0 0 150px;
-    margin-right: 0;
-    margin-bottom: 1rem;
-    -webkit-transition: all .5s ease;
-            transition: all .5s ease; }
-
-  .programas article:hover img {
-    -webkit-transform: rotateY(360deg);
-            transform: rotateY(360deg);
-    -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d; }
-
-  .programas h3 a::after {
-    display: none; }
-
-  .programas h3 {
-    margin: 0 0 .5rem 0;
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 1 auto;
-        -ms-flex: 0 1 auto;
-            flex: 0 1 auto; } }
-@media (min-width: 992px) {
-  html {
-    font-size: 16px; }
-
-  .lo-que-hacemos ul li {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex; }
-
-  .lo-que-hacemos ul li .fa {
-    text-align: center;
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 1 auto;
-        -ms-flex: 0 1 auto;
-            flex: 0 1 auto;
-    margin-right: 1rem;
-    margin-left: 1rem;
-    -webkit-box-ordinal-group: 2;
-    -webkit-order: 1;
-        -ms-flex-order: 1;
-            order: 1; }
-
-  .contenedor-eleccion {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1 0 0px;
-        -ms-flex: 1 0 0px;
-            flex: 1 0 0px; }
-
-  .lo-que-hacemos ul li .contendor-eleccion h4 {
-    margin-top: 0;
-    font-size: 1rem; }
-
-  .lo-que-hacemos ul:first-child {
-    background: red; }
-
-  .lo-que-hacemos ul li p {
-    font-size: .85rem; } }
+    border-top: 1; } }
 
 /*# sourceMappingURL=Estilos.css.map */
