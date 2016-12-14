@@ -45,6 +45,9 @@ $(document).ready(function () {
     }
     else {
       $('#otros').html('');
+      for (var i = 0; i < imagenN.length; i++) {
+        $('#otros').append('<center><img class="img-thumbnail img-responsive box" src="'+imagenN[i]+'"></center>');
+      }
       if (this.files.length > 0) {
         for (var i = 0; i < this.files.length; i++) {
           var extencion = this.files[i].name.substring(this.files[i].name.lastIndexOf('.')).toLowerCase();
@@ -59,9 +62,6 @@ $(document).ready(function () {
             $('#otros').append('<center><img class="img-thumbnail img-responsive box" src="'+imageDefault+'"></center>');
           }
         }
-      }
-      else {
-        $('#otros').append('<center><img class="img-thumbnail img-responsive box" src="'+imageDefault+'"></center>');
       }
     }
   });

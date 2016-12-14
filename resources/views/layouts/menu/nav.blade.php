@@ -21,18 +21,24 @@
             <ul class="nav navbar-nav">
                 <li><a href="#">Info 1</a></li>
                 <li><a href="#">Info 2</a></li>
-                @if (!Auth::guest())
-                  <li><a href="{{route('proyecto.index')}}">Proyectos</a></li>
-                @endif
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                      Vivienda <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu" role="menu">
+                    @php($proyectos = App\Proyecto::all())
+                    @foreach($proyectos as $proyecto)
+                      <li><a href="{{route('evidencia.evidencias', [$proyecto->nombre, 21])}}">{{$proyecto->nombre}}</a></li>
+                    @endforeach
+                  </ul>
+                </li>
             </ul>
 
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
                 @if (Auth::guest())
-                    <li><a href="{{route('evidencia.evidencias', ['proyecto 1', 21])}}">Evidencias</a></li>
                     <li><a href="{{ url('/login') }}">Login</a></li>
-                    <li><a href="{{ url('/register') }}">Register</a></li>
                 @else
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

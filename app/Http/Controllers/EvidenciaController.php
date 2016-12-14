@@ -41,6 +41,9 @@ class EvidenciaController extends Controller
      */
     public function create()
     {
+        if (!(Session::has('proyecto') && Session::has('estado'))) {
+          return view('welcome');
+        }
         return view('usuarios/proveedorEvidencias/crearEvidencia');
     }
 
@@ -152,6 +155,9 @@ class EvidenciaController extends Controller
      */
     public function edit($id)
     {
+        if (!(Session::has('proyecto') && Session::has('estado'))) {
+          return view('welcome');
+        }
         $beneficiado = Beneficiado::find($id);
         $localidad = $beneficiado->localidad;
         $municipio = $localidad->municipio;
@@ -228,7 +234,7 @@ class EvidenciaController extends Controller
         $this->guardarFoto($file, $path, $beneficiado, 'PISO_TERMINADO');
       }
       if ($request->hasFile('fotoN')) {
-        $this->eliminarFotos($path, $fotos, 'OTROS');
+        //$this->eliminarFotos($path, $fotos, 'OTROS');
         $file = $request->file('fotoN');
         $this->guardarFoto($file, $path, $beneficiado, 'OTROS');
       }
