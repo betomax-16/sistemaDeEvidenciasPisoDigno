@@ -1,0 +1,371 @@
+///--------------------
+// PRATRON DE COLORES
+///--------------------
+$texto: #111111;
+$principal: #333333;
+$secundariosB: #3E77C5;
+html {
+    font-size: 15px;
+}
+body {
+    background: #EFEFEF;
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+}
+.encavezado {
+    background: #fff;
+    padding: 0.5rem;
+    -webkit-box-shadow: 0px 20px 72px -12px rgba(0, 0, 0, 0.32);
+    -moz-box-shadow: 0px 20px 72px -12px rgba(0, 0, 0, 0.32);
+    box-shadow: 0px 20px 72px -12px rgba(0, 0, 0, 0.32);
+}
+.encavezado .container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.encavezado .logo img {
+    width: 66px;
+    height: auto;
+}
+.Bienvenidos .logo2 img {
+    margin-top: 10rem;
+}
+
+/*
+Estilos para el boton menu
+*/
+
+.boton-menu {
+    margin: 0;
+    padding: 0.8rem;
+    border: 0;
+    font-size: 2rem;
+    background: transparent;
+    color: #8C8C8C;
+    margin-left: auto;
+    margin-right: 0.8rem;
+}
+
+/*
+Estilo Menu desplegable
+*/
+
+#menu-principal {
+    flex: 1 1 100%;
+}
+#menu-principal ul {
+    padding: 0;
+    list-style: none;
+    margin: 1rem 0 0 0;
+}
+#menu-principal ul a {
+    display: block;
+    padding: .8rem 0;
+    text-align: center;
+    color: #8C8C8C;
+    text-transform: uppercase;
+    border-top: .1px solid #8C8C8C;
+    text-decoration: none;
+}
+#menu-principal ul a:hover {
+    color: #fff;
+}
+#menu-principal ul li:hover {
+    background: $secundariosB;
+}
+#menu-principal ul li:active a {
+    color: $secundariosB;
+}
+.texto-encavezado .btn-secondary:hover {
+    background: #5CB85C;
+    color: white;
+}
+.texto-encavezado .btn-secondary {
+    margin-top: 2rem;
+    color: #5CB85C;
+    background-color: transparent;
+    border-color: #5CB85C;
+}
+.flecha_bajar a {
+    display: inline-block;
+    font-size: 5rem;
+    color: #8C8C8C;
+    animation: flecha-animada 2s ease-in-out infinite;
+}
+@keyframes flecha-animada {
+    from {
+        transform: translateY(0)
+    }
+    50% {
+        transform: translateY(25px)
+    }
+    to {
+        transform: translateY(0px)
+    }
+}
+
+/*////////////
+Nosotros
+*/ ///////////
+.nosotros {
+    padding: 1rem;
+}
+.nosotros img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 0px 36px -6px rgba(0, 0, 0, 0.71);
+    -moz-box-shadow: 0px 0px 36px -6px rgba(0, 0, 0, 0.71);
+    box-shadow: 0px 0px 36px -6px rgba(0, 0, 0, 0.71);
+}
+.nosotros .linea {
+    background-color: #3277D2;
+    height: 1px;
+}
+.nosotros .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/*/////////////
+Lo que hacemos
+*/ /////////////
+.lo-que-hacemos h2 span {
+    color: $secundariosB;
+}
+.lo-que-hacemos ul,
+.lo-que-hacemos ul li {
+    list-style: none;
+}
+.lo-que-hacemos ul li .fa {
+    font-size: 2.3rem;
+    background: #5CB85C;
+    border-radius: 50%;
+    width: 4.8rem;
+    height: 4.8rem;
+    line-height: 4.8rem;
+    color: white;
+}
+.lo-que-hacemos ul li .contenedor-eleccion h4 {
+    color: #111111;
+    font-size: 1.2rem;
+    margin-top: 0.8rem;
+    font-weight: bold;
+}
+.lo-que-hacemos li {
+    min-height: 9rem;
+}
+.lo-que-hacemos ul li {
+    min-height: 10rem;
+}
+.lo-que-hacemos .linea {
+    background-color: #F08AFF;
+    height: 1px;
+}
+
+/*/////////////
+Mision y Vision
+*/ /////////////
+.mision-vision {
+    width: auto;
+    height: auto;
+    padding: 1rem;
+    //border: 1px solid #000;
+    display: flex;
+    flex-wrap: wrap;
+}
+.mision-vision .linea {
+    background-color: #FE9E0C;
+    height: 1px;
+}
+.mision {
+    flex: 1 1 100%;
+}
+.mision img,
+.vision img {
+    width: 100%;
+    height: auto;
+}
+.vision {
+    flex: 1 1 auto;
+}
+
+/*////////////
+Programas
+*/ ///////////
+.programas {
+    background: url("../images/FondoP.jpg") no-repeat center center;
+    background-size: cover;
+    color: #fff;
+}
+.programas img {
+    flex: 0 0 80px;
+    overflow: hidden;
+    margin-right: 1rem;
+}
+.programas article {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+.programas h3 {
+    margin: 0;
+    font-size: 3rem;
+    flex: 1 1 auto;
+}
+.programas h3 a {
+    color: #333333;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+}
+.programas h3 a::after {
+    content: "\f054";
+    font-family: FontAwesome;
+    font-size: 3rem;
+    margin-left: 1rem;
+    opacity: .5;
+    position: relative;
+    left: 0;
+    transition: all .5s ease;
+}
+.programas h3 a:hover::after {
+    left: -10px;
+    opacity: 1;
+    color: black;
+}
+
+/*
+Pie De pagina
+*/
+
+.piedepagina {
+    background: black;
+    color: #fff;
+    font-size: .9rem;
+    text-align: center;
+}
+.piedepagina .redes-sociales {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+}
+.piedepagina .redes-sociales a {
+    color: #fff;
+    font-size: 3rem;
+    margin: 1rem;
+    opacity: .7;
+    transition: all .5s ease;
+}
+.piedepagina .redes-sociales a:hover {
+    opacity: 1;
+}
+.ir-arriba {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 3rem;
+    text-decoration: none;
+    z-index: 99999;
+    line-height: 0;
+    transition: all .5s ease;
+}
+.ir-arriba:hover,
+.ir-arriba:focus {
+    outline: 0;
+    text-decoration: none;
+}
+
+/*---------------
+Medias Queries  |
+----------------*/
+
+@media (min-width:780px) {
+    #menu-principal {
+        height: auto !important;
+        display: block;
+        flex: 0 1 auto;
+        order: 1;
+        margin-left: auto;
+    }
+    #menu-principal ul {
+        display: flex;
+    }
+    #menu-principal ul li:hover {
+        background: transparent;
+    }
+    #menu-principal ul li a {
+        padding: .8rem;
+        text-transform: capitalize;
+        margin: 0 .3rem;
+        border-top: 0;
+        border-bottom: 4px solid transparent;
+        transition: all .5s ease;
+    }
+    #menu-principal ul li a:hover,
+    #menu-principal ul li.active a {
+        color: $secundariosB;
+        border-bottom: 4px solid;
+    }
+    /*
+    Programas
+    */
+    .programas article {
+        margin: 1rem 0;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .programas img {
+        flex: 0 0 150px;
+        margin-right: 0;
+        margin-bottom: 1rem;
+        transition: all .5s ease;
+    }
+    .programas article:hover img {
+        transform: rotateY(360deg);
+        transform-style: preserve-3d;
+    }
+    .programas h3 a::after {
+        display: none;
+    }
+    .programas h3 {
+        margin: 0 0 .5rem 0;
+        flex: 0 1 auto;
+    }
+}
+@media (min-width:992px) {
+    html {
+        font-size: 16px;
+    }
+    .lo-que-hacemos ul li {
+        display: flex;
+    }
+    .lo-que-hacemos ul li .fa {
+        text-align: center;
+        flex: 0 1 auto;
+        margin-right: 1rem;
+        margin-left: 1rem;
+        order: 1;
+    }
+    .contenedor-eleccion {
+        flex: 1 0 0px;
+    }
+    .lo-que-hacemos ul li .contendor-eleccion h4 {
+        margin-top: 0;
+        font-size: 1rem;
+    }
+    .lo-que-hacemos ul:first-child {
+        background: red;
+    }
+    .lo-que-hacemos ul li p {
+        font-size: .85rem;
+    }
+}

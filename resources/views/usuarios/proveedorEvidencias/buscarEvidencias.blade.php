@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{asset('css/imagenes.css')}}">
 @endsection
 @section('content')
-<div class="container">
+<div class="container espacioPagina">
     <div class="row">
         <div class="col-md-12">
             @if(!Auth::guest())

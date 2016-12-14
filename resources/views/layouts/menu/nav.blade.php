@@ -1,26 +1,18 @@
-<nav class="navbar navbar-default navbar-static-top">
+<header class="encavezado navbar-fixed-top" role="banner">
     <div class="container">
-        <div class="navbar-header">
+        <a href="{{url('/')}}" class="logo">
+            <img src="{{asset('images/Logo.svg')}}" alt="logo_del_sitio ">
+        </a>
 
-            <!-- Collapsed Hamburger -->
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                <span class="sr-only">Toggle Navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+        <button type="button" class="boton-menu hidden-md-up" data-toggle="collapse" data-target="#menu-principal" aria-expanded="false">
+            <i class="fa fa-bars" aria-hidden="true"></i></button>
 
-            <!-- Branding Image -->
-            <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Laravel') }}
-            </a>
-        </div>
-
-        <div class="collapse navbar-collapse" id="app-navbar-collapse">
-            <!-- Left Side Of Navbar -->
-            <ul class="nav navbar-nav">
-                <li><a href="#">Info 1</a></li>
-                <li><a href="#">Info 2</a></li>
+        <nav class="collapse" id="menu-principal">
+            <ul>
+                <li><a href="{{url('/')}}">Inicio</a></li>
+                <li><a href="{{url('/').'#nosotros'}}">Nosotros</a></li>
+                <li><a href="{{url('/').'#mision'}}">Mision y Vision</a></li>
+                <li><a href="#">Contacto</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                       Vivienda <span class="caret"></span>
@@ -32,11 +24,6 @@
                     @endforeach
                   </ul>
                 </li>
-            </ul>
-
-            <!-- Right Side Of Navbar -->
-            <ul class="nav navbar-nav navbar-right">
-                <!-- Authentication Links -->
                 @if (Auth::guest())
                     <li><a href="{{ url('/login') }}">Login</a></li>
                 @else
@@ -57,6 +44,6 @@
                     </li>
                 @endif
             </ul>
-        </div>
+        </nav>
     </div>
-</nav>
+</header>
