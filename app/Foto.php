@@ -17,8 +17,8 @@ class Foto extends Model
       'idHogar', 'nombreArchivo', 'tipo',
   ];
 
-  public function hogar()
+  public function beneficiado()
   {
-    return $this->belongsTo('App\Hogar', 'idHogar');
+    return $this->belongsTo('App\Beneficiado', 'idHogar');
   }
 }

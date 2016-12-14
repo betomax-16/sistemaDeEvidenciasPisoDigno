@@ -24,8 +24,8 @@ class Localidad extends Model
     return $this->belongsTo('App\Municipio', 'idMunicipio');
   }
 
-  public function hogares()
+  public function beneficiados()
   {
-    return $this->hasMany('App\Hogar', 'idLocalidad', 'idLocalidad');
+    return $this->hasMany('App\Beneficiado', 'idLocalidad', 'idLocalidad');
   }
 }

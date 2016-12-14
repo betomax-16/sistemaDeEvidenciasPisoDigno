@@ -28,4 +28,6 @@ class Municipio extends Model
   {
     return $this->hasMany('App\Localidad', 'idMunicipio', 'idMunicipio');
   }
+
+
 }

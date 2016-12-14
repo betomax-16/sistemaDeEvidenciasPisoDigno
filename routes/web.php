@@ -17,4 +17,15 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::group(['prefix' => 'proveedor', 'middleware' => 'auth'], function(){
+  Route::resource('evidencia','EvidenciaController');
+  Route::resource('proyecto','ProyectoController');
+});
+Route::post('evidencias/autocompleteLocalidad', 'EvidenciaController@autocompleteLocalidadesDelMunicipio')->name('evidencia.autocompleteLocalidad');
+Route::post('evidencias/autocomplete', 'EvidenciaController@autocomplete')->name('evidencia.autocomplete');
+Route::post('evidencias/hogares', 'EvidenciaController@buscarHogares')->name('evidencia.hogares');
+Route::get('evidencias/{proyecto}/{idEstado}', 'EvidenciaController@evidencias')->name('evidencia.evidencias');
+Route::get('evidencias/{idEvidencia}', 'EvidenciaController@ver')->name('evidencia.ver');
+Route::post('evidencias/masBeneficiados', 'EvidenciaController@municipioConMasBeneficiados')->name('municipioConMasBeneficiados');
+
+Route::post('foto/ver', 'EvidenciaController@foto')->name('foto.ver');

@@ -29,6 +29,17 @@
 <body>
     <div id="app">
         @include('layouts/menu/nav')
+        @if (!Auth::guest() && Session::has('navegacion'))
+        <div class="container">
+          <div class="row">
+            <ol class="breadcrumb">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Library</a></li>
+              <li class="active">Data</li>
+            </ol>
+          </div>
+        </div>
+        @endif
         @yield('content')
         @yield('slideshow')
         @yield('about')
@@ -36,7 +47,8 @@
     </div>
 
     <!-- Scripts -->
-    <script src="/js/app.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
     @yield('javascripts')
 </body>
 </html>

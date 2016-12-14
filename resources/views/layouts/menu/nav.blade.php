@@ -19,11 +19,10 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
-                <li><a href="{{url('/home')}}">Home</a></li>
                 <li><a href="#">Info 1</a></li>
                 <li><a href="#">Info 2</a></li>
-                @if (Auth::guest())
-                  <li><a href="#">Evidencias</a></li>
+                @if (!Auth::guest())
+                  <li><a href="{{route('proyecto.index')}}">Proyectos</a></li>
                 @endif
             </ul>
 
@@ -31,6 +30,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
                 @if (Auth::guest())
+                    <li><a href="{{route('evidencia.evidencias', ['proyecto 1', 21])}}">Evidencias</a></li>
                     <li><a href="{{ url('/login') }}">Login</a></li>
                     <li><a href="{{ url('/register') }}">Register</a></li>
                 @else
@@ -38,7 +38,6 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             {{ Auth::user()->nombre }} <span class="caret"></span>
                         </a>
-
                         <ul class="dropdown-menu" role="menu">
                             <li>
                                 <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

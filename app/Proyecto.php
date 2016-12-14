@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Beneficiado;
 
 class Proyecto extends Model
 {
@@ -23,8 +24,19 @@ class Proyecto extends Model
       return $this->belongsToMany('App\Usuario', 'Usuarios_Proyectos', 'proyecto', 'idUsuario')->withPivot('created_at')->withPivot('updated_at');
     }
 
+    public function beneficiados()
+    {
+      return $this->hasMany('App\Beneficiado', 'proyecto', 'nombre');
+    }
+
     public function estados()
     {
-      return $this->belongsToMany('App\Estado', 'Proyectos_Estados', 'proyecto', 'idEstado')->withPivot('created_at')->withPivot('updated_at');
+       return Estado::join('Municipios', 'Municipios.idEstado', '=', 'Estados.idEstado')
+                  ->join('Localidades', 'Localidades.idMunicipio', '=', 'Municipios.idMunicipio')
+                  ->join('Beneficiados', 'Beneficiados.idLocalidad', '=', 'Localidades.idLocalidad')
+                  ->select('Estados.*')
+                  ->where('Beneficiados.proyecto', '=', $this->nombre)
+                  ->groupBy('Estados.idEstado')
+                  ->get();
     }
 }

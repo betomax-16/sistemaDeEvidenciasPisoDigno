@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Hogar extends Model
+class Beneficiado extends Model
 {
   protected $primaryKey = 'idHogar';
-  protected $table = 'Hogares';
+  protected $table = 'Beneficiados';
 
   /**
    * The attributes that are mass assignable.
@@ -15,8 +15,13 @@ class Hogar extends Model
    * @var array
    */
   protected $fillable = [
-      'familia', 'area', 'idLocalidad',
+      'familia', 'idLocalidad','proyecto',
   ];
+
+  public function proyecto()
+  {
+    return $this->belongsTo('App\Proyecto', 'proyecto');
+  }
 
   public function localidad()
   {

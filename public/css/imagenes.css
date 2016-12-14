@@ -1,0 +1,14 @@
+.box{
+	height: 100px;
+	overflow: hidden;
+}
+.bigbox{
+	height: 250px;
+	overflow: hidden;
+}
+.box img{
+	height: 100%;
+	width: 100%;
+	object-fit:cover;
+	-o-object-fit:cover;
+}

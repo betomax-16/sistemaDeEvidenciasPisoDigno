@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+use App\Proyecto;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $proyectos = Auth::user()->proyectos()->paginate(5);
+
+        return view('home')->with('proyectos', $proyectos);
+    }
+
+    public function show($id)
+    {
+      Session::put('navegacion', ['proyecto' => $id]);
     }
 }

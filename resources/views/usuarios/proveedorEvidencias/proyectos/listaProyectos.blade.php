@@ -22,12 +22,12 @@
                             <td class="text-center">{{$proyecto->nombre}}</td>
                             <td class="text-center">{{$proyecto->created_at}}</td>
                             @php($aux = array())
-                            @foreach($proyecto->estados as $estado)
+                            @foreach($proyecto->estados() as $estado)
                               @php($aux[$estado->idEstado] = $estado->nombre)
                             @endforeach
-                            <td class="text-center">{!! Form::select('estado', $aux, null, ['class' => 'form-control']) !!}</td>
+                            <td class="text-center">{!! Form::select('estado', [21=>'Puebla'], 21, ['class' => 'form-control']) !!}</td>
                             <td>
-                              <a href="{{route('proyecto.show', $proyecto->nombre)}}" class="btn btn-success" style="width:100%">Abrir</a>
+                              <a href="{{route('evidencia.evidencias', [$proyecto->nombre, 21])}}" class="btn btn-success" style="width:100%">Abrir</a>
                             </td>
                           </tr>
                         @endforeach
