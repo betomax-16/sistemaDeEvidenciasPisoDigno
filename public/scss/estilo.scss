@@ -1,0 +1,233 @@
+    $secundariosB: #3E77C5;
+    .encavezado {
+        background: #fff;
+        padding: 0.5rem;
+        -webkit-box-shadow: 0px 20px 72px -12px rgba(0, 0, 0, 0.32);
+        -moz-box-shadow: 0px 20px 72px -12px rgba(0, 0, 0, 0.32);
+        box-shadow: 0px 20px 72px -12px rgba(0, 0, 0, 0.32);
+    }
+    .encavezado .container {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-left: 0px;
+        width: auto;
+    }
+    .encavezado .logo img {
+        width: 135px;
+        height: auto;
+        margin-left: 0px;
+    }
+    /*
+Estilo Menu desplegable
+*/
+    
+    #menu-principal {
+        flex: 1 1 100%;
+    }
+    #menu-principal ul {
+        padding: 0;
+        list-style: none;
+        margin: 1rem 0 0 0;
+    }
+    #menu-principal ul a {
+        display: block;
+        padding: .8rem 0;
+        text-align: center;
+        color: #8C8C8C;
+        text-transform: uppercase;
+        border-top: .1px solid #8C8C8C;
+        text-decoration: none;
+    }
+    #menu-principal ul a:hover {
+        color: #fff;
+    }
+    #menu-principal ul li:hover {
+        background: $secundariosB;
+    }
+    #menu-principal ul li:active a {
+        color: $secundariosB;
+    }
+    /*
+Bienvenidos
+*/
+    
+    .Bienvenidos {
+        height: 600px;
+        width: auto;
+        margin-top: 63px;
+        /* For browsers that do not support gradients */
+        background: -webkit-linear-gradient(#053E63, #FFF);
+        /* For Safari 5.1 to 6.0 */
+    }
+    .Bienvenidos {
+        color: #FFF;
+    }
+    .Bienvenidos .display-3 {
+        margin-top: 2rem;
+    }
+    .Bienvenidos h1 span {
+        color: #f94a0d;
+        border-bottom: 3px dotted;
+    }
+    .texto-encavezado .btn-secondary:hover {
+        background: #f94a0d;
+        color: white;
+    }
+    .texto-encavezado .btn-secondary {
+        margin-top: 2rem;
+        color: #f94a0d;
+        background-color: transparent;
+        border-color: #f94a0d;
+    }
+    .flecha_bajar a {
+        display: inline-block;
+        font-size: 5rem;
+        color: #8C8C8C;
+        animation: flecha-animada 2s ease-in-out infinite;
+    }
+    @keyframes flecha-animada {
+        from {
+            transform: translateY(0)
+        }
+        50% {
+            transform: translateY(25px)
+        }
+        to {
+            transform: translateY(0px)
+        }
+    }
+    /*
+Media Querys
+*/
+    
+    @media (min-width:767px) {
+        #menu-principal {
+            height: auto !important;
+            display: block;
+            flex: 0 1 auto;
+            order: 1;
+            margin-left: auto;
+        }
+        #menu-principal ul {
+            display: flex;
+        }
+        #menu-principal ul li:hover {
+            background: transparent;
+        }
+        #menu-principal ul li a {
+            padding: .8rem;
+            text-transform: capitalize;
+            margin: 0 .3rem;
+            border-top: 0;
+            border-bottom: 4px solid transparent;
+            transition: all .5s ease;
+        }
+        #menu-principal ul li a:hover,
+        #menu-principal ul li.active a {
+            color: $secundariosB;
+            border-bottom: 4px solid;
+        }
+    }
+    @media (min-width:992px) {
+        .Bienvenidos .display-3 {
+            margin-top: 10rem;
+        }
+        .encavezado .logo img {
+            width: 218px;
+        }
+        .texto-encavezado .btn-secondary {
+            margin-top: 14rem;
+            font-size: 2.25rem;
+        }
+    }
+    /*
+
+*/
+    
+    .c-hamburger {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        width: 28px;
+        height: 30px;
+        font-size: 0;
+        text-indent: -9999px;
+        appearance: none;
+        box-shadow: none;
+        border-radius: none;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s;
+        margin-left: auto;
+        margin-right: 0.8px;
+    }
+    .c-hamburger:focus {
+        outline: none;
+    }
+    .c-hamburger span {
+        display: block;
+        position: absolute;
+        top: auto;
+        left: 0;
+        border-radius: 4px;
+        background: #7b8b8e;
+        width: 100%;
+        height: 2px;
+    }
+    .c-hamburger span::before,
+    .c-hamburger span::after {
+        position: absolute;
+        display: block;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #7b8b8e;
+        border-radius: 4px;
+        content: "";
+    }
+    .c-hamburger span::before {
+        top: -7px;
+    }
+    .c-hamburger span::after {
+        bottom: -7px;
+    }
+    .c-hamburger--htx {
+        background-color: #FFF;
+    }
+    .c-hamburger--htx span {
+        transition: background 0s 0.3s;
+    }
+    .c-hamburger--htx span::before,
+    .c-hamburger--htx span::after {
+        transition-duration: 0.3s, 0.3s;
+        transition-delay: 0.3s, 0s;
+    }
+    .c-hamburger--htx span::before {
+        transition-property: top, transform;
+    }
+    .c-hamburger--htx span::after {
+        transition-property: bottom, transform;
+    }
+    /* active state, i.e. menu open */
+    
+    .c-hamburger--htx.is-active {
+        background-color: #FFF;
+    }
+    .c-hamburger--htx.is-active span {
+        background: none;
+    }
+    .c-hamburger--htx.is-active span::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+    .c-hamburger--htx.is-active span::after {
+        bottom: 0;
+        transform: rotate(-45deg);
+    }
+    .c-hamburger--htx.is-active span::before,
+    .c-hamburger--htx.is-active span::after {
+        transition-delay: 0s, 0.3s;
+    }

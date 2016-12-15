@@ -53,7 +53,6 @@
 @endsection
 @section('javascripts')
 <script type="text/javascript" src="{{asset('jquery-ui/jquery-ui.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('js/bootbox.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/Evidencias/buscarLocalidadEvidencia.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/Evidencias/eliminarEvidencia.js')}}"></script>
 <script type="text/javascript">
