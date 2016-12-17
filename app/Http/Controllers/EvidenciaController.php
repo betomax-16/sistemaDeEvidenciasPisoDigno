@@ -12,6 +12,7 @@ use App\Localidad;
 use App\Beneficiado;
 use App\Foto;
 use Validator;
+use Carbon\Carbon;
 
 class EvidenciaController extends Controller
 {
@@ -25,14 +26,43 @@ class EvidenciaController extends Controller
       dd('hola');
     }
 
+    private function beneficiadosDelMunicipio($municipio, $proyecto, $anio)
+    {
+       return Beneficiado::join('Localidades', 'Beneficiados.idLocalidad', '=', 'Localidades.idLocalidad')
+                                 ->join('Municipios', 'Localidades.idMunicipio', '=', 'Municipios.idMunicipio')
+                                 ->select('Beneficiados.*')
+                                 ->where('Municipios.nombre', '=', $municipio)
+                                 ->where('Beneficiados.proyecto', '=', $proyecto)
+                                 ->where(DB::raw('year(Beneficiados.created_at)'), '=', $anio)
+                                 ->paginate(6);
+    }
+
+    private function beneficiadosDeLocalidad($localidad, $proyecto, $anio)
+    {
+       return Beneficiado::join('Localidades', 'Beneficiados.idLocalidad', '=', 'Localidades.idLocalidad')
+                                  ->select('Beneficiados.*')
+                                  ->where('Localidades.nombre', '=', $localidad)
+                                  ->where('Beneficiados.proyecto', '=', $proyecto)
+                                  ->where(DB::raw('year(Beneficiados.created_at)'), '=', $anio)
+                                  ->paginate(6);
+    }
+
     public function evidencias($idProyecto, $idEstado)
     {
       Session::put('proyecto', $idProyecto);
       Session::put('estado', $idEstado);
       $proyecto = Proyecto::find($idProyecto);
       $estado = Estado::find($idEstado);
+      $municipio = $estado->municipioConMasBeneficiados($proyecto);
       //$estado = $proyecto->estados()->find($idEstado);
-      return view('usuarios/proveedorEvidencias/buscarEvidencias')->with('proyecto', $proyecto)->with('estado', $estado);
+      $fechaActual = Carbon::now();
+      $anio = $fechaActual->format('Y');
+      $beneficiados = $this->beneficiadosDelMunicipio($municipio->nombre, $proyecto->nombre, $anio);
+      return view('usuarios/proveedorEvidencias/buscarEvidencias')
+                 ->with('proyecto', $proyecto)
+                 ->with('estado', $estado)
+                 ->with('municipio', $municipio)
+                 ->with('beneficiados', $beneficiados);
     }
     /**
      * Show the form for creating a new resource.
@@ -49,7 +79,7 @@ class EvidenciaController extends Controller
 
     private function guardarFoto($files, $path, Beneficiado $beneficiado, $tipo)
     {
-      if (count($files) > 1) {
+      if (count($files) > 1 || $files[0]) {
         foreach ($files as $file) {
           $nombre = md5($file->getClientOriginalName()).'_'.time().'.'.$file->getClientOriginalExtension();
           $file->move($path, $nombre);
@@ -331,32 +361,15 @@ class EvidenciaController extends Controller
         $anio = $request->year;
         $proyecto = $request->project;
         if ($region == 'MUNICIPIO') {
-          $beneficiados = Beneficiado::join('Localidades', 'Beneficiados.idLocalidad', '=', 'Localidades.idLocalidad')
-                                     ->join('Municipios', 'Localidades.idMunicipio', '=', 'Municipios.idMunicipio')
-                                     ->select('Beneficiados.*')
-                                     ->where('Municipios.nombre', '=', $nombre)
-                                     ->where('Beneficiados.proyecto', '=', $proyecto)
-                                     ->where(DB::raw('year(Beneficiados.created_at)'), '=', $anio)
-                                     ->get();
-          foreach ($beneficiados as $beneficiado) {
-            $beneficiado->fotos;
-          }
+          $beneficiados = $this->beneficiadosDelMunicipio($nombre, $proyecto, $anio);
           return response()->json([
-            'beneficiados' => $beneficiados
+            view('layouts/templates/templateEvidencia', ['beneficiados'=> $beneficiados])->render()
           ]);
         }
         elseif ($region == 'LOCALIDAD') {
-          $beneficiados = Beneficiado::join('Localidades', 'Beneficiados.idLocalidad', '=', 'Localidades.idLocalidad')
-                                     ->select('Beneficiados.*')
-                                     ->where('Localidades.nombre', '=', $nombre)
-                                     ->where('Beneficiados.proyecto', '=', $proyecto)
-                                     ->where(DB::raw('year(Beneficiados.created_at)'), '=', $anio)
-                                     ->get();
-          foreach ($beneficiados as $beneficiado) {
-            $beneficiado->fotos;
-          }
+          $beneficiados = $this->beneficiadosDeLocalidad($nombre, $proyecto, $anio);
           return response()->json([
-            'beneficiados' => $beneficiados
+            view('layouts/templates/templateEvidencia', ['beneficiados'=> $beneficiados])->render()
           ]);
         }
       }

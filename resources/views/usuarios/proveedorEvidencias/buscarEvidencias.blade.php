@@ -21,7 +21,7 @@
                       <div class="form-inline">
                         <div class="form-group">
                           {!! Form::label('año', 'Año') !!}
-                          {!! Form::number('año', null, ['id' => 'año', 'class' => 'form-control']) !!}
+                          {!! Form::number('año', Carbon\Carbon::now()->format('Y'), ['id' => 'año', 'class' => 'form-control']) !!}
                         </div>
                       </div>
                     </div>
@@ -32,7 +32,7 @@
                     </div>
                     <div class="col-md-4">
                       <div class="input-group">
-                        {!! Form::text('nombreLugar', null, ['class' => 'form-control', 'id' => 'nombreLugar', 'placeholder' => 'Lugar...']) !!}
+                        {!! Form::text('nombreLugar', $municipio->nombre, ['class' => 'form-control', 'id' => 'nombreLugar', 'placeholder' => 'Lugar...']) !!}
                         <span class="input-group-btn">
                           <button class="btn btn-default" type="button" id="btnBuscar"><span class="glyphicon glyphicon-search"></span></button>
                         </span>
@@ -40,8 +40,8 @@
                     </div>
                   </div>
                   <hr>
-                  <div class="row" id="evidencias">
-
+                  <div id="evidencias">
+                      @include('layouts/templates/templateEvidencia')
                   </div>
                 </div>
                 {!! Form::open(['route' => ['evidencia.destroy', 'ID_HOGAR'], 'method' => 'DELETE', 'id' => 'form-delete']) !!}
@@ -57,7 +57,6 @@
 <script type="text/javascript" src="{{asset('js/Evidencias/eliminarEvidencia.js')}}"></script>
 <script type="text/javascript">
   var token = '{{ Session::token() }}';
-  var template = '@include("layouts.templates.templateEvidencia")';
   var estado = '{{ Session::get("estado") }}';
   var proyecto = '{{ Session::get("proyecto") }}';
 </script>

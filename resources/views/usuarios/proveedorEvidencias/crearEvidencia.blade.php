@@ -1,19 +1,7 @@
 @extends('layouts.app')
 @section('styles')
 <link rel="stylesheet" href="{{asset('jquery-ui/jquery-ui.min.css')}}">
-<style media="screen">
-.box{
-  height: 250px;
-  overflow: hidden;
-}
-.box img{
-	height: 100%;
-	width: 100%;
-	object-fit:cover;
-	-o-object-fit:cover;
-}
-
-</style>
+<link rel="stylesheet" href="{{asset('css/imagenCerrar.css')}}">
 @endsection
 @section('content')
 <div class="container espacioPagina">
@@ -105,17 +93,25 @@
                         </div>
                         <h3>Otras fotos</h3>
                         <div class="row {{ $errors->get('fotoN.*') ? ' has-error' : '' }}">
-                          <div id="otros" class="col-md-10 col-md-offset-1">
-                            <center><img class="img-thumbnail img-responsive box" src="{{asset('imagenes/evidencias/foto.png')}}" alt="" id="imgN"></center>
+                          <div id="otros" class="row">
+                            <div class="col-md-4">
+                              <center>
+                                <img class="img-thumbnail img-responsive box" src="{{asset('imagenes/evidencias/foto.png')}}" alt="" id="imgN">
+                              </center>
+                            </div>
                           </div>
-                          {!! Form::file('fotoN[]', ['id' => 'fotoN', 'multiple']) !!}
-                          @foreach($errors->get('fotoN.*') as $error)
-                            @foreach($error as $value)
-                              <span class="help-block">
-                                  <strong>{{ $value }}</strong>
-                              </span>
-                            @endforeach
-                          @endforeach
+                          <div class="row">
+                            <div class="col-md-12">
+                              {!! Form::file('fotoN[]', ['id' => 'fotoN', 'multiple']) !!}
+                              @foreach($errors->get('fotoN.*') as $error)
+                                @foreach($error as $value)
+                                  <span class="help-block">
+                                      <strong>{{ $value }}</strong>
+                                  </span>
+                                @endforeach
+                              @endforeach
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -123,7 +119,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-md-12">
-                      {!! Form::submit('Guardar', ['class' => 'btn btn-success btn-lg', 'style' => 'width:100%']) !!}
+                      {!! Form::submit('Guardar', ['class' => 'btn btn-success btn-lg', 'style' => 'width:100%', 'id' => 'btnGuardar']) !!}
                     </div>
                   </div>
                   {!! Form::close() !!}

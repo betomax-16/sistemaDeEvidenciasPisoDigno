@@ -24,7 +24,7 @@ $(document).ready(function () {
         case 'fotoN':
             $('#otros').html('');
             for (var i = 0; i < imagenN.length; i++) {
-              $('#otros').append('<center><img class="img-thumbnail img-responsive box" src="'+imagenN[i]+'"></center>');
+              $('#otros').append('<div class="col-md-4"><center><img class="img-thumbnail img-responsive box" src="'+imagenN[i]+'"></center></div>');
             }
           break;
       }
@@ -46,7 +46,7 @@ $(document).ready(function () {
     else {
       $('#otros').html('');
       for (var i = 0; i < imagenN.length; i++) {
-        $('#otros').append('<center><img class="img-thumbnail img-responsive box" src="'+imagenN[i]+'"></center>');
+        $('#otros').append('<div class="col-md-4"><center><img class="img-thumbnail img-responsive box" src="'+imagenN[i]+'"></center></div>');
       }
       if (this.files.length > 0) {
         for (var i = 0; i < this.files.length; i++) {
@@ -54,12 +54,12 @@ $(document).ready(function () {
           if (extenciones.indexOf(extencion) >= 0) {
             var reader = new FileReader();
             reader.onload = function (e) {
-              $('#otros').append('<center><img class="img-thumbnail img-responsive box" src="'+e.target.result+'"></center>');
+              $('#otros').append('<div class="col-md-4"><center><img class="img-thumbnail img-responsive box" src="'+e.target.result+'"></center></div>');
             }
             reader.readAsDataURL(this.files[i]);
           }
           else {
-            $('#otros').append('<center><img class="img-thumbnail img-responsive box" src="'+imageDefault+'"></center>');
+            $('#otros').append('<div class="col-md-4"><center><img class="img-thumbnail img-responsive box" src="'+imageDefault+'"></center></div>');
           }
         }
       }
@@ -142,7 +142,7 @@ $(document).ready(function () {
   var imagen2 = $('#img2').attr('src');
   var imagen3 = $('#img3').attr('src');
   var imagenN = [];
-  $("#otros img").each(function (index){
+  $("#otros .box").each(function (index){
       imagenN.push($(this).attr('src'));
   });
 

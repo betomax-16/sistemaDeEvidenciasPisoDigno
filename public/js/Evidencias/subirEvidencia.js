@@ -30,17 +30,17 @@ $(document).ready(function () {
           if (extenciones.indexOf(extencion) >= 0) {
             var reader = new FileReader();
             reader.onload = function (e) {
-              $('#otros').append('<center><img class="img-thumbnail img-responsive box" src="'+e.target.result+'"></center>');
+              $('#otros').append('<div class="col-md-4"><center><img class="img-thumbnail img-responsive box" src="'+e.target.result+'"></center></div>');
             }
             reader.readAsDataURL(this.files[i]);
           }
           else {
-            $('#otros').append('<center><img class="img-thumbnail img-responsive box" src="'+imageDefault+'"></center>');
+            $('#otros').append('<div class="col-md-4"><center><img class="img-thumbnail img-responsive box" src="'+imageDefault+'"></center></div>');
           }
         }
       }
       else {
-        $('#otros').append('<center><img class="img-thumbnail img-responsive box" src="'+imageDefault+'"></center>');
+        $('#otros').append('<div class="col-md-4"><center><img class="img-thumbnail img-responsive box" src="'+imageDefault+'"></center></div>');
       }
     }
   });
@@ -116,4 +116,10 @@ $(document).ready(function () {
   if ($('#idMunicipio').val() != '') {
     $('#localidad').prop('disabled', false);
   }
+
+  /*$('#btnGuardar').click(function (e) {
+    e.preventDefault();
+
+    alert($('#fotos').val().length);
+  });*/
 });

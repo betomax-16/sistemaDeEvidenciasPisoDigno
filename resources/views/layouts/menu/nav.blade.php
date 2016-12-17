@@ -17,13 +17,20 @@
                     <li><a href="#">Contacto</a></li>
                     <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                          Vivienda 
+                          Vivienda
                       </a>
                       <ul class="dropdown-menu" role="menu">
-                        @php($proyectos = App\Proyecto::all())
-                        @foreach($proyectos as $proyecto)
-                          <li><a href="{{route('evidencia.evidencias', [$proyecto->nombre, 21])}}">{{$proyecto->nombre}}</a></li>
-                        @endforeach
+                        @if(Auth::guest())
+                          @php($proyectos = App\Proyecto::all())
+                          @foreach($proyectos as $proyecto)
+                            <li><a href="{{route('evidencia.evidencias', [$proyecto->nombre, 21])}}">{{$proyecto->nombre}}</a></li>
+                          @endforeach
+                        @else
+                          @php($proyectos = Auth::user()->proyectos)
+                          @foreach($proyectos as $proyecto)
+                            <li><a href="{{route('evidencia.evidencias', [$proyecto->nombre, 21])}}">{{$proyecto->nombre}}</a></li>
+                          @endforeach
+                        @endif
                       </ul>
                     </li>
                     @if (Auth::guest())
