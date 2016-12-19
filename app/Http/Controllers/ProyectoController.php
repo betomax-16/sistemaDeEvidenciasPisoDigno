@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use App\Proyecto;
+use App\Estado;
+use Validator;
 
 class ProyectoController extends Controller
 {
@@ -21,6 +24,26 @@ class ProyectoController extends Controller
       return view('usuarios/proveedorEvidencias/proyectos/listaProyectos')->with('proyectos', $proyectos);
     }
 
+    public function proyectosPorPrograma($programa)
+    {
+      Session::forget('proyecto');
+      Session::forget('estado');
+      Session::put('programa', $programa);
+      $programas = ['VIVIENDA', 'SALUD', 'ALIMENTOS', 'EDUCACION', 'MEDIO_AMBIENTE'];
+      if (in_array(strtoupper($programa), $programas)) {
+        if (Auth::guest() || Auth::user()->role == 'ROLE_ADMIN') {
+          $proyectos = Proyecto::where('tipo', '=', $programa)->paginate(10);
+        }
+        else {
+          $proyectos = Auth::User()->proyectos()->where('tipo', '=', $programa)->paginate(10);
+        }
+        $estado = Estado::find(21);
+        return view('proyectos/listaProyectos')->with('proyectos', $proyectos)->with('estado', $estado)->with('programa', $programa);
+      }
+      else {
+        # programa ineccistente
+      }
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -28,7 +51,10 @@ class ProyectoController extends Controller
      */
     public function create()
     {
-        //
+        if (!Session::has('programa')) {
+          return view('welcome');
+        }
+        return view('proyectos/crearProyecto');
     }
 
     /**
@@ -39,7 +65,20 @@ class ProyectoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $rules = [
+          'nombre' => 'required|max:255|unique:Proyectos',
+          'tipo' => 'required',
+      ];
+
+      $validacion = Validator::make($request->all(), $rules);
+
+      if ($validacion->fails()) {
+        return redirect()->back()->withInput()->withErrors($validacion->errors());
+      }
+
+      $proyecto = new Proyecto($request->all());
+      $proyecto->save();
+      return redirect()->route('proyectosPorPrograma', Session::get('programa'));
     }
 
     /**
@@ -61,7 +100,11 @@ class ProyectoController extends Controller
      */
     public function edit($id)
     {
-        //
+        if (!Session::has('programa')) {
+          return view('welcome');
+        }
+        $proyecto = Proyecto::find($id);
+        return view('proyectos/editarProyecto')->with('proyecto', $proyecto);
     }
 
     /**
@@ -73,7 +116,21 @@ class ProyectoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $rules = [
+          'nombre' => 'required|max:255|unique:Proyectos',
+          'tipo' => 'required',
+      ];
+
+      $validacion = Validator::make($request->all(), $rules);
+
+      if ($validacion->fails()) {
+        return redirect()->back()->withInput()->withErrors($validacion->errors());
+      }
+
+      $proyecto = Proyecto::find($id);
+      $proyecto->nombre = $request->nombre;
+      $proyecto->save();
+      return redirect()->route('proyectosPorPrograma', Session::get('programa'));
     }
 
     /**
@@ -82,8 +139,14 @@ class ProyectoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        if ($request->ajax()) {
+          $proyecto = Proyecto::find($id);
+          $proyecto->delete();
+          return response()->json([
+            'message' =>  'Proyecto eliminado exitosamente.'
+          ]);
+        }
     }
 }

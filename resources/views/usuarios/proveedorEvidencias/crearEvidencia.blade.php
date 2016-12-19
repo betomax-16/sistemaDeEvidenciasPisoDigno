@@ -15,7 +15,7 @@
                     <div class="col-md-6">
                       <div class="form-group{{ $errors->has('idMunicipio') ? ' has-error' : '' }}">
                         {!! Form::label('municipio', 'Municipio') !!}
-                        {!! Form::text('municipio', old('municipio'), ['placeholder' => 'Municipio...', 'id' => 'municipio', 'class' => 'form-control']) !!}
+                        {!! Form::text('municipio', old('municipio'), ['placeholder' => 'Municipio...', 'id' => 'municipio', 'class' => 'form-control', 'autocomplete' => 'off']) !!}
                         {!! Form::hidden('idMunicipio', old('idMunicipio'), ['id' => 'idMunicipio']) !!}
                         @if ($errors->has('idMunicipio') || $errors->has('municipio'))
                             <span class="help-block">
@@ -27,7 +27,7 @@
                     <div class="col-md-6">
                       <div class="form-group{{ $errors->has('idLocalidad') ? ' has-error' : '' }}">
                         {!! Form::label('localidad', 'Localidad') !!}
-                        {!! Form::text('localidad', old('localidad'), ['placeholder' => 'Localidad...', 'id' => 'localidad', 'class' => 'form-control', 'disabled']) !!}
+                        {!! Form::text('localidad', old('localidad'), ['placeholder' => 'Localidad...', 'id' => 'localidad', 'class' => 'form-control', 'autocomplete' => 'off', 'disabled']) !!}
                         {!! Form::hidden('idLocalidad', old('idLocalidad'), ['id' => 'idLocalidad']) !!}
                         @if ($errors->has('idLocalidad') || $errors->has('localidad'))
                             <span class="help-block">
@@ -42,7 +42,7 @@
                     <div class="col-md-12">
                       <div class="form-group{{ $errors->has('familia') ? ' has-error' : '' }}">
                         {!! Form::label('familia', 'Familia') !!}
-                        {!! Form::text('familia', old('familia'), ['placeholder' => 'Familia...', 'id' => 'familia', 'class' => 'form-control']) !!}
+                        {!! Form::text('familia', old('familia'), ['placeholder' => 'Familia...', 'id' => 'familia', 'class' => 'form-control', 'autocomplete' => 'off']) !!}
                         @if ($errors->has('familia'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('familia') }}</strong>

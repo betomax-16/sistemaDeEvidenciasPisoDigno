@@ -57,7 +57,10 @@ class EvidenciaController extends Controller
       //$estado = $proyecto->estados()->find($idEstado);
       $fechaActual = Carbon::now();
       $anio = $fechaActual->format('Y');
-      $beneficiados = $this->beneficiadosDelMunicipio($municipio->nombre, $proyecto->nombre, $anio);
+      $beneficiados = null;
+      if ($municipio) {
+        $beneficiados = $this->beneficiadosDelMunicipio($municipio->nombre, $proyecto->nombre, $anio);
+      }
       return view('usuarios/proveedorEvidencias/buscarEvidencias')
                  ->with('proyecto', $proyecto)
                  ->with('estado', $estado)
@@ -79,7 +82,7 @@ class EvidenciaController extends Controller
 
     private function guardarFoto($files, $path, Beneficiado $beneficiado, $tipo)
     {
-      if (count($files) > 1 || $files[0]) {
+      if (is_array($files)) {
         foreach ($files as $file) {
           $nombre = md5($file->getClientOriginalName()).'_'.time().'.'.$file->getClientOriginalExtension();
           $file->move($path, $nombre);

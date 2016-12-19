@@ -32,7 +32,7 @@
                     </div>
                     <div class="col-md-4">
                       <div class="input-group">
-                        {!! Form::text('nombreLugar', $municipio->nombre, ['class' => 'form-control', 'id' => 'nombreLugar', 'placeholder' => 'Lugar...']) !!}
+                        {!! Form::text('nombreLugar', $municipio ? $municipio->nombre : null, ['class' => 'form-control', 'id' => 'nombreLugar', 'placeholder' => 'Lugar...', 'autocomplete' => 'off']) !!}
                         <span class="input-group-btn">
                           <button class="btn btn-default" type="button" id="btnBuscar"><span class="glyphicon glyphicon-search"></span></button>
                         </span>
@@ -41,7 +41,11 @@
                   </div>
                   <hr>
                   <div id="evidencias">
+                    @if($beneficiados)
                       @include('layouts/templates/templateEvidencia')
+                    @else
+                      <h2>Sin evidencias</h2>
+                    @endif
                   </div>
                 </div>
                 {!! Form::open(['route' => ['evidencia.destroy', 'ID_HOGAR'], 'method' => 'DELETE', 'id' => 'form-delete']) !!}

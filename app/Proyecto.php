@@ -16,7 +16,7 @@ class Proyecto extends Model
      * @var array
      */
     protected $fillable = [
-        'nombre',
+        'nombre', 'tipo',
     ];
 
     public function miembros()

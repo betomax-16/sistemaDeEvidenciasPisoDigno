@@ -30,7 +30,7 @@ class Usuario extends Authenticatable
 
     public function nombreCompleto()
     {
-      return $this->nombre.' '-$this->apellidoPaterno.' '.$this->apellidoMaterno;
+      return $this->nombre.' '.$this->apellidoPaterno.' '.$this->apellidoMaterno;
     }
 
     public function proyectos()

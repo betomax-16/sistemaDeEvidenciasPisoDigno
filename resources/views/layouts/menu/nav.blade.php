@@ -17,25 +17,22 @@
                     <li><a href="#">Contacto</a></li>
                     <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                          Vivienda
+                          Programas
                       </a>
                       <ul class="dropdown-menu" role="menu">
-                        @if(Auth::guest())
-                          @php($proyectos = App\Proyecto::all())
-                          @foreach($proyectos as $proyecto)
-                            <li><a href="{{route('evidencia.evidencias', [$proyecto->nombre, 21])}}">{{$proyecto->nombre}}</a></li>
-                          @endforeach
-                        @else
-                          @php($proyectos = Auth::user()->proyectos)
-                          @foreach($proyectos as $proyecto)
-                            <li><a href="{{route('evidencia.evidencias', [$proyecto->nombre, 21])}}">{{$proyecto->nombre}}</a></li>
-                          @endforeach
-                        @endif
+                        <li><a href="{{route('proyectosPorPrograma','VIVIENDA')}}">Vivienda</a></li>
+                        <li><a href="{{route('proyectosPorPrograma','SALUD')}}">Salud</a></li>
+                        <li><a href="{{route('proyectosPorPrograma','ALIMENTOS')}}">Alimentos</a></li>
+                        <li><a href="{{route('proyectosPorPrograma','EDUCACION')}}">Educacion</a></li>
+                        <li><a href="{{route('proyectosPorPrograma','MEDIO_AMBIENTE')}}">Medio Ambiente</a></li>
                       </ul>
                     </li>
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
                     @else
+                      @if(Auth::user()->role == 'ROLE_ADMIN')
+                        <li><a href="{{route('usuario.index')}}">Usuarios</a></li>
+                      @endif
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 {{ Auth::user()->nombre }} <span class="caret"></span>

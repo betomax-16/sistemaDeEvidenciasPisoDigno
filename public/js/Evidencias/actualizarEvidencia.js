@@ -143,7 +143,9 @@ $(document).ready(function () {
   var imagen3 = $('#img3').attr('src');
   var imagenN = [];
   $("#otros .box").each(function (index){
-      imagenN.push($(this).attr('src'));
+    if ($(this).attr('src').indexOf('foto.png') == -1) {
+        imagenN.push($(this).attr('src'));
+    }
   });
 
 });
