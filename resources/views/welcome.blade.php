@@ -1,6 +1,4 @@
-@extends('layouts.app') 
-
-@section('content')
+@extends('layouts.app') @section('content')
 
 <section class="Bienvenidos text-xs-center">
     <div class="container">
@@ -29,21 +27,32 @@
             <button type="button" class="btn btn-secondary ENM" data-toggle="collapse" data-target="#collapseVision" aria-expanded="false" aria-controls="collapseExample">Vision</button>
             <button type="button" class="btn btn-secondary B" data-toggle="collapse" data-target="#collapseObjetivo" aria-expanded="false" aria-controls="collapseExample">Objetivo</button>
         </div>
-        <div class="collapse col-md-4 " id="collapseMision">
-            <div class="card card-block">
-                <h1>Mision</h1> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+        <div class="row">
+            <div class="col-md-4">
+                <div class="collapse col-md-12 " id="collapseMision">
+                    <div class="card card-block">
+                        <h1>Mision</h1> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="collapse col-md-12 " id="collapseVision">
+                    <div class="card card-block">
+                        <h1>Vision</h1> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="collapse col-md-12 " id="collapseObjetivo">
+                    <div class="card card-block">
+                        <h1>Objetivo</h1> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="collapse col-md-4 " id="collapseVision">
-            <div class="card card-block">
-                <h1>Vision</h1> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-            </div>
-        </div>
-        <div class="collapse col-md-4 " id="collapseObjetivo">
-            <div class="card card-block">
-                <h1>Objetivo</h1> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-            </div>
-        </div>
+
+
+
 
 </section>
 
@@ -199,7 +208,7 @@
                 <img src=" {{asset('imagenes/aplicacion/Bivienda.svg')}} " alt="LogoPiso Digno">
                 <h3><a> Piso Digno</a></h3>
                 <p class="hidden-md-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia natus asperiores quo eaque, reiciendis provident nobis voluptatem. Quos repellat excepturi cupiditate earum exercitationem porro tempore, odit consectetur fugit ipsa facere.</p>
-                <button class="btn btn-secondary <hidden-md></hidden-md>-down">Más Informacion</button>
+                <button class="btn btn-secondary hidden-md hidden-md-down">Más Informacion</button>
             </article>
 
             <article class="col-lg-4">
@@ -222,14 +231,7 @@
 
 </main>
 
-@include('layouts/templates/modal')
-
-@include('layouts/menu/footer')
-
-@endsection 
-  
-
-@section('javascripts')
+@include('layouts/templates/modal') @include('layouts/menu/footer') @endsection @section('javascripts')
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
 <script src="{{asset('js/estilos.js')}}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
