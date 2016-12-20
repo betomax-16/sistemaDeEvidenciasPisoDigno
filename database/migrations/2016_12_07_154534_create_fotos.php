@@ -15,7 +15,7 @@ class CreateFotos extends Migration
     {
       Schema::create('Fotos', function (Blueprint $table) {
           $table->bigIncrements('idFoto');
-          $table->integer('idHogar')->unsigned();
+          $table->bigInteger('idHogar')->unsigned();
           $table->string('nombreArchivo');
           $table->enum('tipo', ['PISO_ORIGINAL', 'PISO_EN_PROCESO','PISO_TERMINADO','OTROS'])->default('OTROS');
           $table->timestamps();
