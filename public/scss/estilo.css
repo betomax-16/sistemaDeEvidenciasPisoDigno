@@ -26,7 +26,8 @@ Estilo Menu desplegable
 #menu-principal ul {
   padding: 0;
   list-style: none;
-  margin: 1rem 0 0 0; }
+  margin: 1rem 0 0 0;
+  width: 100%; }
 
 #menu-principal ul a {
   display: block;
@@ -45,6 +46,16 @@ Estilo Menu desplegable
 
 #menu-principal ul li:active a {
   color: #3E77C5; }
+
+#menu-principal .dropdown .dropdown-menu {
+  display: none !important; }
+
+#menu-principal .open .dropdown-menu {
+  display: flex !important;
+  flex-wrap: wrap; }
+
+#menu-principal .dropdown-menu li {
+  flex: 1 1 100%; }
 
 /*
 Bienvenidos
