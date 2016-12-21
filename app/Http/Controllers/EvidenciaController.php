@@ -59,7 +59,7 @@ class EvidenciaController extends Controller
       $anio = $fechaActual->format('Y');
       $beneficiados = null;
       if ($municipio) {
-        $beneficiados = $this->beneficiadosDelMunicipio($municipio->nombre, $proyecto->nombre, $anio);
+        $beneficiados = $this->beneficiadosDelMunicipio($municipio->nombre, $proyecto->nombre, $anio);      
       }
       return view('usuarios/proveedorEvidencias/buscarEvidencias')
                  ->with('proyecto', $proyecto)

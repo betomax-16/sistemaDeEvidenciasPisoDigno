@@ -1,6 +1,8 @@
 @extends('layouts.app') @section('styles')
 <link rel="stylesheet" href="{{asset('jquery-ui/jquery-ui.min.css')}}">
-<link rel="stylesheet" href="{{asset('css/imagenes.css')}}"> @endsection @section('content')
+<link rel="stylesheet" href="{{asset('css/imagenes.css')}}">
+<link rel="stylesheet" href="{{asset('css/estilo-Evidencias.css')}}">
+@endsection @section('content')
 <div class="container espacioPagina">
     <div class="row">
         <div class="col-md-12">
@@ -36,21 +38,20 @@
                     </div>
                     <hr>
                     <section class="Evidencias">
-
                         <header class="municipio text-xs-center" role="banner">
                             <h2>Municipio</h2>
                         </header>
                         <div class="container-fluid">
                             <div class="row" id="evidencias">
 
-                                @if($beneficiados) @include('layouts/templates/Evidencias') @else
+                                @if($beneficiados)
+                                  @include('layouts/templates/Evidencias')                                   
+                                @else
                                 <h2>Sin evidencias</h2> @endif
 
                             </div>
                         </div>
-
                     </section>
-
                 </div>
                 {!! Form::open(['route' => ['evidencia.destroy', 'ID_HOGAR'], 'method' => 'DELETE', 'id' => 'form-delete']) !!} {!! Form::close() !!}
             </div>
