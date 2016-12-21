@@ -3,14 +3,14 @@
 
 @endsection
 @section('content')
-<div class="container">
+<div class="container espacioPagina">
   <div class="row">
     <div class="col-md-12">
       <div class="panel panel-default">
         <div class="panel-body">
           <div class="row">
             <div class="col-md-12">
-              <h1>{{$proyecto->nomre}}</h1>
+              <h1>{{$proyecto->nombre}}</h1>
               <h3>{{$proyecto->tipo.' '.$entidad->nombre}}</h3>
             </div>
           </div>
@@ -37,8 +37,9 @@
                       @endforeach
                     </tbody>
                   </table>
-                  {!! Form::open(['route' => ['participante.destroy', 'ID_USUARIO'], 'method' => 'DELETE', 'id' => 'form-delete']) !!}
+                  {!! Form::open(['route' => ['participante.destroy', 'ID_USUARIO', $proyecto->nombre], 'method' => 'DELETE', 'id' => 'form-delete']) !!}
                   {!! Form::close() !!}
+                  {!! $participantes->render() !!}
                 </div>
               </div>
             </div>
@@ -46,15 +47,20 @@
               <h2 class="text-center">Agregar Participante</h2>
               <div class="panel panel-default">
                 <div class="panel-body">
-                  {!! Form::open(['route' => 'participante.store', 'method' => 'POST']) !!}
-                  <div class="form-group">
+                  {!! Form::open(['route' => ['participante.store', $proyecto->nombre, $entidad->idEstado], 'method' => 'POST']) !!}
+                  <div class="form-group{{ $errors->has('idUsuario') ? ' has-error' : '' }}">
                     {!! Form::label('usuario', 'Usuario') !!}
-                    {!! Form::select('usuario', $usuarios, null, ['class' => 'form-control']) !!}
+                    {!! Form::select('idUsuario', $usuarios, old('uidUsuariosuario'), ['class' => 'form-control', 'id' => 'selectUsuario']) !!}
+                    @if ($errors->has('idUsuario'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('idUsuario') }}</strong>
+                        </span>
+                    @endif
                   </div>
                   <div class="form-group">
                     {!! Form::submit('Guardar', ['class' => 'btn btn-success']) !!}
                   </div>
-                  {!! Form::close() !!}                  
+                  {!! Form::close() !!}
                 </div>
               </div>
             </div>
@@ -66,5 +72,9 @@
 </div>
 @endsection
 @section('javascripts')
-<script type="text/javascript" src="{{asset('js/Proyectos/deleteParticipante.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/Usuarios/deleteParticipante.js')}}"></script>
+<script type="text/javascript">
+  var token = '{{ Session::token() }}';
+  var proyecto = '{{$proyecto->nombre}}';
+</script>
 @endsection

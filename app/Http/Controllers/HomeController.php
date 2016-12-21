@@ -35,4 +35,5 @@ class HomeController extends Controller
     {
       Session::put('navegacion', ['proyecto' => $id]);
     }
+
 }

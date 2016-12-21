@@ -7,20 +7,10 @@
             <button class="c-hamburger c-hamburger--htx boton-menu hidden-md-up" data-toggle="collapse" data-target="#menu-principal" aria-expanded="false">
                 <span>toggle menu</span>
             </button>
-
-
             <nav class="collapse" id="menu-principal">
                 <ul>
                     <li><a href="{{url('/')}}">Inicio</a></li>
-
-                    <li><a href="#">Contacto</a></li>
-
-
-
-
-
-
-
+                    <li><a href="{{route('contacto')}}">Contacto</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                           Programas
@@ -33,11 +23,6 @@
                             <li><a href="{{route('proyectosPorPrograma','MEDIO_AMBIENTE')}}">Medio Ambiente</a></li>
                         </ul>
                     </li>
-
-
-
-
-
                     @if (Auth::guest())
                     <li><a href="{{ url('/login') }}">Login</a></li>
                     @else @if(Auth::user()->role == 'ROLE_ADMIN')

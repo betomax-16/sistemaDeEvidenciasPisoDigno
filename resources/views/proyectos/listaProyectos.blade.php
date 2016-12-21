@@ -39,7 +39,7 @@
                               @if(!Auth::guest() and Auth::user()->role == 'ROLE_ADMIN')
                                 <a class="btn btn-info" href="{{route('proyecto.edit', [$proyecto->nombre])}}">Editar</a>
                                 <button type="button" name="button" class="btn btn-danger btn-delete">Eliminar</button>
-                                <a class="btn btn-primary" href="{{route('participante.create')}}">Participantes</a>
+                                <a class="btn btn-primary" href="{{route('participante.index', [$proyecto->nombre, $estado->idEstado])}}">Participantes</a>
                               @endif
                             </td>
                           </tr>
@@ -49,6 +49,7 @@
                   @endif
                   {!! Form::open(['route' => ['proyecto.destroy', 'ID_PROYECTO'], 'method' => 'DELETE', 'id' => 'form-delete']) !!}
                   {!! Form::close() !!}
+                  {!! $proyectos->render() !!}
                 </div>
             </div>
         </div>

@@ -37,6 +37,7 @@
                   </table>
                   {!! Form::open(['route' => ['usuario.destroy', 'ID_USUARIO'], 'method' => 'DELETE', 'id' => 'form-delete']) !!}
                   {!! Form::close() !!}
+                  {{ $usuarios->links() }}
                 </div>
             </div>
         </div>

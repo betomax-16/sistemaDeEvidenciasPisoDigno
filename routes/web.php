@@ -24,7 +24,10 @@ Route::group(['prefix' => 'proveedor', 'middleware' => 'auth'], function(){
   Route::resource('evidencia','EvidenciaController');
   Route::resource('proyecto','ProyectoController');
   Route::resource('usuario','UsuarioController');
-  Route::resource('participante','ParticipanteController');
+  Route::get('participante/{proyecto}/{idEstado}', 'ParticipanteController@index')->name('participante.index');
+  Route::post('participante/store/{proyecto}/{idEstado}', 'ParticipanteController@store')->name('participante.store');
+  Route::delete('participante/destroy/{usuario}/{proyecto}', 'ParticipanteController@destroy')->name('participante.destroy');
+  Route::post('participantes/{proyecto}', 'ParticipanteController@seleccionarUsuarios')->name('participantes');
 });
 Route::post('evidencias/autocompleteLocalidad', 'EvidenciaController@autocompleteLocalidadesDelMunicipio')->name('evidencia.autocompleteLocalidad');
 Route::post('evidencias/autocomplete', 'EvidenciaController@autocomplete')->name('evidencia.autocomplete');
@@ -34,3 +37,5 @@ Route::get('evidencias/{idEvidencia}', 'EvidenciaController@ver')->name('evidenc
 Route::post('evidencias/masBeneficiados', 'EvidenciaController@municipioConMasBeneficiados')->name('municipioConMasBeneficiados');
 Route::post('foto/ver', 'EvidenciaController@foto')->name('foto.ver');
 Route::get('proyecto/{programa}', 'ProyectoController@proyectosPorPrograma')->name('proyectosPorPrograma');
+Route::get('contacto', 'VisitanteController@contacto')->name('contacto');
+Route::post('contacto/enviar', 'VisitanteController@enviarContacto')->name('enviarContacto');
