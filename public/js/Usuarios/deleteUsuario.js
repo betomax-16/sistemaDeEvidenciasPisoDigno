@@ -7,16 +7,30 @@ $(document).ready(function(){
       var form = $('#form-delete');
       var url = form.attr('action').replace('ID_USUARIO',usuario);
       var data = form.serialize();
-      bootbox.confirm('¿Estas seguro de eliminar al usuario?', function(res){
-        if (res == true) {
-          $.post(url, data, function(result){
-            fila.fadeOut(300,function () { $(this).remove()});
-          }).fail(function(){
-            alert('ERROR');
-            fila.show();
-          });
+      bootbox.confirm({
+        message:'¿Estas seguro de eliminar al usuario?',
+        buttons: {
+            confirm: {
+                label: 'Aceptar',
+                className: 'btn-success'
+            },
+            cancel: {
+                label: 'Cancelar',
+                className: 'btn-danger'
+            }
+        },
+        callback: function (result) {
+          if (result == true) {
+            $.post(url, data, function(result){
+              fila.fadeOut(300,function () { $(this).remove()});
+            }).fail(function(){
+              alert('ERROR');
+              fila.show();
+            });
+          }
         }
       });
+
     });
 
 });

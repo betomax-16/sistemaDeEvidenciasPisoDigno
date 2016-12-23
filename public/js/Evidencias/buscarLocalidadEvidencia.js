@@ -3,6 +3,12 @@ var region = $('#region').val();
 var lugar = $('#nombreLugar').val();
 
 $(document).ready(function(){
+    $('.item img').click(function(e) {
+        $('#foto-modal').prop('src', $(this).attr('src'));
+        var titulo = $(this).attr('alt');
+        $('#myModalLabel').html(titulo);
+    });
+
     function evidencias(año, region, lugar){
       var data = {place : lugar, area : region, year : año, project : proyecto, _token : token};
       var url = '../hogares';

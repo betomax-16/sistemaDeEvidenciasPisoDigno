@@ -202,27 +202,30 @@
 <main class="programas p-y1  wow zoomIn">
     <h3 class="titulo text-xs-center font-weight-bold">Nuestros Programas</h3>
     <div class="container">
-        <div class="row">
+        <div class="row" id="proyectos">
 
             <article class="col-lg-4" href="#PisoD" data-toggle="modal" data-target="#PisoD">
+                <input type="hidden" name="ruta" value="{{route('evidencia.evidencias', ['piso digno', 21])}}">
                 <img src=" {{asset('imagenes/aplicacion/Bivienda.svg')}} " alt="LogoPiso Digno">
                 <h3><a> Piso Digno</a></h3>
                 <p class="hidden-md-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia natus asperiores quo eaque, reiciendis provident nobis voluptatem. Quos repellat excepturi cupiditate earum exercitationem porro tempore, odit consectetur fugit ipsa facere.</p>
                 <button class="btn btn-secondary hidden-md hidden-md-down">Más Informacion</button>
             </article>
 
-            <article class="col-lg-4">
+            <article class="col-lg-4" data-toggle="modal" data-target="#PisoD">
+                <input type="hidden" name="ruta" value="#">
                 <img src="{{asset('imagenes/aplicacion/Bivienda.svg')}}" alt="LogoPiso Digno">
                 <h3><a>Despensas</a></h3>
                 <p class="hidden-md-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia natus asperiores quo eaque, reiciendis provident nobis voluptatem. Quos repellat excepturi cupiditate earum exercitationem porro tempore, odit consectetur fugit ipsa facere.</p>
-                <a href="#" class="btn btn-secondary hidden-md-down">Más Informacion</a>
+                <button class="btn btn-secondary hidden-md hidden-md-down">Más Informacion</button>
             </article>
 
-            <article class="col-lg-4">
+            <article class="col-lg-4" data-toggle="modal" data-target="#PisoD">
+                <input type="hidden" name="ruta" value="#">
                 <img src="{{asset('imagenes/aplicacion/Bivienda.svg')}}" alt="LogoPiso Digno">
                 <h3><a>Salud</a></h3>
                 <p class="hidden-md-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia natus asperiores quo eaque, reiciendis provident nobis voluptatem. Quos repellat excepturi cupiditate earum exercitationem porro tempore, odit consectetur fugit ipsa facere.</p>
-                <a href="#" class="btn btn-secondary hidden-md-down">Más Informacion</a>
+                <button class="btn btn-secondary hidden-md hidden-md-down">Más Informacion</button>
             </article>
         </div>
     </div>

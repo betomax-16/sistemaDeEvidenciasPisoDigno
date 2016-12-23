@@ -1,35 +1,41 @@
 @extends('layouts.app')
 @section('styles')
-
+<link rel="stylesheet" href="{{asset('css/general.css')}}">
 @endsection
 @section('content')
 <div class="container espacioPagina">
     <div class="row">
         <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
+            <div class="card">
+                <div class="card-header">
                   <h1>Usuarios</h1>
                 </div>
-                <div class="panel-body">
-                  <a class="btn btn-success btn-lg" href="{{route('usuario.create')}}">Agregar Usuario</a>
+                <div class="card-block">
+                  <a class="btn btn-success btn-lg" href="{{route('usuario.create')}}" style="width:100%">Agregar Usuario</a>
                   <table class="table table-hover">
-                    <thead>
+                    <thead class="thead-inverse">
                       <tr>
-                        <th class="text-center">Nombre</th>
-                        <th class="text-center">Email</th>
-                        <th class="text-center">Rol</th>
-                        <th class="text-center">Acciones</th>
+                        <th class="text-md-center">Nombre</th>
+                        <th class="text-md-center">Email</th>
+                        <th class="text-md-center">Rol</th>
+                        <th class="text-md-center">Acciones</th>
                       </tr>
                     </thead>
                     <tbody>
                       @foreach($usuarios as $usuario)
                         <tr id="{{$usuario->idUsuario}}">
-                          <td class="text-center">{{$usuario->nombreCompleto()}}</td>
-                          <td class="text-center">{{$usuario->email}}</td>
-                          <td class="text-center">{{$usuario->role}}</td>
-                          <td class="text-center">
-                            <a class="btn btn-info" href="{{route('usuario.edit', $usuario->idUsuario)}}">Editar</a>
-                            <button type="button" name="button" class="btn btn-danger btn-delete">Eliminar</button>
+                          <td class="text-md-center">{{$usuario->nombreCompleto()}}</td>
+                          <td class="text-md-center">{{$usuario->email}}</td>
+                          @if($usuario->role == 'ROLE_ADMIN')
+                          <td class="text-md-center"><h5><span class="tag tag-pill tag-success">Administrador</span></h5></td>
+                          @elseif($usuario->role == 'ROLE_PROVIDER')
+                          <td class="text-md-center"><h5><span class="tag tag-pill tag-info">Proveedor de evidencias</span></h5></td>
+                          @endif
+                          <td class="text-md-center">
+                            <div class="btn-group">
+                              <a class="btn btn-info btn-secundary" href="{{route('usuario.edit', $usuario->idUsuario)}}">Editar</a>
+                              <button type="button" name="button" class="btn btn-danger btn-secundary btn-delete">Eliminar</button>
+                            </div>
                           </td>
                         </tr>
                       @endforeach

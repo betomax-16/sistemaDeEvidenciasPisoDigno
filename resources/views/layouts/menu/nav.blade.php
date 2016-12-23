@@ -24,7 +24,7 @@
                         </ul>
                     </li>
                     @if (Auth::guest())
-                    <li><a href="{{ url('/login') }}">Login</a></li>
+                    <li><a href="{{ url('/login') }}">Iniciar Sesión</a></li>
                     @else @if(Auth::user()->role == 'ROLE_ADMIN')
                     <li><a href="{{route('usuario.index')}}">Usuarios</a></li>
                     @endif
@@ -35,7 +35,7 @@
                         <ul class="dropdown-menu" role="menu">
                             <li>
                                 <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                        Logout
+                                        Cerrar Sesión
                                     </a>
                                 <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                     {{ csrf_field() }}

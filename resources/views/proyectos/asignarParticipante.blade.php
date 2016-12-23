@@ -1,38 +1,36 @@
 @extends('layouts.app')
 @section('styles')
-
+<link rel="stylesheet" href="{{asset('css/general.css')}}">
 @endsection
 @section('content')
 <div class="container espacioPagina">
   <div class="row">
     <div class="col-md-12">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-md-12">
-              <h1>{{$proyecto->nombre}}</h1>
-              <h3>{{$proyecto->tipo.' '.$entidad->nombre}}</h3>
-            </div>
-          </div>
+      <div class="card">
+        <div class="card-header">
+          <h1>{{$proyecto->nombre}}</h1>
+          <h3>{{$entidad->nombre}}</h3>
+        </div>
+        <div class="card-block">
           <div class="row">
             <div class="col-md-9">
-              <h2 class="text-center">Participantes</h2>
-              <div class="panel panel-default">
-                <div class="panel-body">
+              <h2 class="text-md-center">Participantes</h2>
+              <div class="card">
+                <div class="card-block">
                   <table class="table table-hover">
-                    <thead>
+                    <thead class="thead-inverse">
                       <tr>
-                        <th class="text-center">Nombre</th>
-                        <th class="text-center">Email</th>
-                        <th class="text-center">Acción</th>
+                        <th class="text-md-center">Nombre</th>
+                        <th class="text-md-center">Email</th>
+                        <th class="text-md-center">Acción</th>
                       </tr>
                     </thead>
                     <tbody>
                       @foreach($participantes as $participante)
                       <tr id="{{$participante->idUsuario}}">
-                        <td>{{$participante->nombreCompleto()}}</td>
-                        <td>{{$participante->email}}</td>
-                        <td><button class="btn btn-danger btn-delete" type="button" name="button">Eliminar</button></td>
+                        <td class="text-md-center">{{$participante->nombreCompleto()}}</td>
+                        <td class="text-md-center">{{$participante->email}}</td>
+                        <td class="text-md-center"><button class="btn btn-danger btn-delete" type="button" name="button">Eliminar</button></td>
                       </tr>
                       @endforeach
                     </tbody>
@@ -44,21 +42,21 @@
               </div>
             </div>
             <div class="col-md-3">
-              <h2 class="text-center">Agregar Participante</h2>
-              <div class="panel panel-default">
-                <div class="panel-body">
+              <h4 class="text-md-center">Agregar Participante</h4>
+              <div class="card">
+                <div class="card-block">
                   {!! Form::open(['route' => ['participante.store', $proyecto->nombre, $entidad->idEstado], 'method' => 'POST']) !!}
-                  <div class="form-group{{ $errors->has('idUsuario') ? ' has-error' : '' }}">
+                  <div class="form-group{{ $errors->has('idUsuario') ? ' has-danger' : '' }}">
                     {!! Form::label('usuario', 'Usuario') !!}
                     {!! Form::select('idUsuario', $usuarios, old('uidUsuariosuario'), ['class' => 'form-control', 'id' => 'selectUsuario']) !!}
                     @if ($errors->has('idUsuario'))
-                        <span class="help-block">
+                        <span class="form-control-feedback">
                             <strong>{{ $errors->first('idUsuario') }}</strong>
                         </span>
                     @endif
                   </div>
                   <div class="form-group">
-                    {!! Form::submit('Guardar', ['class' => 'btn btn-success']) !!}
+                    {!! Form::submit('Guardar', ['class' => 'btn btn-success', 'style' => 'width:100%']) !!}
                   </div>
                   {!! Form::close() !!}
                 </div>

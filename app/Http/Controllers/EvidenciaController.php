@@ -59,7 +59,7 @@ class EvidenciaController extends Controller
       $anio = $fechaActual->format('Y');
       $beneficiados = null;
       if ($municipio) {
-        $beneficiados = $this->beneficiadosDelMunicipio($municipio->nombre, $proyecto->nombre, $anio);      
+        $beneficiados = $this->beneficiadosDelMunicipio($municipio->nombre, $proyecto->nombre, $anio);
       }
       return view('usuarios/proveedorEvidencias/buscarEvidencias')
                  ->with('proyecto', $proyecto)
@@ -366,13 +366,13 @@ class EvidenciaController extends Controller
         if ($region == 'MUNICIPIO') {
           $beneficiados = $this->beneficiadosDelMunicipio($nombre, $proyecto, $anio);
           return response()->json([
-            view('layouts/templates/templateEvidencia', ['beneficiados'=> $beneficiados])->render()
+            view('layouts/templates/evidencias', ['beneficiados'=> $beneficiados])->render()
           ]);
         }
         elseif ($region == 'LOCALIDAD') {
           $beneficiados = $this->beneficiadosDeLocalidad($nombre, $proyecto, $anio);
           return response()->json([
-            view('layouts/templates/templateEvidencia', ['beneficiados'=> $beneficiados])->render()
+            view('layouts/templates/evidencias', ['beneficiados'=> $beneficiados])->render()
           ]);
         }
       }
