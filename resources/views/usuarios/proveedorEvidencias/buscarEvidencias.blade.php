@@ -18,6 +18,7 @@
                         <div class="col-md-4">
                             <div class="form-inline">
                                 <div class="form-group">
+                                    <a href="#" id="btnExcel" class="btn btn-success"><i class="fa fa-download" aria-hidden="true"></i> Excel</a>&nbsp;&nbsp;
                                     {!! Form::label('año', 'Año') !!} {!! Form::number('año', Carbon\Carbon::now()->format('Y'), ['id' => 'año', 'class' => 'form-control']) !!}
                                 </div>
                             </div>
@@ -68,5 +69,6 @@
     var token = '{{ Session::token() }}';
     var estado = '{{ Session::get("estado") }}';
     var proyecto = '{{ Session::get("proyecto") }}';
+    var download = "{{route('evidencia.excel',['PROYECTO','ANIO','REGION','LUGAR'])}}";
 </script>
 @endsection

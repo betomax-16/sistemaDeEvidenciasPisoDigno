@@ -1,7 +1,7 @@
 <div class="row">
   @foreach($beneficiados as $beneficiado)
   @php($fotos = $beneficiado->fotos)
-  <div class="col-md-4" id="evidencia{{$beneficiado->idHogar}}">
+  <div class="col-md-4 evidencia" id="evidencia{{$beneficiado->idHogar}}">
     <div class="container-image image_wrapper">
       @if(!Auth::guest())
       <div class="remove" id="{{$beneficiado->idHogar}}"><img src="{{asset('imagenes/aplicacion/cerrar24x24.png')}}" alt=""></div>

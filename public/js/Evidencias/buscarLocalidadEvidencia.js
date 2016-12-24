@@ -3,6 +3,21 @@ var region = $('#region').val();
 var lugar = $('#nombreLugar').val();
 
 $(document).ready(function(){
+    $('#btnExcel').click(function (e) {
+      if ($('#evidencias').find('.evidencia').length > 0) {
+        var aux = download;
+        aux = aux.replace('PROYECTO',proyecto);
+        aux = aux.replace('ANIO',año);
+        aux = aux.replace('REGION',region);
+        aux = aux.replace('LUGAR',lugar);
+        $(this).prop('href',aux);
+      }
+      else {
+        e.preventDefault();
+        bootbox.alert('No se encontraron datos en la busqueda.');
+      }
+    });
+
     $('.item img').click(function(e) {
         $('#foto-modal').prop('src', $(this).attr('src'));
         var titulo = $(this).attr('alt');

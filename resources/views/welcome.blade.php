@@ -1,5 +1,8 @@
-@extends('layouts.app') @section('content')
-
+@extends('layouts.app')
+@section('styles')
+<link rel="stylesheet" href="{{asset('css/morris.css')}}">
+@endsection
+@section('content')
 <section class="Bienvenidos text-xs-center">
     <div class="container">
         <div class="row">
@@ -230,7 +233,11 @@
         </div>
     </div>
 
-
+    <div class="hidden-md-down">
+        <h3 class="titulo text-xs-center font-weight-bold">Medición de Pobreza 2014 | Puebla</h3>
+        <div id="graph"></div>
+        <h5 class="text-xs-center"><a href="http://www.coneval.org.mx/coordinacion/entidades/Puebla/Paginas/pobreza-2014.aspx">CONEVAL</a></h5>
+    </div>
 
 </main>
 
@@ -238,4 +245,7 @@
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
 <script src="{{asset('js/estilos.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="{{asset('js/morris.min.js')}}"></script>
+<script src="{{asset('js/Welcome/grafica.js')}}"></script>
 @endsection

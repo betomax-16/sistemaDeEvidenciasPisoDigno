@@ -13,6 +13,7 @@ use App\Beneficiado;
 use App\Foto;
 use Validator;
 use Carbon\Carbon;
+use Excel;
 
 class EvidenciaController extends Controller
 {
@@ -30,7 +31,7 @@ class EvidenciaController extends Controller
     {
        return Beneficiado::join('Localidades', 'Beneficiados.idLocalidad', '=', 'Localidades.idLocalidad')
                                  ->join('Municipios', 'Localidades.idMunicipio', '=', 'Municipios.idMunicipio')
-                                 ->select('Beneficiados.*')
+                                 ->select('Beneficiados.*','Localidades.idMunicipio','Localidades.nombre')
                                  ->where('Municipios.nombre', '=', $municipio)
                                  ->where('Beneficiados.proyecto', '=', $proyecto)
                                  ->where(DB::raw('year(Beneficiados.created_at)'), '=', $anio)
@@ -40,7 +41,7 @@ class EvidenciaController extends Controller
     private function beneficiadosDeLocalidad($localidad, $proyecto, $anio)
     {
        return Beneficiado::join('Localidades', 'Beneficiados.idLocalidad', '=', 'Localidades.idLocalidad')
-                                  ->select('Beneficiados.*')
+                                  ->select('Beneficiados.*','Localidades.idMunicipio','Localidades.nombre')
                                   ->where('Localidades.nombre', '=', $localidad)
                                   ->where('Beneficiados.proyecto', '=', $proyecto)
                                   ->where(DB::raw('year(Beneficiados.created_at)'), '=', $anio)
@@ -385,5 +386,38 @@ class EvidenciaController extends Controller
           'foto' =>  Foto::find($request->idFoto)
         ]);
       }
+    }
+
+    public function excel($proyecto, $año, $region, $lugar)
+    {
+      $beneficiados = null;
+      if ($region == 'MUNICIPIO') {
+        $beneficiados = $this->beneficiadosDelMunicipio($lugar, $proyecto, $año);
+      }
+      elseif ($region == 'LOCALIDAD') {
+        $beneficiados = $this->beneficiadosDeLocalidad($lugar, $proyecto, $año);
+      }
+      $this->crearExcel($region, $lugar, $beneficiados);
+    }
+
+    private function crearExcel($region, $nombre, $beneficiados)
+    {
+      Excel::create('Evidencias', function ($excel) use ($beneficiados, $nombre, $region)
+      {
+        $excel->sheet($nombre, function ($sheet) use ($beneficiados, $nombre, $region)
+        {
+          $sheet->mergeCells('A1:D1');
+          $sheet->row(1,['Registro de evidencias de '.$region.' '.$nombre]);
+          $sheet->row(2,['Municipio', 'Localidad', 'Familia', 'Fecha']);
+          foreach ($beneficiados as $beneficiado) {
+            $fila = [];
+            $fila[0] = Municipio::find($beneficiado->idMunicipio)->nombre;
+            $fila[1] = $beneficiado->nombre;
+            $fila[2] = $beneficiado->familia;
+            $fila[3] = Carbon::createFromFormat('Y-m-d H:i:s',$beneficiado->created_at)->format('Y-m-d');
+            $sheet->appendRow($fila);
+          }
+        });
+      })->export('xls');
     }
 }
