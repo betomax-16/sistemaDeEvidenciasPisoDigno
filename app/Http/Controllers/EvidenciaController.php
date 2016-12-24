@@ -392,22 +392,33 @@ class EvidenciaController extends Controller
     {
       $beneficiados = null;
       if ($region == 'MUNICIPIO') {
-        $beneficiados = $this->beneficiadosDelMunicipio($lugar, $proyecto, $año);
+        $beneficiados = Beneficiado::join('Localidades', 'Beneficiados.idLocalidad', '=', 'Localidades.idLocalidad')
+                                  ->join('Municipios', 'Localidades.idMunicipio', '=', 'Municipios.idMunicipio')
+                                  ->select('Beneficiados.*','Localidades.idMunicipio','Localidades.nombre')
+                                  ->where('Municipios.nombre', '=', $lugar)
+                                  ->where('Beneficiados.proyecto', '=', $proyecto)
+                                  ->where(DB::raw('year(Beneficiados.created_at)'), '=', $año)
+                                  ->get();
       }
       elseif ($region == 'LOCALIDAD') {
-        $beneficiados = $this->beneficiadosDeLocalidad($lugar, $proyecto, $año);
+        $beneficiados = Beneficiado::join('Localidades', 'Beneficiados.idLocalidad', '=', 'Localidades.idLocalidad')
+                                   ->select('Beneficiados.*','Localidades.idMunicipio','Localidades.nombre')
+                                   ->where('Localidades.nombre', '=', $lugar)
+                                   ->where('Beneficiados.proyecto', '=', $proyecto)
+                                   ->where(DB::raw('year(Beneficiados.created_at)'), '=', $año)
+                                   ->get();
       }
-      $this->crearExcel($region, $lugar, $beneficiados);
+      $this->crearExcel($region, $lugar, $beneficiados, $proyecto);
     }
 
-    private function crearExcel($region, $nombre, $beneficiados)
+    private function crearExcel($region, $nombre, $beneficiados, $proyecto)
     {
-      Excel::create('Evidencias', function ($excel) use ($beneficiados, $nombre, $region)
+      Excel::create('Evidencias', function ($excel) use ($beneficiados, $nombre, $region, $proyecto)
       {
-        $excel->sheet($nombre, function ($sheet) use ($beneficiados, $nombre, $region)
+        $excel->sheet($nombre, function ($sheet) use ($beneficiados, $nombre, $region, $proyecto)
         {
           $sheet->mergeCells('A1:D1');
-          $sheet->row(1,['Registro de evidencias de '.$region.' '.$nombre]);
+          $sheet->row(1,['Registro de evidencias de '.$region.' '.$nombre.'/ proyecto: '.$proyecto]);
           $sheet->row(2,['Municipio', 'Localidad', 'Familia', 'Fecha']);
           foreach ($beneficiados as $beneficiado) {
             $fila = [];

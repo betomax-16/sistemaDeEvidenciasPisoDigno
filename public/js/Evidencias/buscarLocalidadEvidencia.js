@@ -18,10 +18,10 @@ $(document).ready(function(){
       }
     });
 
-    $('.item img').click(function(e) {
-        $('#foto-modal').prop('src', $(this).attr('src'));
-        var titulo = $(this).attr('alt');
-        $('#myModalLabel').html(titulo);
+    $('#evidencias').on('click','.item img', function () {
+      $('#foto-modal').prop('src', $(this).attr('src'));
+      var titulo = $(this).attr('alt');
+      $('#myModalLabel').html(titulo);
     });
 
     function evidencias(año, region, lugar){

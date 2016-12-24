@@ -24,6 +24,7 @@
 .titulo{
   display: flex;
   height: 50px;
+  overflow: hidden;
   text-align: center;
   font-weight: bold;
   line-height: 45px;
