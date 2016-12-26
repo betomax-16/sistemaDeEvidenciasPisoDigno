@@ -3,11 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\Usuario;
 use Validator;
 
 class UsuarioController extends Controller
 {
+
+    private function noGuardarCache($view)
+    {
+      $response = response($view, 200);
+      $response->header('Expires', 'Tue, 1 Jan 1980 00:00:00 GMT');
+      $response->header('Cache-Control', 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
+      $response->header('Pragma', 'no-cache');
+      return $response;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +26,7 @@ class UsuarioController extends Controller
     public function index()
     {
         $usuarios = Usuario::paginate(10);
-        return view('usuarios/administrado/listaUsuarios')->with('usuarios', $usuarios);
+        return $this->noGuardarCache(view('usuarios/administrado/listaUsuarios')->with('usuarios', $usuarios));
     }
 
     /**
@@ -26,7 +36,7 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        return view('usuarios/administrado/agregarUsuarios');
+        return $this->noGuardarCache(view('usuarios/administrado/agregarUsuarios'));
     }
 
     /**
@@ -81,7 +91,7 @@ class UsuarioController extends Controller
     public function edit($id)
     {
         $usuario = Usuario::find($id);
-        return view('usuarios/administrado/editarUsuario')->with('usuario', $usuario);
+        return $this->noGuardarCache(view('usuarios/administrado/editarUsuario')->with('usuario', $usuario));
     }
 
     /**

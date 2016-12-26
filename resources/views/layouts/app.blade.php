@@ -12,8 +12,8 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
 
-    <title>{{ config('app.name', 'GSUPPuebla') }}</title>
-
+    <title>GSUPPuebla</title>
+    <link rel="icon" type="image/png" sizes="24x24" href="{{asset('imagenes/aplicacion/icon.ico')}}">
     <!-- Styles -->
 
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->

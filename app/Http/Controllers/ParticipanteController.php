@@ -10,14 +10,23 @@ use Validator;
 
 class ParticipanteController extends Controller
 {
+    private function noGuardarCache($view)
+    {
+      $response = response($view, 200);
+      $response->header('Expires', 'Tue, 1 Jan 1980 00:00:00 GMT');
+      $response->header('Cache-Control', 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
+      $response->header('Pragma', 'no-cache');
+      return $response;
+    }
+
     private function usuariosSeleccionables(Proyecto $project)
     {
-      return Usuario::leftJoin('usuarios_proyectos', 'usuarios_proyectos.idUsuario', '=', 'usuarios.idUsuario')
-                         ->select('usuarios.*')
-                         ->whereNull('usuarios_proyectos.idUsuario')
-                         ->where('usuarios.role', '=', 'ROLE_PROVIDER')
-                         ->orWhere('usuarios_proyectos.proyecto', '<>', $project->nombre)
-                         ->groupBy('usuarios.idUsuario')
+      return Usuario::leftJoin('Usuarios_Proyectos', 'Usuarios_Proyectos.idUsuario', '=', 'Usuarios.idUsuario')
+                         ->select('Usuarios.*')
+                         ->whereNull('Usuarios_Proyectos.idUsuario')
+                         ->where('Usuarios.role', '=', 'ROLE_PROVIDER')
+                         ->orWhere('Usuarios_Proyectos.proyecto', '<>', $project->nombre)
+                         ->groupBy('Usuarios.idUsuario')
                          ->get();
     }
     /**
@@ -35,11 +44,11 @@ class ParticipanteController extends Controller
         foreach ($usuarios as $usuario) {
           $aux[$usuario->idUsuario] = $usuario->nombreCompleto();
         }
-        return view('proyectos/asignarParticipante')
-                ->with('proyecto', $project)
-                ->with('entidad', $estado)
-                ->with('participantes', $participantes)
-                ->with('usuarios', $aux);
+        return $this->noGuardarCache(view('proyectos/asignarParticipante')
+                                    ->with('proyecto', $project)
+                                    ->with('entidad', $estado)
+                                    ->with('participantes', $participantes)
+                                    ->with('usuarios', $aux));        
     }
 
     /**

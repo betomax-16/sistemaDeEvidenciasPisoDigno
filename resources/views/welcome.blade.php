@@ -4,21 +4,47 @@
     <div class="container">
         <div class="row">
             <h1 class="display-3 col-xs-12 col-md-4 wow rubberBand">Ayudanos <br> a <br> <span>Ayudar</span></h1>
-            <div class="slide offset-md-2 col-md-4 hidden-md-down">
 
+            <div class="slide offset-md-1 col-md-7 hidden-md-down">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img src="{{asset( 'imagenes/aplicacion/Logo3.png')}}" alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{asset( 'imagenes/aplicacion/Logo3.png')}}" alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{asset( 'imagenes/aplicacion/Logo3.png')}}" alt="First slide">
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                        <span class="icon-prev" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                        <span class="icon-next" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
             </div>
+
 
         </div>
         <div class="texto-encavezado ">
-            <a href="#" class="btn btn-secondary btn-lg ">Contactanos</a>
+            <a href="{{route('contacto')}}" class="btn btn-secondary btn-lg ">Contactanos</a>
         </div>
-
         <div class="flecha_bajar">
             <a href="#nosotros"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
         </div>
+        <a name="nosotros"></a>
     </div>
 </section>
-
 <section class="M-V">
     <div class="container-fluid">
         <div class="row opciones">
@@ -55,7 +81,6 @@
 
 </section>
 
-
 <section class="Nosotros">
     <div class="container">
 
@@ -81,10 +106,9 @@
     <div class="container">
         <br>
         <br>
-        <h2 class="h3 text-xs-center ">¿Que es lo <span>que hacemos?</span></h2>
-        <p class="text-xs-center">
-            Ayudandanos a ayudar
-        </p>
+        <h2 class="titulo text-xs-center font-weight-bold">¿Que es lo <span>que hacemos?</span></h2>
+        <h5 class="text-xs-center">Ayudandanos a ayudar</h5>
+
         <div class="linea"></div>
         <br>
         <div class="row">
@@ -99,14 +123,14 @@
                 </li>
 
                 <li>
-                    <img src="{{asset('imagenes/aplicacion/Bivienda.svg')}}" alt="">
+                    <img src="{{asset('imagenes/aplicacion/despensa.svg')}}" alt="">
                     <div class="contenedor-eleccion">
                         <h4>Entregamos despensas </h4>
                         <p class="hidden-md-down">A las Familias de escasos recursos se les entrega una despensa cada mes.</p>
                     </div>
                 </li>
                 <li>
-                    <img src="{{asset('imagenes/aplicacion/Bivienda.svg')}}" alt="">
+                    <img src="{{asset('imagenes/aplicacion/MedioAmbiente.svg')}}" alt="">
                     <div class="contenedor-eleccion">
                         <h4>Ayudamos a los menos aforunados</h4>
                         <p class="hidden-md-down">Se entregan, sillas de ruedas, bastones y demas a quienes mas lo necesitan.</p>
@@ -115,7 +139,7 @@
             </ul>
 
             <div class=" mision hidden-md-down col-lg-4  wow tada">
-                <img src="{{asset('imagenes/aplicacion/Bivienda.svg')}}" alt="mision">
+                <img src="{{asset('imagenes/aplicacion/mision.svg')}}" alt="mision">
             </div>
 
             <ul class="col-xs-6 col-lg-4 text-xs-center text-lg-right wow bounceInRight">
@@ -127,7 +151,7 @@
                     </div>
                 </li>
                 <li>
-                    <img src="{{asset('imagenes/aplicacion/Bivienda.svg')}}" alt="">
+                    <img src="{{asset('imagenes/aplicacion/despensa.svg')}}" alt="">
                     <div class="contenedor-eleccion">
                         <h4>Entregamos despensas </h4>
                         <p class="hidden-md-down">A las Familias de escasos recursos se les entrega una despensa cada mes.</p>
@@ -135,7 +159,7 @@
 
                 </li>
                 <li>
-                    <img src="{{asset('imagenes/aplicacion/Bivienda.svg')}}" alt="">
+                    <img src="{{asset('imagenes/aplicacion/MedioAmbiente.svg')}}" alt="">
                     <div class="contenedor-eleccion">
                         <h4>Ayudamos a los menos aforunados</h4>
                         <p class="hidden-md-down">Se entregan, sillas de ruedas, bastones y demas a quienes mas lo necesitan.</p>
@@ -151,7 +175,7 @@
         <div class="row CJ text-xs-center">
             <div class="cajas col-xs-6 col-md-3">
                 <div class="icono">
-                    <img src="{{asset('imagenes/aplicacion/Bivienda.svg')}}" alt="Educacion">
+                    <img src="{{asset('imagenes/aplicacion/Educacion.svg')}}" alt="Educacion">
                 </div>
                 <br>
                 <div class="contenido">
@@ -162,7 +186,7 @@
             </div>
             <div class="cajas col-xs-6  col-md-3 offset-md-0">
                 <div class="icono">
-                    <img src="{{asset('imagenes/aplicacion/Bivienda.svg')}}" alt="Educacion">
+                    <img src="{{asset('imagenes/aplicacion/Educacion.svg')}}" alt="Educacion">
                 </div>
                 <br>
                 <div class="contenido">
@@ -174,7 +198,7 @@
             <br>
             <div class="cajas col-xs-6 col-md-3">
                 <div class="icono">
-                    <img src="{{asset('imagenes/aplicacion/Bivienda.svg')}}" alt="Educacion">
+                    <img src="{{asset('imagenes/aplicacion/Educacion.svg')}}" alt="Educacion">
                 </div>
                 <br>
                 <div class="contenido">
@@ -185,7 +209,7 @@
             </div>
             <div class="cajas col-xs-6 col-md-3 offset-md-0">
                 <div class="icono">
-                    <img src="{{asset('imagenes/aplicacion/Bivienda.svg')}}" alt="Educacion">
+                    <img src="{{asset('imagenes/aplicacion/Educacion.svg')}}" alt="Educacion">
                 </div>
                 <br>
                 <div class="contenido">
@@ -213,7 +237,7 @@
 
             <article class="col-lg-4" data-toggle="modal" data-target="#PisoD">
                 <input type="hidden" name="ruta" value="#">
-                <img src="{{asset('imagenes/aplicacion/Bivienda.svg')}}" alt="LogoPiso Digno">
+                <img src="{{asset('imagenes/aplicacion/despensa.svg')}}" alt="LogoPiso Digno">
                 <h3><a>Despensas</a></h3>
                 <p class="hidden-md-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia natus asperiores quo eaque, reiciendis provident nobis voluptatem. Quos repellat excepturi cupiditate earum exercitationem porro tempore, odit consectetur fugit ipsa facere.</p>
                 <button class="btn btn-secondary hidden-md hidden-md-down">Más Informacion</button>
@@ -221,7 +245,7 @@
 
             <article class="col-lg-4" data-toggle="modal" data-target="#PisoD">
                 <input type="hidden" name="ruta" value="#">
-                <img src="{{asset('imagenes/aplicacion/Bivienda.svg')}}" alt="LogoPiso Digno">
+                <img src="{{asset('imagenes/aplicacion/Salud.svg')}}" alt="LogoPiso Digno">
                 <h3><a>Salud</a></h3>
                 <p class="hidden-md-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia natus asperiores quo eaque, reiciendis provident nobis voluptatem. Quos repellat excepturi cupiditate earum exercitationem porro tempore, odit consectetur fugit ipsa facere.</p>
                 <button class="btn btn-secondary hidden-md hidden-md-down">Más Informacion</button>
@@ -230,15 +254,11 @@
     </div>
 </main>
 
-
 <div class="estadisticas">
-    <div class="">
-        <h3 class="titulo text-xs-center font-weight-bold p-3 ">Medición de Pobreza 2014 | Puebla</h3>
-        <div class="card">
-
-            <div id="graph"></div>
-            <h5 class="text-xs-center"><a href="http://www.coneval.org.mx/coordinacion/entidades/Puebla/Paginas/pobreza-2014.aspx">CONEVAL</a></h5>
-        </div>
+    <h3 class="titulo text-xs-center font-weight-bold p-3 ">Medición de Pobreza 2014 | Puebla</h3>
+    <div class="card">
+        <div id="graph"></div>
+        <h5 class="text-xs-center"><a href="http://www.coneval.org.mx/coordinacion/entidades/Puebla/Paginas/pobreza-2014.aspx">CONEVAL</a></h5>
     </div>
 </div>
 @include('layouts/templates/modal') @include('layouts/menu/footer') @endsection @section('javascripts')

@@ -11,6 +11,14 @@ use Validator;
 
 class ProyectoController extends Controller
 {
+    private function noGuardarCache($view)
+    {
+      $response = response($view, 200);
+      $response->header('Expires', 'Tue, 1 Jan 1980 00:00:00 GMT');
+      $response->header('Cache-Control', 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
+      $response->header('Pragma', 'no-cache');
+      return $response;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -38,7 +46,7 @@ class ProyectoController extends Controller
           $proyectos = Auth::User()->proyectos()->where('tipo', '=', $programa)->paginate(10);
         }
         $estado = Estado::find(21);
-        return view('proyectos/listaProyectos')->with('proyectos', $proyectos)->with('estado', $estado)->with('programa', $programa);
+        return $this->noGuardarCache(view('proyectos/listaProyectos')->with('proyectos', $proyectos)->with('estado', $estado)->with('programa', $programa));
       }
       else {
         # programa ineccistente
@@ -54,7 +62,7 @@ class ProyectoController extends Controller
         if (!Session::has('programa')) {
           return view('welcome');
         }
-        return view('proyectos/crearProyecto');
+        return $this->noGuardarCache(view('proyectos/crearProyecto'));
     }
 
     /**
@@ -104,7 +112,7 @@ class ProyectoController extends Controller
           return view('welcome');
         }
         $proyecto = Proyecto::find($id);
-        return view('proyectos/editarProyecto')->with('proyecto', $proyecto);
+        return $this->noGuardarCache(view('proyectos/editarProyecto')->with('proyecto', $proyecto));              
     }
 
     /**

@@ -21,11 +21,12 @@
                     <h1 class="display-4 text-md-center">Sin proyectos activos</h1>
                   @endif
                   @if(count($proyectos) > 0)
+                  <div class="table-responsive">
                     <table class="table table-hover">
                       <thead>
                         <tr class="thead-inverse">
                           <th class="text-md-center">Proyecto</th>
-                          <th class="text-md-center">Fecha de inicio</th>
+                          <th class="text-md-center hidden-xs-down">Fecha de inicio</th>
                           <th class="text-md-center">Acciones</th>
                         </tr>
                       </thead>
@@ -33,10 +34,20 @@
                         @foreach($proyectos as $proyecto)
                           <tr id="{{$proyecto->nombre}}">
                             <td class="text-md-center"><b>{{$proyecto->nombre}}</b></td>
-                            <td class="text-md-center">{{Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$proyecto->created_at)->format('Y-m-d')}}</td>
-                            <td class="text-md-center">
+                            <td class="text-md-center hidden-xs-down">{{Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$proyecto->created_at)->format('Y-m-d')}}</td>
+                            <td class="text-md-center hidden-xs-down">
                               <div class="btn-group">
                                 <a class="btn btn-success btn-secundary" href="{{route('evidencia.evidencias', [$proyecto->nombre, $estado->idEstado])}}">Ver evidencias</a>
+                                @if(!Auth::guest() and Auth::user()->role == 'ROLE_ADMIN')
+                                  <a class="btn btn-info btn-secundary" href="{{route('proyecto.edit', [$proyecto->nombre])}}">Editar</a>
+                                  <button type="button" name="button" class="btn btn-danger btn-secundary btn-delete">Eliminar</button>
+                                  <a class="btn btn-warning btn-secundary" href="{{route('participante.index', [$proyecto->nombre, $estado->idEstado])}}">Participantes</a>
+                                @endif
+                              </div>
+                            </td>
+                            <td class="text-md-center hidden-sm-up">
+                              <div class="btn-group-vertical btn-group-sm">
+                                <a class="btn btn-success btn-secundary btn-xs" href="{{route('evidencia.evidencias', [$proyecto->nombre, $estado->idEstado])}}">Ver evidencias</a>
                                 @if(!Auth::guest() and Auth::user()->role == 'ROLE_ADMIN')
                                   <a class="btn btn-info btn-secundary" href="{{route('proyecto.edit', [$proyecto->nombre])}}">Editar</a>
                                   <button type="button" name="button" class="btn btn-danger btn-secundary btn-delete">Eliminar</button>
@@ -48,6 +59,7 @@
                         @endforeach
                       </tbody>
                     </table>
+                  </div>
                   @endif
                   {!! Form::open(['route' => ['proyecto.destroy', 'ID_PROYECTO'], 'method' => 'DELETE', 'id' => 'form-delete']) !!}
                   {!! Form::close() !!}

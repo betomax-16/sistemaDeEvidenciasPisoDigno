@@ -17,6 +17,14 @@ use Excel;
 
 class EvidenciaController extends Controller
 {
+    private function noGuardarCache($view)
+    {
+      $response = response($view, 200);
+      $response->header('Expires', 'Tue, 1 Jan 1980 00:00:00 GMT');
+      $response->header('Cache-Control', 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
+      $response->header('Pragma', 'no-cache');
+      return $response;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -62,11 +70,11 @@ class EvidenciaController extends Controller
       if ($municipio) {
         $beneficiados = $this->beneficiadosDelMunicipio($municipio->nombre, $proyecto->nombre, $anio);
       }
-      return view('usuarios/proveedorEvidencias/buscarEvidencias')
-                 ->with('proyecto', $proyecto)
-                 ->with('estado', $estado)
-                 ->with('municipio', $municipio)
-                 ->with('beneficiados', $beneficiados);
+      return $this->noGuardarCache(view('usuarios/proveedorEvidencias/buscarEvidencias')
+                                   ->with('proyecto', $proyecto)
+                                   ->with('estado', $estado)
+                                   ->with('municipio', $municipio)
+                                   ->with('beneficiados', $beneficiados));
     }
     /**
      * Show the form for creating a new resource.
@@ -78,7 +86,7 @@ class EvidenciaController extends Controller
         if (!(Session::has('proyecto') && Session::has('estado'))) {
           return view('welcome');
         }
-        return view('usuarios/proveedorEvidencias/crearEvidencia');
+        return $this->noGuardarCache(view('usuarios/proveedorEvidencias/crearEvidencia'));
     }
 
     private function guardarFoto($files, $path, Beneficiado $beneficiado, $tipo)
@@ -196,11 +204,11 @@ class EvidenciaController extends Controller
         $localidad = $beneficiado->localidad;
         $municipio = $localidad->municipio;
         $fotos = Foto::where('idHogar','=',$beneficiado->idHogar)->get();
-        return view('usuarios/proveedorEvidencias/editarEvidencia')
-                    ->with('beneficiado', $beneficiado)
-                    ->with('municipio', $municipio)
-                    ->with('localidad', $localidad)
-                    ->WITH('fotos', $fotos);
+        return $this->noGuardarCache(view('usuarios/proveedorEvidencias/editarEvidencia')
+                                    ->with('beneficiado', $beneficiado)
+                                    ->with('municipio', $municipio)
+                                    ->with('localidad', $localidad)
+                                    ->with('fotos', $fotos));
     }
 
     private function eliminarFotos($path, $fotos, $tipo)
@@ -367,13 +375,13 @@ class EvidenciaController extends Controller
         if ($region == 'MUNICIPIO') {
           $beneficiados = $this->beneficiadosDelMunicipio($nombre, $proyecto, $anio);
           return response()->json([
-            view('layouts/templates/evidencias', ['beneficiados'=> $beneficiados])->render()
+            view('layouts/templates/Evidencias', ['beneficiados'=> $beneficiados])->render()
           ]);
         }
         elseif ($region == 'LOCALIDAD') {
           $beneficiados = $this->beneficiadosDeLocalidad($nombre, $proyecto, $anio);
           return response()->json([
-            view('layouts/templates/evidencias', ['beneficiados'=> $beneficiados])->render()
+            view('layouts/templates/Evidencias', ['beneficiados'=> $beneficiados])->render()
           ]);
         }
       }
@@ -392,22 +400,33 @@ class EvidenciaController extends Controller
     {
       $beneficiados = null;
       if ($region == 'MUNICIPIO') {
-        $beneficiados = $this->beneficiadosDelMunicipio($lugar, $proyecto, $año);
+        $beneficiados = Beneficiado::join('Localidades', 'Beneficiados.idLocalidad', '=', 'Localidades.idLocalidad')
+                                  ->join('Municipios', 'Localidades.idMunicipio', '=', 'Municipios.idMunicipio')
+                                  ->select('Beneficiados.*','Localidades.idMunicipio','Localidades.nombre')
+                                  ->where('Municipios.nombre', '=', $lugar)
+                                  ->where('Beneficiados.proyecto', '=', $proyecto)
+                                  ->where(DB::raw('year(Beneficiados.created_at)'), '=', $año)
+                                  ->get();
       }
       elseif ($region == 'LOCALIDAD') {
-        $beneficiados = $this->beneficiadosDeLocalidad($lugar, $proyecto, $año);
+        $beneficiados = Beneficiado::join('Localidades', 'Beneficiados.idLocalidad', '=', 'Localidades.idLocalidad')
+                                   ->select('Beneficiados.*','Localidades.idMunicipio','Localidades.nombre')
+                                   ->where('Localidades.nombre', '=', $lugar)
+                                   ->where('Beneficiados.proyecto', '=', $proyecto)
+                                   ->where(DB::raw('year(Beneficiados.created_at)'), '=', $año)
+                                   ->get();
       }
-      $this->crearExcel($region, $lugar, $beneficiados);
+      $this->crearExcel($region, $lugar, $beneficiados, $proyecto);
     }
 
-    private function crearExcel($region, $nombre, $beneficiados)
+    private function crearExcel($region, $nombre, $beneficiados, $proyecto)
     {
-      Excel::create('Evidencias', function ($excel) use ($beneficiados, $nombre, $region)
+      Excel::create('Evidencias', function ($excel) use ($beneficiados, $nombre, $region, $proyecto)
       {
-        $excel->sheet($nombre, function ($sheet) use ($beneficiados, $nombre, $region)
+        $excel->sheet($nombre, function ($sheet) use ($beneficiados, $nombre, $region, $proyecto)
         {
           $sheet->mergeCells('A1:D1');
-          $sheet->row(1,['Registro de evidencias de '.$region.' '.$nombre]);
+          $sheet->row(1,['Registro de evidencias de '.$region.' '.$nombre.'/ proyecto: '.$proyecto]);
           $sheet->row(2,['Municipio', 'Localidad', 'Familia', 'Fecha']);
           foreach ($beneficiados as $beneficiado) {
             $fila = [];

@@ -9,6 +9,7 @@ class Proyecto extends Model
 {
     protected $primaryKey = 'nombre';
     public $incrementing = false;
+    protected $table = 'Proyectos';
 
     /**
      * The attributes that are mass assignable.

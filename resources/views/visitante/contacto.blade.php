@@ -13,11 +13,10 @@
 
     </div>
     </section>
-    <section class="ruta p-1">
+    <section class="ruta p-2">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 text-xs-right">
-                    <a href="{{url('/')}}">Inicio</a> » Contacto
 
                 </div>
             </div>

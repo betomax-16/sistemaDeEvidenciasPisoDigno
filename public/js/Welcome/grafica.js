@@ -1,4 +1,5 @@
 Morris.Donut({
+
     element: 'graph',
     resize: true,
     data: [
@@ -18,6 +19,7 @@ Morris.Donut({
             value: 10.5,
             label: 'Población No Vulnerable'
         }
+
   ],
     backgroundColor: '#ccc',
     labelColor: '#060',
