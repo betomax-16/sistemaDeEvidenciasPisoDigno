@@ -1,14 +1,10 @@
-@extends('layouts.app')
-@section('styles')
-<link rel="stylesheet" href="{{asset('css/morris.css')}}">
-@endsection
-@section('content')
+@extends('layouts.app') @section('styles')
+<link rel="stylesheet" href="{{asset('css/morris.css')}}"> @endsection @section('content')
 <section class="Bienvenidos text-xs-center">
     <div class="container">
         <div class="row">
             <h1 class="display-3 col-xs-12 col-md-4 wow rubberBand">Ayudanos <br> a <br> <span>Ayudar</span></h1>
             <div class="slide offset-md-2 col-md-4 hidden-md-down">
-                <p>holi</p>
 
             </div>
 
@@ -202,7 +198,7 @@
     </div>
 </section>
 
-<main class="programas p-y1  wow zoomIn">
+<main class="programas   wow zoomIn p-1">
     <h3 class="titulo text-xs-center font-weight-bold">Nuestros Programas</h3>
     <div class="container">
         <div class="row" id="proyectos">
@@ -232,15 +228,19 @@
             </article>
         </div>
     </div>
-
-    <div class="hidden-md-down">
-        <h3 class="titulo text-xs-center font-weight-bold">Medición de Pobreza 2014 | Puebla</h3>
-        <div id="graph"></div>
-        <h5 class="text-xs-center"><a href="http://www.coneval.org.mx/coordinacion/entidades/Puebla/Paginas/pobreza-2014.aspx">CONEVAL</a></h5>
-    </div>
-
 </main>
 
+
+<div class="estadisticas">
+    <div class="">
+        <h3 class="titulo text-xs-center font-weight-bold p-3 ">Medición de Pobreza 2014 | Puebla</h3>
+        <div class="card">
+
+            <div id="graph"></div>
+            <h5 class="text-xs-center"><a href="http://www.coneval.org.mx/coordinacion/entidades/Puebla/Paginas/pobreza-2014.aspx">CONEVAL</a></h5>
+        </div>
+    </div>
+</div>
 @include('layouts/templates/modal') @include('layouts/menu/footer') @endsection @section('javascripts')
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
 <script src="{{asset('js/estilos.js')}}"></script>

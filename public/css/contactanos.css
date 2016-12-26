@@ -1,0 +1,59 @@
+.bienvenidos {
+    background: url("../imagenes/aplicacion/fondo-encabezado.jpg") no-repeat center top;
+    color: #fff;
+    background-size: cover;
+    background-attachment: fixed !important;
+    height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-top: 5rem;
+}
+.texto-encabezado {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.texto-encabezado .display-4 {
+    margin-top: 5rem;
+}
+.texto-encabezado .btn-primary {
+    margin-top: 1rem;
+}
+
+/*-------------------------------------------
+ESTILOS PAGINA NOSOTROS
+--------------------------------------------*/
+
+.paginas-internas .bienvenidos {
+    height: 50vh;
+}
+.paginas-internas .ruta {
+    background: #B5D486;
+    color: #fff;
+}
+.paginas-internas .ruta a {
+    color: #fff;
+    text-decoration: underline;
+}
+.paginas-internas .ruta a:hover {
+    text-decoration: none;
+}
+@media (min-width: 768px) {
+    background: url("../imagenes/aplicacion/fondo-encabezado-grande.jpg") no-repeat center top;
+}

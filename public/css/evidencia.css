@@ -1,73 +1,76 @@
-.container-image{
-  padding: 5px;
-  margin: 5px;
-  background: #e7eef5;
-  width: 250px;
-  border-radius: 5px;
+.container-image {
+    padding: 5px;
+    margin: 5px;
+    background: #e7eef5;
+    border-radius: 5px;
 }
-.secundario{
-  display: flex;
-  justify-content: center;
-  height: 120px;
+.secundario {
+    display: flex;
+    justify-content: center;
+    height: 120px;
 }
-.secundario img{
-  height: 116px;
+.secundario img {
+    height: 116px;
 }
-.primario{
-  display: flex;
-  justify-content: center;
-  height: 150px;
+.primario {
+    display: flex;
+    justify-content: center;
+    height: 150px;
 }
-.primario img{
-  height: 146px;
+.primario img {
+    height: 146px;
 }
-.titulo{
-  display: flex;
-  height: 50px;
-  text-align: center;
-  font-weight: bold;
-  line-height: 45px;
+.titulo {
+    display: flex;
+    height: 50px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 45px;
 }
-.titulo .item{
-  margin-top: 0px;
-  border-radius: 0px 0px 5px 5px;
-  -webkit-box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.24);
-  background: #e7eef5;
-  color: #666363;
+.titulo .item {
+    margin-top: 0px;
+    border-radius: 0px 0px 5px 5px;
+    -webkit-box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.24);
+    background: #e7eef5;
+    color: #666363;
 }
-.item{
-  width: 100%;
-  color: black;
-  margin: 2px;
-  border-radius: 5px;
+.item {
+    width: 100%;
+    color: black;
+    margin: 2px;
+    border-radius: 5px;
 }
-.item img{
-  max-width: 100%;
-  border-radius: 3px;
+.item img {
+    width: 100%;
+    border-radius: 3px;
 }
-.primario .item{
-  margin-bottom: 0px;
-  border-radius: 5px 5px 0px 0px;
+.primario .item {
+    margin-bottom: 0px;
+    border-radius: 5px 5px 0px 0px;
 }
 .image_wrapper {
-    position:relative;
+    position: relative;
 }
+
 /* Definimos el formato de las imagenes */
+
 .image_wrapper .remove {
-    position:absolute;
-    top:0px;
-    opacity:0;
-    transition:opacity 0.5s linear;
-    -webkit-transition:opacity 0.5s linear;
-    cursor:pointer;
-    border:0px;
+    position: absolute;
+    top: 0px;
+    opacity: 0;
+    transition: opacity 0.5s linear;
+    -webkit-transition: opacity 0.5s linear;
+    cursor: pointer;
+    border: 0px;
 }
+
 /* Mostramos el icono al pasar por encima de la imagen con una transicion */
+
 .image_wrapper:hover .remove {
     transition: opacity 0.5s linear;
     -webkit-transition: opacity 0.5s linear;
     opacity: 0.8;
 }
 .image_wrapper .remove {
-    right:0px;
+    right: 0px;
 }
