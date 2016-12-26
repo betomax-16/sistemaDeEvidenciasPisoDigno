@@ -39,7 +39,7 @@
                     </div>
                     <hr>
                     <div class="container" id="evidencias">
-                      @if($beneficiados) @include('layouts/templates/evidencias') @else
+                      @if($beneficiados) @include('layouts/templates/Evidencias') @else
                       <h1 class="display-4 text-md-center">Sin evidencias</h1> @endif
                     </div>
                 </div>

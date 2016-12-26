@@ -10,6 +10,7 @@ class Usuario extends Authenticatable
     use Notifiable;
 
     protected $primaryKey = 'idUsuario';
+    protected $table = 'Usuarios';
     /**
      * The attributes that are mass assignable.
      *
@@ -35,6 +36,6 @@ class Usuario extends Authenticatable
 
     public function proyectos()
     {
-      return $this->belongsToMany('App\Proyecto', 'usuarios_proyectos', 'idUsuario', 'proyecto')->withPivot('created_at')->withPivot('updated_at');
+      return $this->belongsToMany('App\Proyecto', 'Usuarios_Proyectos', 'idUsuario', 'proyecto')->withPivot('created_at')->withPivot('updated_at');
     }
 }

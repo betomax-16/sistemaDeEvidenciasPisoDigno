@@ -1,10 +1,10 @@
 Morris.Donut({
   element: 'graph',
   data: [
-    {value: 19.8, label: 'Pob. Vulnerable Por Carencias Sociales'},
-    {value: 5.1, label: 'Pob. Vulnerable Por Ingresos'},
-    {value: 64.5, label: 'Población En Situacion De Pobreza'},
-    {value: 10.5, label: 'Población No Vulnerable'}
+    {value: 19.8, label: 'Pob. vulnerable \n Por carencias sociales'},
+    {value: 5.1, label: 'Pob. vulnerable \n Por ingresos'},
+    {value: 64.5, label: 'Población en \n Situacion de pobreza'},
+    {value: 10.5, label: 'Población \n No vulnerable'}
   ],
   backgroundColor: '#ccc',
   labelColor: '#060',

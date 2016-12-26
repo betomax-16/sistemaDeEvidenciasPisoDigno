@@ -13,6 +13,7 @@ class Estado extends Model
   public $timestamps = false;
   public $incrementing = false;
   protected $primaryKey = 'idEstado';
+  protected $table = 'Estados';
 
   /**
    * The attributes that are mass assignable.
@@ -22,11 +23,6 @@ class Estado extends Model
   protected $fillable = [
       'nombre',
   ];
-
-  public function proyectos()
-  {
-    return $this->belongsToMany('App\Proyecto', 'Proyectos_Estados', 'idEstado', 'proyecto')->withPivot('created_at')->withPivot('updated_at');
-  }
 
   public function municipios()
   {

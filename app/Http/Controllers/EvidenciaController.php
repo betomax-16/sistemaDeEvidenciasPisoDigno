@@ -17,6 +17,14 @@ use Excel;
 
 class EvidenciaController extends Controller
 {
+    private function noGuardarCache($view)
+    {
+      $response = response($view, 200);
+      $response->header('Expires', 'Tue, 1 Jan 1980 00:00:00 GMT');
+      $response->header('Cache-Control', 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
+      $response->header('Pragma', 'no-cache');
+      return $response;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -62,11 +70,11 @@ class EvidenciaController extends Controller
       if ($municipio) {
         $beneficiados = $this->beneficiadosDelMunicipio($municipio->nombre, $proyecto->nombre, $anio);
       }
-      return view('usuarios/proveedorEvidencias/buscarEvidencias')
-                 ->with('proyecto', $proyecto)
-                 ->with('estado', $estado)
-                 ->with('municipio', $municipio)
-                 ->with('beneficiados', $beneficiados);
+      return $this->noGuardarCache(view('usuarios/proveedorEvidencias/buscarEvidencias')
+                                   ->with('proyecto', $proyecto)
+                                   ->with('estado', $estado)
+                                   ->with('municipio', $municipio)
+                                   ->with('beneficiados', $beneficiados));
     }
     /**
      * Show the form for creating a new resource.
@@ -78,7 +86,7 @@ class EvidenciaController extends Controller
         if (!(Session::has('proyecto') && Session::has('estado'))) {
           return view('welcome');
         }
-        return view('usuarios/proveedorEvidencias/crearEvidencia');
+        return $this->noGuardarCache(view('usuarios/proveedorEvidencias/crearEvidencia'));
     }
 
     private function guardarFoto($files, $path, Beneficiado $beneficiado, $tipo)
@@ -196,11 +204,11 @@ class EvidenciaController extends Controller
         $localidad = $beneficiado->localidad;
         $municipio = $localidad->municipio;
         $fotos = Foto::where('idHogar','=',$beneficiado->idHogar)->get();
-        return view('usuarios/proveedorEvidencias/editarEvidencia')
-                    ->with('beneficiado', $beneficiado)
-                    ->with('municipio', $municipio)
-                    ->with('localidad', $localidad)
-                    ->WITH('fotos', $fotos);
+        return $this->noGuardarCache(view('usuarios/proveedorEvidencias/editarEvidencia')
+                                    ->with('beneficiado', $beneficiado)
+                                    ->with('municipio', $municipio)
+                                    ->with('localidad', $localidad)
+                                    ->with('fotos', $fotos));
     }
 
     private function eliminarFotos($path, $fotos, $tipo)
@@ -367,13 +375,13 @@ class EvidenciaController extends Controller
         if ($region == 'MUNICIPIO') {
           $beneficiados = $this->beneficiadosDelMunicipio($nombre, $proyecto, $anio);
           return response()->json([
-            view('layouts/templates/evidencias', ['beneficiados'=> $beneficiados])->render()
+            view('layouts/templates/Evidencias', ['beneficiados'=> $beneficiados])->render()
           ]);
         }
         elseif ($region == 'LOCALIDAD') {
           $beneficiados = $this->beneficiadosDeLocalidad($nombre, $proyecto, $anio);
           return response()->json([
-            view('layouts/templates/evidencias', ['beneficiados'=> $beneficiados])->render()
+            view('layouts/templates/Evidencias', ['beneficiados'=> $beneficiados])->render()
           ]);
         }
       }

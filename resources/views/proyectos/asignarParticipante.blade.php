@@ -17,24 +17,26 @@
               <h2 class="text-md-center">Participantes</h2>
               <div class="card">
                 <div class="card-block">
-                  <table class="table table-hover">
-                    <thead class="thead-inverse">
-                      <tr>
-                        <th class="text-md-center">Nombre</th>
-                        <th class="text-md-center">Email</th>
-                        <th class="text-md-center">Acción</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      @foreach($participantes as $participante)
-                      <tr id="{{$participante->idUsuario}}">
-                        <td class="text-md-center">{{$participante->nombreCompleto()}}</td>
-                        <td class="text-md-center">{{$participante->email}}</td>
-                        <td class="text-md-center"><button class="btn btn-danger btn-delete" type="button" name="button">Eliminar</button></td>
-                      </tr>
-                      @endforeach
-                    </tbody>
-                  </table>
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead class="thead-inverse">
+                        <tr>
+                          <th class="text-md-center">Nombre</th>
+                          <th class="text-md-center hidden-xs-down">Email</th>
+                          <th class="text-md-center">Acción</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @foreach($participantes as $participante)
+                        <tr id="{{$participante->idUsuario}}">
+                          <td class="text-md-center">{{$participante->nombreCompleto()}}</td>
+                          <td class="text-md-center hidden-xs-down">{{$participante->email}}</td>
+                          <td class="text-md-center"><button class="btn btn-danger btn-delete" type="button" name="button">Eliminar</button></td>
+                        </tr>
+                        @endforeach
+                      </tbody>
+                    </table>
+                  </div>
                   {!! Form::open(['route' => ['participante.destroy', 'ID_USUARIO', $proyecto->nombre], 'method' => 'DELETE', 'id' => 'form-delete']) !!}
                   {!! Form::close() !!}
                   {!! $participantes->render() !!}

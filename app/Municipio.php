@@ -9,6 +9,7 @@ class Municipio extends Model
   public $timestamps = false;
   public $incrementing = false;
   protected $primaryKey = 'idMunicipio';
+  protected $table = 'Municipios';
 
   /**
    * The attributes that are mass assignable.
