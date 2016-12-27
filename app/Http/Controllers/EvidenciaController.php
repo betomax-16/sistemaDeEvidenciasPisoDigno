@@ -121,6 +121,9 @@ class EvidenciaController extends Controller
      */
     public function store(Request $request)
     {
+        if (!(Session::has('proyecto') && Session::has('estado'))) {
+          return view('welcome');
+        }
         $rules = [
             'municipio' => 'required|max:255',
             'idMunicipio' => 'required|exists:Municipios',
@@ -229,6 +232,9 @@ class EvidenciaController extends Controller
      */
     public function update(Request $request, $id)
     {
+      if (!(Session::has('proyecto') && Session::has('estado'))) {
+        return view('welcome');
+      }
       $rules = [
           'municipio' => 'required|max:255',
           'idMunicipio' => 'required|exists:Municipios',

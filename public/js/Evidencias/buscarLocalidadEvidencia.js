@@ -29,7 +29,7 @@ $(document).ready(function(){
       var url = '../hogares';
       $('#evidencias').html('');
       $.post(url, data, function(response) {
-        $('#evidencias').html(response);
+          $('#evidencias').html(response);        
       });
     };
 

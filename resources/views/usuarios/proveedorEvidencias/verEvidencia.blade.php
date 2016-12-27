@@ -22,9 +22,16 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                  <h1>Familia: {{$beneficiado->familia}}</h1>
-                  <h5>Proyecto: {{Session::get('proyecto')}}</h5>
-                  <h6 class="text-md-right">Municipio: {{$municipio->nombre}} / Localidad: {{$localidad->nombre}} / Fecha: {{Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$beneficiado->created_at)->format('Y-m-d')}}</h6>
+                  <div class="row">
+                    <div class="col-xs-3 col-sm-2 col-md-1">
+                      <a href="{{ URL::previous() }}" class="btn btn-success btn-circle"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="col-xs-9 col-sm-10 col-md-11">
+                      <h1>Familia: {{$beneficiado->familia}}</h1>
+                      <h5>Proyecto: {{Session::get('proyecto')}}</h5>
+                      <h6 class="text-md-right">Municipio: {{$municipio->nombre}} / Localidad: {{$localidad->nombre}} / Fecha: {{Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$beneficiado->created_at)->format('Y-m-d')}}</h6>
+                    </div>
+                  </div>
                 </div>
                 <div class="card-block">
                   <div id="fotos" class="row">

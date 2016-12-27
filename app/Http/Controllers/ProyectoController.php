@@ -73,6 +73,9 @@ class ProyectoController extends Controller
      */
     public function store(Request $request)
     {
+      if (!Session::has('programa')) {
+        return view('welcome');
+      }
       $rules = [
           'nombre' => 'required|max:255|unique:Proyectos',
           'tipo' => 'required',
@@ -112,7 +115,7 @@ class ProyectoController extends Controller
           return view('welcome');
         }
         $proyecto = Proyecto::find($id);
-        return $this->noGuardarCache(view('proyectos/editarProyecto')->with('proyecto', $proyecto));              
+        return $this->noGuardarCache(view('proyectos/editarProyecto')->with('proyecto', $proyecto));
     }
 
     /**
@@ -124,6 +127,9 @@ class ProyectoController extends Controller
      */
     public function update(Request $request, $id)
     {
+      if (!Session::has('programa')) {
+        return view('welcome');
+      }
       $rules = [
           'nombre' => 'required|max:255|unique:Proyectos',
           'tipo' => 'required',
