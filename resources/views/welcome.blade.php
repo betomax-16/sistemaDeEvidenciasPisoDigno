@@ -1,5 +1,8 @@
 @extends('layouts.app') @section('styles')
-<link rel="stylesheet" href="{{asset('css/morris.css')}}"> @endsection @section('content')
+<link rel="stylesheet" href="{{asset('css/morris.css')}}">
+<link rel="stylesheet" href="{{asset('css/graficas.css')}}">
+<link rel="stylesheet" href="{{asset('css/odometer-theme-train-station.css')}}">
+@endsection @section('content')
 <section class="Bienvenidos text-xs-center">
     <div class="container">
         <div class="row">
@@ -179,7 +182,7 @@
                 </div>
                 <br>
                 <div class="contenido">
-                    <h2><span>34</span></h2>
+                    <h2><span class="odometer" id="odometer1">0</span></h2>
                     <br>
                     <p>Campaas Ganadas</p>
                 </div>
@@ -190,7 +193,7 @@
                 </div>
                 <br>
                 <div class="contenido">
-                    <h2><span>35</span></h2>
+                    <h2><span class="odometer" id="odometer2">0</span></h2>
                     <br>
                     <p>Campaas Ganadas</p>
                 </div>
@@ -202,7 +205,7 @@
                 </div>
                 <br>
                 <div class="contenido">
-                    <h2><span>36</span></h2>
+                    <h2><span class="odometer" id="odometer3">0</span></h2>
                     <br>
                     <p>Campaas Ganadas</p>
                 </div>
@@ -213,7 +216,7 @@
                 </div>
                 <br>
                 <div class="contenido">
-                    <h2><span>37</span></h2>
+                    <h2><span class="odometer" id="odometer4">0</span></h2>
                     <br>
                     <p>Campaas Ganadas</p>
                 </div>
@@ -254,18 +257,89 @@
     </div>
 </main>
 
-<div class="estadisticas">
-    <h3 class="titulo text-xs-center font-weight-bold p-3 ">Medición de Pobreza 2014 | Puebla</h3>
-    <div class="card">
-        <div id="graph"></div>
-        <h5 class="text-xs-center"><a href="http://www.coneval.org.mx/coordinacion/entidades/Puebla/Paginas/pobreza-2014.aspx">CONEVAL</a></h5>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="text-xs-center p-3 ">
+        Medición de Pobreza 2014 | Puebla
+        <a href="http://www.coneval.org.mx/coordinacion/entidades/Puebla/Paginas/pobreza-2014.aspx" target="_blank">CONEVAL</a>
+      </h3>
     </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-block">
+            <div id="graph"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-block" id="circulos">
+          <div class="card-text">
+              <h5 class="text-xs-center">Indicadores de carencias sociales</h5>
+          </div>
+          <div class="col-md-2 text-xs-center">
+            <div class="primera circle">
+              <strong></strong>
+              <span>Rezago educativo</span>
+            </div>
+          </div>
+          <div class="col-md-2 text-xs-center">
+            <div class="segunda circle">
+              <strong></strong>
+              <span>Servicios de salud</span>
+            </div>
+          </div>
+          <div class="col-md-2 text-xs-center">
+            <div class="tercera circle">
+              <strong></strong>
+              <span>Seguridad social</span>
+            </div>
+          </div>
+          <div class="col-md-2 text-xs-center">
+            <div class="cuarta circle">
+              <strong></strong>
+              <span>Espacios <br> en la vivienda</span>
+            </div>
+          </div>
+          <div class="col-md-2 text-xs-center">
+            <div class="quinta circle">
+              <strong></strong>
+              <span>Servicios <br> en la vivienda</span>
+            </div>
+          </div>
+          <div class="col-md-2 text-xs-center">
+            <div class="sexta circle">
+              <strong></strong>
+              <span>La alimentación</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer" id="infoGrafica" style="overflow:auto;"></div>
+      </div>
+    </div>
+  </div>
 </div>
 @include('layouts/templates/modal') @include('layouts/menu/footer') @endsection @section('javascripts')
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
 <script src="{{asset('js/estilos.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="{{asset('js/jquery.waypoints.min.js')}}"></script>
+<script src="{{asset('js/odometer.min.js')}}"></script>
 <script src="{{asset('js/morris.min.js')}}"></script>
 <script src="{{asset('js/Welcome/grafica.js')}}"></script>
+<script src="{{asset('js/circle-progress.min.js')}}"></script>
+<script>
+$('.Beneficiados').waypoint(function () {
+  setTimeout(function(){
+    $('#odometer1').html(34);
+    $('#odometer2').html(35);
+    $('#odometer3').html(36);
+    $('#odometer4').html(37);
+  }, 100);
+},{offset:'70%',triggerOnce: true});
+</script>
 @endsection

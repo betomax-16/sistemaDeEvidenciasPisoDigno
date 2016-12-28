@@ -21,15 +21,18 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header" style="overflow:auto;">
                   <div class="row">
                     <div class="col-xs-3 col-sm-2 col-md-1">
                       <a href="{{ URL::previous() }}" class="btn btn-success btn-circle"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
                     </div>
                     <div class="col-xs-9 col-sm-10 col-md-11">
-                      <h1>Familia: {{$beneficiado->familia}}</h1>
-                      <h5>Proyecto: {{Session::get('proyecto')}}</h5>
-                      <h6 class="text-md-right">Municipio: {{$municipio->nombre}} / Localidad: {{$localidad->nombre}} / Fecha: {{Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$beneficiado->created_at)->format('Y-m-d')}}</h6>
+                      <h1 class="hidden-xs-down">Familia: {{$beneficiado->familia}}</h1>
+                      <h5 class="hidden-sm-up">Familia: {{$beneficiado->familia}}</h5>
+                      <h5 class="hidden-xs-down">Proyecto: {{Session::get('proyecto')}}</h5>
+                      <h6 class="hidden-sm-up">Proyecto: {{Session::get('proyecto')}}</h6>
+                      <h6 class="text-md-right hidden-xs-down">Municipio: {{$municipio->nombre}} / Localidad: {{$localidad->nombre}} / Fecha: {{Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$beneficiado->created_at)->format('Y-m-d')}}</h6>
+                      <span class="hidden-sm-up">Municipio: {{$municipio->nombre}} / Localidad: {{$localidad->nombre}} / Fecha: {{Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$beneficiado->created_at)->format('Y-m-d')}}</span>
                     </div>
                   </div>
                 </div>

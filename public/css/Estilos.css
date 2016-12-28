@@ -356,7 +356,7 @@ Beneficiados
 .Beneficiados .contenido h2 {
     margin-top: -15px;
 }
-.Beneficiados .contenido h2 span {
+.Beneficiados .contenido h2 .odometer {
     background: white;
     padding: 0 15px;
 }
