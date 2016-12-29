@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Laracasts\Flash\Flash;
 use Illuminate\Http\Request;
 use Validator;
+use Mail;
 
 class VisitanteController extends Controller
 {
@@ -18,14 +20,16 @@ class VisitanteController extends Controller
 
   public function contacto()
   {
-    return $this->noGuardarCache(view('visitante/contacto'));    
+    return $this->noGuardarCache(view('visitante/contacto'));
   }
 
   public function enviarContacto(Request $request)
   {
     $rules = [
         'nombre' => 'required|max:255',
+        'telefono' => 'required',
         'email' => 'required|email|max:255',
+        'asunto' => 'required|max:255',
         'mensaje' => 'required|max:255',
     ];
 
@@ -35,6 +39,18 @@ class VisitanteController extends Controller
       return redirect()->back()->withInput()->withErrors($validacion->errors());
     }
 
-    dd($request->all());
+    $this->enviarCorreo($request);
+    flash('Mensaje enviado exitosamente.', 'success');
+    return redirect()->route('contacto');
+  }
+
+  private function enviarCorreo(Request $request)
+  {
+    Mail::send('emails.contacto',['data' => $request],function ($mensaje) use ($request)
+    {
+      $mensaje->to('contacto@gsuppuebla.org')
+              ->subject($request->asunto)
+              ->from($request->email, $request->nombre);
+    });
   }
 }

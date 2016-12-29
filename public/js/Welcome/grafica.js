@@ -54,7 +54,14 @@ $( document ).ready(function() {
       miniGrafica('.quinta', .306, '#8E0B83', '#CD07BC');
       miniGrafica('.sexta', .239, '#0BA227', '#10C831');
     }, 100);
+     this.destroy();
   },{offset:'70%',triggerOnce: true});
+
+  $('.ir-arriba').click(function(){
+  		$('body, html').animate({
+  			scrollTop: '0px'
+  		}, 300);
+  	});
 });
 function prepareMorrisDonutChart() {
 	$("#graph tspan:first").css("display","none");

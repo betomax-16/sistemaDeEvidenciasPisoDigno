@@ -4,9 +4,10 @@
 <link rel="stylesheet" href="{{asset('css/contactanos.css')}}">
 @endsection
 @section('content')
-<div class="paginas-internas  ">
+<div class="paginas-internas">
     <div class="texto-encabezado text-xs-center bienvenidos">
         <div class="container">
+            @include('flash::message')
             <h1 class="display-4 wow bounceIn">Contacto</h1>
             <p class="wow bounceIn" data-wow-delay=".3s">Estamos listos para ayudar</p>
         </div>
@@ -37,6 +38,17 @@
                           @endif
                         </div>
                     </div>
+                    <div class="form-group row{{ $errors->has('telefono') ? ' has-danger' : '' }}">
+                        {!! Form::label('telefono', 'Teléfono', ['class' => 'col-md-4 col-form-label']) !!}
+                        <div class="col-md-8">
+                          {!! Form::tel('telefono', old('telefono'), ['class' => 'form-control', 'placeholder' => 'Ingrese su número telefónico', 'id' => 'nombre', 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Ingrese su número telefónico', 'autocomplete' => 'off']) !!}
+                          @if ($errors->has('telefono'))
+                              <span class="form-control-feedback">
+                                  <strong>{{ $errors->first('telefono') }}</strong>
+                              </span>
+                          @endif
+                        </div>
+                    </div>
                     <div class="form-group row{{ $errors->has('email') ? ' has-danger' : '' }}">
                         {!! Form::label('email', 'Email', ['class' => 'col-md-4 col-form-label']) !!}
                         <div class="col-md-8">
@@ -44,6 +56,17 @@
                           @if ($errors->has('email'))
                               <span class="form-control-feedback">
                                   <strong>{{ $errors->first('email') }}</strong>
+                              </span>
+                          @endif
+                        </div>
+                    </div>
+                    <div class="form-group row{{ $errors->has('asunto') ? ' has-danger' : '' }}">
+                        {!! Form::label('asunto', 'Asunto', ['class' => 'col-md-4 col-form-label']) !!}
+                        <div class="col-md-8">
+                          {!! Form::text('asunto', old('asunto'), ['class' => 'form-control', 'placeholder' => 'Ingrese asunto', 'id' => 'asunto', 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Ingrese el asunto', 'autocomplete' => 'off']) !!}
+                          @if ($errors->has('asunto'))
+                              <span class="form-control-feedback">
+                                  <strong>{{ $errors->first('asunto') }}</strong>
                               </span>
                           @endif
                         </div>

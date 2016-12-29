@@ -4,49 +4,46 @@
 <link rel="stylesheet" href="{{asset('css/odometer-theme-train-station.css')}}">
 @endsection @section('content')
 <section class="Bienvenidos text-xs-center">
-    <div class="container">
-        <div class="row">
-            <h1 class="display-3 col-xs-12 col-md-4 wow rubberBand">Ayudanos <br> a <br> <span>Ayudar</span></h1>
-
-            <div class="slide offset-md-1 col-md-7 hidden-md-down">
-                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item active">
-                            <img src="{{asset( 'imagenes/aplicacion/Logo3.png')}}" alt="First slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{{asset( 'imagenes/aplicacion/Logo3.png')}}" alt="First slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{{asset( 'imagenes/aplicacion/Logo3.png')}}" alt="First slide">
-                        </div>
-                    </div>
-                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                        <span class="icon-prev" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                        <span class="icon-next" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-            </div>
-
-
-        </div>
-        <div class="texto-encavezado ">
-            <a href="{{route('contacto')}}" class="btn btn-secondary btn-lg ">Contactanos</a>
-        </div>
-        <div class="flecha_bajar">
-            <a href="#nosotros"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
-        </div>
-        <a name="nosotros"></a>
+  <div class="container">
+    <div class="row">
+      <h1 class="display-3 col-xs-12 col-md-4 wow rubberBand">Ayudanos <br> a <br> <span>Ayudar</span></h1>
+      <div class="slide offset-md-1 col-md-7 hidden-md-down">
+          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                  <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                  <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item active">
+                      <img src="{{asset( 'imagenes/aplicacion/Logo3.png')}}" alt="First slide">
+                  </div>
+                  <div class="carousel-item">
+                      <img src="{{asset( 'imagenes/aplicacion/Logo3.png')}}" alt="First slide">
+                  </div>
+                  <div class="carousel-item">
+                      <img src="{{asset( 'imagenes/aplicacion/Logo3.png')}}" alt="First slide">
+                  </div>
+              </div>
+              <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                  <span class="icon-prev" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                  <span class="icon-next" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+              </a>
+          </div>
+      </div>
     </div>
+    <div class="texto-encavezado ">
+      <a href="{{route('contacto')}}" class="btn btn-secondary btn-lg ">Contactanos</a>
+    </div>
+    <div class="flecha_bajar">
+      <a href="#nosotros"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+    </div>
+    <a name="nosotros"></a>
+  </div>
 </section>
 <section class="M-V">
     <div class="container-fluid">
@@ -340,6 +337,7 @@ $('.Beneficiados').waypoint(function () {
     $('#odometer3').html(36);
     $('#odometer4').html(37);
   }, 100);
+   this.destroy();
 },{offset:'70%',triggerOnce: true});
 </script>
 @endsection
