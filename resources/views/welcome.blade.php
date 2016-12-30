@@ -1,26 +1,52 @@
 @extends('layouts.app') @section('styles')
 <link rel="stylesheet" href="{{asset('css/morris.css')}}">
 <link rel="stylesheet" href="{{asset('css/graficas.css')}}">
+<link rel="stylesheet" href="{{asset('css/odometer-theme-train-station.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('css/textoPresentacion.css')}}" />
 <link rel="stylesheet" href="{{asset('css/style1.css')}}">
+
 <link rel="stylesheet" href="{{asset('css/Estadisticas.css')}}">
 
 
 
 <link rel="stylesheet" href="{{asset('css/odometer-theme-train-station.css')}}"> @endsection @section('content')
+
 <div class="bak">
     <section class="Bienvenidos">
+        <div class="sp-container hidden-md-down" style="z-index:1;">
+            <div class="sp-content">
+                <div class="sp-wrap sp-left">
+                    <h2>
+    					<span class="sp-top">What if you wouldn't get</span>
+    					<span class="sp-mid">spam</span>
+    					<span class="sp-bottom">anymore?</span>
+    				</h2>
+                </div>
+                <div class="sp-wrap sp-right">
+                    <h2>
+    					<span class="sp-top">Wouldn't that be absolutely</span>
+    					<span class="sp-mid">great<i>!</i><i>?</i></span>
+    					<span class="sp-bottom">Yeah, it would!</span>
+    				</h2>
+                </div>
+            </div>
+            <div class="sp-full">
+                <h2>A great way to get rid of spam!</h2>
+                <a href="#">Sign up now!</a>
+            </div>
+        </div>
+        <div class="hidden-lg-up" id="mini" style="z-index:1;">
+            <div class="col-xs-12">
+                <center>
+                    <h2>A great way to get rid of spam!</h2>
+                    <a href="#">Sign up now!</a>
+                </center>
+            </div>
+        </div>
         <ul class="cb-slideshow">
-            <li><span>Image 01</span>
-
-            </li>
-            <li><span>Image 02</span>
-
-            </li>
-            <li><span>Image 03</span>
-
-            </li>
-
-
+            <li><span>Image 01</span></li>
+            <li><span>Image 02</span></li>
+            <li><span>Image 03</span></li>
         </ul>
     </section>
     <section class="M-V">

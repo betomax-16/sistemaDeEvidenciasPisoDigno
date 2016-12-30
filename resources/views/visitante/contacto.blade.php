@@ -1,9 +1,8 @@
-@extends('layouts.app')
-@section('styles')
+@extends('layouts.app') @section('styles')
 <link rel="stylesheet" href="{{asset('css/general.css')}}">
-<link rel="stylesheet" href="{{asset('css/contactanos.css')}}">
-@endsection
-@section('content')
+<link rel="stylesheet" href="{{asset('css/set1.css')}}">
+
+<link rel="stylesheet" href="{{asset('css/contactanos.css')}}"> @endsection @section('content')
 <div class="paginas-internas">
     <div class="texto-encabezado text-xs-center bienvenidos">
         <div class="container">
@@ -26,66 +25,35 @@
             <div class="row">
                 <div class="col-md-8">
                     <h2 class="m-b-2">Formulario de contacto</h2>
-                    {!! Form::open(['route' => 'enviarContacto', 'method' => 'POST']) !!}
-                    <div class="form-group row{{ $errors->has('nombre') ? ' has-danger' : '' }}">
-                        {!! Form::label('nombre', 'Nombre', ['class' => 'col-md-4 col-form-label']) !!}
-                        <div class="col-md-8">
-                          {!! Form::text('nombre', old('nombre'), ['class' => 'form-control', 'placeholder' => 'Ingrese su nombre', 'id' => 'nombre', 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Ingrese su nombre completo', 'autocomplete' => 'off']) !!}
-                          @if ($errors->has('nombre'))
-                              <span class="form-control-feedback">
-                                  <strong>{{ $errors->first('nombre') }}</strong>
-                              </span>
-                          @endif
-                        </div>
+                    <div class="col-md-12">
+                        <span class="input input--hoshi">
+					    <input class="input__field input__field--hoshi" type="text" id="input-4" />
+					    <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
+						    <span class="input__label-content input__label-content--hoshi">Nombre</span>
+                        </label>
+                        </span>
                     </div>
-                    <div class="form-group row{{ $errors->has('telefono') ? ' has-danger' : '' }}">
-                        {!! Form::label('telefono', 'Teléfono', ['class' => 'col-md-4 col-form-label']) !!}
-                        <div class="col-md-8">
-                          {!! Form::tel('telefono', old('telefono'), ['class' => 'form-control', 'placeholder' => 'Ingrese su número telefónico', 'id' => 'nombre', 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Ingrese su número telefónico', 'autocomplete' => 'off']) !!}
-                          @if ($errors->has('telefono'))
-                              <span class="form-control-feedback">
-                                  <strong>{{ $errors->first('telefono') }}</strong>
-                              </span>
-                          @endif
-                        </div>
+
+                    <div class="col-md-12">
+                        <span class="input input--hoshi">
+					    <input class="input__field input__field--hoshi" type="text" id="input-4" />
+					    <label class="input__label input__label--hoshi input__label--hoshi-color-2" for="input-4">
+						    <span class="input__label-content input__label-content--hoshi ">Asunto</span>
+                        </label>
+                        </span>
                     </div>
-                    <div class="form-group row{{ $errors->has('email') ? ' has-danger' : '' }}">
-                        {!! Form::label('email', 'Email', ['class' => 'col-md-4 col-form-label']) !!}
-                        <div class="col-md-8">
-                          {!! Form::email('email', old('email'), ['class' => 'form-control', 'placeholder' => 'Ingrese su email', 'id' => 'email', 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Ingrese su email', 'autocomplete' => 'off']) !!}
-                          @if ($errors->has('email'))
-                              <span class="form-control-feedback">
-                                  <strong>{{ $errors->first('email') }}</strong>
-                              </span>
-                          @endif
-                        </div>
-                    </div>
-                    <div class="form-group row{{ $errors->has('asunto') ? ' has-danger' : '' }}">
-                        {!! Form::label('asunto', 'Asunto', ['class' => 'col-md-4 col-form-label']) !!}
-                        <div class="col-md-8">
-                          {!! Form::text('asunto', old('asunto'), ['class' => 'form-control', 'placeholder' => 'Ingrese asunto', 'id' => 'asunto', 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Ingrese el asunto', 'autocomplete' => 'off']) !!}
-                          @if ($errors->has('asunto'))
-                              <span class="form-control-feedback">
-                                  <strong>{{ $errors->first('asunto') }}</strong>
-                              </span>
-                          @endif
-                        </div>
-                    </div>
-                    <div class="form-group row{{ $errors->has('mensaje') ? ' has-danger' : '' }}">
-                        {!! Form::label('mensaje', 'Mensaje', ['class' => 'col-md-4 col-form-label']) !!}
-                        <div class="col-md-8">
-                          {!! Form::textarea('mensaje', old('mensaje'), ['class' => 'form-control', 'placeholder' => 'Ingrese su mensaje', 'id' => 'mensaje', 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Ingrese un mensaje', 'autocomplete' => 'off']) !!}
-                          @if ($errors->has('mensaje'))
-                              <span class="form-control-feedback">
-                                  <strong>{{ $errors->first('mensaje') }}</strong>
-                              </span>
-                          @endif
-                        </div>
+
+                    <div class="col-md-12">
+                        <span class="input input--hoshi">
+					    <input class="input__field input__field--hoshi" type="text" id="input-4" />
+					    <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="input-4">
+						    <span class="input__label-content input__label-content--hoshi">Mensaje</span>
+                        </label>
+                        </span>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-8 offset-md-4">
-                            {!! Form::submit('Enviar', ['class' => 'btn btn-primary']) !!}
-                            {!! Form::reset('Limpiar', ['class' => 'btn btn-secondary']) !!}
+                            {!! Form::submit('Enviar', ['class' => 'btn btn-primary']) !!} {!! Form::reset('Limpiar', ['class' => 'btn btn-secondary']) !!}
                         </div>
                     </div>
                     {!! Form::close() !!}
@@ -98,7 +66,8 @@
             </div>
         </div>
     </main>
+
 </div>
-@endsection
-@section('javascripts')
-@endsection
+
+@endsection @section('javascripts')
+<script src="{{asset('js/Hoshi.js')}}"></script> @endsection
