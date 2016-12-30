@@ -1,3 +1,7 @@
+@import url('../fonts/fonts.css');
+body {
+    font-family: 'CANDARA'
+}
 .encavezado {
     background: #fff;
     padding: 0.5rem;
@@ -36,6 +40,7 @@ Estilo Menu desplegable
     -webkit-flex: 1 1 100%;
     -ms-flex: 1 1 100%;
     flex: 1 1 100%;
+    font-family:
 }
 #menu-principal ul {
     padding: 0;
@@ -52,15 +57,17 @@ Estilo Menu desplegable
     border-top: .1px solid #8C8C8C;
     text-decoration: none;
 }
-#menu-principal ul a:hover {
-    color: #fff;
+#menu-principal ul a:hover,
+#menu-principal ul li.active a {
+    color: #3E77C5;
 }
+
+/*
 #menu-principal ul li:hover {
     background: #3E77C5;
 }
-#menu-principal ul li:active a {
-    color: #3E77C5;
-}
+*/
+
 #menu-principal .dropdown .dropdown-menu {
     display: none !important;
 }
@@ -85,7 +92,6 @@ Bienvenidos
 */
 
 .Bienvenidos {
-    background: url("../imagenes/aplicacion/fondo-encabezado.jpg") no-repeat center top;
     color: #fff;
     background-size: cover;
     background-attachment: fixed !important;
@@ -104,8 +110,30 @@ Bienvenidos
     /* For browsers that do not support gradients */
     /* background: -webkit-linear-gradient(#053E63, #FFF)*/
     /* For Safari 5.1 to 6.0 */
+    -webkit-animation: backgoundf 5s ease-in-out infinite;
+    animation: backgoundf 5s ease-in-out infinite;
+}
+@-webkit-keyframes imageAnimation {
+    0% {
+        opacity: 0;
+        -webkit-animation-timing-function: ease-in;
+    }
+    8% {
+        opacity: 1;
+        -webkit-animation-timing-function: ease-out;
+    }
+    17% {
+        opacity: 1
+    }
+    25% {
+        opacity: 0
+    }
+    100% {
+        opacity: 0
+    }
 }
 .Bienvenidos {
+    margin-top: 4rem;
     color: #FFF;
 }
 .Bienvenidos .display-3 {
@@ -165,11 +193,17 @@ Bienvenidos
 Mision y Vision
 */
 
+.M-V {
+    margin-top: -66px
+}
 .M-V .opciones {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+}
+.M-V .opciones button {
+    font-size: 1.5rem;
 }
 .M-V .opciones .btn-secondary {
     -webkit-box-flex: 1;
@@ -177,8 +211,8 @@ Mision y Vision
     -ms-flex: 1;
     flex: 1;
     border-radius: 0;
-    min-height: 98.5px;
-    background-color: #DBE7DA;
+    min-height: 80.5px;
+    background-color: #C592C2;
     background-image: url(https://www.transparenttextures.com/patterns/gplay.png);
 }
 .M-V .opciones .ENM {
@@ -273,8 +307,8 @@ Lo que hacemos
 
 .lo-que-hacemos {
     margin-top: 6rem;
-    background-color: #f1bf83;
-    background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png");
+    background-color: #FFE66B;
+    //background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png");
 }
 .lo-que-hacemos .mision {
     -webkit-align-self: center;
@@ -367,7 +401,6 @@ Programas
 
 .programas {
     margin-top: 4rem;
-    background-image: url(https://www.transparenttextures.com/patterns/cubes.png);
 }
 .programas .container {
     margin-top: 2rem;
@@ -489,6 +522,9 @@ Media Querys
     }
 }
 @media (min-width: 992px) {
+    .M-V {
+        margin-top: -80px
+    }
     .Nosotros {
         margin-top: 7rem;
     }
@@ -496,7 +532,6 @@ Media Querys
         font-size: 16px;
     }
     .Bienvenidos {
-        background: url("../imagenes/aplicacion/fondo-encabezado-grande.jpg") no-repeat center top;
         margin-top: 5rem;
         background-size: cover;
     }
