@@ -2,48 +2,31 @@
 <link rel="stylesheet" href="{{asset('css/morris.css')}}">
 <link rel="stylesheet" href="{{asset('css/graficas.css')}}">
 <link rel="stylesheet" href="{{asset('css/odometer-theme-train-station.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('css/style3.css')}}" />
 @endsection @section('content')
 <section class="Bienvenidos text-xs-center">
-  <div class="container">
-    <div class="row">
-      <h1 class="display-3 col-xs-12 col-md-4 wow rubberBand">Ayudanos <br> a <br> <span>Ayudar</span></h1>
-      <div class="slide offset-md-1 col-md-7 hidden-md-down">
-          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-              </ol>
-              <div class="carousel-inner" role="listbox">
-                  <div class="carousel-item active">
-                      <img src="{{asset( 'imagenes/aplicacion/Logo3.png')}}" alt="First slide">
-                  </div>
-                  <div class="carousel-item">
-                      <img src="{{asset( 'imagenes/aplicacion/Logo3.png')}}" alt="First slide">
-                  </div>
-                  <div class="carousel-item">
-                      <img src="{{asset( 'imagenes/aplicacion/Logo3.png')}}" alt="First slide">
-                  </div>
-              </div>
-              <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                  <span class="icon-prev" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-              </a>
-              <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                  <span class="icon-next" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-              </a>
-          </div>
-      </div>
-    </div>
-    <div class="texto-encavezado ">
-      <a href="{{route('contacto')}}" class="btn btn-secondary btn-lg ">Contactanos</a>
-    </div>
-    <div class="flecha_bajar">
-      <a href="#nosotros"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
-    </div>
-    <a name="nosotros"></a>
-  </div>
+  <div class="sp-container">
+		<div class="sp-content">
+			<div class="sp-wrap sp-left">
+				<h2>
+					<span class="sp-top">What if you wouldn't get</span>
+					<span class="sp-mid">spam</span>
+					<span class="sp-bottom">anymore?</span>
+				</h2>
+			</div>
+			<div class="sp-wrap sp-right">
+				<h2>
+					<span class="sp-top">Wouldn't that be absolutely</span>
+					<span class="sp-mid">great<i>!</i><i>?</i></span>
+					<span class="sp-bottom">Yeah, it would!</span>
+				</h2>
+			</div>
+		</div>
+		<div class="sp-full">
+			<h2>A great way to get rid of spam!</h2>
+			<a href="index3.html">Sign up now!</a>
+		</div>
+	</div>
 </section>
 <section class="M-V">
     <div class="container-fluid">
