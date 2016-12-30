@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="{{asset('css/morris.css')}}">
 <link rel="stylesheet" href="{{asset('css/graficas.css')}}">
 <link rel="stylesheet" href="{{asset('css/style1.css')}}">
+<link rel="stylesheet" href="{{asset('css/Estadisticas.css')}}">
 
 
 
@@ -232,70 +233,7 @@
     </main>
 
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h3 class="text-xs-center p-3 ">
-        Medición de Pobreza 2014 | Puebla
-        <a href="http://www.coneval.org.mx/coordinacion/entidades/Puebla/Paginas/pobreza-2014.aspx" target="_blank">CONEVAL</a>
-      </h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-block">
-                        <div id="graph"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-block" id="circulos">
-                        <div class="card-text">
-                            <h5 class="text-xs-center">Indicadores de carencias sociales</h5>
-                        </div>
-                        <div class="col-md-2 text-xs-center">
-                            <div class="primera circle">
-                                <strong></strong>
-                                <span>Rezago educativo</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 text-xs-center">
-                            <div class="segunda circle">
-                                <strong></strong>
-                                <span>Servicios de salud</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 text-xs-center">
-                            <div class="tercera circle">
-                                <strong></strong>
-                                <span>Seguridad social</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 text-xs-center">
-                            <div class="cuarta circle">
-                                <strong></strong>
-                                <span>Espacios <br> en la vivienda</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 text-xs-center">
-                            <div class="quinta circle">
-                                <strong></strong>
-                                <span>Servicios <br> en la vivienda</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 text-xs-center">
-                            <div class="sexta circle">
-                                <strong></strong>
-                                <span>La alimentación</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer" id="infoGrafica" style="overflow:auto;"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+        @include('layouts/templates/Estadisticas')
     </div>
     @include('layouts/templates/modal') @include('layouts/menu/footer') @endsection @section('javascripts')
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
