@@ -3,6 +3,7 @@ var region = $('#region').val();
 var lugar = $('#nombreLugar').val();
 
 $(document).ready(function(){
+  
   (function() {
     [].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {
       new SelectFx(el);
@@ -13,7 +14,7 @@ $(document).ready(function(){
         $(this).addClass('cs-selected');
       }
     });
-    
+
     $('#btnExcel').click(function (e) {
       if ($('#evidencias').find('.evidencia').length > 0) {
         var aux = download;

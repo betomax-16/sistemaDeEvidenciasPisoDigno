@@ -18,30 +18,33 @@
                 <div class="card-block">
                     <div class="row">
                         <div class="col-md-4 " style="padding:5px">
-                          <div class="row">
-                            <div class="col-md-3">
-                              <a href="#" id="btnExcel" class="btn green-inverse" style="margin-top: 19px;"><i class="fa fa-download" aria-hidden="true"></i> Excel</a>                              
-                            </div>
-                            <div class="col-md-9">
-                              <span class="input input--hoshi">
-                                {!! Form::number('año', Carbon\Carbon::now()->format('Y'), ['id' => 'año', 'class' => 'input__field input__field--hoshi']) !!}
-                  					    <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
-                  						    <span class="input__label-content arriba">Año</span>
-                                </label>
-                              </span>
-                            </div>
-                          </div>
+                          <span class="input input--hoshi">
+                            {!! Form::number('año', Carbon\Carbon::now()->format('Y'), ['id' => 'año', 'class' => 'input__field input__field--hoshi']) !!}
+                            <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
+                              <span class="input__label-content arriba">Año</span>
+                            </label>
+                          </span>
                         </div>
                         <div class="col-md-4" style="padding:5px">
                             {!! Form::select('region', ['MUNICIPIO' => 'Municipio', 'LOCALIDAD' => 'Localidad'],'MUNICIPIO', ['class' => 'cs-select cs-skin-underline', 'id' => 'region', 'style' => 'display:none;']) !!}
                         </div>
                         <div class="col-md-4  " style="padding:5px">
-                          <span class="input input--hoshi">
-                            {!! Form::text('nombreLugar', $municipio ? $municipio->nombre : null, ['class' => 'input__field input__field--hoshi', 'id' => 'nombreLugar', 'autocomplete' => 'off']) !!}
-              					    <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
-              						    <span class="input__label-content input__label-content--hoshi">Lugar</span>
-                            </label>
-                          </span>
+                          <div class="row">
+                            <div class="col-md-9">
+                              <span class="input input--hoshi">
+                                {!! Form::text('nombreLugar', $municipio ? $municipio->nombre : null, ['class' => 'input__field input__field--hoshi', 'id' => 'nombreLugar', 'autocomplete' => 'off']) !!}
+                  					    <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
+                  						    <span class="input__label-content input__label-content--hoshi">Lugar</span>
+                                </label>
+                              </span>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="btn-group" role="group" aria-label="Basic example" style="margin-top:19px;">
+                                <button id="btnBuscar" type="button" class="btn blue-inverse"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                <a href="#" id="btnExcel" class="btn green-inverse"><i class="fa fa-download" aria-hidden="true"></i></a>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                     </div>
                     <hr>
@@ -76,10 +79,10 @@
 <script type="text/javascript" src="{{asset('js/select/selectFx.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/Evidencias/buscarLocalidadEvidencia.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/Evidencias/eliminarEvidencia.js')}}"></script>
-<script type="text/javascript">
-    var token = '{{ Session::token() }}';
-    var estado = '{{ Session::get("estado") }}';
-    var proyecto = '{{ Session::get("proyecto") }}';
-    var download = "{{route('evidencia.excel',['PROYECTO','ANIO','REGION','LUGAR'])}}";
+<script type="text/javascript">
+var token = '{{ Session::token() }}';
+var estado = '{{ Session::get("estado") }}';
+var proyecto = '{{ Session::get("proyecto") }}';
+var download = "{{route('evidencia.excel',['PROYECTO','ANIO','REGION','LUGAR'])}}";
 </script>
 @endsection
