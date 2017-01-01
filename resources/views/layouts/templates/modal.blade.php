@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-              <a id="ir" href="#" class="btn btn-primary" style="width:100%">Ir</a>
+              <a id="ir" href="#" class="btn blue-inverse" style="width:100%">Ir</a>
             </div>
         </div>
     </div>
