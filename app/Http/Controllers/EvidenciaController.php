@@ -381,7 +381,8 @@ class EvidenciaController extends Controller
         if ($region == 'MUNICIPIO') {
           $beneficiados = $this->beneficiadosDelMunicipio($nombre, $proyecto, $anio);
           return response()->json([
-            view('layouts/templates/Evidencias', ['beneficiados'=> $beneficiados])->render()
+            'evidencias' => view('layouts/templates/Evidencias', ['beneficiados'=> $beneficiados])->render(),
+            'paginacion' => view('layouts/templates/pagination', ['beneficiados'=> $beneficiados])->render()
           ]);
         }
         elseif ($region == 'LOCALIDAD') {

@@ -11,7 +11,7 @@
                   <h1>Usuarios</h1>
                 </div>
                 <div class="card-block">
-                  <a class="btn btn-success btn-lg" href="{{route('usuario.create')}}" style="width:100%">Agregar Usuario</a>
+                  <a class="btn green-inverse btn-lg" href="{{route('usuario.create')}}" style="width:100%">Agregar Usuario</a>
                   <div class="table-responsive">
                     <table class="table table-hover">
                       <thead class="thead-inverse">
@@ -34,8 +34,8 @@
                             @endif
                             <td class="text-md-center">
                               <div class="btn-group">
-                                <a class="btn btn-info btn-secundary" href="{{route('usuario.edit', $usuario->idUsuario)}}">Editar</a>
-                                <button type="button" name="button" class="btn btn-danger btn-secundary btn-delete">Eliminar</button>
+                                <a class="btn blue-inverse btn-secundary" href="{{route('usuario.edit', $usuario->idUsuario)}}">Editar</a>
+                                <button type="button" name="button" class="btn red-inverse btn-secundary btn-delete">Eliminar</button>
                               </div>
                             </td>
                           </tr>

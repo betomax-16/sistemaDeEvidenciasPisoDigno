@@ -4,15 +4,18 @@
 <link rel="stylesheet" href="{{asset('css/general.css')}}">
 <link rel="stylesheet" href="{{asset('css/set1.css')}}">
 <link rel="stylesheet" href="{{asset('css/cs-select.css')}}">
-<link rel="stylesheet" href="{{asset('css/cs-skin-underline.css')}}">@endsection @section('content')
+<link rel="stylesheet" href="{{asset('css/cs-skin-underline.css')}}">
+<link rel="stylesheet" href="{{asset('css/evidencias/bookblock.css')}}">
+<!-- custom demo style -->
+<link rel="stylesheet" href="{{asset('css/evidencias/demo5.css')}}" />@endsection @section('content')
 <div class="container-fluid espacioPagina">
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">
-                  <h1>Buscar Evidencias</h1>
-                  <h4 style="display:inline"><span id='proyecto'>{{$proyecto->nombre}}</span>,  Entidad: {{$estado->nombre}}</h4>
-                </div>
+              <div class="card-header">
+                <h1>Buscar Evidencias</h1>
+                <h4 style="display:inline"><span id='proyecto'>{{$proyecto->nombre}}</span>,  Entidad: {{$estado->nombre}}</h4>
+    					</div>
                 @if(!Auth::guest())
                 <a href="{{route('evidencia.create')}}" class="btn green-inverse" style="width:100%">Agregar Evidencia</a> @endif
                 <div class="card-block">
@@ -39,35 +42,33 @@
                               </span>
                             </div>
                             <div class="col-md-3">
+                              <center>
                               <div class="btn-group" role="group" aria-label="Basic example" style="margin-top:19px;">
                                 <button id="btnBuscar" type="button" class="btn blue-inverse"><i class="fa fa-search" aria-hidden="true"></i></button>
                                 <a href="#" id="btnExcel" class="btn green-inverse"><i class="fa fa-download" aria-hidden="true"></i></a>
                               </div>
+                            </center>
                             </div>
                           </div>
                         </div>
                     </div>
-                    <hr>
-                    <div class="container-fliud" id="evidencias">
+                </div><hr>
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <ul class="bb-custom-grid text-xs-center" id="bb-custom-grid">
                         @if($beneficiados) @include('layouts/templates/Evidencias') @else
                         <h1 class="display-4 text-md-center">Sin evidencias</h1> @endif
+                      </ul>
                     </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12" id="pagination">
+                      @if($beneficiados) @include('layouts/templates/pagination')@endif
+                    </div>
+                  </div>
                 </div>
                 {!! Form::open(['route' => ['evidencia.destroy', 'ID_HOGAR'], 'method' => 'DELETE', 'id' => 'form-delete']) !!} {!! Form::close() !!}
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-            </div>
-            <div class="modal-body">
-                <center><img id="foto-modal" src="#" class="img-thumbnail img-responsive"></img>
-                </center>
             </div>
         </div>
     </div>
@@ -79,10 +80,58 @@
 <script type="text/javascript" src="{{asset('js/select/selectFx.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/Evidencias/buscarLocalidadEvidencia.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/Evidencias/eliminarEvidencia.js')}}"></script>
+<script src="{{asset('js/Evidencias/design/modernizr.custom.js')}}"></script>
+<script src="{{asset('js/Evidencias/design/jquerypp.custom.js')}}"></script>
+<script src="{{asset('js/Evidencias/design/jquery.bookblock.js')}}"></script>
 <script type="text/javascript">
 var token = '{{ Session::token() }}';
 var estado = '{{ Session::get("estado") }}';
 var proyecto = '{{ Session::get("proyecto") }}';
 var download = "{{route('evidencia.excel',['PROYECTO','ANIO','REGION','LUGAR'])}}";
+var Page = (function() {
+
+  var $grid = $( '#bb-custom-grid' );
+
+  return {
+    init : function() {
+      $grid.find( 'div.bb-bookblock' ).each( function( i ) {
+
+        var $bookBlock = $( this ),
+          $nav = $bookBlock.next().children( 'span' ),
+          bb = $bookBlock.bookblock( {
+            speed : 600,
+            shadows : false
+          } );
+
+        // add navigation events
+        $nav.each( function( i ) {
+          $( this ).on( 'click touchstart', function( event ) {
+            var $dot = $( this );
+            $nav.removeClass( 'bb-current' );
+            $dot.addClass( 'bb-current' );
+            $bookBlock.bookblock( 'jump', i + 1 );
+            return false;
+          } );
+        } );
+
+        // add swipe events
+        $bookBlock.children().on( {
+          'swipeleft' : function( event ) {
+            $bookBlock.bookblock( 'next' );
+            return false;
+          },
+          'swiperight' : function( event ) {
+            $bookBlock.bookblock( 'prev' );
+            return false;
+          }
+
+        } );
+
+      } );
+    }
+  };
+
+})();
+	Page.init();
 </script>
 @endsection

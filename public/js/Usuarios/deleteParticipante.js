@@ -22,11 +22,11 @@ $(document).ready(function(){
         buttons: {
             confirm: {
                 label: 'Aceptar',
-                className: 'btn-success'
+                className: 'green-inverse'
             },
             cancel: {
                 label: 'Cancelar',
-                className: 'btn-danger'
+                className: 'red-inverse'
             }
         },
         callback: function (result) {

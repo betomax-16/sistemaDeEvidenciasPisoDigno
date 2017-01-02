@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    $('#evidencias').on( "click", ".remove", function(e) {
+    $('#bb-custom-grid').on( "click", ".remove", function(e) {
         e.preventDefault();
         var idHogar = $(this).attr('id');
         var url = $('#form-delete').attr('action').replace('ID_HOGAR',idHogar);
@@ -10,11 +10,11 @@ $(document).ready(function(){
           buttons: {
               confirm: {
                   label: 'Aceptar',
-                  className: 'btn-success'
+                  className: 'green-inverse'
               },
               cancel: {
                   label: 'Cancelar',
-                  className: 'btn-danger'
+                  className: 'red-inverse'
               }
           },
           callback: function (result) {

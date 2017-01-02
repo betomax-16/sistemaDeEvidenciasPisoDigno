@@ -10,7 +10,7 @@
                 <div class="card-header">
                   <div class="row">
                     <div class="col-xs-3 col-sm-2 col-md-1">
-                      <a href="{{ URL::previous() }}" class="btn btn-success btn-circle"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                      <a href="{{ URL::previous() }}" class="btn green btn-circle"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
                     </div>
                     <div class="col-xs-9 col-sm-10 col-md-11">
                       <h1>Agregar Usuario</h1>
@@ -74,7 +74,7 @@
                   </div>
                   <hr>
                   <div class="form-group">
-                    {!! Form::submit('Guardar', ['class' => 'btn btn-success btn-lg', 'style' => 'width:100%']) !!}
+                    {!! Form::submit('Guardar', ['class' => 'btn green-inverse btn-lg', 'style' => 'width:100%']) !!}
                   </div>
                   {!! Form::close() !!}
                 </div>
