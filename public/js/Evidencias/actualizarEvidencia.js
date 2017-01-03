@@ -23,8 +23,13 @@ $(document).ready(function () {
           break;
         case 'fotoN':
             $('#otros').html('');
-            for (var i = 0; i < imagenN.length; i++) {
-              $('#otros').append('<div class="col-md-4"><center><img class="img-thumbnail img-responsive box" src="'+imagenN[i]+'"></center></div>');
+            if (imagenN.length == 0) {
+              $('#otros').append('<div class="col-md-4"><center><img class="img-thumbnail img-responsive box" src="'+imageDefault+'"></center></div>');
+            }
+            else {
+              for (var i = 0; i < imagenN.length; i++) {
+                $('#otros').append('<div class="col-md-4"><center><img class="img-thumbnail img-responsive box" src="'+imagenN[i]+'"></center></div>');
+              }
             }
           break;
       }

@@ -1,8 +1,9 @@
 @extends('layouts.app')
 @section('styles')
 <link rel="stylesheet" href="{{asset('jquery-ui/jquery-ui.min.css')}}">
-<link rel="stylesheet" href="{{asset('css/imagenCerrar.css')}}">
 <link rel="stylesheet" href="{{asset('css/general.css')}}">
+<link rel="stylesheet" href="{{asset('css/fileInput/demo.css')}}">
+<link rel="stylesheet" href="{{asset('css/fileInput/component.css')}}">
 @endsection
 @section('content')
 <div class="container espacioPagina">
@@ -153,10 +154,8 @@
                           </div>
                           <div class="row">
                             <div class="col-md-12">
-                              <label class="custom-file">
-                                {!! Form::file('fotoN[]', ['class' => 'custom-file-input', 'id' => 'fotoN', 'multiple']) !!}
-                                <span class="custom-file-control"></span>
-                              </label>
+                              {!! Form::file('fotoN[]', ['class' => 'inputfile inputfile-2', 'id' => 'fotoN', 'data-multiple-caption' => '{count} archivos seleccionados', 'style' => 'display:none', 'multiple']) !!}
+                              <label for="file-2" id="inputN"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>Selecciona un archivo&hellip;</span></label>
                               @foreach($errors->get('fotoN.*') as $error)
                                 @foreach($error as $value)
                                   <span class="form-control-feedback">
@@ -184,6 +183,8 @@
 </div>
 @endsection
 @section('javascripts')
+<script type="text/javascript" src="{{asset('js/inputFile/jquery-v1.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/inputFile/jquery.custom-file-input.js')}}"></script>
 <script type="text/javascript" src="{{asset('jquery-ui/jquery-ui.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/Evidencias/actualizarEvidencia.js')}}"></script>
 <script type="text/javascript">
