@@ -6,10 +6,14 @@
             @if(!Auth::guest())
               <div class="remove" id="{{$beneficiado->idHogar}}"><img src="{{asset('imagenes/aplicacion/cerrar24x24.png')}}" alt=""></div>
             @endif
-            <h3>{{$beneficiado->familia}}</h3>
+            @if(!Auth::guest())
+              <a href="{{route('evidencia.edit', $beneficiado->idHogar)}}"><h3>{{$beneficiado->familia}}</h3></a>
+            @else
+              <h3>{{$beneficiado->familia}}</h3>
+            @endif
             <div class="bb-bookblock">
               @foreach($fotos as $foto)
-                <div class="bb-item"><a href="#"><img src="{{asset('imagenes/evidencias').'/'.$foto->nombreArchivo}}" alt="{{$foto->tipo}}"/></a></div>
+                <div class="bb-item"><a href="{{asset('imagenes/evidencias').'/'.$foto->nombreArchivo}}" data-lightbox="{{$foto->idHogar}}" data-title="{{$foto->created_at}}"><img src="{{asset('imagenes/evidencias').'/'.$foto->nombreArchivo}}" alt="{{$foto->tipo}}"/></a></div>
               @endforeach
             </div>
             <nav>

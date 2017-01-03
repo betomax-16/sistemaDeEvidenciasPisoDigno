@@ -99,6 +99,10 @@ ul.bb-custom-grid > li h3 {
 	height: 40px;
 }
 
+ul.bb-custom-grid > li h3:hover {
+	color: #66B0DE;
+}
+
 ul.bb-custom-grid nav {
 	text-align: center;
 	margin-top: 1%;

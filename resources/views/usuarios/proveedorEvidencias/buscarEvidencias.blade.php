@@ -6,8 +6,8 @@
 <link rel="stylesheet" href="{{asset('css/cs-select.css')}}">
 <link rel="stylesheet" href="{{asset('css/cs-skin-underline.css')}}">
 <link rel="stylesheet" href="{{asset('css/evidencias/bookblock.css')}}">
-<!-- custom demo style -->
-<link rel="stylesheet" href="{{asset('css/evidencias/demo5.css')}}" />@endsection @section('content')
+<link rel="stylesheet" href="{{asset('css/evidencias/demo5.css')}}" />
+<link rel="stylesheet" href="{{asset('css/lightbox.min.css')}}">@endsection @section('content')
 <div class="container-fluid espacioPagina">
     <div class="row">
         <div class="col-md-12">
@@ -74,6 +74,7 @@
     </div>
 </div>
 @endsection @section('javascripts')
+<script src="{{asset('js/lightbox-plus-jquery.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('jquery-ui/jquery-ui.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/Contacto/Hoshi.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/select/classie.js')}}"></script>
@@ -83,6 +84,7 @@
 <script src="{{asset('js/Evidencias/design/modernizr.custom.js')}}"></script>
 <script src="{{asset('js/Evidencias/design/jquerypp.custom.js')}}"></script>
 <script src="{{asset('js/Evidencias/design/jquery.bookblock.js')}}"></script>
+
 <script type="text/javascript">
 var token = '{{ Session::token() }}';
 var estado = '{{ Session::get("estado") }}';
