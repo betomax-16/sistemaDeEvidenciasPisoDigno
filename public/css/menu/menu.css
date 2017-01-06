@@ -1,0 +1,365 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  padding-top: 180px;
+}
+header{
+  z-index: 9999;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  box-sizing: border-box;
+}
+header nav{
+  background: #E4E4E9;
+  z-index: 1000;
+  -webkit-box-shadow: 0px -4px 36px 7px rgba(0,0,0,0.38);
+  -moz-box-shadow: 0px -4px 36px 7px rgba(0,0,0,0.38);
+  box-shadow: 0px -4px 36px 7px rgba(0,0,0,0.38);
+}
+header nav ul{
+  display: flex;
+  flex-direction: row;
+}
+header nav ul li{
+  font-weight: bold;
+  list-style: none;
+  position: relative;
+  flex-grow: 1;
+  border-bottom: 1px solid #fff;
+  text-align: center;
+}
+header nav ul li::after{
+  content: '';
+  width: 0;
+  height: 100%;
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  opacity: .3;
+  -webkit-transition: .2s all;
+  transition: .2s all;
+}
+header nav ul li:nth-child(1){
+  background: #c10c2d;
+}
+header nav ul li:nth-child(2){
+  background: #93278f;
+}
+header nav ul li:nth-child(3){
+  background: #f7931e;
+}
+header nav ul li:nth-child(4){
+  background: #7bcb17;
+}
+header nav ul li a:hover{
+  color: #fff;
+}
+header nav ul li:hover::after{
+  height: 6px;
+  width: 100%;
+  opacity: 1;
+}
+header nav ul li a{
+  color: #fff;
+  display: block;
+  text-decoration: none !important;
+  padding: 20px;
+}
+header nav ul li i{
+  margin-right: 10px;
+}
+.sub-menu .children{
+  list-style: none;
+  width: 100%;
+}
+.sub-menu .children li{
+  flex-grow: 1;
+  background: #023859;
+}
+.nav-bar{
+  height: 120px;
+  display: block;
+  width: 100%;
+  background: #fff;
+  top: 0;
+}
+.btn-menu{
+  color: #55acee;
+  font-size: 25px;
+  font-weight: bold;
+  display: block;
+  padding: 20px;
+  overflow: hidden;
+  text-decoration: none !important;
+}
+.nav-bar a{
+  display: inline-flex;
+}
+/*donativos*/
+.nav-bar .donar{
+  float: right;
+  margin-top: 35px;
+  margin-right: 15px;
+}
+header nav ul .donar{
+  background: #E6344A;
+  display: none;
+}
+/*--donativos--*/
+.nav-bar i{
+  display: none;
+}
+
+
+header nav ul li:hover .children{
+  display: block;
+}
+header nav ul li .children{
+  display: none;
+  background: #011826;
+  position: absolute;
+  z-index: 1000;
+}
+header nav ul li .children li{
+  display: block;
+  border-bottom: 3px solid rgba(255, 255, 255, .5);
+}
+header nav ul li .children li a{
+  display: block;
+}
+header nav ul li .cared{
+  position: relative;
+  top: 1px;
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+/*responsive*/
+@media (max-width: 543px) {
+  body{
+    padding-top: 80px;
+  }
+  .btn-menu i{
+    float: right;
+    font-size: 40px;
+  }
+  .nav-bar{
+    height: 80px;
+  }
+  .nav-bar i{
+    display: block;
+  }
+  .nav-bar a{
+    display: block;
+  }
+  .nav-bar a img{
+    width: 200px;
+    margin-top: -111px;
+  }
+  /*donativos*/
+  .nav-bar .donar{
+    display: none;
+  }
+  header nav ul{
+    flex-direction: column;
+  }
+  header nav ul .donar{
+    display: block;
+    background: #2e3192;
+  }
+  /*--donativos--*/
+  header nav{
+    width: 80%;
+    position: fixed;
+    left: -100%;
+    margin: 0;
+    overflow: scroll;
+    height: calc(100% - 80px);
+  }
+  header nav ul li{
+    display: block;
+    border-bottom:  3px solid rgba(255,255,255,.5);
+    width: 100%;
+    text-align: left;
+  }
+  header nav ul li a{
+    display: block;
+  }
+  header nav ul li:hover .children{
+    display: none;
+  }
+  header nav ul li .children{
+    width: 100%;
+    position: relative;
+  }
+  header nav ul li .children li a{
+    margin-left: 40px;
+  }
+  header nav ul li .cared{
+    float: right;
+  }
+}
+
+@media (min-width: 544px) and (max-width: 767px) {
+  body{
+    padding-top: 80px;
+  }
+  .btn-menu i{
+    float: right;
+    font-size: 40px;
+  }
+  .nav-bar{
+    height: 80px;
+  }
+  .nav-bar i{
+    display: block;
+  }
+  .nav-bar a{
+    display: block;
+  }
+  .nav-bar a img{
+    width: 200px;
+    margin-top: -111px;
+  }
+  /*donativos*/
+  .nav-bar .donar{
+    display: none;
+  }
+  header nav ul{
+    flex-direction: column;
+  }
+  header nav ul .donar{
+    display: block;
+    background: #2e3192;
+  }
+  /*--donativos--*/
+  header nav{
+    width: 60%;
+    position: fixed;
+    left: -100%;
+    margin: 0;
+    overflow: scroll;
+    height: calc(100% - 80px);
+  }
+  header nav ul li{
+    display: block;
+    border-bottom:  3px solid rgba(255,255,255,.5);
+    width: 100%;
+    text-align: left;
+  }
+  header nav ul li a{
+    display: block;
+  }
+  header nav ul li:hover .children{
+    display: none;
+  }
+  header nav ul li .children{
+    width: 100%;
+    position: relative;
+  }
+  header nav ul li .children li a{
+    margin-left: 40px;
+  }
+  header nav ul li .cared{
+    float: right;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  body{
+    padding-top: 80px;
+  }
+  .btn-menu i{
+    float: right;
+    font-size: 40px;
+  }
+  .nav-bar{
+    height: 80px;
+  }
+  .nav-bar i{
+    display: block;
+  }
+  .nav-bar a{
+    display: block;
+  }
+  .nav-bar a img{
+    width: 200px;
+    margin-top: -111px;
+  }
+  /*donativos*/
+  .nav-bar .donar{
+    display: none;
+  }
+  header nav ul{
+    flex-direction: column;
+  }
+  header nav ul .donar{
+    display: block;
+    background: #2e3192;
+  }
+  /*--donativos--*/
+  header nav{
+    width: 40%;
+    position: fixed;
+    left: -100%;
+    margin: 0;
+    overflow: scroll;
+    height: calc(100% - 80px);
+  }
+  header nav ul li{
+    display: block;
+    border-bottom:  3px solid rgba(255,255,255,.5);
+    width: 100%;
+    text-align: left;
+  }
+  header nav ul li a{
+    display: block;
+  }
+  header nav ul li:hover .children{
+    display: none;
+  }
+  header nav ul li .children{
+    width: 100%;
+    position: relative;
+  }
+  header nav ul li .children li a{
+    margin-left: 40px;
+  }
+  header nav ul li .cared{
+    float: right;
+  }
+}
+
+/*buttons*/
+.btnDonar {
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none !important;
+  padding: 10px;
+  font-size: 18px;
+  transition: .3s;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -o-transition: .3s;
+  display: inline-block;
+  background-color: #fff;
+  text-transform: uppercase;
+  box-shadow: 0 2px 5px 0 rgba(125,65,0,.5);
+  color: #e34e09;
+}
+
+.btnDonar:hover {
+  background-color: #e34e09;
+  color: #fff;
+}
+
+.active::after{
+  height: 6px;
+  width: 100%;
+  opacity: 1;
+}

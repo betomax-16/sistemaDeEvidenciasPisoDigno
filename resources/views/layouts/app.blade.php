@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/Estilos.css')}}">
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/menu/menu.css')}}">
     <link rel="stylesheet" href="{{asset('css/buttons.css')}}">@yield('styles')
 
     <!-- Scripts -->
@@ -52,7 +53,7 @@
 
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
-
+    <script src="{{asset('js/Menu/menu.js')}}"></script>
     <script src="{{asset('js/bootbox.min.js')}}"></script>
     <script src="{{asset('js/wow.min.js')}}"></script>
     <script type="text/javascript">

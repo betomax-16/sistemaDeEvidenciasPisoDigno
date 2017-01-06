@@ -3,24 +3,6 @@
 <link rel="stylesheet" href="{{asset('css/set1.css')}}">
 <link rel="stylesheet" href="{{asset('css/contactanos.css')}}"> @endsection @section('content')
 <div class="paginas-internas">
-    <div class="texto-encabezado text-xs-center bienvenidos">
-        <div class="container">
-            @include('flash::message')
-            <h1 class="display-4 wow bounceIn">Contacto</h1>
-            <p class="wow bounceIn" data-wow-delay=".3s">Estamos listos para ayudar</p>
-        </div>
-    </div>
-    </section>
-    <section class="ruta p-2">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 text-xs-right">
-                </div>
-            </div>
-        </div>
-    </section>
-
-
     <main class="p-1">
         <div class="container">
             <div class="row">

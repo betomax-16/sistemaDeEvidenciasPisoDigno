@@ -94,7 +94,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates dicta ipsa eligendi fugit illum ipsam debitis illo, voluptas sequi, dolorum quis, possimus, consequuntur necessitatibus aliquid architecto cupiditate. Quaerat, error, quis.</p>
                 </article>
 
-                <header class="text-xs-center col-xs-12 offset-md-1 col-md-5">
+                <header class="text-xs-center col-xs-12 offset-md-1 col-md-5" style="z-index:1;">
                     <h1 class="NC2">Nuestra comunidad</h1>
                     <br>
                     <h2><span><i class="fa fa-quote-right" aria-hidden="true"></i></span></h2>
@@ -271,10 +271,6 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <script src="{{asset('js/jquery.waypoints.min.js')}}"></script>
     <script src="{{asset('js/odometer.min.js')}}"></script>
-
-    <script src="{{asset('js/Welcome/grafica.js')}}"></script>
-    <script src="{{asset('js/circle-progress.min.js')}}"></script>
-
 
     <script>
         $('.Beneficiados').waypoint(function() {

@@ -204,7 +204,9 @@ Mision y Vision
     display: flex;
 }
 .M-V .opciones button {
-    font-size: 1.5rem;
+    font-size: xx-large;
+    font-weight: bold;
+    color: #fff;
 }
 .M-V .opciones .btn-secondary {
     -webkit-box-flex: 1;
