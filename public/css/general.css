@@ -13,3 +13,12 @@ body {
     line-height: 1.42;
     border-radius: 25px;
 }
+
+.box{
+  height: 250px;
+  overflow: hidden;
+}
+.box img{
+	height: 100%;
+	max-width: 100%;
+}

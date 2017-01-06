@@ -1,15 +1,14 @@
 @extends('layouts.app') @section('styles')
-<link rel="stylesheet" href="{{asset('css/morris.css')}}">
-<link rel="stylesheet" href="{{asset('css/graficas.css')}}">
 <link rel="stylesheet" href="{{asset('css/odometer-theme-train-station.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('css/textoPresentacion.css')}}" />
 <link rel="stylesheet" href="{{asset('css/style1.css')}}">
-<link rel="stylesheet" href="{{asset('css/Circulos.css')}}">
 <link rel="stylesheet" href="{{asset('css/Estadisticas.css')}}">
 
 
 
 <link rel="stylesheet" href="{{asset('css/odometer-theme-train-station.css')}}"> @endsection @section('content')
+
+
 
 <div class="bak">
     <section class="Bienvenidos">
@@ -17,29 +16,29 @@
             <div class="sp-content">
                 <div class="sp-wrap sp-left">
                     <h2>
-    					<span class="sp-top">What if you wouldn't get</span>
-    					<span class="sp-mid">spam</span>
-    					<span class="sp-bottom">anymore?</span>
+    					<span class="sp-top">cambiar el mundo es el resultado de la</span>
+    					<span class="sp-mid"><b>suma</b></span>
+    					<span class="sp-bottom">de todos nuestros pasos</span>
     				</h2>
                 </div>
                 <div class="sp-wrap sp-right">
                     <h2>
-    					<span class="sp-top">Wouldn't that be absolutely</span>
-    					<span class="sp-mid">great<i>!</i><i>?</i></span>
-    					<span class="sp-bottom">Yeah, it would!</span>
+    					<span class="sp-top">en un minuto puedes cambiar de</span>
+    					<span class="sp-mid"><b>actitud<i>!</i><i></i></b></span>
+    					<span class="sp-bottom">y al mismo tiempo el dia entero</span>
     				</h2>
                 </div>
             </div>
             <div class="sp-full">
-                <h2>A great way to get rid of spam!</h2>
-                <a href="#">Sign up now!</a>
+                <h2>Ayudanos a ayudar</h2>
+                <a href="#">Dona!</a>
             </div>
         </div>
         <div class="hidden-lg-up" id="mini" style="z-index:1;">
             <div class="col-xs-12">
                 <center>
-                    <h2>A great way to get rid of spam!</h2>
-                    <a href="#">Sign up now!</a>
+                    <h2 class="text-xs-center">Ayudanos a ayudar</h2>
+                    <a href="#">Dona!</a>
                 </center>
             </div>
         </div>
@@ -236,7 +235,7 @@
                     <img src=" {{asset('imagenes/aplicacion/Bivienda.svg')}} " alt="LogoPiso Digno">
                     <h3><a> Piso Digno</a></h3>
                     <p class="hidden-md-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia natus asperiores quo eaque, reiciendis provident nobis voluptatem. Quos repellat excepturi cupiditate earum exercitationem porro tempore, odit consectetur fugit ipsa facere.</p>
-                    <button class="btn btn-secondary hidden-md hidden-md-down">Más Informacion</button>
+                    <button class="btn blue hidden-md hidden-md-down">Más Informacion</button>
                 </article>
 
                 <article class="col-lg-4" data-toggle="modal" data-target="#PisoD">
@@ -244,7 +243,7 @@
                     <img src="{{asset('imagenes/aplicacion/despensa.svg')}}" alt="LogoPiso Digno">
                     <h3><a>Despensas</a></h3>
                     <p class="hidden-md-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia natus asperiores quo eaque, reiciendis provident nobis voluptatem. Quos repellat excepturi cupiditate earum exercitationem porro tempore, odit consectetur fugit ipsa facere.</p>
-                    <button class="btn btn-secondary hidden-md hidden-md-down">Más Informacion</button>
+                    <button class="btn purple hidden-md hidden-md-down">Más Informacion</button>
                 </article>
 
                 <article class="col-lg-4" data-toggle="modal" data-target="#PisoD">
@@ -252,18 +251,16 @@
                     <img src="{{asset('imagenes/aplicacion/Salud.svg')}}" alt="LogoPiso Digno">
                     <h3><a>Salud</a></h3>
                     <p class="hidden-md-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia natus asperiores quo eaque, reiciendis provident nobis voluptatem. Quos repellat excepturi cupiditate earum exercitationem porro tempore, odit consectetur fugit ipsa facere.</p>
-                    <button class="btn btn-secondary hidden-md hidden-md-down">Más Informacion</button>
+                    <button class="btn red hidden-md hidden-md-down">Más Informacion</button>
                 </article>
             </div>
         </div>
     </main>
 
-    <div class="container">
-        @include('layouts/templates/Estadisticas')
-    </div>
-
-    <div class="container ">
-        @include('layouts/templates/Circulos')
+    <div class="container-fluid estadisticas">
+        <div class=" container svge">
+            @include('layouts/templates/Estadisticas')
+        </div>
     </div>
     @include('layouts/templates/modal') @include('layouts/menu/footer') @endsection @section('javascripts')
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
@@ -274,8 +271,10 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <script src="{{asset('js/jquery.waypoints.min.js')}}"></script>
     <script src="{{asset('js/odometer.min.js')}}"></script>
+
     <script src="{{asset('js/Welcome/grafica.js')}}"></script>
     <script src="{{asset('js/circle-progress.min.js')}}"></script>
+
 
     <script>
         $('.Beneficiados').waypoint(function() {
@@ -289,6 +288,13 @@
         }, {
             offset: '70%',
             triggerOnce: true
+        });
+        $(document).ready(function() {
+            $('.ir-arriba').click(function() {
+                $('body, html').animate({
+                    scrollTop: '0px'
+                }, 300);
+            });
         });
 
     </script>

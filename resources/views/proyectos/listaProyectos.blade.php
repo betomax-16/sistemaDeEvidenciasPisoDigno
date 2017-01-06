@@ -13,7 +13,7 @@
                 </div>
                 <div class="card-block">
                   @if(!Auth::guest() and Auth::user()->role == 'ROLE_ADMIN')
-                    <a class="btn btn-success btn-lg" href="{{route('proyecto.create')}}" style="width:100%">Nuevo Proyecto</a>
+                    <a class="btn green-inverse btn-lg" href="{{route('proyecto.create')}}" style="width:100%">Nuevo Proyecto</a>
                   @endif
                   @if(count($proyectos) == 0 and !Auth::guest() and Auth::user()->role == 'ROLE_PROVIDER')
                     <h1 class="display-4 text-md-center">No participa en ningún proyecto.</h1>
@@ -37,21 +37,21 @@
                             <td class="text-md-center hidden-xs-down">{{Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$proyecto->created_at)->format('Y-m-d')}}</td>
                             <td class="text-md-center hidden-xs-down">
                               <div class="btn-group">
-                                <a class="btn btn-success btn-secundary" href="{{route('evidencia.evidencias', [$proyecto->nombre, $estado->idEstado])}}">Ver evidencias</a>
+                                <a class="btn green-inverse btn-secundary" href="{{route('evidencia.evidencias', [$proyecto->nombre, $estado->idEstado])}}">Ver evidencias</a>
                                 @if(!Auth::guest() and Auth::user()->role == 'ROLE_ADMIN')
-                                  <a class="btn btn-info btn-secundary" href="{{route('proyecto.edit', [$proyecto->nombre])}}">Editar</a>
-                                  <button type="button" name="button" class="btn btn-danger btn-secundary btn-delete">Eliminar</button>
-                                  <a class="btn btn-warning btn-secundary" href="{{route('participante.index', [$proyecto->nombre, $estado->idEstado])}}">Participantes</a>
+                                  <a class="btn blue-inverse btn-secundary" href="{{route('proyecto.edit', [$proyecto->nombre])}}">Editar</a>
+                                  <button type="button" name="button" class="btn red-inverse btn-secundary btn-delete">Eliminar</button>
+                                  <a class="btn purple-inverse btn-secundary" href="{{route('participante.index', [$proyecto->nombre, $estado->idEstado])}}">Participantes</a>
                                 @endif
                               </div>
                             </td>
                             <td class="text-md-center hidden-sm-up">
                               <div class="btn-group-vertical btn-group-sm">
-                                <a class="btn btn-success btn-secundary btn-xs" href="{{route('evidencia.evidencias', [$proyecto->nombre, $estado->idEstado])}}">Ver evidencias</a>
+                                <a class="btn green-inverse btn-secundary btn-xs" href="{{route('evidencia.evidencias', [$proyecto->nombre, $estado->idEstado])}}">Ver evidencias</a>
                                 @if(!Auth::guest() and Auth::user()->role == 'ROLE_ADMIN')
-                                  <a class="btn btn-info btn-secundary" href="{{route('proyecto.edit', [$proyecto->nombre])}}">Editar</a>
-                                  <button type="button" name="button" class="btn btn-danger btn-secundary btn-delete">Eliminar</button>
-                                  <a class="btn btn-warning btn-secundary" href="{{route('participante.index', [$proyecto->nombre, $estado->idEstado])}}">Participantes</a>
+                                  <a class="btn blue-inverse btn-secundary" href="{{route('proyecto.edit', [$proyecto->nombre])}}">Editar</a>
+                                  <button type="button" name="button" class="btn red-inverse btn-secundary btn-delete">Eliminar</button>
+                                  <a class="btn purple-inverse btn-secundary" href="{{route('participante.index', [$proyecto->nombre, $estado->idEstado])}}">Participantes</a>
                                 @endif
                               </div>
                             </td>

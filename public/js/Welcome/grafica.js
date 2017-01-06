@@ -57,11 +57,7 @@ $( document ).ready(function() {
      this.destroy();
   },{offset:'70%',triggerOnce: true});
 
-  $('.ir-arriba').click(function(){
-  		$('body, html').animate({
-  			scrollTop: '0px'
-  		}, 300);
-  	});
+  
 });
 function prepareMorrisDonutChart() {
 	$("#graph tspan:first").css("display","none");

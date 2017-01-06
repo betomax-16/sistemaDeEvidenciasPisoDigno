@@ -112,6 +112,7 @@ Bienvenidos
     /* For Safari 5.1 to 6.0 */
     -webkit-animation: backgoundf 5s ease-in-out infinite;
     animation: backgoundf 5s ease-in-out infinite;
+    overflow: hidden;
 }
 @-webkit-keyframes imageAnimation {
     0% {
@@ -194,7 +195,7 @@ Mision y Vision
 */
 
 .M-V {
-    margin-top: -66px
+    margin-top: -66px;
 }
 .M-V .opciones {
     display: -webkit-box;
@@ -472,7 +473,6 @@ Programas
 /*
 Media Querys
 */
-
 @media (min-width: 768px) {
     .Bienvenidos .display-3 {
         margin-top: 10rem;

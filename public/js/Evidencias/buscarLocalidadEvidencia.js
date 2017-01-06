@@ -3,6 +3,18 @@ var region = $('#region').val();
 var lugar = $('#nombreLugar').val();
 
 $(document).ready(function(){
+
+  (function() {
+    [].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {
+      new SelectFx(el);
+    } );
+  })();
+    $('.cs-options li').each(function () {
+      if ($(this).attr('data-value') == $('#region').val()) {
+        $(this).addClass('cs-selected');
+      }
+    });
+
     $('#btnExcel').click(function (e) {
       if ($('#evidencias').find('.evidencia').length > 0) {
         var aux = download;
@@ -27,9 +39,11 @@ $(document).ready(function(){
     function evidencias(año, region, lugar){
       var data = {place : lugar, area : region, year : año, project : proyecto, _token : token};
       var url = '../hogares';
-      $('#evidencias').html('');
+      $('#bb-custom-grid').html('');
       $.post(url, data, function(response) {
-          $('#evidencias').html(response);        
+          $('#bb-custom-grid').html(response.evidencias);
+          $('#pagination').html(response.paginacion);
+          Page.init();
       });
     };
 
@@ -75,7 +89,9 @@ function paginacionPost(page) {
   var url = '../hogares?page=' + page;
   var data = {place : lugar, area : region, year : año, project : proyecto, _token : token};
   $.post(url, data, function(response) {
-    $('#evidencias').html(response);
+    $('#bb-custom-grid').html(response.evidencias);
+    $('#pagination').html(response.paginacion);
+    Page.init();
     window.location.hash = page;
   });
 }
