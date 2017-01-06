@@ -1,7 +1,7 @@
 <!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="InteractiveSVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1024 1388" style="enable-background:new 0 0 1024 1388;" xml:space="preserve">
     <style type="text/css">
-        .st0 {
+        .st100 {
             fill: #E8EFEF;
         }
         
@@ -265,7 +265,7 @@
 
     </style>
     <g id="background">
-        <rect y="298" class="st0" width="1023.9" height="1090" />
+        <rect y="298" class="st100" width="1023.9" height="1090" />
         <g>
             <line class="st1" x1="950.4" y1="1252.5" x2="565.5" y2="1252.5" />
             <line class="st1" x1="950.4" y1="1177.6" x2="565.5" y2="1177.6" />

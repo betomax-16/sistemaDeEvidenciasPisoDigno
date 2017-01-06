@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="{{asset('css/general.css')}}">
 <link rel="stylesheet" href="{{asset('css/set1.css')}}">
 
+
 <link rel="stylesheet" href="{{asset('css/contactanos.css')}}"> @endsection @section('content')
 <div class="paginas-internas">
     <div class="texto-encabezado text-xs-center bienvenidos">
@@ -70,4 +71,5 @@
 </div>
 
 @endsection @section('javascripts')
-<script src="{{asset('js/Hoshi.js')}}"></script> @endsection
+<script src="{{asset('js/Hoshi.js')}}"></script>
+@endsection

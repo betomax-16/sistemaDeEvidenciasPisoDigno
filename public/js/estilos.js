@@ -19,14 +19,14 @@
 })();
 
 $(document).ready(function () {
-  $('#proyectos').on('click', 'article', function () {
-    var proyecto = $(this).children('h3').children('a').html();
-    var texto = $(this).children('p').html();
-    var img = $(this).children('img').attr('src');
-    var url = $(this).children('input').attr('value');
-    $('.modal-title').html(proyecto);
-    $('#modal-texto').html(texto);
-    $('#modal-img').prop('src',img);
-    $('#ir').prop('href', url);
-  });
+    $('#proyectos').on('click', 'article', function () {
+        var proyecto = $(this).children('h3').children('a').html();
+        var texto = $(this).children('p').html();
+        var img = $(this).children('img').attr('src');
+        var url = $(this).children('input').attr('value');
+        $('.modal-title').html(proyecto);
+        $('#modal-texto').html(texto);
+        $('#modal-img').prop('src', img);
+        $('#ir').prop('href', url);
+    });
 });

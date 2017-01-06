@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{asset('css/odometer-theme-train-station.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('css/textoPresentacion.css')}}" />
 <link rel="stylesheet" href="{{asset('css/style1.css')}}">
-
+<link rel="stylesheet" href="{{asset('css/Circulos.css')}}">
 <link rel="stylesheet" href="{{asset('css/Estadisticas.css')}}">
 
 
@@ -261,6 +261,10 @@
     <div class="container">
         @include('layouts/templates/Estadisticas')
     </div>
+
+    <div class="container ">
+        @include('layouts/templates/Circulos')
+    </div>
     @include('layouts/templates/modal') @include('layouts/menu/footer') @endsection @section('javascripts')
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
 
@@ -270,7 +274,6 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <script src="{{asset('js/jquery.waypoints.min.js')}}"></script>
     <script src="{{asset('js/odometer.min.js')}}"></script>
-    <script src="{{asset('js/morris.min.js')}}"></script>
     <script src="{{asset('js/Welcome/grafica.js')}}"></script>
     <script src="{{asset('js/circle-progress.min.js')}}"></script>
 
@@ -289,4 +292,5 @@
         });
 
     </script>
+
     @endsection
