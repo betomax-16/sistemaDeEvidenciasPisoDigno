@@ -2,13 +2,13 @@
   border-radius: 15px 50px 30px:
 }
 .form-header{
-  background: #ffe76c;
+  background: rgba(244, 220, 44, 0.8);
   border-radius: 15px 50px 0px 0px;
   padding: 10px;
   color: #fff;
 }
 .form-body{
-  background: #e9eab3;
+  background: rgba(244, 225, 136, 0.6);
   padding: 25px;
   border-radius: 0px 0px 15px 50px;
 }

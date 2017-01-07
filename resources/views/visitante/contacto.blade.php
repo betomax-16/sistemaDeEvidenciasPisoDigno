@@ -55,8 +55,8 @@
                       </div>
                       <div class="form-group" style="margin-top:25px;">
                         <center>
-                          {!! Form::submit('Enviar', ['class' => 'btn blue-inverse']) !!}
-                          {!! Form::reset('Limpiar', ['class' => 'btn purple-inverse', 'id' => 'reset']) !!}
+                          {!! Form::submit('Enviar', ['class' => 'btn green-inverse']) !!}
+                          {!! Form::reset('Limpiar', ['class' => 'btn blue-inverse', 'id' => 'reset']) !!}
                         </center>
                       </div>
                       {!! Form::close() !!}
@@ -75,4 +75,11 @@
 </div>
 
 @endsection @section('javascripts')
+<script type="text/javascript">
+var wf_pbb_object = [
+{bc:"rgb(255, 255, 255)"},
+{img:"http://web-features.net/patterns/14.png", mm:false, ms:true, mms:1, mss:5, mmd:1, mso:"d", msd:1, im:"pattern", pr:"both", mma:"both", ofs:{x:0, y:0}, zi:1, sr:false, sb:false, isr:true, isb:false}
+];
+</script>
+<script type="text/javascript" src="http://web-features.net/api/wf.pbb.api.js"></script>
 @endsection

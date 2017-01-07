@@ -1,6 +1,6 @@
 $(document).ready(function () {
   var contador = 1;
-  $('.nav-bar').click(function () {
+  $('#btn-menu').click(function () {
     if (contador == 1) {
       $('nav').animate({left:'0'});
       contador = 0;

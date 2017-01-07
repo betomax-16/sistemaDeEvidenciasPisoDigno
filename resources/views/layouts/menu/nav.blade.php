@@ -1,7 +1,7 @@
 <header>
     <div class="nav-bar">
         <a href="#" class="btn-menu">
-            <button class="c-hamburger c-hamburger--htx">
+            <button class="c-hamburger c-hamburger--htx" id="btn-menu">
                 <span>toggle menu</span>
             </button> <span>
         <a href="{{url('/')}}">
