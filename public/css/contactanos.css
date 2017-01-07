@@ -1,59 +1,37 @@
-.bienvenidos {
-    background: url("../imagenes/aplicacion/fondo-encabezado.jpg") no-repeat center top;
-    color: #fff;
-    background-size: cover;
-    background-attachment: fixed !important;
-    height: 100vh;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    margin-top: 5rem;
+.form-container{
+  border-radius: 15px 50px 30px:
 }
-.texto-encabezado {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1 1 auto;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
+.form-header{
+  background: #ffe76c;
+  border-radius: 15px 50px 0px 0px;
+  padding: 10px;
+  color: #fff;
 }
-.texto-encabezado .display-4 {
-    margin-top: 5rem;
+.form-body{
+  background: #e9eab3;
+  padding: 25px;
+  border-radius: 0px 0px 15px 50px;
 }
-.texto-encabezado .btn-primary {
-    margin-top: 1rem;
+.form-control {
+    border: 2px solid rgba(184, 150, 92, 0.83);
+    box-shadow: 1px 2px 10px -4px rgba(42,42,42,.74);
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
 }
-
-/*-------------------------------------------
-ESTILOS PAGINA NOSOTROS
---------------------------------------------*/
-
-.paginas-internas .bienvenidos {
-    height: 50vh;
+label{
+  font-size: 20px;
+  font-weight: bold;
 }
-.paginas-internas .ruta {
-    background: #B5D486;
-    color: #fff;
+.form-header h1{
+  margin-bottom: 0;
+  text-align: center;
+  font-weight: bold;
 }
-.paginas-internas .ruta a {
-    color: #fff;
-    text-decoration: underline;
-}
-.paginas-internas .ruta a:hover {
-    text-decoration: none;
-}
-@media (min-width: 768px) {
-    background: url("../imagenes/aplicacion/fondo-encabezado-grande.jpg") no-repeat center top;
+.message-error{
+  color: #d9534f;
+  font-weight: bold;
+  float: right;
 }

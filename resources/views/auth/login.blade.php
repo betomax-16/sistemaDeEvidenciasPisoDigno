@@ -1,7 +1,7 @@
 @extends('layouts.app') @section('styles')
 <link rel="stylesheet" href="{{asset('css/login.css')}}">
 <link rel="stylesheet" href="{{asset('css/general.css')}}"> @endsection @section('content')
-<div class="login-form espacioPagina container">
+<div class="login-form container">
     <div class="row">
         <h1>Iniciar Sesión</h1>
         <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
