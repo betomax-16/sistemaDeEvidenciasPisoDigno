@@ -475,6 +475,7 @@ Programas
 /*
 Media Querys
 */
+
 @media (min-width: 768px) {
     .Bienvenidos .display-3 {
         margin-top: 10rem;
@@ -532,6 +533,9 @@ Media Querys
     }
     html {
         font-size: 16px;
+    }
+    .btn-menu button {
+        height: auto !important;
     }
     .Bienvenidos {
         margin-top: 5rem;
