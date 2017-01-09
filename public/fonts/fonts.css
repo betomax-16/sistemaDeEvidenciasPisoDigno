@@ -5,3 +5,8 @@
     src: url('Candara.eot');
     src: local('Candara'), url('Candara.woff') format('woff'), url('Candara.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'Candara-Bold';
+    src: url('Candara.eot');
+    src: local('Candara'), url('Candara.woff') format('woff'), url('Candara-Bold.ttf') format('truetype');
+}

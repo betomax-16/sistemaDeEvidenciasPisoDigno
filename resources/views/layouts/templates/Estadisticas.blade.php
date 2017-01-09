@@ -1,3 +1,4 @@
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 612 645.3" style="enable-background:new 0 0 612 645.3;" xml:space="preserve">
     <style type="text/css">
         .st0 {
@@ -559,7 +560,8 @@
 
     </style>
     <g id="background">
-        <rect class="st0" width="612" height="645.3" />
+        <path class="st0" d="M11.3,0h589.3c6.3,0,11.3,5.1,11.3,11.3V634c0,6.3-5.1,11.3-11.3,11.3H11.3C5.1,645.3,0,640.2,0,634V11.3
+		C0,5.1,5.1,0,11.3,0z" />
         <g>
             <line class="st1" x1="568.1" y1="565.1" x2="338" y2="565.1" />
             <line class="st1" x1="568.1" y1="520.8" x2="338" y2="520.8" />
@@ -600,13 +602,13 @@
         <g id="B4_1_">
             <g id="bandera">
 
-                <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="116.2766" y1="-401.7" x2="395.592" y2="-401.7" gradientTransform="matrix(1 0 0 -1 0 60)">
+                <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="116.2766" y1="1193.7" x2="395.592" y2="1193.7" gradientTransform="matrix(1 0 0 1 0 -732)">
                     <stop offset="3.370800e-02" style="stop-color:#42AEB8" />
                     <stop offset="1" style="stop-color:#64D5E3" />
                 </linearGradient>
                 <polygon class="st12" points="522.5,517.3 197.7,517.3 197.7,406.1 570.9,406.1 			" />
 
-                <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="360.868" y1="1099.6558" x2="359.7275" y2="1132.3159" gradientTransform="matrix(1 0 0 1 0 -588)">
+                <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="360.868" y1="-451.6557" x2="359.7275" y2="-484.3159" gradientTransform="matrix(1 0 0 -1 0 60)">
                     <stop offset="3.370800e-02" style="stop-color:#231F20;stop-opacity:0.4" />
                     <stop offset="0.1351" style="stop-color:#423F3F;stop-opacity:0.358" />
                     <stop offset="0.3697" style="stop-color:#848283;stop-opacity:0.2609" />
@@ -617,7 +619,7 @@
                 </linearGradient>
                 <polygon class="st13" points="522.5,550 197.7,517.3 522.5,517.3 			" />
 
-                <radialGradient id="SVGID_3_" cx="490.3" cy="10721.7188" r="23.2532" gradientTransform="matrix(1 0 0 9.680000e-02 0 -532.7941)" gradientUnits="userSpaceOnUse">
+                <radialGradient id="SVGID_3_" cx="490.3" cy="-10745.5205" r="23.2532" gradientTransform="matrix(1 0 0 -9.680000e-02 0 -535.0981)" gradientUnits="userSpaceOnUse">
                     <stop offset="3.370800e-02" style="stop-color:#231F20" />
                     <stop offset="0.6538" style="stop-color:#B0AFAF" />
                     <stop offset="1" style="stop-color:#FFFFFF" />
@@ -914,7 +916,7 @@
         <g id="B3_1_">
             <g id="bandera_2_">
 
-                <linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="116.2766" y1="-290.5" x2="395.592" y2="-290.5" gradientTransform="matrix(1 0 0 -1 0 60)">
+                <linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="116.2766" y1="1082.5" x2="395.592" y2="1082.5" gradientTransform="matrix(1 0 0 1 0 -732)">
                     <stop offset="3.370800e-02" style="stop-color:#00750C" />
                     <stop offset="1" style="stop-color:#00BB17" />
                 </linearGradient>
@@ -973,7 +975,7 @@
                     </g>
                 </g>
 
-                <linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="360.8692" y1="988.4227" x2="359.7287" y2="1021.0828" gradientTransform="matrix(1 0 0 1 0 -588)">
+                <linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="360.8692" y1="-340.4227" x2="359.7287" y2="-373.0829" gradientTransform="matrix(1 0 0 -1 0 60)">
                     <stop offset="3.370800e-02" style="stop-color:#231F20;stop-opacity:0.4" />
                     <stop offset="0.1351" style="stop-color:#423F3F;stop-opacity:0.358" />
                     <stop offset="0.3697" style="stop-color:#848283;stop-opacity:0.2609" />
@@ -984,7 +986,7 @@
                 </linearGradient>
                 <polygon class="st82" points="522.5,438.8 197.7,406.1 522.5,406.1 			" />
 
-                <radialGradient id="SVGID_6_" cx="490.3" cy="9572.9443" r="23.2532" gradientTransform="matrix(1 0 0 9.680000e-02 0 -532.7941)" gradientUnits="userSpaceOnUse">
+                <radialGradient id="SVGID_6_" cx="490.3" cy="-9596.7461" r="23.2532" gradientTransform="matrix(1 0 0 -9.680000e-02 0 -535.0981)" gradientUnits="userSpaceOnUse">
                     <stop offset="3.370800e-02" style="stop-color:#231F20" />
                     <stop offset="0.6538" style="stop-color:#B0AFAF" />
                     <stop offset="1" style="stop-color:#FFFFFF" />
@@ -1149,7 +1151,7 @@
         <g id="B2_1_">
             <g id="bandera_1_">
 
-                <linearGradient id="SVGID_7_" gradientUnits="userSpaceOnUse" x1="116.2766" y1="-179.3" x2="395.592" y2="-179.3" gradientTransform="matrix(1 0 0 -1 0 60)">
+                <linearGradient id="SVGID_7_" gradientUnits="userSpaceOnUse" x1="116.2766" y1="971.3" x2="395.592" y2="971.3" gradientTransform="matrix(1 0 0 1 0 -732)">
                     <stop offset="3.370800e-02" style="stop-color:#A93B0C" />
                     <stop offset="1" style="stop-color:#FF4F17" />
                 </linearGradient>
@@ -1354,7 +1356,7 @@
                     </g>
                 </g>
 
-                <linearGradient id="SVGID_8_" gradientUnits="userSpaceOnUse" x1="360.8698" y1="877.2057" x2="359.7293" y2="909.866" gradientTransform="matrix(1 0 0 1 0 -588)">
+                <linearGradient id="SVGID_8_" gradientUnits="userSpaceOnUse" x1="360.8698" y1="-229.2057" x2="359.7293" y2="-261.8659" gradientTransform="matrix(1 0 0 -1 0 60)">
                     <stop offset="3.370800e-02" style="stop-color:#231F20;stop-opacity:0.4" />
                     <stop offset="0.1351" style="stop-color:#423F3F;stop-opacity:0.358" />
                     <stop offset="0.3697" style="stop-color:#848283;stop-opacity:0.2609" />
@@ -1365,7 +1367,7 @@
                 </linearGradient>
                 <polygon class="st104" points="522.5,327.6 197.7,294.9 522.5,294.9 			" />
 
-                <radialGradient id="SVGID_9_" cx="490.3" cy="8424.0098" r="23.2532" gradientTransform="matrix(1 0 0 9.680000e-02 0 -532.7941)" gradientUnits="userSpaceOnUse">
+                <radialGradient id="SVGID_9_" cx="490.3" cy="-8447.8115" r="23.2532" gradientTransform="matrix(1 0 0 -9.680000e-02 0 -535.0981)" gradientUnits="userSpaceOnUse">
                     <stop offset="3.370800e-02" style="stop-color:#231F20" />
                     <stop offset="0.6538" style="stop-color:#B0AFAF" />
                     <stop offset="1" style="stop-color:#FFFFFF" />
@@ -1530,7 +1532,7 @@
         <g id="B1_3_">
             <g id="bandera_3_">
 
-                <linearGradient id="SVGID_10_" gradientUnits="userSpaceOnUse" x1="197.7" y1="519.6" x2="570.9" y2="519.6" gradientTransform="matrix(1 0 0 -1 0 648)">
+                <linearGradient id="SVGID_10_" gradientUnits="userSpaceOnUse" x1="197.7" y1="272.4" x2="570.9" y2="272.4" gradientTransform="matrix(1 0 0 1 0 -144)">
                     <stop offset="3.370800e-02" style="stop-color:#9F3DB7" />
                     <stop offset="1" style="stop-color:#BC4FD3" />
                 </linearGradient>
@@ -1586,7 +1588,7 @@
                     </g>
                 </g>
 
-                <linearGradient id="SVGID_11_" gradientUnits="userSpaceOnUse" x1="360.8698" y1="766.3058" x2="359.7293" y2="798.9659" gradientTransform="matrix(1 0 0 1 0 -588)">
+                <linearGradient id="SVGID_11_" gradientUnits="userSpaceOnUse" x1="360.8698" y1="-118.3058" x2="359.7293" y2="-150.966" gradientTransform="matrix(1 0 0 -1 0 60)">
                     <stop offset="3.370800e-02" style="stop-color:#231F20;stop-opacity:0.4" />
                     <stop offset="0.1351" style="stop-color:#423F3F;stop-opacity:0.358" />
                     <stop offset="0.3697" style="stop-color:#848283;stop-opacity:0.2609" />
@@ -1597,7 +1599,7 @@
                 </linearGradient>
                 <polygon class="st115" points="522.5,216.7 197.7,184 522.5,184 			" />
 
-                <radialGradient id="SVGID_12_" cx="490.3" cy="7278.3491" r="23.2532" gradientTransform="matrix(1 0 0 9.680000e-02 0 -532.7941)" gradientUnits="userSpaceOnUse">
+                <radialGradient id="SVGID_12_" cx="490.3" cy="-7302.1509" r="23.2532" gradientTransform="matrix(1 0 0 -9.680000e-02 0 -535.0981)" gradientUnits="userSpaceOnUse">
                     <stop offset="3.370800e-02" style="stop-color:#231F20" />
                     <stop offset="0.6538" style="stop-color:#B0AFAF" />
                     <stop offset="1" style="stop-color:#FFFFFF" />
@@ -1764,11 +1766,8 @@
     </g>
     <rect y="54.1" class="st0" width="41.1" height="480.4" />
 </svg>
-<svg id="svg-effects">
-    <filter id="blur-effect-1">
-        <feGaussianBlur stdDeviation="0.9" />
-    </filter>
 
+<svg id="svg-effects" width="0" height="0">
     <filter id="blur-effect-2">
         <feGaussianBlur stdDeviation="3" />
     </filter>
