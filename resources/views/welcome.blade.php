@@ -51,22 +51,22 @@
     <section class="M-V">
         <div class="container-fluid">
             <div class="row opciones">
-                <button type="button" class=" btn btn-secondary A" data-toggle="collapse" data-target="#collapseMision" aria-expanded="false" aria-controls="collapseExample">Mision</button>
-                <button type="button" class="btn btn-secondary ENM" data-toggle="collapse" data-target="#collapseVision" aria-expanded="false" aria-controls="collapseExample">Vision</button>
+                <button type="button" class=" btn btn-secondary A" data-toggle="collapse" data-target="#collapseMision" aria-expanded="false" aria-controls="collapseExample">Misión</button>
+                <button type="button" class="btn btn-secondary ENM" data-toggle="collapse" data-target="#collapseVision" aria-expanded="false" aria-controls="collapseExample">Visión</button>
                 <button type="button" class="btn btn-secondary B" data-toggle="collapse" data-target="#collapseObjetivo" aria-expanded="false" aria-controls="collapseExample">Objetivo</button>
             </div>
             <div class="row">
                 <div class="col-md-4">
                     <div class="collapse col-md-12 " id="collapseMision">
                         <div class="card card-block">
-                            <h1>Mision</h1> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                            <h1>Misión</h1> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="collapse col-md-12 " id="collapseVision">
                         <div class="card card-block">
-                            <h1>Vision</h1> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                            <h1>Visión</h1> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
                         </div>
                     </div>
                 </div>
