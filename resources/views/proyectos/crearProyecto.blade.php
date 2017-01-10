@@ -40,5 +40,10 @@
 </div>
 @endsection
 @section('javascripts')
-
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#programas').addClass('active');
+    $('#{{ strtolower(Session::get("programa")) }}').addClass('active');    
+  });
+</script>
 @endsection

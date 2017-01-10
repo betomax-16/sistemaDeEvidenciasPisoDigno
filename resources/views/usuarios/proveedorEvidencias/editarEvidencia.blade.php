@@ -191,4 +191,10 @@
   var token = '{{ Session::token() }}';
   var imageDefault = '{{asset("imagenes/evidencias/foto.png")}}'
 </script>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#programas').addClass('active');
+    $('#{{ strtolower(App\Proyecto::find(Session::get("proyecto"))->tipo) }}').addClass('active');
+  });
+</script>
 @endsection

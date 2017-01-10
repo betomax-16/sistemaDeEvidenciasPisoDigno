@@ -17,6 +17,7 @@ h1 span{
 }
 .listaProyectos li span{
   font-size: 19px;
+  flex: 2 1 auto;
 }
 .listaProyectos .circle{
   display: flex;
@@ -29,8 +30,7 @@ h1 span{
   padding-bottom: 0;
   padding-left: 13px;
   padding-right: 12px;
-  margin-left: 10%;
 }
 .btn-group, .btn-group-vertical{
-  margin-left: 10%;
+  flex: 2 1 auto;
 }

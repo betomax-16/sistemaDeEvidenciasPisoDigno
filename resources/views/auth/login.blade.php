@@ -27,3 +27,10 @@
     </div>
 </div>
 @endsection
+@section('javascripts')
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#login').addClass('active');
+  });
+</script>
+@endsection

@@ -294,5 +294,9 @@
         });
 
     </script>
-
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#inicio').addClass('active');
+      });
+    </script>
     @endsection

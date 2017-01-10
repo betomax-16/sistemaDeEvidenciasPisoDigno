@@ -42,4 +42,10 @@
 @section('javascripts')
 <script type="text/javascript" src="{{asset('js/bootbox.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/Proyectos/updateProyecto.js')}}"></script>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#programas').addClass('active');
+    $('#{{ strtolower(Session::get("programa")) }}').addClass('active');
+  });
+</script>
 @endsection

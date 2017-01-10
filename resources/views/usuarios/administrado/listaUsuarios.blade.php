@@ -55,4 +55,9 @@
 @section('javascripts')
 <script type="text/javascript" src="{{asset('js/bootbox.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/Usuarios/deleteUsuario.js')}}"></script>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#usuarios').addClass('active');
+  });
+</script>
 @endsection

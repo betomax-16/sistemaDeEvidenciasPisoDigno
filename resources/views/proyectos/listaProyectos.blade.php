@@ -8,11 +8,21 @@
     <div class="row">
       <div class="col-md-3"></div>
         <div class="col-md-6">
-          <h1 class="text-xs-center">Proyectos en <span>{{$programa}}</span></h1>
+          <h1 class="text-xs-center">
+            Proyectos en <span>
+              @if(strtolower($programa) == 'educacion')
+                educación
+              @elseif(strtolower($programa) == 'medio_ambiente')
+                medio ambiente
+              @else
+                {{$programa}}
+              @endif
+              </span>
+          </h1>
           @if(count($proyectos) == 0 and !Auth::guest() and Auth::user()->role == 'ROLE_PROVIDER')
-            <h1 class="display-4 text-md-center">No participa en ningún proyecto.</h1>
+            <h1 class="display-4 text-md-center" style="color:#B8B7B7;">No participa en ningún proyecto.</h1>
           @elseif(count($proyectos) == 0)
-            <h1 class="display-4 text-md-center">Sin proyectos activos</h1>
+            <h1 class="display-4 text-md-center" style="color:#B8B7B7;">Sin proyectos activos</h1>
           @endif
           @if(count($proyectos) > 0)
             <ul class="listaProyectos">
@@ -50,4 +60,10 @@
 @endsection
 @section('javascripts')
 <script type="text/javascript" src="{{asset('js/Proyectos/deleteProyecto.js')}}"></script>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#programas').addClass('active');
+    $('#{{ strtolower($programa) }}').addClass('active');
+  });
+</script>
 @endsection

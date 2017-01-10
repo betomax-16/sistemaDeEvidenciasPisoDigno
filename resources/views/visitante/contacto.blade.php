@@ -4,7 +4,7 @@
 @endsection @section('content')
 @include('flash::message')
 <div class="paginas-internas">
-    <main class="p-1">
+    <main class="p-3">
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
@@ -76,10 +76,8 @@
 
 @endsection @section('javascripts')
 <script type="text/javascript">
-var wf_pbb_object = [
-{bc:"rgb(255, 255, 255)"},
-{img:"http://web-features.net/patterns/14.png", mm:false, ms:true, mms:1, mss:5, mmd:1, mso:"d", msd:1, im:"pattern", pr:"both", mma:"both", ofs:{x:0, y:0}, zi:1, sr:false, sb:false, isr:true, isb:false}
-];
+  $(document).ready(function () {
+    $('#contacto').addClass('active');
+  });
 </script>
-<script type="text/javascript" src="http://web-features.net/api/wf.pbb.api.js"></script>
 @endsection

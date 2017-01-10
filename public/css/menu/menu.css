@@ -91,6 +91,9 @@ header nav ul li i{
   background: #fff;
   top: 0;
 }
+.nav-bar a img{
+  margin-top: 8px;
+}
 .btn-menu{
   color: #55acee;
   font-size: 25px;
@@ -162,7 +165,7 @@ header nav ul li .cared{
   }
   .nav-bar a img{
     width: 200px;
-    margin-top: -111px;
+    margin-top: -88px;
   }
   /*donativos*/
   .nav-bar .donar{
@@ -227,7 +230,7 @@ header nav ul li .cared{
   }
   .nav-bar a img{
     width: 200px;
-    margin-top: -111px;
+    margin-top: -88px;
   }
   /*donativos*/
   .nav-bar .donar{
@@ -292,7 +295,7 @@ header nav ul li .cared{
   }
   .nav-bar a img{
     width: 200px;
-    margin-top: -111px;
+    margin-top: -88px;
   }
   /*donativos*/
   .nav-bar .donar{

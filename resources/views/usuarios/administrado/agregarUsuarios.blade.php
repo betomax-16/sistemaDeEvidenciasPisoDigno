@@ -84,5 +84,9 @@
 </div>
 @endsection
 @section('javascripts')
-
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#usuarios').addClass('active');
+  });
+</script>
 @endsection

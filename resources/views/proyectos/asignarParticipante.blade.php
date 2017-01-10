@@ -84,4 +84,10 @@
   var token = '{{ Session::token() }}';
   var proyecto = '{{$proyecto->nombre}}';
 </script>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#programas').addClass('active');
+    $('#{{ strtolower($proyecto->tipo) }}').addClass('active');    
+  });
+</script>
 @endsection

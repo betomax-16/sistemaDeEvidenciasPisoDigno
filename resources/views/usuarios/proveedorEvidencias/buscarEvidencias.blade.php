@@ -11,6 +11,9 @@
     <div class="row" id="cabecera">
         <div class="col-md-12">
           <h1 class="text-xs-center"><b>Evidencias:</b> <span id='proyecto'>{{$proyecto->nombre}}</span></h1>
+          @if(!Auth::guest() and Auth::user()->role == 'ROLE_ADMIN')
+            <a class="btn green-inverse circle" href="{{route('evidencia.create')}}" style="width:100%;margin-bottom:5px;"><i class="fa fa-plus" aria-hidden="true"></i></a>
+          @endif
           <div class="row">
             <div class="col-md-3">
               {!! Form::number('año', Carbon\Carbon::now()->format('Y'), ['id' => 'año', 'class' => 'form-control', 'placeholder' => 'Año']) !!}
@@ -110,5 +113,11 @@ var Page = (function() {
 
 })();
 	Page.init();
+</script>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#programas').addClass('active');
+    $('#{{ strtolower($proyecto->tipo) }}').addClass('active');
+  });
 </script>
 @endsection
