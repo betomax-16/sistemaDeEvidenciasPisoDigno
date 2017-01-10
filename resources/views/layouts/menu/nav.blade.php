@@ -30,11 +30,11 @@
             @if (Auth::guest())
             <li><a href="{{ url('/login') }}"><i class="fa fa-heartbeat" aria-hidden="true"></i>Iniciar Sesión</a></li>
             @else @if(Auth::user()->role == 'ROLE_ADMIN')
-            <li><a href="{{route('usuario.index')}}"><i class="fa fa-coffee" aria-hidden="true"></i>Usuarios</a></li>
+            <li><a href="{{route('usuario.index')}}"><i class="fa fa-user-circle-o" aria-hidden="true"></i>Usuarios</a></li>
             @endif
             <li class="sub-menu">
                 <a href="#">
-                    <i class="fa fa-commenting-o" aria-hidden="true"></i>{{ Auth::user()->nombre }}<i class="fa fa-angle-down cared" aria-hidden="true"></i>
+                    <i class="fa fa-address-card-o" aria-hidden="true"></i></i>{{ Auth::user()->nombre }}<i class="fa fa-angle-down cared" aria-hidden="true"></i>
                 </a>
                 <ul class="children">
                     <li>

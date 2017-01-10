@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     $('.btn-delete').click(function (e) {
       e.preventDefault();
-      var fila = $(this).parents('tr');
+      var fila = $(this).parents('li');
       var proyecto = fila.attr('id');
       var form = $('#form-delete');
       var url = form.attr('action').replace('ID_PROYECTO',proyecto);

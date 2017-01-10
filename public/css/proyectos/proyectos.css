@@ -1,0 +1,36 @@
+h1 span{
+  text-transform: lowercase;
+}
+.listaProyectos{
+  background: #F8F8FB;
+  border-radius: 15px;
+  padding: 25px;
+  padding-bottom: 15px;
+}
+.listaProyectos li{
+  list-style: none;
+  background: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 10px;
+  display: flex;
+}
+.listaProyectos li span{
+  font-size: 19px;
+}
+.listaProyectos .circle{
+  display: flex;
+  font-size: 10px;
+  margin-top: -6px;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 13px;
+  padding-right: 12px;
+  margin-left: 10%;
+}
+.btn-group, .btn-group-vertical{
+  margin-left: 10%;
+}

@@ -11,7 +11,9 @@
   display: inline-block;
   background-color: #fff;
 }
-
+.circle{
+  border-radius: 100px;
+}
 .blue {
   color: #55acee;
   border: 2px #55acee solid;
