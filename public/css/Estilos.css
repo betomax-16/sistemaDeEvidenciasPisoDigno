@@ -197,6 +197,9 @@ Mision y Vision
 .M-V {
     margin-top: -66px;
 }
+.M-V .row spam {
+    font-weight: bold;
+}
 .M-V .opciones {
     display: -webkit-box;
     display: -webkit-flex;
@@ -291,14 +294,13 @@ Nosotros
     z-index: -1;
 }
 .Nosotros .NC {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     padding: 1rem;
+}
+.Nosotros .NC p {
+    text-align: justify;
 }
 .Nosotros .NC2 {
     margin-top: 1rem;

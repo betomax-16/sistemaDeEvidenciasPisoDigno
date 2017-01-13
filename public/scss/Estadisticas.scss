@@ -1,0 +1,27 @@
+#bandera_2_,
+#bandera_1_,
+#bandera_3_,
+#bandera {
+    transition: all .8s cubic-bezier(0.250, 0.250, 0.640, 1.425);
+    transform: translateX(-380px);
+    transform-origin: 50% 50%;
+}
+#B1_3_:hover #bandera_3_,
+#B2_1_:hover #bandera_1_,
+#B3_1_:hover #bandera_2_,
+#B4_1_:hover #bandera {
+    transform-origin: 50% 50%;
+    transform: translateX(0px);
+}
+#Inicial:hover #Titulos {
+    filter: url(#blur-effect-2) ease;
+}
+#Titulos:hover {
+    filter: url(#blur-effect-3)!important;
+}
+.estadisticas {
+    background: #AFD8D7;
+}
+.estadisticas svg {
+    margin-top: 1rem;
+}
