@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA;;;QAGS;EACL,UAAU,EAAE,8CAAgD;EAC5D,SAAS,EAAE,kBAAkB;EAC7B,gBAAgB,EAAE,OAAO;;AAE7B;;;qBAGsB;EAClB,gBAAgB,EAAE,OAAO;EACzB,SAAS,EAAE,eAAe;;AAE9B,uBAAwB;EACpB,MAAM,EAAE,wBAAwB;;AAEpC,cAAe;EACX,MAAM,EAAE,8BAA6B;;AAEzC,aAAc;EACV,UAAU,EAAE,OAAO;;AAEvB,iBAAkB;EACd,UAAU,EAAE,IAAI",
+"sources": ["../scss/Estadisticas.scss"],
+"names": [],
+"file": "Estadisticas.css"
+}

@@ -59,14 +59,16 @@
                 <div class="col-md-4">
                     <div class="collapse col-md-12 " id="collapseMision">
                         <div class="card card-block">
-                            <h1>Misión</h1> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                            <h1>Misión</h1> Consolidar de manera efectiva en los doscientos diecisiete municipios que conforman el Estado de Puebla, una red permanente de colaboradores, patrocinadores y voluntarios que contribuyan a generar, promover y capitalizar esfuerzos encaminados a remediar la brecha de desigualdad social que limita el desarrollo pleno de las familias poblanas más necesitadas.
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="collapse col-md-12 " id="collapseVision">
                         <div class="card card-block">
-                            <h1>Visión</h1> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                            <h1>Visión</h1> En el año 2022,
+                            <spam> GRUPOS SOCIALES UNIDOS POR PUEBLA 13 DE NOVIEMBRE A.C.</spam>, será un referente entre las organizaciones de la sociedad civil en el Estado de Puebla, por su eficaz gestión y canalización de apoyos sociales; el impacto de sus acciones asistenciales en la calidad de vida de las familias poblanas beneficiadas; su intensa y continua labor en el área de orientación y capacitación; la transparente ejecución de los recursos económicos y materiales captados; y, por el alto sentido humano de todos los que la conforman.
+
                         </div>
                     </div>
                 </div>
@@ -91,7 +93,8 @@
                 <article class="col-xs-12 col-md-6">
                     <h1>Nosotros</h1>
                     <br>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates dicta ipsa eligendi fugit illum ipsam debitis illo, voluptas sequi, dolorum quis, possimus, consequuntur necessitatibus aliquid architecto cupiditate. Quaerat, error, quis.</p>
+                    <p>GRUPOS SOCIALES UNIDOS POR PUEBLA 13 DE NOVIEMBRE A.C., es una organización no lucrativa de la sociedad civil que opera primordialmente en el Estado de Puebla, la cual busca generar acciones encaminadas a mitigar los estragos que el abandono y la carencia de recursos económicos y materiales, han provocado en los grupos más vulnerables de nuestro Estado. Fue precisamente en dos mil once, cuando nuestro presidente, el señor Jesús Barrales Sevilla, buscó constituir un equipo de trabajo con el afán de sembrar una semilla de solidaridad y corresponsabilidad en todos aquellos que de forma desinteresada se han unido a la causa de ayudar a los que menos tienen. De ahí que la asociación se haya dado a la tarea de desarrollar y ejecutar acciones en los ámbitos de la educación, salud, alimentación, vestido, desarrollo humano y medio ambiente, con las que busca contribuir a alcanzar la línea de bienestar de las familias apoyadas, y en consecuencia, su desarrollo integral y el de sus comunidades. Sin duda, GRUPOS SOCIALES UNIDOS POR PUEBLA 13 DE NOVIEMBRE A.C., representa un esfuerzo más que se suma a labor diaria de personas como tú, esto es, de seres humanos con la firme convicción de abonar al porvenir de sus semejantes.
+                    </p>
                 </article>
 
                 <header class="text-xs-center col-xs-12 offset-md-1 col-md-5" style="z-index:1;">
@@ -295,8 +298,9 @@
 
     </script>
     <script type="text/javascript">
-      $(document).ready(function () {
-        $('#inicio').addClass('active');
-      });
+        $(document).ready(function() {
+            $('#inicio').addClass('active');
+        });
+
     </script>
     @endsection
