@@ -9,24 +9,38 @@
         </a>
       </span>
         </a>
-        <a href="#" class="btn orange donar">Donar</a>
+        @if (Auth::guest())
+        <a href="{{ url('/login') }}" class="btn orange login"><i class="fa fa-heartbeat" aria-hidden="true"></i>Iniciar Sesión</a>
+        @else
+            @if(Auth::user()->role == 'ROLE_ADMIN')
+            <div class="login-session">
+              <input type="text" value="{{ 'Bienvenido '.Auth::user()->nombre }}" disabled>
+              <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <span class="fa fa-sign-out" aria-hidden="true"></span>
+              </a>
+              <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                  {{ csrf_field() }}
+              </form>
+            </div>
+            @endif
+        @endif
     </div>
     <nav>
         <ul>
             <li id="inicio"><a href="{{url('/')}}"><i class="fa fa-home" aria-hidden="true"></i>Inicio</a></li>
-            <li id="contacto"><a href="{{route('contacto')}}"><i class="fa fa-coffee" aria-hidden="true"></i>Contacto</a></li>
             <li id="programas" class="sub-menu">
                 <a href="#">
                     <i class="fa fa-commenting-o" aria-hidden="true"></i>Programas<i class="fa fa-angle-down cared" aria-hidden="true"></i>
                 </a>
                 <ul class="children">
-                    <li id="vivienda"><a href="{{route('proyectosPorPrograma','VIVIENDA')}}">Vivienda</a></li>
-                    <li id="salud"><a href="{{route('proyectosPorPrograma','SALUD')}}">Salud</a></li>
-                    <li id="alimentos"><a href="{{route('proyectosPorPrograma','ALIMENTOS')}}">Alimentos</a></li>
-                    <li id="educacion"><a href="{{route('proyectosPorPrograma','EDUCACION')}}">Educación</a></li>
-                    <li id="medio_ambiente"><a href="{{route('proyectosPorPrograma','MEDIO_AMBIENTE')}}">Medio Ambiente</a></li>
+                    <a href="{{route('proyectosPorPrograma','VIVIENDA')}}"><li id="vivienda">Vivienda</li></a>
+                    <a href="{{route('proyectosPorPrograma','SALUD')}}"><li id="salud">Salud</li></a>
+                    <a href="{{route('proyectosPorPrograma','ALIMENTOS')}}"><li id="alimentos">Alimentos</li></a>
+                    <a href="{{route('proyectosPorPrograma','EDUCACION')}}"><li id="educacion">Educación</li></a>
+                    <a href="{{route('proyectosPorPrograma','MEDIO_AMBIENTE')}}"><li id="medio_ambiente">Medio Ambiente</li></a>
                 </ul>
             </li>
+            <li id="contacto"><a href="{{route('contacto')}}"><i class="fa fa-coffee" aria-hidden="true"></i>Contacto</a></li>
             @if (Auth::guest())
             <li id="login"><a href="{{ url('/login') }}"><i class="fa fa-heartbeat" aria-hidden="true"></i>Iniciar Sesión</a></li>
             @else
@@ -49,7 +63,7 @@
                   </ul>
               </li>
             @endif
-            <li class="donar"><a href=""><i class="fa fa-paw" aria-hidden="true"></i>Donar</a></li>
+            <li id="donar"d><a href=""><i class="fa fa-heartbeat" aria-hidden="true"></i>Donar</a></li>
         </ul>
     </nav>
 </header>

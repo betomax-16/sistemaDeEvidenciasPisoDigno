@@ -180,7 +180,7 @@ ul.bb-custom-grid nav span.bb-current {
 	}
 }
 /*pantallas mobilies pequeñas*/
-@media (max-width: 543px) {
+@media (min-width: 350px) and (max-width: 543px) {
 	.bb-bookblock {
 		width: 180px;
 		height: 125px;
@@ -188,6 +188,25 @@ ul.bb-custom-grid nav span.bb-current {
 	ul.bb-custom-grid > li {
 		height: 190px;
 		width: 210px;
+		margin-left: 25%;
+	}
+	ul.bb-custom-grid nav {
+		margin-top: 5%;
+	}
+
+	ul  h1{
+		font-size: 44px !important;
+	}
+}
+@media (max-width: 349px) {
+	.bb-bookblock {
+		width: 180px;
+		height: 125px;
+	}
+	ul.bb-custom-grid > li {
+		height: 190px;
+		width: 210px;
+		margin-left: 10%;
 	}
 	ul.bb-custom-grid nav {
 		margin-top: 5%;

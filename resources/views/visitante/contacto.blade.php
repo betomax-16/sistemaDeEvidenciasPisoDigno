@@ -17,7 +17,7 @@
                       <div class="form-group {{ $errors->has('nombre') ? 'has-danger' : '' }}">
                         <label>Nombre</label>
                         @php($error = $errors->has('nombre') ? 'form-control-danger' : '')
-                        {!! Form::text('nombre', old('nombre'), ['class' => 'form-control '.$error, 'autocomplete' => 'off']) !!}
+                        {!! Form::text('nombre', old('nombre'), ['class' => 'form-control '.$error, 'autocomplete' => 'off', 'autofocus']) !!}
                         @if ($errors->has('nombre'))
                           <div class="message-error">{{ $errors->first('nombre') }}</div>
                         @endif

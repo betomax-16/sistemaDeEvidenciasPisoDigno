@@ -12,6 +12,9 @@ header{
   top: 0;
   box-sizing: border-box;
 }
+header nav a:visited{
+  color: #fff;
+}
 header nav{
   background: #E4E4E9;
   z-index: 1000;
@@ -29,7 +32,10 @@ header nav ul li{
   position: relative;
   flex-grow: 1;
   border-bottom: 1px solid #fff;
-  text-align: center;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 header nav ul li::after{
   content: '';
@@ -48,15 +54,19 @@ header nav ul li:nth-child(1){
   background: #c10c2d;
 }
 header nav ul li:nth-child(2){
-  background: #93278f;
+  /*background: #93278f;*/
+  background: #f7931e;
 }
 header nav ul li:nth-child(3){
-  background: #f7931e;
+  background: #93278f;
 }
 header nav ul li:nth-child(4){
   background: #7bcb17;
 }
 header nav ul li:nth-child(5){
+  background: #3e74b9;
+}
+header nav ul li:nth-child(6){
   background: #3e74b9;
 }
 header nav ul li a:hover{
@@ -77,12 +87,20 @@ header nav ul li i{
   margin-right: 10px;
 }
 .sub-menu .children{
+  margin-top: 40px;
+  align-self: flex-start;
   list-style: none;
   width: 100%;
+
 }
 .sub-menu .children li{
+  display: flex;
   flex-grow: 1;
-  background: #023859;
+  background: #ECC562;
+  font-weight: normal;
+}
+.children a{
+  padding: 0px;
 }
 .nav-bar{
   height: 120px;
@@ -107,12 +125,45 @@ header nav ul li i{
   display: inline-flex;
 }
 /*donativos*/
-.nav-bar .donar{
+.nav-bar .login{
   float: right;
   margin-top: 35px;
-  margin-right: 15px;
+  margin-right: 25px;
 }
-header nav ul .donar{
+.nav-bar .login-session{
+  float: right;
+  margin-top: 40px;
+  margin-right: 35px;
+  display: flex;
+}
+.login-session input{
+  height: 35px;
+  background: #fff;
+  text-align: center;
+  border-style: groove;
+  border-radius: 7px 0px 0px 7px;
+  display: inline-flex;
+  font-weight: bold;
+}
+.login-session a{
+    text-decoration: none;
+    height: 35px;
+    width: 40px;
+    display: inline-flex;
+    border-style: groove;
+    border-radius: 0px 7px 7px 0px;
+    background: #FAD55C;
+    color: #fff;
+    margin-left: -5px;
+}
+.login-session a:hover{
+  background: #FCC206;
+}
+.login-session a span{
+  margin-left: 11px;
+  margin-top: 6px;
+}
+header nav ul #login{
   background: #E6344A;
   display: none;
 }
@@ -168,13 +219,16 @@ header nav ul li .cared{
     margin-top: -88px;
   }
   /*donativos*/
-  .nav-bar .donar{
+  .nav-bar .login-session{
+    display: none;
+  }
+  .nav-bar .login{
     display: none;
   }
   header nav ul{
     flex-direction: column;
   }
-  header nav ul .donar{
+  header nav ul #login{
     display: block;
     background: #2e3192;
   }
@@ -191,6 +245,7 @@ header nav ul li .cared{
     display: block;
     border-bottom:  3px solid rgba(255,255,255,.5);
     width: 100%;
+    height: auto;
     text-align: left;
   }
   header nav ul li a{
@@ -208,6 +263,13 @@ header nav ul li .cared{
   }
   header nav ul li .cared{
     float: right;
+  }
+  .sub-menu .children{
+    margin-top: auto;
+  }
+  .sub-menu .children a{
+    display: flex;
+    height: 50px;
   }
 }
 
@@ -233,13 +295,16 @@ header nav ul li .cared{
     margin-top: -88px;
   }
   /*donativos*/
-  .nav-bar .donar{
+  .nav-bar .login-session{
+    display: none;
+  }
+  .nav-bar .login{
     display: none;
   }
   header nav ul{
     flex-direction: column;
   }
-  header nav ul .donar{
+  header nav ul #login{
     display: block;
     background: #2e3192;
   }
@@ -256,6 +321,7 @@ header nav ul li .cared{
     display: block;
     border-bottom:  3px solid rgba(255,255,255,.5);
     width: 100%;
+    height: auto;
     text-align: left;
   }
   header nav ul li a{
@@ -273,6 +339,13 @@ header nav ul li .cared{
   }
   header nav ul li .cared{
     float: right;
+  }
+  .sub-menu .children{
+    margin-top: auto;
+  }
+  .sub-menu .children a{
+    display: flex;
+    height: 50px;
   }
 }
 
@@ -298,13 +371,16 @@ header nav ul li .cared{
     margin-top: -88px;
   }
   /*donativos*/
-  .nav-bar .donar{
+  .nav-bar .login-session{
+    display: none;
+  }
+  .nav-bar .login{
     display: none;
   }
   header nav ul{
     flex-direction: column;
   }
-  header nav ul .donar{
+  header nav ul #login{
     display: block;
     background: #2e3192;
   }
@@ -321,6 +397,7 @@ header nav ul li .cared{
     display: block;
     border-bottom:  3px solid rgba(255,255,255,.5);
     width: 100%;
+    height: auto;
     text-align: left;
   }
   header nav ul li a{
@@ -338,6 +415,13 @@ header nav ul li .cared{
   }
   header nav ul li .cared{
     float: right;
+  }
+  .sub-menu .children{
+    margin-top: auto;
+  }
+  .sub-menu .children a{
+    display: flex;
+    height: 50px;
   }
 }
 
