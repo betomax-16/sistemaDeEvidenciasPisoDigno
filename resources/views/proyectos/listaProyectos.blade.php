@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{asset('css/proyectos/proyectos.css')}}">
 @endsection
 @section('content')
-<div class="container espacioPagina">
+<div class="container espacioPagina marco">
     <div class="row">
       <div class="col-md-3"></div>
         <div class="col-md-6">
@@ -53,10 +53,11 @@
           @endif
         </div>
     </div>
+    {!! Form::open(['route' => ['proyecto.destroy', 'ID_PROYECTO'], 'method' => 'DELETE', 'id' => 'form-delete']) !!}
+    {!! Form::close() !!}
+    {!! $proyectos->render() !!}
 </div>
-{!! Form::open(['route' => ['proyecto.destroy', 'ID_PROYECTO'], 'method' => 'DELETE', 'id' => 'form-delete']) !!}
-{!! Form::close() !!}
-{!! $proyectos->render() !!}
+ @include('layouts/menu/footer')
 @endsection
 @section('javascripts')
 <script type="text/javascript" src="{{asset('js/Proyectos/deleteProyecto.js')}}"></script>

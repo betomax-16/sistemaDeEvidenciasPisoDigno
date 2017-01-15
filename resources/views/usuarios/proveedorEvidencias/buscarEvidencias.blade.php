@@ -55,6 +55,7 @@
       {!! Form::open(['route' => ['evidencia.destroy', 'ID_HOGAR'], 'method' => 'DELETE', 'id' => 'form-delete']) !!} {!! Form::close() !!}
     </div>
 </div>
+@include('layouts/menu/footer')
 @endsection @section('javascripts')
 <script src="{{asset('js/lightbox-plus-jquery.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('jquery-ui/jquery-ui.min.js')}}"></script>

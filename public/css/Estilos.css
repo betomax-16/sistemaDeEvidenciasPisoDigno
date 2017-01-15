@@ -221,6 +221,15 @@ Mision y Vision
     background-color: #C592C2;
     background-image: url(https://www.transparenttextures.com/patterns/gplay.png);
 }
+.M-V .opciones .btn-secondary:nth-child(1){
+  background: brown;
+}
+.M-V .opciones .btn-secondary:nth-child(2){
+  background: #1DC92B;
+}
+.M-V .opciones .btn-secondary:nth-child(3){
+  background: #FFE66B;
+}
 .M-V .opciones .ENM {
     border-left-color: white;
     border-top: 0;

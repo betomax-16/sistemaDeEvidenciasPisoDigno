@@ -1,9 +1,4 @@
-* {
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    font-family: arial;
-}
+
 
 /*body{background:url("http://www.galaxiastudio.com/wp-content/uploads/2014/03/2252.jpg")#FF9000}*/
 
@@ -13,8 +8,8 @@ h1 {
     font-faimly: icon;
 }
 .login-form {
-    padding: 40px 30px;
-    background: rgba(236, 238, 239, 0.75);
+    padding: 30px 30px;
+    background: yellowgreen;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     margin: 60px auto;
@@ -139,11 +134,12 @@ h1 {
     }
 }
 .log-btn {
-    background: #0AC986;
+  padding: 7px;
+    background: coral;
     dispaly: inline-block;
     width: 100%;
-    font-size: 16px;
-    height: 50px;
+    font-size: 30px;
+    font-weight: bold;
     color: #fff;
     text-decoration: none;
     border: none;
@@ -172,4 +168,7 @@ h1 {
     .login-form {
         width: 350px;
     }
+}
+label{
+  color: cadetblue!important;
 }

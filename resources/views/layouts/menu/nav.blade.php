@@ -12,25 +12,24 @@
         @if (Auth::guest())
         <a href="{{ url('/login') }}" class="btn orange login"><i class="fa fa-heartbeat" aria-hidden="true"></i>Iniciar Sesión</a>
         @else
-            @if(Auth::user()->role == 'ROLE_ADMIN')
-            <div class="login-session">
-              <input type="text" value="{{ 'Bienvenido '.Auth::user()->nombre }}" disabled>
-              <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                <span class="fa fa-sign-out" aria-hidden="true"></span>
-              </a>
-              <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                  {{ csrf_field() }}
-              </form>
-            </div>
-            @endif
+        <div class="login-session">
+          <input type="text" value="{{ 'Bienvenido '.Auth::user()->nombre }}" disabled>
+          <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn orange" data-toggle="tooltip" data-placement="top" title="Cerrar Sesión">
+            <span class="fa fa-sign-out" aria-hidden="true"></span>
+          </a>
+          <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+              {{ csrf_field() }}
+          </form>
+        </div>
         @endif
     </div>
     <nav>
         <ul>
             <li id="inicio"><a href="{{url('/')}}"><i class="fa fa-home" aria-hidden="true"></i>Inicio</a></li>
+            <li id="nosotros"><a href="#"><i class="fa fa-users" aria-hidden="true"></i>¿Quiénes somos?</a></li>
             <li id="programas" class="sub-menu">
                 <a href="#">
-                    <i class="fa fa-commenting-o" aria-hidden="true"></i>Programas<i class="fa fa-angle-down cared" aria-hidden="true"></i>
+                    <i class="fa fa-commenting" aria-hidden="true"></i>Programas<i class="fa fa-angle-down cared" aria-hidden="true"></i>
                 </a>
                 <ul class="children">
                     <a href="{{route('proyectosPorPrograma','VIVIENDA')}}"><li id="vivienda">Vivienda</li></a>
@@ -52,14 +51,14 @@
                       <i class="fa fa-address-card-o" aria-hidden="true"></i></i>{{ Auth::user()->nombre }}<i class="fa fa-angle-down cared" aria-hidden="true"></i>
                   </a>
                   <ul class="children">
-                      <li id="logout">
-                          <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                      <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><li id="logout">
+
                         Cerrar Sesión
-                    </a>
+
                           <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                               {{ csrf_field() }}
                           </form>
-                      </li>
+                      </li></a>
                   </ul>
               </li>
             @endif

@@ -69,6 +69,9 @@ header nav ul li:nth-child(5){
 header nav ul li:nth-child(6){
   background: #3e74b9;
 }
+header nav ul li:nth-child(7){
+  background: #e2e168;
+}
 header nav ul li a:hover{
   color: #fff;
 }
@@ -82,6 +85,8 @@ header nav ul li a{
   display: block;
   text-decoration: none !important;
   padding: 20px;
+  width: 100%;
+  text-align: center;
 }
 header nav ul li i{
   margin-right: 10px;
@@ -96,7 +101,8 @@ header nav ul li i{
 .sub-menu .children li{
   display: flex;
   flex-grow: 1;
-  background: #ECC562;
+  /*background: #ECC562;*/
+  background: #de62ec;
   font-weight: normal;
 }
 .children a{
@@ -137,22 +143,22 @@ header nav ul li i{
   display: flex;
 }
 .login-session input{
+  margin-top: 5px;
   height: 35px;
   background: #fff;
   text-align: center;
-  border-style: groove;
-  border-radius: 7px 0px 0px 7px;
+  border: none;
   display: inline-flex;
   font-weight: bold;
 }
-.login-session a{
+/*.login-session a{
     text-decoration: none;
     height: 35px;
     width: 40px;
     display: inline-flex;
     border-style: groove;
     border-radius: 0px 7px 7px 0px;
-    background: #FAD55C;
+    background: ##FFE66B;
     color: #fff;
     margin-left: -5px;
 }
@@ -162,7 +168,7 @@ header nav ul li i{
 .login-session a span{
   margin-left: 11px;
   margin-top: 6px;
-}
+}*/
 header nav ul #login{
   background: #E6344A;
   display: none;
@@ -230,7 +236,10 @@ header nav ul li .cared{
   }
   header nav ul #login{
     display: block;
-    background: #2e3192;
+    background: indianred;
+  }
+  header nav ul #login .children li{
+    background: #ff8b8b;
   }
   /*--donativos--*/
   header nav{
@@ -306,7 +315,10 @@ header nav ul li .cared{
   }
   header nav ul #login{
     display: block;
-    background: #2e3192;
+    background: indianred;
+  }
+  header nav ul #login .children li{
+    background: #ff8b8b;
   }
   /*--donativos--*/
   header nav{
@@ -382,7 +394,10 @@ header nav ul li .cared{
   }
   header nav ul #login{
     display: block;
-    background: #2e3192;
+    background: indianred;
+  }
+  header nav ul #login .children li{
+    background: #ff8b8b;
   }
   /*--donativos--*/
   header nav{

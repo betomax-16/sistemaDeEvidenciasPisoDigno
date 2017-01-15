@@ -96,7 +96,6 @@
                     <p>GRUPOS SOCIALES UNIDOS POR PUEBLA 13 DE NOVIEMBRE A.C., es una organización no lucrativa de la sociedad civil que opera primordialmente en el Estado de Puebla, la cual busca generar acciones encaminadas a mitigar los estragos que el abandono y la carencia de recursos económicos y materiales, han provocado en los grupos más vulnerables de nuestro Estado. Fue precisamente en dos mil once, cuando nuestro presidente, el señor Jesús Barrales Sevilla, buscó constituir un equipo de trabajo con el afán de sembrar una semilla de solidaridad y corresponsabilidad en todos aquellos que de forma desinteresada se han unido a la causa de ayudar a los que menos tienen. De ahí que la asociación se haya dado a la tarea de desarrollar y ejecutar acciones en los ámbitos de la educación, salud, alimentación, vestido, desarrollo humano y medio ambiente, con las que busca contribuir a alcanzar la línea de bienestar de las familias apoyadas, y en consecuencia, su desarrollo integral y el de sus comunidades. Sin duda, GRUPOS SOCIALES UNIDOS POR PUEBLA 13 DE NOVIEMBRE A.C., representa un esfuerzo más que se suma a labor diaria de personas como tú, esto es, de seres humanos con la firme convicción de abonar al porvenir de sus semejantes.
                     </p>
                 </article>
-
                 <header class="text-xs-center col-xs-12 offset-md-1 col-md-5" style="z-index:1;">
                     <h1 class="NC2">Nuestra comunidad</h1>
                     <br>
