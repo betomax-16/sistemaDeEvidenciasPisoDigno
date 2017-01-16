@@ -225,10 +225,11 @@ Mision y Vision
   background: brown;
 }
 .M-V .opciones .btn-secondary:nth-child(2){
-  background: #1DC92B;
+  background: #3e74b9;
 }
 .M-V .opciones .btn-secondary:nth-child(3){
-  background: #FFE66B;
+  /*background: #FFE66B;*/
+  background: #1DC92B;
 }
 .M-V .opciones .ENM {
     border-left-color: white;

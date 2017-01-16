@@ -53,8 +53,8 @@
                 </div>
                 <div class="form-group" style="margin-top:25px;">
                   <center>
-                    {!! Form::submit('Enviar', ['class' => 'btn green-inverse']) !!}
-                    {!! Form::reset('Limpiar', ['class' => 'btn blue-inverse', 'id' => 'reset']) !!}
+                    <button id="btnGuardar" type="submit" class="btn green-inverse circle" style="width:100%"><i class="fa fa-paper-plane" aria-hidden="true"></i> Enviar</button>
+                    <button id="reset" type="reset" class="btn blue-inverse circle" style="width:100%"><i class="fa fa-refresh" aria-hidden="true"></i> Limpiar</button>
                   </center>
                 </div>
                 {!! Form::close() !!}
@@ -73,6 +73,9 @@
 <script type="text/javascript">
   $(document).ready(function () {
     $('#contacto').addClass('active');
+    $('#reset').click(function () {
+      $('input[name=nombre]').focus();
+    });
   });
 </script>
 @endsection

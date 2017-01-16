@@ -50,13 +50,31 @@
 /* style 2 */
 
 .inputfile-2 + label {
-    color: #d3394c;
+    color: #398bd3;
     border: 2px solid currentColor;
-    margin-left: 3%;
+    border-radius: 5px;
+    margin-top: 11px;
+}
+@media (max-width: 575px) {
+  .inputfile-2 + label {
+    margin-left: 12%;
+  }
 }
 
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .inputfile-2 + label {
+    margin-left: 42px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .inputfile-2 + label {
+    margin-left: 45px;
+  }
+}
 .inputfile-2:focus + label,
 .inputfile-2.has-focus + label,
 .inputfile-2 + label:hover {
-    color: #722040;
+    color: #173d5f;
 }

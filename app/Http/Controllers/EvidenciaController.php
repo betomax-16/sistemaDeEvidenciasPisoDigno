@@ -43,7 +43,7 @@ class EvidenciaController extends Controller
                                  ->where('Municipios.nombre', '=', $municipio)
                                  ->where('Beneficiados.proyecto', '=', $proyecto)
                                  ->where(DB::raw('year(Beneficiados.created_at)'), '=', $anio)
-                                 ->paginate(8);
+                                 ->paginate(12);
     }
 
     private function beneficiadosDeLocalidad($localidad, $proyecto, $anio)
@@ -53,7 +53,7 @@ class EvidenciaController extends Controller
                                   ->where('Localidades.nombre', '=', $localidad)
                                   ->where('Beneficiados.proyecto', '=', $proyecto)
                                   ->where(DB::raw('year(Beneficiados.created_at)'), '=', $anio)
-                                  ->paginate(8);
+                                  ->paginate(12);
     }
 
     public function evidencias($idProyecto, $idEstado)
