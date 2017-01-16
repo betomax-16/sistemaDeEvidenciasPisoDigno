@@ -14,7 +14,7 @@
     transform: translateX(0px);
 }
 #Inicial:hover #Titulos {
-    filter: url(#blur-effect-2) ease;
+    filter: url(#blur-effect-2);
 }
 #Titulos:hover {
     filter: url(#blur-effect-3)!important;

@@ -1,5 +1,4 @@
-@import url('../fonts/fonts.css');
-body {
+html {
     font-family: 'CANDARA'
 }
 .encavezado {
@@ -198,7 +197,7 @@ Mision y Vision
     margin-top: -66px;
 }
 .M-V .row spam {
-    font-weight: bold;
+    font-weight: 'Candara-Bold';
 }
 .M-V .opciones {
     display: -webkit-box;
@@ -221,14 +220,14 @@ Mision y Vision
     background-color: #C592C2;
     background-image: url(https://www.transparenttextures.com/patterns/gplay.png);
 }
-.M-V .opciones .btn-secondary:nth-child(1){
-  background: brown;
+.M-V .opciones .btn-secondary:nth-child(1) {
+    background: brown;
 }
-.M-V .opciones .btn-secondary:nth-child(2){
-  background: #1DC92B;
+.M-V .opciones .btn-secondary:nth-child(2) {
+    background: #1DC92B;
 }
-.M-V .opciones .btn-secondary:nth-child(3){
-  background: #FFE66B;
+.M-V .opciones .btn-secondary:nth-child(3) {
+    background: #FFE66B;
 }
 .M-V .opciones .ENM {
     border-left-color: white;
@@ -248,6 +247,9 @@ Mision y Vision
     background: none;
     border: none;
 }
+.M-V spam {
+    font-family: 'Candara-Bold';
+}
 
 /*
 Nosotros
@@ -257,6 +259,9 @@ Nosotros
     color: white;
     background: #555a61;
     border-radius: 0px 0px 9px 9px;
+}
+.Nosotros spam {
+    font-family: 'Candara-Bold';
 }
 .Nosotros h2 {
     font: 33px sans-serif;
@@ -536,14 +541,14 @@ Media Querys
     }
 }
 @media (max-width: 543px) {
-  .M-V {
-      margin-top: -86px
-  }
+    .M-V {
+        margin-top: -86px
+    }
 }
 @media (min-width: 544px) and (max-width: 991px) {
-  .M-V {
-      margin-top: -66px
-  }
+    .M-V {
+        margin-top: -66px
+    }
 }
 @media (min-width: 992px) {
     .M-V {
@@ -805,10 +810,30 @@ Media Querys
 Pie De Pagina
 */
 
+.piedepagina p {
+margin-bottom: 0;
+}
+.piedepagina2 {
+    background: #fff;
+    color: #000;
+    padding: .5rem;
+    font-size: 16px;
+}
+.piedepagina2 a {
+   text-decoration: none;
+    color: #000;
+}
+.piedepagina2 a:hover {
+    color: #666666;
+}
+.piedepagina1 p{
+    margin-top: -17px;
+}
 .piedepagina {
+    font-family: 'Candara-Italic';
     background: #073E62;
     color: #fff;
-    font-size: .9rem;
+    font-size: 1.2rem;
     text-align: center;
 }
 .piedepagina .redes-sociales {
@@ -826,7 +851,7 @@ Pie De Pagina
 }
 .piedepagina .redes-sociales a {
     color: #fff;
-    font-size: 3rem;
+    font-size: 1.5rem;
     margin: 1rem;
     opacity: .7;
     -webkit-transition: all .5s ease;
@@ -835,6 +860,7 @@ Pie De Pagina
 .piedepagina .redes-sociales a:hover {
     opacity: 1;
 }
+
 .ir-arriba {
     position: fixed;
     bottom: 1rem;

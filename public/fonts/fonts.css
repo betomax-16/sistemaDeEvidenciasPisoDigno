@@ -8,5 +8,16 @@
 @font-face {
     font-family: 'Candara-Bold';
     src: url('Candara-Bold.eot');
-    src: local('Candara'), url('Candara-Bold.woff') format('woff'), url('Candara-Bold.ttf') format('truetype');
+    /* IE9 Compat Modes */
+    src: url('Candara-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('Candara-Bold.woff') format('woff'), /* Modern Browsers */
+    url('Candara-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+@font-face {
+    font-family: 'Candara-Italic';
+    src: url('Candara-Italic.eot');
+    /* IE9 Compat Modes */
+    src: url('Candara-Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('Candara-Italic.woff') format('woff'), /* Modern Browsers */
+    url('Candara-Italic.ttf') format('truetype'), /* Safari, Android, iOS */
 }

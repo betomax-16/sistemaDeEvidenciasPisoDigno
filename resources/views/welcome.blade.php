@@ -6,6 +6,7 @@
 
 
 
+
 <link rel="stylesheet" href="{{asset('css/odometer-theme-train-station.css')}}"> @endsection @section('content')
 
 
@@ -48,7 +49,7 @@
             <li><span>Image 03</span></li>
         </ul>
     </section>
-    <section class="M-V">
+    <section class="M-V text-justify">
         <div class="container-fluid">
             <div class="row opciones">
                 <button type="button" class=" btn btn-secondary A" data-toggle="collapse" data-target="#collapseMision" aria-expanded="false" aria-controls="collapseExample">Misión</button>
@@ -59,15 +60,14 @@
                 <div class="col-md-4">
                     <div class="collapse col-md-12 " id="collapseMision">
                         <div class="card card-block">
-                            <h1>Misión</h1> Consolidar de manera efectiva en los doscientos diecisiete municipios que conforman el Estado de Puebla, una red permanente de colaboradores, patrocinadores y voluntarios que contribuyan a generar, promover y capitalizar esfuerzos encaminados a remediar la brecha de desigualdad social que limita el desarrollo pleno de las familias poblanas más necesitadas.
+                            Consolidar de manera efectiva en los doscientos diecisiete municipios que conforman el Estado de Puebla, una red permanente de colaboradores, patrocinadores y voluntarios que contribuyan a generar, promover y capitalizar esfuerzos encaminados a remediar la brecha de desigualdad social que limita el desarrollo pleno de las familias poblanas más necesitadas.
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="collapse col-md-12 " id="collapseVision">
                         <div class="card card-block">
-                            <h1>Visión</h1> En el año 2022,
-                            <spam> GRUPOS SOCIALES UNIDOS POR PUEBLA 13 DE NOVIEMBRE A.C.</spam>, será un referente entre las organizaciones de la sociedad civil en el Estado de Puebla, por su eficaz gestión y canalización de apoyos sociales; el impacto de sus acciones asistenciales en la calidad de vida de las familias poblanas beneficiadas; su intensa y continua labor en el área de orientación y capacitación; la transparente ejecución de los recursos económicos y materiales captados; y, por el alto sentido humano de todos los que la conforman.
+                            En el año 2022, <spam> GRUPOS SOCIALES UNIDOS POR PUEBLA 13 DE NOVIEMBRE A.C.</spam>, será un referente entre las organizaciones de la sociedad civil en el Estado de Puebla, por su eficaz gestión y canalización de apoyos sociales; el impacto de sus acciones asistenciales en la calidad de vida de las familias poblanas beneficiadas; su intensa y continua labor en el área de orientación y capacitación; la transparente ejecución de los recursos económicos y materiales captados; y, por el alto sentido humano de todos los que la conforman.
 
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                 <div class="col-md-4">
                     <div class="collapse col-md-12 " id="collapseObjetivo">
                         <div class="card card-block">
-                            <h1>Objetivo</h1> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
                         </div>
                     </div>
                 </div>
@@ -93,7 +93,16 @@
                 <article class="col-xs-12 col-md-6">
                     <h1>Nosotros</h1>
                     <br>
-                    <p>GRUPOS SOCIALES UNIDOS POR PUEBLA 13 DE NOVIEMBRE A.C., es una organización no lucrativa de la sociedad civil que opera primordialmente en el Estado de Puebla, la cual busca generar acciones encaminadas a mitigar los estragos que el abandono y la carencia de recursos económicos y materiales, han provocado en los grupos más vulnerables de nuestro Estado. Fue precisamente en dos mil once, cuando nuestro presidente, el señor Jesús Barrales Sevilla, buscó constituir un equipo de trabajo con el afán de sembrar una semilla de solidaridad y corresponsabilidad en todos aquellos que de forma desinteresada se han unido a la causa de ayudar a los que menos tienen. De ahí que la asociación se haya dado a la tarea de desarrollar y ejecutar acciones en los ámbitos de la educación, salud, alimentación, vestido, desarrollo humano y medio ambiente, con las que busca contribuir a alcanzar la línea de bienestar de las familias apoyadas, y en consecuencia, su desarrollo integral y el de sus comunidades. Sin duda, GRUPOS SOCIALES UNIDOS POR PUEBLA 13 DE NOVIEMBRE A.C., representa un esfuerzo más que se suma a labor diaria de personas como tú, esto es, de seres humanos con la firme convicción de abonar al porvenir de sus semejantes.
+                    <p> <spam> GRUPOS SOCIALES UNIDOS POR PUEBLA 13 DE NOVIEMBRE A.C.,</spam> es una organización no lucrativa de la sociedad civil que opera primordialmente en el Estado de Puebla, la cual busca generar acciones encaminadas a mitigar los estragos que el abandono y la carencia de recursos económicos y materiales, han provocado en los grupos más vulnerables de nuestro Estado. 
+                    <br>
+                    <br>
+                    Fue precisamente en dos mil once, cuando nuestro presidente, el señor Jesús Barrales Sevilla, buscó constituir un equipo de trabajo con el afán de sembrar una semilla de solidaridad y corresponsabilidad en todos aquellos que de forma desinteresada se han unido a la causa de ayudar a los que menos tienen.
+                    <br>
+                     <br>
+                      De ahí que la asociación se haya dado a la tarea de desarrollar y ejecutar acciones en los ámbitos de la educación, salud, alimentación, vestido, desarrollo humano y medio ambiente, con las que busca contribuir a alcanzar la línea de bienestar de las familias apoyadas, y en consecuencia, su desarrollo integral y el de sus comunidades.
+                      <br>
+                       <br>
+                        Sin duda,<spam> GRUPOS SOCIALES UNIDOS POR PUEBLA 13 DE NOVIEMBRE A.C.,</spam> representa un esfuerzo más que se suma a labor diaria de personas como tú, esto es, de seres humanos con la firme convicción de abonar al porvenir de sus semejantes.
                     </p>
                 </article>
                 <header class="text-xs-center col-xs-12 offset-md-1 col-md-5" style="z-index:1;">
@@ -112,7 +121,7 @@
             <br>
             <br>
             <h2 class="titulo text-xs-center font-weight-bold">¿Que es lo <span>que hacemos?</span></h2>
-            <h5 class="text-xs-center">Ayudandanos a ayudar</h5>
+            <h5 class="text-xs-center">Ayudanos a ayudar</h5>
 
             <div class="linea"></div>
             <br>
