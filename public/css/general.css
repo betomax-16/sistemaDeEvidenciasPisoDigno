@@ -28,10 +28,10 @@ body {
     border-radius: 15px;
     border-color: aliceblue;
     padding: 35px;
+    min-height: 250px\10;
     min-height: 250px;
     margin-bottom: 65px;
 }
-
 @media (min-width: 1200px){
   .marco{
     min-width: 1250px;

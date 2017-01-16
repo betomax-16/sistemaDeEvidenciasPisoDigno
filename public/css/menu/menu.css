@@ -96,7 +96,11 @@ header nav ul li i{
   align-self: flex-start;
   list-style: none;
   width: 100%;
-
+}
+@-moz-document url-prefix() {
+  .sub-menu .children {
+    margin-top: 20px;
+  }
 }
 .sub-menu .children li{
   display: flex;
@@ -117,6 +121,7 @@ header nav ul li i{
 }
 .nav-bar a img{
   margin-top: 8px;
+  min-width: 300px;
 }
 .btn-menu{
   color: #55acee;
@@ -181,6 +186,7 @@ header nav ul #login{
 
 header nav ul li:hover .children{
   display: block;
+  left: 0;
 }
 header nav ul li .children{
   display: none;
