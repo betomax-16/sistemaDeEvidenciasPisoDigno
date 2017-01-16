@@ -22,15 +22,19 @@
 }
 label{
   font-size: 20px;
-  color: #B8B795;
+  color: #8c8c8c;
 }
 .form-header h1{
   margin-bottom: 0;
   text-align: center;
   font-weight: bold;
+  color: #fff;
 }
 .message-error{
   color: #d9534f;
   font-weight: bold;
   float: right;
+}
+#btnGuardar{
+  margin-bottom: 5px;
 }

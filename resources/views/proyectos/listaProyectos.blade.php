@@ -23,6 +23,7 @@
             <h1 class="display-4 text-md-center" style="color:#B8B7B7;">No participa en ningún proyecto.</h1>
           @elseif(count($proyectos) == 0)
             <h1 class="display-4 text-md-center" style="color:#B8B7B7;">Sin proyectos activos</h1>
+
           @endif
           @if(count($proyectos) > 0)
             <ul class="listaProyectos">
@@ -47,9 +48,9 @@
               </li>
               @endforeach
             </ul>
-            @if(!Auth::guest() and Auth::user()->role == 'ROLE_ADMIN')
-              <a class="btn green-inverse circle" href="{{route('proyecto.create')}}" style="width:100%"><i class="fa fa-plus" aria-hidden="true"></i></a>
-            @endif
+          @endif
+          @if(!Auth::guest() and Auth::user()->role == 'ROLE_ADMIN')
+            <a class="btn green-inverse circle" href="{{route('proyecto.create')}}" style="width:100%"><i class="fa fa-plus" aria-hidden="true"></i></a>
           @endif
         </div>
     </div>

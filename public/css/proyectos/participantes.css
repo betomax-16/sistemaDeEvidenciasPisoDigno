@@ -1,0 +1,30 @@
+h1{
+  font-weight: bold;
+  font-size: 45px;
+  margin-bottom: 0px;
+}
+h2, h4{
+  font-weight: bold;
+  color: darkgray;
+}
+.btn-circle{
+  float: left;
+}
+.btn-delete{
+  font-size: 15px;
+  line-height: .25;
+}
+#addParticipante{
+  background: ghostwhite;
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  #tabla{
+    border: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  #tabla{
+    border: none;
+  }
+}
