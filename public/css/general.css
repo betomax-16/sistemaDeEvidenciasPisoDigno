@@ -29,7 +29,7 @@ body {
     border-color: aliceblue;
     padding: 35px;
     min-height: 250px\10;
-    min-height: 250px;
+    min-height: 300px;
     margin-bottom: 65px;
 }
 @media (min-width: 1200px){
@@ -52,5 +52,51 @@ select.form-control{
 }
 label{
   font-weight: bold;
-  font-size: 20px;
+  font-size: 15px;
+}
+
+/*TITULOS*/
+.titulo1{
+
+}
+.titulo2{
+  font-size: 3.5rem;
+  font-weight: 300;
+}
+.titulo3{
+  font-size: 45px;
+  font-weight: bold;
+}
+.titulo4{
+  font-size: 2rem;
+  font-weight: bold;
+}
+.titulo5{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+/*SUBTITULOS*/
+.subtitulo1{
+  font-size: 3rem;
+  font-weight: 700;
+}
+.subtitulo2{
+  /*para h3*/
+  font-size:  2.5rem;
+  margin-bottom: .5rem;
+  font-weight: 500;
+}
+.subtitulo3{
+  font-size: 2rem;
+  font-weight: 500;
+}
+.subtitulo4{
+  font-size: 1.7rem;
+  margin-bottom: .5rem;
+  font-weight: 300;
+}
+
+.subtitulo5{
+  font-size: 1.2rem;
+  font-weight: 300;
 }

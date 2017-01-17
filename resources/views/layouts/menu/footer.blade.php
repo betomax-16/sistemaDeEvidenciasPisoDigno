@@ -2,7 +2,8 @@
     <section>
         <div class="piedepagina1 container">
            <br>
-            <p>Síguenos</p>
+            <p class="subtitulo4">Síguenos</p>
+            <hr>
             <ul class="redes-sociales">
                 <li><a href="#"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
