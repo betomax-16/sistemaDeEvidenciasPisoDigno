@@ -53,4 +53,9 @@ class VisitanteController extends Controller
               ->from($request->email, $request->nombre);
     });
   }
+
+  public function quienesSomos()
+  {
+    return $this->noGuardarCache(view('visitante/somos'));
+  }
 }

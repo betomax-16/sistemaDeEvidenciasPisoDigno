@@ -1,12 +1,10 @@
-@extends('layouts.app') @section('styles')
-<link rel="stylesheet" href="{{asset('css/odometer-theme-train-station.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('css/textoPresentacion.css')}}" />
-<link rel="stylesheet" href="{{asset('css/style1.css')}}">
-<link rel="stylesheet" href="{{asset('css/Estadisticas.css')}}">
-<link rel="stylesheet" href="{{asset('css/odometer-theme-train-station.css')}}"> @endsection @section('content')
-
+@extends('layouts.app')
+@section('styles')
+<link rel="stylesheet" href="{{asset('css/general.css')}}">
+@endsection
+@section('content')
 <section class="container somos text-xs-center">
-    <h1>¿Quienes somos?</h1>
+    <h1 class="subtitulo1">¿Quienes somos?</h1>
     <hr/>
     <br>
     <p>Somos una gran familia conformada por amigos, líderes sociales y voluntarios cuya afinidad por aportar tiempo, esfuerzo y talento en aras de ayudar a las familias poblanas más necesitadas, nos ha consolidado en un equipo interdisciplinario que ha sabido garantizar el correcto devenir de las metas y objetivos de la asociación.
@@ -76,24 +74,11 @@
         </div>
     </div>
 </section>
-
-
-
-
-
-
-
-
-
-
-@include('layouts/templates/modal') @include('layouts/menu/footer') @endsection @section('javascripts')
-<!-- jQuery first, then Tether, then Bootstrap JS. -->
-
-
-<script src="{{asset('js/estilos.js')}}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="{{asset('js/jquery.waypoints.min.js')}}"></script>
-<script src="{{asset('js/odometer.min.js')}}"></script>
-
+@include('layouts/templates/modal') @include('layouts/menu/footer') @endsection
+@section('javascripts')
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#somos').addClass('active');
+  });
+</script>
 @endsection

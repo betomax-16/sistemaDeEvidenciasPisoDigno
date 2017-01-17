@@ -41,6 +41,7 @@ Route::get('evidencias/{idEvidencia}', 'EvidenciaController@ver')->name('evidenc
 Route::post('evidencias/masBeneficiados', 'EvidenciaController@municipioConMasBeneficiados')->name('municipioConMasBeneficiados');
 Route::post('foto/ver', 'EvidenciaController@foto')->name('foto.ver');
 Route::get('proyecto/{programa}', 'ProyectoController@proyectosPorPrograma')->name('proyectosPorPrograma');
+Route::get('somos', 'VisitanteController@quienesSomos')->name('somos');
 Route::get('contacto', 'VisitanteController@contacto')->name('contacto');
 Route::post('contacto/enviar', 'VisitanteController@enviarContacto')->name('enviarContacto');
 Route::get('download/{proyecto}/{anio}/{region}/{lugar}', 'EvidenciaController@excel')->name('evidencia.excel');
