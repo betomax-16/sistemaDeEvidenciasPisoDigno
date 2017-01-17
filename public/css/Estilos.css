@@ -223,7 +223,6 @@ Mision y Vision
 .M-V .opciones .btn-secondary:nth-child(1) {
     background: brown;
 }
-
 .M-V .opciones .btn-secondary:nth-child(2) {
     background: #1DC92B;
 }
@@ -540,17 +539,68 @@ Media Querys
         color: #3E77C5;
         border-bottom: 4px solid;
     }
+    .somos .imagen {
+        order: 1;
+    }
+    .somos .persona1 .citas {
+        border-right: 4px solid #ff6262;
+        ;
+        border-bottom: 4px solid #ff6262;
+        ;
+        border-radius: 4px;
+    }
+    .somos .persona3 .citas {
+        border-right: 4px solid #fffa8c;
+        ;
+        border-bottom: 4px solid #fffa8c;
+        ;
+        border-radius: 4px;
+    }
+    .somos .persona5 .citas {
+        border-right: 4px solid #31B500;
+        ;
+        border-bottom: 4px solid #31B500;
+        ;
+        border-radius: 4px;
+    }
+    .somos .persona2 .citas {
+        border-left: 4px solid #ff8500;
+        ;
+        border-bottom: 4px solid #ff8500;
+        ;
+        border-radius: 4px;
+    }
+    .somos .persona4 .citas {
+        border-left: 4px solid #0053a0;
+        ;
+        border-bottom: 4px solid #0053a0;
+        ;
+        border-radius: 4px;
+    }
+    .somos .persona6 .citas {
+        border-left: 4px solid #8934B8;
+        ;
+        border-bottom: 4px solid #8934B8;
+        ;
+        border-radius: 4px;
+    }
+    .somos .persona6,
+    .somos .persona5,
+    .somos .persona4,
+    .somos .persona3,
+    .somos .persona2,
+    .somos .persona1 {
+        border: none !important;
+    }
 }
 @media (max-width: 543px) {
-<<<<<<< HEAD
-    .M-V {
+    <<<<<<< HEAD .M-V {
         margin-top: -86px
     }
-=======
-  .M-V {
-      margin-top: -66px
-  }
->>>>>>> 23a0abf472366972f312add5e56cee3aeeaf92d6
+    =======.M-V {
+        margin-top: -66px
+    }
+    >>>>>>> 23a0abf472366972f312add5e56cee3aeeaf92d6
 }
 @media (min-width: 544px) and (max-width: 991px) {
     .M-V {
@@ -756,69 +806,13 @@ Media Querys
     -webkit-transition-delay: 0s, 0.3s;
     transition-delay: 0s, 0.3s;
 }
-@media (max-width: 767px) {
-    .text-xs-left {
-        text-align: left;
-    }
-    .text-xs-right {
-        text-align: right;
-    }
-    .text-xs-center {
-        text-align: center;
-    }
-    .text-xs-justify {
-        text-align: justify;
-    }
-}
-@media (min-width: 768px) and (max-width: 991px) {
-    .text-sm-left {
-        text-align: left;
-    }
-    .text-sm-right {
-        text-align: right;
-    }
-    .text-sm-center {
-        text-align: center;
-    }
-    .text-sm-justify {
-        text-align: justify;
-    }
-}
-@media (min-width: 992px) and (max-width: 1199px) {
-    .text-md-left {
-        text-align: left;
-    }
-    .text-md-right {
-        text-align: right;
-    }
-    .text-md-center {
-        text-align: center;
-    }
-    .text-md-justify {
-        text-align: justify;
-    }
-}
-@media (min-width: 1200px) {
-    .text-lg-left {
-        text-align: left;
-    }
-    .text-lg-right {
-        text-align: right;
-    }
-    .text-lg-center {
-        text-align: center;
-    }
-    .text-lg-justify {
-        text-align: justify;
-    }
-}
 
 /*
 Pie De Pagina
 */
 
 .piedepagina p {
-margin-bottom: 0;
+    margin-bottom: 0;
 }
 .piedepagina2 {
     background: #fff;
@@ -827,13 +821,13 @@ margin-bottom: 0;
     font-size: 16px;
 }
 .piedepagina2 a {
-   text-decoration: none;
+    text-decoration: none;
     color: #000;
 }
 .piedepagina2 a:hover {
     color: #666666;
 }
-.piedepagina1 p{
+.piedepagina1 p {
     margin-top: -17px;
 }
 .piedepagina {
@@ -867,7 +861,6 @@ margin-bottom: 0;
 .piedepagina .redes-sociales a:hover {
     opacity: 1;
 }
-
 .ir-arriba {
     position: fixed;
     bottom: 1rem;
@@ -884,5 +877,69 @@ margin-bottom: 0;
     outline: 0;
     text-decoration: none;
 }
+.somos {
+    margin-top: 1rem;
+}
+.somos hr {
+    color: red;
+}
+.somos .persona1,
+.somos .persona2,
+.somos .persona3,
+.somos .persona4,
+.somos .persona5,
+.somos .persona6 {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem;
+}
+.somos .citas {
+    align-self: center;
+}
+.somos .persona1 {
+    border: 4px solid #ff6262;
+    border-radius: 3px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+.somos .persona2 {
+    border: 4px solid #ff8500;
+    border-radius: 3px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+.somos .persona3 {
+    border: 4px solid #fffa8c;
+    border-radius: 3px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+.somos .persona4 {
+    border: 4px solid #0053a0;
+    border-radius: 3px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+.somos .persona5 {
+    border: 4px solid #31B500;
+    border-radius: 3px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+.somos .persona6 {
+    border: 4px solid #8934B8;
+    border-radius: 3px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+/* 
+.somos .persona1 .citas {
+    border-right: 6px groove;
+    border-bottom: 6px groove;
+    border-radius: 6px;
+}
+*/
+
 
 /*# sourceMappingURL=estilos.css.map */

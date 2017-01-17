@@ -26,7 +26,9 @@
     <nav>
         <ul>
             <li id="inicio"><a href="{{url('/')}}"><i class="fa fa-home" aria-hidden="true"></i>Inicio</a></li>
-            <li id="nosotros"><a href="#"><i class="fa fa-users" aria-hidden="true"></i>¿Quiénes somos?</a></li>
+            
+            <li id="nosotros"><a  href="#"><i class="fa fa-users" aria-hidden="true"></i>¿Quiénes somos?</a></li>
+            
             <li id="programas" class="sub-menu">
                 <a href="#">
                     <i class="fa fa-commenting" aria-hidden="true"></i>Programas<i class="fa fa-angle-down cared" aria-hidden="true"></i>
