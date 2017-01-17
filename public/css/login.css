@@ -3,13 +3,12 @@
 /*body{background:url("http://www.galaxiastudio.com/wp-content/uploads/2014/03/2252.jpg")#FF9000}*/
 
 h1 {
-    color: rgba(0, 0, 0, .5);
+    color: #fff;
     text-align: center;
-    font-faimly: icon;
 }
 .login-form {
     padding: 30px 30px;
-    background: #ffe76c;
+    background: #ffe66b;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     margin: 60px auto;
@@ -146,6 +145,10 @@ h1 {
     border-radius: 4px;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
+}
+.log-btn:hover{
+  background: rgba(6, 6, 6, 0.75);
+  transition: all 0.5s;
 }
 .link {
     text-decoration: none;

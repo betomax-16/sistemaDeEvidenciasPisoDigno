@@ -14,7 +14,7 @@
         @else
         <div class="login-session">
           <input type="text" value="{{ 'Bienvenido '.Auth::user()->nombre }}" disabled>
-          <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn orange" data-toggle="tooltip" data-placement="top" title="Cerrar Sesión">
+          <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn orange logout" data-toggle="tooltip" data-placement="top" title="Cerrar Sesión">
             <span class="fa fa-sign-out" aria-hidden="true"></span>
           </a>
           <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">

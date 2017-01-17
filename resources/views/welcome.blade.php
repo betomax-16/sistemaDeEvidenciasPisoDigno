@@ -3,6 +3,7 @@
 <link rel="stylesheet" type="text/css" href="{{asset('css/textoPresentacion.css')}}" />
 <link rel="stylesheet" href="{{asset('css/style1.css')}}">
 <link rel="stylesheet" href="{{asset('css/Estadisticas.css')}}">
+<link rel="stylesheet" href="{{asset('css/general.css')}}">
 
 
 
@@ -91,7 +92,7 @@
 
             <div class="row  NC">
                 <article class="col-xs-12 col-md-6">
-                    <h1>Nosotros</h1>
+                    <h1 class="subtitulo1">Nosotros</h1>
                     <br>
                     <p> <spam> GRUPOS SOCIALES UNIDOS POR PUEBLA 13 DE NOVIEMBRE A.C.,</spam> es una organización no lucrativa de la sociedad civil que opera primordialmente en el Estado de Puebla, la cual busca generar acciones encaminadas a mitigar los estragos que el abandono y la carencia de recursos económicos y materiales, han provocado en los grupos más vulnerables de nuestro Estado.
                     <br>
@@ -120,7 +121,7 @@
         <div class="container">
             <br>
             <br>
-            <h2 class="titulo text-xs-center font-weight-bold">¿Qué es lo <span>que hacemos?</span></h2>
+            <h2 class="titulo text-xs-center subtitulo1">¿Qué es lo <span>que hacemos?</span></h2>
             <h5 class="text-xs-center">Ayudanos a ayudar</h5>
 
             <div class="linea"></div>
@@ -237,7 +238,7 @@
     </section>
 
     <main class="programas   wow zoomIn p-1">
-        <h3 class="titulo text-xs-center font-weight-bold">Nuestros Programas</h3>
+        <h3 class="text-xs-center subtitulo1">Nuestros Programas</h3>
         <div class="container">
             <div class="row" id="proyectos">
 
@@ -246,7 +247,7 @@
                     <img src=" {{asset('imagenes/aplicacion/Bivienda.svg')}} " alt="LogoPiso Digno">
                     <h3><a> Piso Digno</a></h3>
                     <p class="hidden-md-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia natus asperiores quo eaque, reiciendis provident nobis voluptatem. Quos repellat excepturi cupiditate earum exercitationem porro tempore, odit consectetur fugit ipsa facere.</p>
-                    <button class="btn blue hidden-md hidden-md-down">Más Informacion</button>
+                    <button class="btn blue-inverse hidden-md hidden-md-down">Más Informacion</button>
                 </article>
 
                 <article class="col-lg-4" data-toggle="modal" data-target="#PisoD">
@@ -254,7 +255,7 @@
                     <img src="{{asset('imagenes/aplicacion/despensa.svg')}}" alt="LogoPiso Digno">
                     <h3><a>Despensas</a></h3>
                     <p class="hidden-md-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia natus asperiores quo eaque, reiciendis provident nobis voluptatem. Quos repellat excepturi cupiditate earum exercitationem porro tempore, odit consectetur fugit ipsa facere.</p>
-                    <button class="btn purple hidden-md hidden-md-down">Más Informacion</button>
+                    <button class="btn purple-inverse hidden-md hidden-md-down">Más Informacion</button>
                 </article>
 
                 <article class="col-lg-4" data-toggle="modal" data-target="#PisoD">
@@ -262,7 +263,7 @@
                     <img src="{{asset('imagenes/aplicacion/Salud.svg')}}" alt="LogoPiso Digno">
                     <h3><a>Salud</a></h3>
                     <p class="hidden-md-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia natus asperiores quo eaque, reiciendis provident nobis voluptatem. Quos repellat excepturi cupiditate earum exercitationem porro tempore, odit consectetur fugit ipsa facere.</p>
-                    <button class="btn red hidden-md hidden-md-down">Más Informacion</button>
+                    <button class="btn red-inverse hidden-md hidden-md-down">Más Informacion</button>
                 </article>
             </div>
         </div>

@@ -8,7 +8,7 @@
           <div class="col-md-8">
             <div class="form-container">
               <div class="form-header">
-                <h1>Formulario de contacto</h1>
+                <h1 class="subtitulo1">Formulario de contacto</h1>
               </div>
               <div class="form-body">
                 {!! Form::open(['route' => 'enviarContacto', 'method' => 'POST']) !!}
@@ -62,7 +62,7 @@
             </div>
           </div>
           <div class="col-md-4">
-              <h3>Detalles de contacto</h3>
+              <h3 class="subtitulo3">Detalles de contacto</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque laborum commodi suscipit vitae eius perferendis consequuntur? Modi nihil aliquam, quas deserunt vitae atque suscipit ratione rerum eveniet. Qui, adipisci ad.</p>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque laborum commodi suscipit vitae eius perferendis consequuntur? Modi nihil aliquam, quas deserunt vitae atque suscipit ratione rerum eveniet. Qui, adipisci ad.</p>
           </div>
