@@ -138,9 +138,20 @@ header nav ul li i{
 /*donativos*/
 .nav-bar .login{
   float: right;
-  margin-top: 35px;
+  margin-top: 30px;
   margin-right: 25px;
+  border-radius: 100px;
+  border: 5px solid #FDA;
 }
+.nav-bar .login i{
+  margin-top: 4px;
+  margin-left: 15px;
+  color: #FDA;
+}
+.nav-bar .login:hover{
+  border-color: #FEC;
+}
+
 .nav-bar .login-session{
   float: right;
   margin-top: 40px;
@@ -156,32 +167,12 @@ header nav ul li i{
   display: inline-flex;
   font-weight: bold;
 }
-/*.login-session a{
-    text-decoration: none;
-    height: 35px;
-    width: 40px;
-    display: inline-flex;
-    border-style: groove;
-    border-radius: 0px 7px 7px 0px;
-    background: ##FFE66B;
-    color: #fff;
-    margin-left: -5px;
-}
-.login-session a:hover{
-  background: #FCC206;
-}
-.login-session a span{
-  margin-left: 11px;
-  margin-top: 6px;
-}*/
 header nav ul #login{
   background: #E6344A;
   display: none;
 }
 /*--donativos--*/
-.nav-bar i{
-  display: none;
-}
+
 
 
 header nav ul li:hover .children{
@@ -228,7 +219,9 @@ header nav ul li .cared{
   }
   .nav-bar a img{
     width: 200px;
+    height: 70px;
     margin-top: -88px;
+    margin-left: -40px;
   }
   /*donativos*/
   .nav-bar .login-session{
@@ -307,6 +300,7 @@ header nav ul li .cared{
   }
   .nav-bar a img{
     width: 200px;
+    height: 70px;
     margin-top: -88px;
   }
   /*donativos*/
@@ -386,6 +380,7 @@ header nav ul li .cared{
   }
   .nav-bar a img{
     width: 200px;
+    height: 70px;
     margin-top: -88px;
   }
   /*donativos*/

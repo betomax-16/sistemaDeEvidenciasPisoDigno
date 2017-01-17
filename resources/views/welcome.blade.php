@@ -93,7 +93,7 @@
                 <article class="col-xs-12 col-md-6">
                     <h1>Nosotros</h1>
                     <br>
-                    <p> <spam> GRUPOS SOCIALES UNIDOS POR PUEBLA 13 DE NOVIEMBRE A.C.,</spam> es una organización no lucrativa de la sociedad civil que opera primordialmente en el Estado de Puebla, la cual busca generar acciones encaminadas a mitigar los estragos que el abandono y la carencia de recursos económicos y materiales, han provocado en los grupos más vulnerables de nuestro Estado. 
+                    <p> <spam> GRUPOS SOCIALES UNIDOS POR PUEBLA 13 DE NOVIEMBRE A.C.,</spam> es una organización no lucrativa de la sociedad civil que opera primordialmente en el Estado de Puebla, la cual busca generar acciones encaminadas a mitigar los estragos que el abandono y la carencia de recursos económicos y materiales, han provocado en los grupos más vulnerables de nuestro Estado.
                     <br>
                     <br>
                     Fue precisamente en dos mil once, cuando nuestro presidente, el señor Jesús Barrales Sevilla, buscó constituir un equipo de trabajo con el afán de sembrar una semilla de solidaridad y corresponsabilidad en todos aquellos que de forma desinteresada se han unido a la causa de ayudar a los que menos tienen.
@@ -120,7 +120,7 @@
         <div class="container">
             <br>
             <br>
-            <h2 class="titulo text-xs-center font-weight-bold">¿Que es lo <span>que hacemos?</span></h2>
+            <h2 class="titulo text-xs-center font-weight-bold">¿Qué es lo <span>que hacemos?</span></h2>
             <h5 class="text-xs-center">Ayudanos a ayudar</h5>
 
             <div class="linea"></div>

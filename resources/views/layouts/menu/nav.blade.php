@@ -10,7 +10,7 @@
       </span>
         </a>
         @if (Auth::guest())
-        <a href="{{ url('/login') }}" class="btn orange login"><i class="fa fa-heartbeat" aria-hidden="true"></i>Iniciar Sesión</a>
+        <a href="{{ url('/login') }}" class="btn orange-inverse login">Iniciar Sesión<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
         @else
         <div class="login-session">
           <input type="text" value="{{ 'Bienvenido '.Auth::user()->nombre }}" disabled>
@@ -41,7 +41,7 @@
             </li>
             <li id="contacto"><a href="{{route('contacto')}}"><i class="fa fa-coffee" aria-hidden="true"></i>Contacto</a></li>
             @if (Auth::guest())
-            <li id="login"><a href="{{ url('/login') }}"><i class="fa fa-heartbeat" aria-hidden="true"></i>Iniciar Sesión</a></li>
+            <li id="login"><a href="{{ url('/login') }}"><i class="fa fa-address-card-o" aria-hidden="true"></i></i>Iniciar Sesión</a></li>
             @else
               @if(Auth::user()->role == 'ROLE_ADMIN')
                 <li id="usuarios"><a href="{{route('usuario.index')}}"><i class="fa fa-user-circle-o" aria-hidden="true"></i>Usuarios</a></li>

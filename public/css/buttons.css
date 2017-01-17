@@ -96,22 +96,22 @@
 
 .orange {
   color: #e67e22;
-  border: 2px #e67e22 solid;
+  border: 2px #f7931e solid;
 }
 
 .orange:hover {
   color: #fff;
-  background-color: #e67e22;
+  background-color: #ff7700;
 }
 
 .orange-inverse{
-  background-color: #e67e22;
+  background-color: #f7931e;
   color: #fff
 }
 
 .orange-inverse:hover{
   color: #fff;
-  background-color: #C86D1D;
+  background-color: #f58728;
 }
 
 .yellow {

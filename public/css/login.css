@@ -9,7 +9,7 @@ h1 {
 }
 .login-form {
     padding: 30px 30px;
-    background: yellowgreen;
+    background: #ffe76c;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     margin: 60px auto;
@@ -135,7 +135,7 @@ h1 {
 }
 .log-btn {
   padding: 7px;
-    background: coral;
+    background: rgba(6, 6, 6, 0.44);
     dispaly: inline-block;
     width: 100%;
     font-size: 30px;
@@ -170,5 +170,5 @@ h1 {
     }
 }
 label{
-  color: cadetblue!important;
+  color: rgba(0, 0, 0, 0.65)!important;
 }
