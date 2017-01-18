@@ -64,7 +64,7 @@
                   </ul>
               </li>
             @endif
-            <li id="donar"d><a href=""><i class="fa fa-heartbeat" aria-hidden="true"></i>Donar</a></li>
+            <li id="donar"d><a href="{{route('donacion')}}"><i class="fa fa-heartbeat" aria-hidden="true"></i>Donar</a></li>
         </ul>
     </nav>
 </header>
