@@ -1,3 +1,0 @@
-if (self.CavalryLogger) { CavalryLogger.start_js(["V0PYT"]); }
-
-__d('HideInlineHelp',['DynamicIconSelector','SelectorDeprecated'],(function a(b,c,d,e,f,g){var h=[],i={registerMenu:function j(k,l,m){h[k]=l.setValue.bind(l,m);},registerLegacyMenu:function j(k,l,m){h[k]=function(){c('SelectorDeprecated').setSelected(l,m);c('DynamicIconSelector').swapIcon(l);};},registerAsyncPopoverMenu:function j(k,l,m){h[k]=function(){var n=l.getMenu();n.setValue(m);};},triggerUndo:function j(k){h[k]();}};f.exports=i;}),null);
