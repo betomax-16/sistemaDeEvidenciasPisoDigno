@@ -4,14 +4,7 @@
 <link rel="stylesheet" href="{{asset('css/style1.css')}}">
 <link rel="stylesheet" href="{{asset('css/Estadisticas.css')}}">
 <link rel="stylesheet" href="{{asset('css/general.css')}}">
-
-
-
-
-<link rel="stylesheet" href="{{asset('css/odometer-theme-train-station.css')}}"> @endsection @section('content')
-
-
-
+@endsection @section('content')
 <div class="bak">
     <section class="Bienvenidos">
         <div class="sp-container hidden-md-down" style="z-index:1;">

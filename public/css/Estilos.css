@@ -1,5 +1,6 @@
+@import url('../fonts/fonts.css');
 * {
-    font-family: 'CANDARA'
+    font-family: CANDARA
 }
 .encavezado {
     background: #fff;
@@ -817,11 +818,9 @@ Pie De Pagina
     font-size: 16px;
 }
 .piedepagina2 a {
-    <<<<<<< HEAD text-decoration: none;
-    color: #000;
-    =======text-decoration: none;
+    font-family: 'Candara-Italic';
+    text-decoration: none;
     color: #fff;
-    >>>>>>> 4430d12b62eebf696c5021679069bc38627b51e8
 }
 .piedepagina2 a:hover {
     color: #FF8;
@@ -933,7 +932,7 @@ Pie De Pagina
     margin-top: 2rem;
 }
 
-/* 
+/*
 .somos .persona1 .citas {
     border-right: 6px groove;
     border-bottom: 6px groove;

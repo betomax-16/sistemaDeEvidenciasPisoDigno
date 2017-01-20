@@ -15,6 +15,9 @@ header{
 header nav a:visited{
   color: #fff;
 }
+.sub-menu a:visited{
+  color: #fff;
+}
 header nav{
   background: #E4E4E9;
   z-index: 1000;
@@ -106,7 +109,7 @@ header nav ul li i{
   display: flex;
   flex-grow: 1;
   /*background: #ECC562;*/
-  background: #de62ec;
+  background: rgba(222, 98, 236, 0.77);
   font-weight: normal;
 }
 .children a{
@@ -155,6 +158,7 @@ header nav ul li i{
 .nav-bar .logout{
   border-radius: 100px;
   border: 5px solid #FDA;
+  margin-top: -5px;
 }
 .nav-bar .logout:hover{
   border-color: #FEC;

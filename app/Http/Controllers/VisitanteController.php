@@ -61,6 +61,7 @@ class VisitanteController extends Controller
 
   public function donacion()
   {
-    return $this->noGuardarCache(view('visitante/donacion'));
+    return $this->noGuardarCache(view('visitante/proximamente'));
+    //return $this->noGuardarCache(view('visitante/donacion'));
   }
 }
