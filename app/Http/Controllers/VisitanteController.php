@@ -17,7 +17,10 @@ class VisitanteController extends Controller
     $response->header('Pragma', 'no-cache');
     return $response;
   }
-
+ public function avisop()
+  {
+    return $this->noGuardarCache(view('visitante/avisop'));
+  }
   public function contacto()
   {
     return $this->noGuardarCache(view('visitante/contacto'));

@@ -946,3 +946,12 @@ Pie De Pagina
 .programas .subtitulo1 {
     color: #a4a4a3;
 }
+.avisop p {
+    text-align: justify;
+}
+.avisop spam {
+    font-family: 'Candara-Bold';
+}
+.avisop li {
+    margin-left: 2rem;
+}

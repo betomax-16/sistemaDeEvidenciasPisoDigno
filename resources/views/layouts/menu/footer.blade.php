@@ -1,7 +1,7 @@
 <footer class="piedepagina p-y-1 " role="contentinfo">
     <section>
         <div class="piedepagina1 container">
-           <br>
+            <br>
             <p class="subtitulo4">Síguenos</p>
             <hr>
             <ul class="redes-sociales">
@@ -11,7 +11,7 @@
             </ul>
         </div>
         <div class="piedepagina2 conteiner-fluid text-center">
-            <p> Grupo Social Unidos por Puebla - <a href="#">Aviso de Privacidad</a></p>
+            <p> Grupo Social Unidos por Puebla - <a href="{{route( 'avisop')}}">Aviso de Privacidad</a></p>
         </div>
     </section>
 </footer>
