@@ -374,6 +374,7 @@ Lo que hacemos
 }
 .lo-que-hacemos li {
     min-height: 9rem;
+    height: 158px;
 }
 .lo-que-hacemos ul li {
     min-height: 10rem;
