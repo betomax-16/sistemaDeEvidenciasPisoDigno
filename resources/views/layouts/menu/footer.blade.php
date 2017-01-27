@@ -11,7 +11,7 @@
             </ul>
         </div>
         <div class="piedepagina2 conteiner-fluid text-center">
-            <p> Grupo Social Unidos por Puebla - <a href="{{route( 'avisop')}}">Aviso de Privacidad</a></p>
+            <p> Grupo Social Unidos por Puebla - <a href="{{route('avisop')}}">Aviso de Privacidad</a></p>
         </div>
     </section>
 </footer>

@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 <section class="container somos text-xs-center">
-    <h1 class="subtitulo1">¿Quienes somos?</h1>
+    <h1 class="subtitulo1">¿Quiénes somos?</h1>
     <hr/>
     <br>
     <p>Somos una gran familia conformada por amigos, líderes sociales y voluntarios cuya afinidad por aportar tiempo, esfuerzo y talento en aras de ayudar a las familias poblanas más necesitadas, nos ha consolidado en un equipo interdisciplinario que ha sabido garantizar el correcto devenir de las metas y objetivos de la asociación.

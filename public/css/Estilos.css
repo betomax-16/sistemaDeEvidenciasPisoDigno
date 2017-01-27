@@ -210,6 +210,7 @@ Mision y Vision
     font-size: xx-large;
     font-weight: bold;
     color: #fff;
+    z-index: 1;
 }
 .M-V .opciones .btn-secondary {
     -webkit-box-flex: 1;
@@ -328,7 +329,9 @@ Lo que hacemos
 .lo-que-hacemos {
     margin-top: 6rem;
     background-color: #FFE66B;
-    //background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png");
+    background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre-v2.png");
+    background-attachment: fixed;
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 .lo-que-hacemos .mision {
     -webkit-align-self: center;
@@ -383,6 +386,26 @@ Lo que hacemos
 .lo-que-hacemos .linea {
     background-color: #FFF;
     height: 1px;
+}
+.lo-que-hacemos ul li p {
+    text-align: justify;
+}
+.lo-que-hacemos ul li:hover img {
+    animation: vibrar .01s ease-in-out infinite;
+}
+@keyframes vibrar {
+    from {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    75% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-10deg);
+    }
 }
 
 /*
@@ -598,6 +621,14 @@ Media Querys
 @media (max-width: 543px) {
     .M-V {
         margin-top: -66px
+    }
+    .M-V .opciones button {
+        font-size: 23px;
+        font-weight: bold;
+        color: #fff;
+    }
+    .programas h3 a {
+        font-size: 1.3rem;
     }
 }
 @media (min-width: 544px) and (max-width: 991px) {
@@ -876,6 +907,36 @@ Pie De Pagina
 .ir-arriba:focus {
     outline: 0;
     text-decoration: none;
+}
+@media (max-width: 575px) {
+    .piedepagina .redes-sociales a {
+        font-size: 2.5rem;
+        margin: 2rem;
+    }
+    .piedepagina1 .subtitulo4 {
+        font-size: inherit;
+    }
+    .piedepagina2 a {
+        display: block;
+    }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+    .piedepagina .redes-sociales a {
+        font-size: 2.5rem;
+        margin: 4rem;
+    }
+    .piedepagina1 .subtitulo4 {
+        font-size: inherit;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .piedepagina .redes-sociales a {
+        font-size: 2.5rem;
+        margin: 6rem;
+    }
+    .piedepagina1 .subtitulo4 {
+        font-size: 1.5rem;
+    }
 }
 .somos {
     margin-top: 1rem;
