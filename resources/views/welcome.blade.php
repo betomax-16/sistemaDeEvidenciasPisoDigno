@@ -3,8 +3,7 @@
 <link rel="stylesheet" type="text/css" href="{{asset('css/textoPresentacion.css')}}" />
 <link rel="stylesheet" href="{{asset('css/style1.css')}}">
 <link rel="stylesheet" href="{{asset('css/Estadisticas.css')}}">
-<link rel="stylesheet" href="{{asset('css/general.css')}}">
-@endsection @section('content')
+<link rel="stylesheet" href="{{asset('css/general.css')}}"> @endsection @section('content')
 <div class="bak">
     <section class="Bienvenidos">
         <div class="sp-container hidden-md-down" style="z-index:1;">
@@ -61,7 +60,8 @@
                 <div class="col-md-4">
                     <div class="collapse col-md-12 " id="collapseVision">
                         <div class="card card-block">
-                            En el año 2022, <spam> GRUPOS SOCIALES UNIDOS POR PUEBLA 13 DE NOVIEMBRE A.C.</spam>, será un referente entre las organizaciones de la sociedad civil en el Estado de Puebla, por su eficaz gestión y canalización de apoyos sociales; el impacto de sus acciones asistenciales en la calidad de vida de las familias poblanas beneficiadas; su intensa y continua labor en el área de orientación y capacitación; la transparente ejecución de los recursos económicos y materiales captados; y, por el alto sentido humano de todos los que la conforman.
+                            En el año 2022,
+                            <spam> GRUPOS SOCIALES UNIDOS POR PUEBLA 13 DE NOVIEMBRE A.C.</spam>, será un referente entre las organizaciones de la sociedad civil en el Estado de Puebla, por su eficaz gestión y canalización de apoyos sociales; el impacto de sus acciones asistenciales en la calidad de vida de las familias poblanas beneficiadas; su intensa y continua labor en el área de orientación y capacitación; la transparente ejecución de los recursos económicos y materiales captados; y, por el alto sentido humano de todos los que la conforman.
 
                         </div>
                     </div>
@@ -87,16 +87,15 @@
                 <article class="col-xs-12 col-md-6">
                     <h1 class="subtitulo1">Nosotros</h1>
                     <br>
-                    <p> <spam> GRUPOS SOCIALES UNIDOS POR PUEBLA 13 DE NOVIEMBRE A.C.,</spam> es una organización no lucrativa de la sociedad civil que opera primordialmente en el Estado de Puebla, la cual busca generar acciones encaminadas a mitigar los estragos que el abandono y la carencia de recursos económicos y materiales, han provocado en los grupos más vulnerables de nuestro Estado.
-                    <br>
-                    <br>
-                    Fue precisamente en dos mil once, cuando nuestro presidente, el señor Jesús Barrales Sevilla, buscó constituir un equipo de trabajo con el afán de sembrar una semilla de solidaridad y corresponsabilidad en todos aquellos que de forma desinteresada se han unido a la causa de ayudar a los que menos tienen.
-                    <br>
-                     <br>
-                      De ahí que la asociación se haya dado a la tarea de desarrollar y ejecutar acciones en los ámbitos de la educación, salud, alimentación, vestido, desarrollo humano y medio ambiente, con las que busca contribuir a alcanzar la línea de bienestar de las familias apoyadas, y en consecuencia, su desarrollo integral y el de sus comunidades.
-                      <br>
-                       <br>
-                        Sin duda,<spam> GRUPOS SOCIALES UNIDOS POR PUEBLA 13 DE NOVIEMBRE A.C.,</spam> representa un esfuerzo más que se suma a labor diaria de personas como tú, esto es, de seres humanos con la firme convicción de abonar al porvenir de sus semejantes.
+                    <p>
+                        <spam> GRUPOS SOCIALES UNIDOS POR PUEBLA 13 DE NOVIEMBRE A.C.,</spam> es una organización no lucrativa de la sociedad civil que opera primordialmente en el Estado de Puebla, la cual busca generar acciones encaminadas a mitigar los estragos que el abandono y la carencia de recursos económicos y materiales, han provocado en los grupos más vulnerables de nuestro Estado.
+                        <br>
+                        <br> Fue precisamente en dos mil once, cuando nuestro presidente, el señor Jesús Barrales Sevilla, buscó constituir un equipo de trabajo con el afán de sembrar una semilla de solidaridad y corresponsabilidad en todos aquellos que de forma desinteresada se han unido a la causa de ayudar a los que menos tienen.
+                        <br>
+                        <br> De ahí que la asociación se haya dado a la tarea de desarrollar y ejecutar acciones en los ámbitos de la educación, salud, alimentación, vestido, desarrollo humano y medio ambiente, con las que busca contribuir a alcanzar la línea de bienestar de las familias apoyadas, y en consecuencia, su desarrollo integral y el de sus comunidades.
+                        <br>
+                        <br> Sin duda,
+                        <spam> GRUPOS SOCIALES UNIDOS POR PUEBLA 13 DE NOVIEMBRE A.C.,</spam> representa un esfuerzo más que se suma a labor diaria de personas como tú, esto es, de seres humanos con la firme convicción de abonar al porvenir de sus semejantes.
                     </p>
                 </article>
                 <header class="text-xs-center col-xs-12 offset-md-1 col-md-5" style="z-index:1;">
@@ -111,7 +110,7 @@
 
     <section class="lo-que-hacemos p-a-1">
 
-        <div class="container">
+        <div class="container-fluid">
             <br>
             <br>
             <h2 class="titulo text-xs-center subtitulo1">¿Qué es lo <span>que hacemos?</span></h2>
@@ -123,54 +122,57 @@
 
                 <ul class="col-xs-6 col-lg-4 text-xs-center text-lg-left  wow bounceInLeft">
                     <li>
-                        <img src="{{asset('imagenes/aplicacion/Bivienda.svg')}}" alt="" aria-hidden="true">
+                        <img src="{{asset('imagenes/aplicacion/Bivienda.svg')}}" class="img-fluid" alt="" aria-hidden="true">
                         <div class="contenedor-eleccion">
-                            <h4>Ponemos piso firme </h4>
-                            <p class="hidden-md-down">Se pone piso firme a las casas con piso de tierra o en peor estado.</p>
+                            <h4>Vivienda </h4>
+                            <p class="hidden-md-down">Porque un HOGAR es más que un techo y cuatro paredes, implementamos acciones encaminadas a MEJORAR las condiciones de HABITABILIDAD en los hogares menos afortunados.</p>
                         </div>
                     </li>
-
+                    <br>
                     <li>
                         <img src="{{asset('imagenes/aplicacion/despensa.svg')}}" alt="">
                         <div class="contenedor-eleccion">
-                            <h4>Entregamos despensas </h4>
-                            <p class="hidden-md-down">A las Familias de escasos recursos se les entrega una despensa cada mes.</p>
+                            <h4>Alimentación </h4>
+                            <p class="hidden-md-down">Buscamos generar acciones y condiciones que garanticen una alimentación DISPONIBLE, ACCESIBLE y ADECUADA a las familias más necesitadas.</p>
                         </div>
                     </li>
+                    <br>
                     <li>
-                        <img src="{{asset('imagenes/aplicacion/MedioAmbiente.svg')}}" alt="">
+                        <img src="{{asset('imagenes/aplicacion/Salud.svg')}}" alt="">
                         <div class="contenedor-eleccion">
-                            <h4>Ayudamos a los menos aforunados</h4>
-                            <p class="hidden-md-down">Se entregan, sillas de ruedas, bastones y demas a quienes mas lo necesitan.</p>
+                            <h4>Salud</h4>
+                            <p class="hidden-md-down">Dado que salud no es sólo la ausencia de enfermedades o afecciones, efectuamos campañas de prevención y atención temprana que permiten un completo estado de BIENESTAR FÍSICO, MENTAL y SOCIAL a las personas más vulnerables.</p>
                         </div>
                     </li>
                 </ul>
 
-                <div class=" mision hidden-md-down col-lg-4  wow tada">
+                <div class=" mision hidden-md-down col-lg-4 wow tada">
                     <img src="{{asset('imagenes/aplicacion/mision.svg')}}" alt="mision">
                 </div>
 
                 <ul class="col-xs-6 col-lg-4 text-xs-center text-lg-right wow bounceInRight">
                     <li>
-                        <img src="{{asset('imagenes/aplicacion/Bivienda.svg')}}" alt="" aria-hidden="true">
+                        <img src="{{asset('imagenes/aplicacion/Educacion.svg')}}" alt="" aria-hidden="true">
                         <div class="contenedor-eleccion">
-                            <h4>Ponemos piso firme </h4>
-                            <p class="hidden-md-down">Se pone piso firme a las casas con piso de tierra o en peor estado.</p>
+                            <h4>Educación </h4>
+                            <p class="hidden-md-down">El estudio es una oportunidad para crecer en el mundo del saber, por eso gestionamos becas y patrocinios que permiten a nuestros niños y jóvenes continuar con el desarrollo de sus CAPACIDADES y TALENTOS.</p>
                         </div>
                     </li>
-                    <li>
-                        <img src="{{asset('imagenes/aplicacion/despensa.svg')}}" alt="">
-                        <div class="contenedor-eleccion">
-                            <h4>Entregamos despensas </h4>
-                            <p class="hidden-md-down">A las Familias de escasos recursos se les entrega una despensa cada mes.</p>
-                        </div>
-
-                    </li>
+                    <br>
                     <li>
                         <img src="{{asset('imagenes/aplicacion/MedioAmbiente.svg')}}" alt="">
                         <div class="contenedor-eleccion">
-                            <h4>Ayudamos a los menos aforunados</h4>
-                            <p class="hidden-md-down">Se entregan, sillas de ruedas, bastones y demas a quienes mas lo necesitan.</p>
+                            <h4>Medio Ambiente </h4>
+                            <p class="hidden-md-down">El planeta es nuestro hogar común y todos somos corresponsables de su cuidado, de ahí que fomentamos iniciativas dirigidas a la PRESERVACIÓN y DESARROLLO SUSTENTABLE de los recursos naturales.</p>
+                        </div>
+
+                    </li>
+                    <br>
+                    <li>
+                        <img src="{{asset('imagenes/aplicacion/OS.svg')}}" alt="">
+                        <div class="contenedor-eleccion">
+                            <h4>Orientación Social</h4>
+                            <p class="hidden-md-down">Todo problema tiene una solución, por eso organizamos a grupos de profesionales a efecto de brindar jornadas de CAPACITACIÓN y ASESORÍA sobre temas cotidianos, así como de asuntos muy particulares que aquejan a nuestros allegados.</p>
                         </div>
                     </li>
                 </ul>
