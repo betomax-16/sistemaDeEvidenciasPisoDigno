@@ -999,3 +999,9 @@ Pie De Pagina
 .avisop li {
     margin-left: 2rem;
 }
+@media (max-width: 575px) {
+  .avisop h1 {
+      font-size: 1.5rem;
+      font-weight: bold;
+  }
+}
