@@ -26,8 +26,8 @@
     <link rel="stylesheet" href="{{asset('css/Estilos.css')}}">
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/menu/menu.css')}}">
-    <link rel="stylesheet" href="{{asset('css/buttons.css')}}">
-    @yield('styles')
+
+    <link rel="stylesheet" href="{{asset('css/buttons.css')}}"> @yield('styles')
 
     <!-- Scripts -->
     <script>

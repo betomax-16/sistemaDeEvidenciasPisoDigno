@@ -1,17 +1,23 @@
-@extends('layouts.app')
-@section('styles')
-<link rel="stylesheet" href="{{asset('css/general.css')}}">
-@endsection
-@section('content')
-<section class="container somos text-xs-center">
-    <h1 class="subtitulo1">¿Quiénes somos?</h1>
+@extends('layouts.app') @section('styles')
+<link rel="stylesheet" href="{{asset('css/general.css')}}"> @endsection @section('content')
+<div class="estilo">
+</div>
+
+<div class="container-fluid cabeza">
+
+
+    <h1 class="subtitulo1 text-xs-center ">¿Quiénes somos?</h1>
     <hr/>
     <br>
-    <p>Somos una gran familia conformada por amigos, líderes sociales y voluntarios cuya afinidad por aportar tiempo, esfuerzo y talento en aras de ayudar a las familias poblanas más necesitadas, nos ha consolidado en un equipo interdisciplinario que ha sabido garantizar el correcto devenir de las metas y objetivos de la asociación.
-    </p>
     <br>
-    <p>Los miembros que actualmente encabezan esta noble labor son:
-    </p>
+    <h3>    Somos una gran familia conformada por amigos, líderes sociales y voluntarios cuya afinidad por aportar tiempo, esfuerzo y talento en aras de ayudar a las familias poblanas más necesitadas, nos ha consolidado en un equipo interdisciplinario que ha sabido garantizar el correcto devenir de las metas y objetivos de la asociación.
+    </h3>
+
+</div>
+<section class="container-fluid somos text-xs-center">
+    <br>
+    <h1>Los miembros que actualmente encabezan esta noble labor son:
+    </h1>
     <div class="persona1 wow fadeIn">
         <div class=" col-xs-12 col-md-5">
             <img class="img-fluid" src="{{asset('imagenes/somos/persona1.jpg')}}" alt="">
@@ -74,11 +80,11 @@
         </div>
     </div>
 </section>
-@include('layouts/templates/modal') @include('layouts/menu/footer') @endsection
-@section('javascripts')
+@include('layouts/templates/modal') @include('layouts/menu/footer') @endsection @section('javascripts')
 <script type="text/javascript">
-  $(document).ready(function () {
-    $('#somos').addClass('active');
-  });
+    $(document).ready(function() {
+        $('#somos').addClass('active');
+    });
+
 </script>
 @endsection
