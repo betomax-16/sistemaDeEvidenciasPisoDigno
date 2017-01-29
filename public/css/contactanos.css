@@ -20,6 +20,9 @@
     font-size: 16px;
     font-weight: bold;
 }
+p{
+  text-align: justify;
+}
 label{
   font-size: 20px;
   color: #8c8c8c;
@@ -37,4 +40,84 @@ label{
 }
 #btnGuardar{
   margin-bottom: 5px;
+}
+
+
+#map_canvas{
+  width: 100%!important;
+  margin-bottom: 15px;
+}
+.telefonos li{
+  list-style: none;
+  display: flex;
+}
+li span{
+  font-size: 1.3rem;
+}
+.telefonos li .fa{
+  font-size: 2rem;
+}
+p .fa{
+  font-size: 25px;
+  color: #c10c2d;
+}
+.telefonos{
+  padding-top: 5%;
+}
+.fa-twitter-square{
+  color: rgb(29, 160, 242);
+}
+.fa-facebook-square{
+  color: #3e74b9;
+}
+.fa-phone-square{
+  color: #8b4795;
+}
+
+
+
+
+@media (max-width: 575px) {
+    .subtitulo1 {
+        font-size: 2rem;
+    }
+    .form-container{
+      margin-bottom: 25px;
+    }
+    li span{
+      font-size: 90%;
+    }
+    .qr{
+      padding-top: 5%;
+    }
+    .qr img{
+      height: auto;
+    }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .form-container{
+    margin-bottom: 25px;
+  }
+  li span{
+    font-size: 100%;
+  }
+  .qr img{
+    height: 130px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .qr{
+    padding-top: 2%;
+  }
+  .qr img{
+    height: 130px;
+  }
+  .horarios{
+    padding-top: 5%;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  li span{
+    font-size: 100%;
+  }
 }

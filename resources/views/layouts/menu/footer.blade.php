@@ -1,17 +1,19 @@
 <footer class="piedepagina p-y-1 " role="contentinfo">
     <section>
         <div class="piedepagina1 container">
-            <br>
-            <p class="subtitulo4">Síguenos</p>
-            <hr>
-            <ul class="redes-sociales">
-                <li><a href="#"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-youtube " aria-hidden="true"></i></a></li>
-            </ul>
+            <p class="subtitulo4"></p>
         </div>
-        <div class="piedepagina2 conteiner-fluid text-center">
-            <p> Grupo Social Unidos por Puebla - <a href="{{route('avisop')}}">Aviso de Privacidad</a></p>
+        <div class="piedepagina2 conteiner-fluid">
+            <div class="row">
+              <div class="col-md-8">
+                <p>© 2017 Grupos Sociales Unidos por Puebla 13 de Noviembre A.C. | Derechos reservados | <a href="{{route('avisop')}}">Aviso de Privacidad</a></p>
+              </div>
+              <div class="col-md-4 redes-sociales text-xs-center text-md-right">
+                <a href="#"><i class="fa fa-facebook " aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-twitter " aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-youtube " aria-hidden="true"></i></a>
+              </div>
+            </div>
         </div>
     </section>
 </footer>
