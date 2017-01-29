@@ -62,14 +62,61 @@
             </div>
           </div>
           <div class="col-md-4">
-              <h3 class="subtitulo3">Detalles de contacto</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque laborum commodi suscipit vitae eius perferendis consequuntur? Modi nihil aliquam, quas deserunt vitae atque suscipit ratione rerum eveniet. Qui, adipisci ad.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque laborum commodi suscipit vitae eius perferendis consequuntur? Modi nihil aliquam, quas deserunt vitae atque suscipit ratione rerum eveniet. Qui, adipisci ad.</p>
+              <h3 class="subtitulo3">¡Escríbenos!</h3>
+              <p>¿Dudas o comentarios? Usa este formulario y en breve te asistiremos.</p>
+              <p>Si te interesa aportar tu talento en nuestras diversas iniciativas,
+                o te gustaría generar un impacto social en tu comunidad, no dudes en
+                hacérnoslo saber por cualquiera de nuestros medios de contacto.</p>
+              <p>
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                Lateral Poniente del Hospital del Niño Poblano, número 1033, interior 5 A,
+                colonia Concepción La Cruz, San Andrés Cholula, Puebla; C.P. 72197.</p>
+                {!!$map['html']!!}
+                <div class="row hidden-md-down">
+                  <div class="col-lg-7 telefonos">
+                    <ul>
+                      <li><i class="fa fa-phone-square" aria-hidden="true"></i><span>: (222) 583-7134</span></li>
+                      <li><i class="fa fa-facebook-square" aria-hidden="true"></i><span>: @gsuppuebla</span></li>
+                      <li><i class="fa fa-twitter-square" aria-hidden="true"></i><span>: @gsuppuebla</span></li>
+                    </ul>
+                  </div>
+                  <div class="col-lg-5">
+                    <img src="{{asset('imagenes/aplicacion/qr.jpg')}}" alt="" class="img-fluid">
+                  </div>
+                </div>
+                <div class="row hidden-md-down">
+                  <div class="col-md-12">
+                    <h4>Horarios de Atención</h4>
+                    <p>Lunes a Viernes de 9:00 a 18:00 horas</p>
+                  </div>
+                </div>
           </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 hidden-lg-up">
+          <div class="row">
+            <div class="col-md-5 col-sm-12  col-xs-12 horarios">
+              <h4>Horarios de Atención</h4>
+              <p>Lunes a Viernes de 9:00 a 18:00 horas</p>
+            </div>
+            <div class="col-md-4 col-sm-8 col-xs-8 telefonos">
+              <ul>
+                <li><i class="fa fa-phone-square" aria-hidden="true"></i><span>: (222) 583-7134</span></li>
+                <li><i class="fa fa-facebook-square" aria-hidden="true"></i><span>: @gsuppuebla</span></li>
+                <li><i class="fa fa-twitter-square" aria-hidden="true"></i><span>: @gsuppuebla</span></li>
+              </ul>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-4 qr">
+              <img src="{{asset('imagenes/aplicacion/qr.jpg')}}" alt="" class="img-fluid">
+            </div>
+          </div>
+        </div>
       </div>
   </div>
  @include('layouts/menu/footer')
 @endsection @section('javascripts')
+<script type="text/javascript">var centreGot = true;</script>
+{!!$map['js']!!}
 <script type="text/javascript">
   $(document).ready(function () {
     $('#contacto').addClass('active');

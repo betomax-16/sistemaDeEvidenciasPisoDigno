@@ -6,6 +6,7 @@ use Laracasts\Flash\Flash;
 use Illuminate\Http\Request;
 use Validator;
 use Mail;
+use Gmaps;
 
 class VisitanteController extends Controller
 {
@@ -23,7 +24,35 @@ class VisitanteController extends Controller
   }
   public function contacto()
   {
-    return $this->noGuardarCache(view('visitante/contacto'));
+    //configuaración
+        $config = array();
+        $config['center'] = '19.036118085809655, -98.24550747871399';
+        $config['map_width'] = 400;
+        $config['map_height'] = 250;
+        $config['zoom'] = 18;
+        $config['onboundschanged'] = 'if (!centreGot) {
+            var mapCentre = map.getCenter();
+            marker_0.setOptions({
+                position: new google.maps.LatLng(mapCentre.lat(), mapCentre.lng())
+            });
+        }
+        centreGot = true;';
+
+        Gmaps::initialize($config);
+
+        // Colocar el marcador
+        // Una vez se conozca la posición del usuario
+        $marker = array();
+        $marker['position'] = '19.036118085809655, -98.24550747871399';
+        $marker['animation'] = 'DROP';
+        //$marker['icon'] = public_path().'\imagenes\aplicacion\icon.png';
+
+        Gmaps::add_marker($marker);
+
+        $map = Gmaps::create_map();
+
+        //Devolver vista con datos del mapa
+    return $this->noGuardarCache(view('visitante/contacto', compact('map')));
   }
 
   public function enviarContacto(Request $request)

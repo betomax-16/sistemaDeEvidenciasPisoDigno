@@ -138,10 +138,4 @@
     <p>Primero de enero de dos mil dieciséis.</p>
 </section>
 @include('layouts/templates/modal') @include('layouts/menu/footer') @endsection @section('javascripts')
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#somos').addClass('active');
-    });
-
-</script>
 @endsection
