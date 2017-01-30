@@ -1,122 +1,6 @@
 @extends('layouts.app') @section('styles')
 <link rel="stylesheet" href="{{asset('css/general.css')}}">
-<style media="screen">
-.container-fluid{
-  margin-top: -20px;
-}
-.texto{
-  padding: 9% 4% 1% 4%;
-}
-p{
-  text-align: justify;
-}
-.recurso{
-  margin-bottom: 17px;
-}
-.tiempo img{
-  width: 100%;
-}
-.tiempo .btn{
-  padding: 5px 20px;
-}
-.especie img{
-  width: 100%;
-}
-.especie .btn{
-  padding: 5px 20px;
-}
-.imagen{
-  padding: 0;
-}
-h1{
-  margin-top: 2%;
-}
-.menu-recurso{
-  display: flex;
-  justify-content: center;
-}
-.menu-recurso ul{
-  display: flex;
-}
-.menu-recurso ul li{
-  font-size: 1.2rem;
-  list-style: none;
-  border-top: 1px;
-  border-bottom: 1px;
-  border-left: 0px;
-  border-right: 0px;
-  border-color: #000;
-  border-style: solid;
-}
-.menu-recurso ul li a:hover{
-  background: #c10c2d;
-  color: #fff;
-}
-.menu-recurso ul li a{
-  text-decoration: none;
-  color: #000;
-  display: block;
-  padding: 0 10px;
-}
-.recurso-active{
-  background: #c10c2d;
-  color: #fff!important;
-}
-.form-line{
-  display: flex;
-  justify-content: center;
-}
-.form-line .form-group{
-  flex: 1 1 auto;
-  padding: 5px 5px 0 5px;
-}
-.donante .form-group{
-  padding: 5px 5px 0 5px;
-}
-.referencia-bancaria, .spei, .paypal{
-  margin-bottom: 35px;
-}
-.hidden{
-  display: none;
-}
-@media (max-width: 575px) {
-  .texto{
-    padding: 3%;
-  }
-  .container-fluid{
-    margin-top: 0;
-  } 
-}
-
-@media (min-width: 576px) and (max-width: 767px) {
-  .texto{
-    padding: 3%;
-  }
-  .container-fluid{
-    margin-top: 0;
-  }
-}
-
-
-@media (min-width: 768px) and (max-width: 991px) {
-  .texto{
-    padding: 2% 2% 1% 2%;
-  }
-  .container-fluid{
-    margin-top: 0;
-  }
-}
-
-@media (min-width: 992px) and (max-width: 1199px) {
-  .texto{
-    padding: 7% 4% 1% 4%;
-  }
-}
-
-@media (min-width: 1200px) {
-
-}
-</style>
+<link rel="stylesheet" href="{{asset('css/donaciones/donaciones.css')}}">
 @endsection @section('content')
 @include('flash::message')
   <div class="container-fluid">
@@ -176,7 +60,7 @@ h1{
         <div class="row tipo-recurso">
           <div class="col-md-12 menu-recurso">
             <ul>
-              <li id="paypal"><a href="#" class="recurso-active">Paypal</a></li>
+              <li id="paypal" class="recurso-active"><a href="#">Paypal</a></li>
               <li id="RFC"><a href="#">Referencia Bancaria</a></li>
               <li id="SPEI"><a href="#">SPEI</a></li>
             </ul>
@@ -236,63 +120,9 @@ h1{
       </div>
     </div>
   </div>
- @include('layouts/menu/footer')
+@include('layouts/menu/footer')
 @endsection @section('javascripts')
-<script type="text/javascript">
-  $(document).ready(function () {
-    $('#donar').addClass('active');
-
-    $('#paypal').click(function (event) {
-      event.preventDefault();
-      $('#RFC').children('a').removeClass('recurso-active');
-      $('#SPEI').children('a').removeClass('recurso-active');
-      if (!$(this).children('a').hasClass('recurso-active')) {
-        $(this).children('a').addClass('recurso-active');
-      }
-      $('.paypal').removeClass('hidden');
-      if (!$('.referencia-bancaria').hasClass('hidden')) {
-        $('.referencia-bancaria').addClass('hidden');
-      }
-      if (!$('.spei').hasClass('hidden')) {
-        $('.spei').addClass('hidden');
-      }
-    });
-
-    $('#RFC').click(function (event) {
-      event.preventDefault();
-      $('#paypal').children('a').removeClass('recurso-active');
-      $('#SPEI').children('a').removeClass('recurso-active');
-      if (!$(this).children('a').hasClass('recurso-active')) {
-        $(this).children('a').addClass('recurso-active');
-      }
-      $(this).children('a').addClass('recurso-active');
-      $('.referencia-bancaria').removeClass('hidden');
-      if (!$('.paypal').hasClass('hidden')) {
-        $('.paypal').addClass('hidden');
-      }
-      if (!$('.spei').hasClass('hidden')) {
-        $('.spei').addClass('hidden');
-      }
-    });
-
-    $('#SPEI').click(function (event) {
-      event.preventDefault();
-      $('#paypal').children('a').removeClass('recurso-active');
-      $('#RFC').children('a').removeClass('recurso-active');
-      if (!$(this).children('a').hasClass('recurso-active')) {
-        $(this).children('a').addClass('recurso-active');
-      }
-      $(this).children('a').addClass('recurso-active');
-      $('.spei').removeClass('hidden');
-      if (!$('.paypal').hasClass('hidden')) {
-        $('.paypal').addClass('hidden');
-      }
-      if (!$('.referencia-bancaria').hasClass('hidden')) {
-        $('.referencia-bancaria').addClass('hidden');
-      }
-    });
-  });
-</script>
+<script src="{{asset('js/donaciones/donaciones.js')}}" charset="utf-8"></script>
 @endsection
 <!--<style media="screen">
   h1{

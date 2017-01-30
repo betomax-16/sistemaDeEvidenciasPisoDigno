@@ -853,6 +853,9 @@ Pie De Pagina
     font-size: 16px;
     text-align: left;
 }
+.piedepagina2 .row{
+  width: 100%;
+}
 .piedepagina2 a {
     font-family: 'Candara-Italic';
     text-decoration: none;
