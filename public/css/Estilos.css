@@ -1,4 +1,4 @@
-    @import url('../fonts/fonts.css');
+            @import url('../fonts/fonts.css');
     * {
         font-family: CANDARA
     }
@@ -777,12 +777,169 @@ Pie De Pagina
         font-size: 1.2rem;
         text-align: center;
     }
+    /*
+
+
+*/
+    
+    .c-hamburger {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        width: 28px;
+        height: 30px;
+        font-size: 0;
+        text-indent: -9999px;
+        appearance: none;
+        box-shadow: none;
+        border-radius: none;
+        border: none;
+        cursor: pointer;
+        -webkit-transition: background 0.3s;
+        transition: background 0.3s;
+        margin-left: auto;
+        margin-right: 0.8px;
+    }
+    .c-hamburger:focus {
+        outline: none;
+    }
+    .c-hamburger span {
+        display: block;
+        position: absolute;
+        top: auto;
+        left: 0;
+        border-radius: 4px;
+        background: #7b8b8e;
+        width: 100%;
+        height: 2px;
+    }
+    .c-hamburger span::before,
+    .c-hamburger span::after {
+        position: absolute;
+        display: block;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #7b8b8e;
+        border-radius: 4px;
+        content: "";
+    }
+    .c-hamburger span::before {
+        top: -7px;
+    }
+    .c-hamburger span::after {
+        bottom: -7px;
+    }
+    .c-hamburger--htx {
+        background-color: #FFF;
+    }
+    .c-hamburger--htx span {
+        -webkit-transition: background 0s 0.3s;
+        transition: background 0s 0.3s;
+    }
+    .c-hamburger--htx span::before,
+    .c-hamburger--htx span::after {
+        -webkit-transition-duration: 0.3s, 0.3s;
+        transition-duration: 0.3s, 0.3s;
+        -webkit-transition-delay: 0.3s, 0s;
+        transition-delay: 0.3s, 0s;
+    }
+    .c-hamburger--htx span::before {
+        -webkit-transition-property: top, -webkit-transform;
+        transition-property: top, transform;
+    }
+    .c-hamburger--htx span::after {
+        -webkit-transition-property: bottom, -webkit-transform;
+        transition-property: bottom, transform;
+    }
+    /* active state, i.e. menu open */
+    
+    .c-hamburger--htx.is-active {
+        background-color: #FFF;
+    }
+    .c-hamburger--htx.is-active span {
+        background: none;
+    }
+    .c-hamburger--htx.is-active span::before {
+        top: 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+    .c-hamburger--htx.is-active span::after {
+        bottom: 0;
+        -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+    .c-hamburger--htx.is-active span::before,
+    .c-hamburger--htx.is-active span::after {
+        -webkit-transition-delay: 0s, 0.3s;
+        transition-delay: 0s, 0.3s;
+    }
+    /*
+Pie De Pagina
+*/
+    
+    .piedepagina p {
+        margin-bottom: 0;
+    }
+    .piedepagina1 {
+        min-height: 10px;
+    }
+    .piedepagina2 {
+        background: rgba(0, 10, 10, 0.65);
+        color: #fff;
+        padding: .5rem;
+        font-size: 16px;
+        text-align: left;
+    }
+    .piedepagina2 .row {
+        width: 100%;
+    }
+    .piedepagina2 a {
+        font-family: 'Candara-Italic';
+        text-decoration: none;
+        color: #fff;
+    }
+    .piedepagina2 a:hover {
+        color: #FF8;
+    }
+    .piedepagina1 p {
+        margin-top: -17px;
+        font-weight: bold;
+    }
+    .piedepagina {
+        font-family: 'Candara-Italic';
+        background: #073E62;
+        color: #fff;
+        font-size: 1.2rem;
+        text-align: center;
+    }
     .redes-sociales {
-        padding-right: 60px;
+        padding-right: 15px;
+        padding-left: 0;
+    }
+    .redes-sociales .btn {
+        padding: 5px;
+        margin: auto !important;
+        font-size: 100%;
+    }
+    .redes-sociales .btn:hover {
+        background: #c32e41;
+    }
+    .redes-sociales .btn-transparencia {
+        padding-left: 0;
+    }
+    .redes-sociales .button-group-redes {
+        margin-top: 5px;
+        padding-left: 0;
     }
     .piedepagina .redes-sociales a {
         color: #fff;
-        margin: 1rem;
+        margin: 10%;
         opacity: .7;
         -webkit-transition: all .5s ease;
         transition: all .5s ease;
@@ -810,102 +967,134 @@ Pie De Pagina
         .piedepagina1 .subtitulo4 {
             font-size: inherit;
         }
-        .redes-sociales {
-            padding-right: 0px;
+        .piedepagina .redes-sociales a {
+            color: #fff;
+            margin: 1rem;
+            opacity: .7;
+            -webkit-transition: all .5s ease;
+            transition: all .5s ease;
         }
-    }
-    @media (min-width: 576px) and (max-width: 767px) {
-        .piedepagina1 .subtitulo4 {
-            font-size: inherit;
+        .piedepagina .redes-sociales a:hover {
+            opacity: 1;
         }
-        .redes-sociales {
-            padding-right: 0px;
+        .ir-arriba {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            font-size: 3rem;
+            text-decoration: none;
+            z-index: 99999;
+            line-height: 0;
+            -webkit-transition: all .5s ease;
+            transition: all .5s ease;
         }
-    }
-    @media (min-width: 768px) and (max-width: 991px) {
-        .piedepagina1 .subtitulo4 {
-            font-size: 1.5rem;
+        .ir-arriba:hover,
+        .ir-arriba:focus {
+            outline: 0;
+            text-decoration: none;
         }
-        .redes-sociales {
-            padding-right: 0px;
+        @media (max-width: 575px) {
+            .piedepagina1 .subtitulo4 {
+                font-size: inherit;
+            }
+            .redes-sociales {
+                padding-right: 0px;
+            }
         }
-    }
-    .somos hr {
-        color: red;
-    }
-    .somos .persona1,
-    .somos .persona2,
-    .somos .persona3,
-    .somos .persona4,
-    .somos .persona5,
-    .somos .persona6 {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 1rem;
-    }
-    .somos .citas {
-        align-self: center;
-    }
-    .somos .persona1 {
-        border: 4px solid #ff6262;
-        border-radius: 3px;
-        margin-bottom: 2rem;
-        margin-top: 2rem;
-    }
-    .somos .persona2 {
-        border: 4px solid #ff8500;
-        border-radius: 3px;
-        margin-bottom: 2rem;
-        margin-top: 2rem;
-    }
-    .somos .persona3 {
-        border: 4px solid #fffa8c;
-        border-radius: 3px;
-        margin-bottom: 2rem;
-        margin-top: 2rem;
-    }
-    .somos .persona4 {
-        border: 4px solid #0053a0;
-        border-radius: 3px;
-        margin-bottom: 2rem;
-        margin-top: 2rem;
-    }
-    .somos .persona5 {
-        border: 4px solid #31B500;
-        border-radius: 3px;
-        margin-bottom: 2rem;
-        margin-top: 2rem;
-    }
-    .somos .persona6 {
-        border: 4px solid #8934B8;
-        border-radius: 3px;
-        margin-bottom: 2rem;
-        margin-top: 2rem;
-    }
-    /*
+        @media (min-width: 576px) and (max-width: 767px) {
+            .piedepagina1 .subtitulo4 {
+                font-size: inherit;
+            }
+            .redes-sociales {
+                padding-right: 0px;
+            }
+        }
+        @media (min-width: 768px) and (max-width: 991px) {
+            .piedepagina1 .subtitulo4 {
+                font-size: 1.5rem;
+            }
+            .redes-sociales {
+                padding-right: 0px;
+            }
+        }
+        .somos hr {
+            color: red;
+        }
+        .somos .persona1,
+        .somos .persona2,
+        .somos .persona3,
+        .somos .persona4,
+        .somos .persona5,
+        .somos .persona6 {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 1rem;
+        }
+        <<<<<<< HEAD .somos .citas {
+            align-self: center;
+            =======.redes-sociales {
+                padding-right: 3%;
+                >>>>>>> 3905991d29efe58a5bd6f963d6701c542c0cf1ac
+            }
+            .somos .persona1 {
+                border: 4px solid #ff6262;
+                border-radius: 3px;
+                margin-bottom: 2rem;
+                margin-top: 2rem;
+            }
+            .somos .persona2 {
+                border: 4px solid #ff8500;
+                border-radius: 3px;
+                margin-bottom: 2rem;
+                margin-top: 2rem;
+            }
+            .somos .persona3 {
+                border: 4px solid #fffa8c;
+                border-radius: 3px;
+                margin-bottom: 2rem;
+                margin-top: 2rem;
+            }
+            .somos .persona4 {
+                border: 4px solid #0053a0;
+                border-radius: 3px;
+                margin-bottom: 2rem;
+                margin-top: 2rem;
+            }
+            .somos .persona5 {
+                border: 4px solid #31B500;
+                border-radius: 3px;
+                margin-bottom: 2rem;
+                margin-top: 2rem;
+            }
+            .somos .persona6 {
+                border: 4px solid #8934B8;
+                border-radius: 3px;
+                margin-bottom: 2rem;
+                margin-top: 2rem;
+            }
+            /*
 .somos .persona1 .citas {
     border-right: 6px groove;
     border-bottom: 6px groove;
     border-radius: 6px;
 }
 */
-    /*# sourceMappingURL=estilos.css.map */
-    
-    .programas .subtitulo1 {
-        color: #a4a4a3;
-    }
-    .avisop p {
-        text-align: justify;
-    }
-    .avisop spam {
-        font-family: 'Candara-Bold';
-    }
-    .avisop li {
-        margin-left: 2rem;
-    }
-    @media (max-width: 575px) {
-        .avisop h1 {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-    }
+            /*# sourceMappingURL=estilos.css.map */
+            .programas .subtitulo1 {
+                color: #a4a4a3;
+            }
+            .avisop p {
+                text-align: justify;
+            }
+            .avisop spam {
+                font-family: 'Candara-Bold';
+            }
+            .avisop li {
+                margin-left: 2rem;
+            }
+            @media (max-width: 575px) {
+                .avisop h1 {
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                }
+            }

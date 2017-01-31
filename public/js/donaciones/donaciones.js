@@ -1,51 +1,60 @@
 $(document).ready(function () {
   $('#donar').addClass('active');
 
-  $('#paypal').click(function (event) {
+  $('.menu-recurso li').click(function (event) {
     event.preventDefault();
-    $('#RFC').removeClass('recurso-active');
-    $('#SPEI').removeClass('recurso-active');
-    if (!$(this).hasClass('recurso-active')) {
-      $(this).addClass('recurso-active');
+    var current = $(this);
+    var forms = $('#forms-donaciones > div');
+    for (var i = 0; i < forms.length; i++) {
+      if (!$(forms[i]).hasClass('hidden')) {
+        $(forms[i]).addClass('hidden');
+      }
     }
-    $('.paypal').removeClass('hidden');
-    if (!$('.referencia-bancaria').hasClass('hidden')) {
-      $('.referencia-bancaria').addClass('hidden');
-    }
-    if (!$('.spei').hasClass('hidden')) {
-      $('.spei').addClass('hidden');
+    var opciones = $('.menu-recurso li');
+    for (var i = 0; i < opciones.length; i++) {
+      $(opciones[i]).removeClass('recurso-active');
+      if (current.attr('id') == $(opciones[i]).attr('id') && !current.hasClass('recurso-active')) {
+        current.addClass('recurso-active');
+        $('#'+current.attr('id')+'-form').removeClass('hidden');
+      }
     }
   });
 
-  $('#RFC').click(function (event) {
-    event.preventDefault();
-    $('#paypal').removeClass('recurso-active');
-    $('#SPEI').removeClass('recurso-active');
-    if (!$(this).hasClass('recurso-active')) {
-      $(this).addClass('recurso-active');
-    }
-    $('.referencia-bancaria').removeClass('hidden');
-    if (!$('.paypal').hasClass('hidden')) {
-      $('.paypal').addClass('hidden');
-    }
-    if (!$('.spei').hasClass('hidden')) {
-      $('.spei').addClass('hidden');
-    }
-  });
+  function obtenerDatosPersonales() {
+    return {
+      nombre:$('#nombre').val(),
+      apellidoPaterno:$('#apellidoPaterno').val(),
+      apellidoMaterno:$('#apellidoMaterno').val(),
+      email:$('#email'),
+      _token:token
+    };
+  }
 
-  $('#SPEI').click(function (event) {
-    event.preventDefault();
-    $('#paypal').removeClass('recurso-active');
-    $('#RFC').removeClass('recurso-active');
-    if (!$(this).hasClass('recurso-active')) {
-      $(this).addClass('recurso-active');
-    }
-    $('.spei').removeClass('hidden');
-    if (!$('.paypal').hasClass('hidden')) {
-      $('.paypal').addClass('hidden');
-    }
-    if (!$('.referencia-bancaria').hasClass('hidden')) {
-      $('.referencia-bancaria').addClass('hidden');
-    }
-  });
+  function obtenerDatosRFC() {
+    return {
+      rfc:$('#rfc').val(),
+      estado:$('#RFC-form #estado').val(),
+      cp:$('#RFC-form #cp').val(),
+      _token:token
+    };
+  }
+
+  function obtenerDatosSPEI() {
+    return {
+      estado:$('#SPEI-form #estado').val(),
+      cp:$('#SPEI-form #cp').val(),
+      _token:token
+    };
+  }
+
+   $('#RFC-button').click(function () {
+     //alert(obtenerDatosPersonales().nombre);
+     //alert(obtenerDatosRFC().cp);
+     bootbox.alert('proximámente RFC');
+   });
+
+   $('#SPEI-button').click(function () {
+     //alert(obtenerDatosSPEI().cp);
+     bootbox.alert('proximámente SPEI');
+   });
 });

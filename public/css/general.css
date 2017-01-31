@@ -29,7 +29,7 @@ body {
     border-color: aliceblue;
     padding: 35px;
     min-height: 250px\10;
-    min-height: 300px;
+    min-height: 325px;
     margin-bottom: 65px;
 }
 @media (min-width: 1200px){
