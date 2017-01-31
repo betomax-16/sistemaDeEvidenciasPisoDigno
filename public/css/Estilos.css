@@ -876,11 +876,27 @@ Pie De Pagina
     text-align: center;
 }
 .redes-sociales{
-  padding-right: 60px;
+  padding-right: 15px;
+  padding-left: 0;
+}
+.redes-sociales .btn{
+  padding: 5px;
+  margin: auto !important;
+  font-size: 100%;
+}
+.redes-sociales .btn:hover{
+  background: #c32e41;
+}
+.redes-sociales .btn-transparencia{
+  padding-left: 0;
+}
+.redes-sociales .button-group-redes{
+  margin-top: 5px;
+  padding-left: 0;
 }
 .piedepagina .redes-sociales a {
     color: #fff;
-    margin: 1rem;
+    margin: 10%;
     opacity: .7;
     -webkit-transition: all .5s ease;
     transition: all .5s ease;
@@ -925,7 +941,7 @@ Pie De Pagina
         font-size: 1.5rem;
     }
     .redes-sociales{
-      padding-right: 0px;
+      padding-right: 3%;
     }
 }
 .somos {

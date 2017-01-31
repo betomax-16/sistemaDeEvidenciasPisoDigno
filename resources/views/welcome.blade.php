@@ -250,7 +250,7 @@
                     <img src="{{asset('imagenes/aplicacion/despensa.svg')}}" alt="LogoPiso Digno">
                     <h3><a>Despensas</a></h3>
                     <p class="hidden-md-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia natus asperiores quo eaque, reiciendis provident nobis voluptatem. Quos repellat excepturi cupiditate earum exercitationem porro tempore, odit consectetur fugit ipsa facere.</p>
-                    <button class="btn purple-inverse hidden-md hidden-md-down">Más Información</button>
+                    <button class="btn green-inverse hidden-md hidden-md-down">Más Información</button>
                 </article>
 
                 <article class="col-lg-4" data-toggle="modal" data-target="#PisoD">
