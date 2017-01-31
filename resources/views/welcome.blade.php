@@ -86,6 +86,72 @@
                     <h2><span><i class="fa fa-quote-right" aria-hidden="true"></i></span></h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate harum adipisci et eos rerum consectetur, dolorem culpa. Dolor magnam fuga perspiciatis, beatae accusantium, labore similique, quisquam laudantium architecto, iure cumque.</p>
                 </header>
+
+                <div id="carouselExampleIndicators" class="carousel slide col-xs-12 offset-md-1 col-md-5" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="10"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="11"></li>
+
+
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img class="d-block img-fluid" src="{{asset('imagenes/fotos/file1.jpg')}}" alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{{asset('imagenes/fotos/file2.jpg')}}" alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{{asset('imagenes/fotos/file3.jpg')}}" alt="Third slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{{asset('imagenes/fotos/file4.jpg')}}" alt="Ford slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{{asset('imagenes/fotos/file5.jpg')}}" alt="Five slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{{asset('imagenes/fotos/file6.jpg')}}" alt="Six slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{{asset('imagenes/fotos/file7.jpg')}}" alt="Seven slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{{asset('imagenes/fotos/file8.jpg')}}" alt="Eight slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{{asset('imagenes/fotos/file9.jpg')}}" alt="Nine slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{{asset('imagenes/fotos/file10.jpg')}}" alt="Eleven slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{{asset('imagenes/fotos/file11.jpg')}}" alt="Twelve slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{{asset('imagenes/fotos/file12.jpg')}}" alt="Third slide">
+                        </div>
+
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -260,6 +326,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <script src="{{asset('js/jquery.waypoints.min.js')}}"></script>
     <script src="{{asset('js/odometer.min.js')}}"></script>
+
 
 
     <script>

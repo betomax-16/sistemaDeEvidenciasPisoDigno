@@ -75,9 +75,9 @@
                 <div class="row hidden-md-down">
                   <div class="col-lg-7 telefonos">
                     <ul>
-                      <li><i class="fa fa-phone-square" aria-hidden="true"></i><span>: (222) 583-7134</span></li>
-                      <li><i class="fa fa-facebook-square" aria-hidden="true"></i><span>: @gsuppuebla</span></li>
-                      <li><i class="fa fa-twitter-square" aria-hidden="true"></i><span>: @gsuppuebla</span></li>
+                      <li><a href="tel:+522225837134" onclick="return (navigator.userAgent.match(/Android|iPhone|iPad|iPod|Mobile/i))!=null;"><i class="fa fa-phone-square" aria-hidden="true"></i></a><span>: (222) 583-7134</span></li>
+                      <li><a href="https://www.facebook.com/gsuppuebla/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a><span>: @gsuppuebla</span></li>
+                      <li><a href="https://twitter.com/gsuppuebla" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a><span>: @gsuppuebla</span></li>
                     </ul>
                   </div>
                   <div class="col-lg-5">
@@ -101,9 +101,9 @@
             </div>
             <div class="col-md-4 col-sm-8 col-xs-8 telefonos">
               <ul>
-                <li><i class="fa fa-phone-square" aria-hidden="true"></i><span>: (222) 583-7134</span></li>
-                <li><i class="fa fa-facebook-square" aria-hidden="true"></i><span>: @gsuppuebla</span></li>
-                <li><i class="fa fa-twitter-square" aria-hidden="true"></i><span>: @gsuppuebla</span></li>
+                <li><a href="tel:+522225837134" onclick="return (navigator.userAgent.match(/Android|iPhone|iPad|iPod|Mobile/i))!=null;"><i class="fa fa-phone-square" aria-hidden="true"></i></a><span>: (222) 583-7134</span></li>
+                <li><a href="https://www.facebook.com/gsuppuebla/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a><span>: @gsuppuebla</span></li>
+                <li><a href="https://twitter.com/gsuppuebla" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a><span>: @gsuppuebla</span></li>
               </ul>
             </div>
             <div class="col-md-3 col-sm-4 col-xs-4 qr">
