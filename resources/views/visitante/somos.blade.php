@@ -10,7 +10,7 @@
     <hr/>
     <br>
     <br>
-    <h3>    Somos una gran familia conformada por amigos, líderes sociales y voluntarios cuya afinidad por aportar tiempo, esfuerzo y talento en aras de ayudar a las familias poblanas más necesitadas, nos ha consolidado en un equipo interdisciplinario que ha sabido garantizar el correcto devenir de las metas y objetivos de la asociación.
+    <h3 class="text-xs-center">    Somos una gran familia conformada por amigos, líderes sociales y voluntarios cuya afinidad por aportar tiempo, esfuerzo y talento en aras de ayudar a las familias poblanas más necesitadas, nos ha consolidado en un equipo interdisciplinario que ha sabido garantizar el correcto devenir de las metas y objetivos de la asociación.
     </h3>
 
 </div>
@@ -19,10 +19,10 @@
     <h1>Los miembros que actualmente encabezan esta noble labor son:
     </h1>
     <div class="persona1 wow fadeIn">
-        <div class=" col-xs-12 col-md-5">
+        <div class=" col-xs-12 col-lg-5">
             <img class="img-fluid" src="{{asset('imagenes/somos/persona1.jpg')}}" alt="">
         </div>
-        <div class="citas col-xs-12 offset-md-1 col-md-6">
+        <div class="citas col-xs-12 offset-lg-1 col-lg-6">
             <h2>Diseñador Web</h2>
             <br>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus animi provident quibusdam ex magnam, inventore incidunt libero, sint quos pariatur itaque voluptates voluptatem dolor. Rerum nesciunt suscipit, beatae cum eius!</p>

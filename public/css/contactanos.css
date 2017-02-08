@@ -51,9 +51,7 @@ label{
   list-style: none;
   display: flex;
 }
-li span{
-  font-size: 1.3rem;
-}
+
 .telefonos li .fa{
   font-size: 2rem;
 }

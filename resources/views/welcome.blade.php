@@ -43,7 +43,7 @@
             <li><span>Image 03</span></li>
         </ul>
     </section>
-    <section class="container-fluid M-V text-justify">
+    <section class="container M-V text-justify">
 
         <div class=" Mision col-xs-12 col-md-5">
             <h1>Misión</h1>
