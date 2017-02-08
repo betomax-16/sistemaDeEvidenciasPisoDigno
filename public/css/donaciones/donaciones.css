@@ -1,3 +1,12 @@
+#btnPaypal{
+  background: #f0c64e;
+}
+#btnPaypal:hover{
+  background: #f7b41e;
+}
+#btnPaypal i{
+  margin-right: 10px;
+}
 .container-fluid{
   margin-top: -20px;
 }
@@ -78,12 +87,16 @@ h1{
 .donante .form-group{
   padding: 5px 5px 0 5px;
 }
+.paypal{
+  padding: 5px 0 5px 5px;
+}
 .referencia-bancaria, .spei, .paypal{
   margin-bottom: 35px;
 }
 .hidden{
   display: none;
 }
+
 @media (max-width: 575px) {
   .texto{
     padding: 3%;

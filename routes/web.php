@@ -47,3 +47,9 @@ Route::get('avisop', 'VisitanteController@avisop')->name('avisop');
 Route::get('contacto', 'VisitanteController@contacto')->name('contacto');
 Route::post('contacto/enviar', 'VisitanteController@enviarContacto')->name('enviarContacto');
 Route::get('download/{proyecto}/{anio}/{region}/{lugar}', 'EvidenciaController@excel')->name('evidencia.excel');
+
+
+//paypal
+
+Route::get('payment', 'PaypalController@postPayment')->name('payment');
+Route::get('payment/status', 'PaypalController@getPaymentStatus')->name('payment.status');

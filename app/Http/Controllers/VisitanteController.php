@@ -26,6 +26,7 @@ class VisitanteController extends Controller
   {
     //configuaración
         $config = array();
+        $config['apiKey'] = env('APIKEYGMAPS');
         $config['center'] = '19.036118085809655, -98.24550747871399';
         $config['map_width'] = 400;
         $config['map_height'] = 250;
@@ -50,7 +51,7 @@ class VisitanteController extends Controller
         Gmaps::add_marker($marker);
 
         $map = Gmaps::create_map();
-
+        
         //Devolver vista con datos del mapa
     return $this->noGuardarCache(view('visitante/contacto', compact('map')));
   }

@@ -1,5 +1,12 @@
 @extends('layouts.app') @section('styles')
-<link rel="stylesheet" href="{{asset('css/general.css')}}"> @endsection @section('content')
+<link rel="stylesheet" href="{{asset('css/general.css')}}">
+<link rel="stylesheet" href="{{asset('css/footer/footer.css')}}">
+<style media="screen">
+  .somos{
+    margin-bottom: 20px;
+  }
+</style>
+@endsection @section('content')
 <div class="estilo">
 </div>
 

@@ -2,6 +2,7 @@
     * {
         font-family: CANDARA
     }
+
     .encavezado {
         background: #fff;
         padding: 0.5rem;
@@ -33,7 +34,7 @@
     /*
 Estilo Menu desplegable
 */
-    
+
     #menu-principal {
         -webkit-box-flex: 1;
         -webkit-flex: 1 1 100%;
@@ -65,7 +66,7 @@ Estilo Menu desplegable
     background: #3E77C5;
 }
 */
-    
+
     #menu-principal .dropdown .dropdown-menu {
         display: none !important;
     }
@@ -87,7 +88,7 @@ Estilo Menu desplegable
     /*
 Bienvenidos
 */
-    
+
     .Bienvenidos {
         color: #fff;
         background-size: cover;
@@ -144,7 +145,7 @@ Bienvenidos
     /*
 Mision y Vision
 */
-    
+
     .M-V {
         display: flex;
         flex-wrap: wrap;
@@ -178,7 +179,7 @@ Mision y Vision
     /*
 Nosotros
 */
-    
+
     .Nosotros header {
         color: white;
         background: #555a61;
@@ -246,7 +247,7 @@ Nosotros
     /*/////////////
 Lo que hacemos
 */
-    
+
     .lo-que-hacemos {
         margin-top: 6rem;
         background-color: #FFE66B;
@@ -331,7 +332,7 @@ Lo que hacemos
     /*
 Beneficiados
 */
-    
+
     .Beneficiados img {
         width: 7rem;
         margin-top: 4rem;
@@ -361,7 +362,7 @@ Beneficiados
     /*////////////
 Programas
 */
-    
+
     .programas {
         margin-top: 4rem;
     }
@@ -434,7 +435,7 @@ Programas
     /*
 Media Querys
 */
-    
+
     @media (min-width: 768px) {
         .Nosotros {
             margin-top: 2rem;
@@ -640,7 +641,7 @@ Media Querys
 
 
 */
-    
+
     .c-hamburger {
         display: block;
         position: relative;
@@ -714,7 +715,7 @@ Media Querys
         transition-property: bottom, transform;
     }
     /* active state, i.e. menu open */
-    
+
     .c-hamburger--htx.is-active {
         background-color: #FFF;
     }
@@ -741,7 +742,7 @@ Media Querys
     /*
 Pie De Pagina
 */
-    
+
     .piedepagina p {
         margin-bottom: 0;
     }
@@ -781,7 +782,7 @@ Pie De Pagina
 
 
 */
-    
+
     .c-hamburger {
         display: block;
         position: relative;
@@ -855,7 +856,7 @@ Pie De Pagina
         transition-property: bottom, transform;
     }
     /* active state, i.e. menu open */
-    
+
     .c-hamburger--htx.is-active {
         background-color: #FFF;
     }
@@ -882,12 +883,9 @@ Pie De Pagina
     /*
 Pie De Pagina
 */
-    
+
     .piedepagina p {
         margin-bottom: 0;
-    }
-    .piedepagina1 {
-        min-height: 10px;
     }
     .piedepagina2 {
         background: rgba(0, 10, 10, 0.65);

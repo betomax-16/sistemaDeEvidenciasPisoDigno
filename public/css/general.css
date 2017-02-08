@@ -28,8 +28,8 @@ body {
     border-radius: 15px;
     border-color: aliceblue;
     padding: 35px;
-    min-height: 250px\10;
-    min-height: 325px;
+    /*min-height: 250px\10;
+    min-height: 325px;*/
     margin-bottom: 65px;
 }
 @media (min-width: 1200px){

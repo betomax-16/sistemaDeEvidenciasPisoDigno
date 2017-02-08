@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('styles')
 <link rel="stylesheet" href="{{asset('css/general.css')}}">
+<link rel="stylesheet" href="{{asset('css/footer/footer.css')}}">
 <link rel="stylesheet" href="{{asset('css/proyectos/proyectos.css')}}">
 @endsection
 @section('content')

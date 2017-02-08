@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="{{asset('jquery-ui/jquery-ui.min.css')}}">
 <link rel="stylesheet" href="{{asset('css/evidencia.css')}}">
 <link rel="stylesheet" href="{{asset('css/general.css')}}">
+<link rel="stylesheet" href="{{asset('css/footer/footer.css')}}">
 <link rel="stylesheet" href="{{asset('css/cs-skin-underline.css')}}">
 <link rel="stylesheet" href="{{asset('css/evidencias/bookblock.css')}}">
 <link rel="stylesheet" href="{{asset('css/evidencias/demo5.css')}}" />

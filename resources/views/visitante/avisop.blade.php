@@ -1,5 +1,6 @@
 @extends('layouts.app') @section('styles')
-<link rel="stylesheet" href="{{asset('css/general.css')}}"> @endsection @section('content')
+<link rel="stylesheet" href="{{asset('css/general.css')}}">
+<link rel="stylesheet" href="{{asset('css/footer/footer.css')}}">@endsection @section('content')
 <section class="avisop container">
     <br>
 

@@ -1,0 +1,25 @@
+html
+{
+  position: relative;
+  min-height: 100%;
+}
+
+.piedepagina {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+}
+
+.container, .container-fluid{
+  margin-bottom: 15px;
+}
+
+#app{
+  margin-bottom: 75px;
+}
+
+@media (max-width: 575px) {
+  #app{
+    margin-bottom: 50%;
+  }
+}

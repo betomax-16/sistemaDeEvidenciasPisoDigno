@@ -1,6 +1,7 @@
 @extends('layouts.app') @section('styles')
 <link rel="stylesheet" href="{{asset('css/general.css')}}">
 <link rel="stylesheet" href="{{asset('css/contactanos.css')}}">
+<link rel="stylesheet" href="{{asset('css/footer/footer.css')}}">
 @endsection @section('content')
 @include('flash::message')
   <div class="container espacioPagina marco">
@@ -115,7 +116,7 @@
   </div>
  @include('layouts/menu/footer')
 @endsection @section('javascripts')
-<script type="text/javascript">var centreGot = true;</script>
+<script type="text/javascript">var centreGot = false;</script>
 {!!$map['js']!!}
 <script type="text/javascript">
   $(document).ready(function () {
