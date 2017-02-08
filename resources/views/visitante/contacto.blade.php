@@ -82,7 +82,7 @@
                     </ul>
                   </div>
                   <div class="col-lg-5">
-                    <img src="{{asset('imagenes/aplicacion/qr.jpg')}}" alt="" class="img-fluid">
+                    <img src="{{asset('imagenes/aplicacion/qr.png')}}" alt="" class="img-fluid">
                   </div>
                 </div>
                 <div class="row hidden-md-down">

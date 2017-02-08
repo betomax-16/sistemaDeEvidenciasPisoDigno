@@ -1,7 +1,9 @@
 @extends('layouts.app') @section('styles')
+
 <link rel="stylesheet" href="{{asset('css/general.css')}}">
 <link rel="stylesheet" href="{{asset('css/footer/footer.css')}}">@endsection @section('content')
-<section class="avisop container">
+<section class="avisop container text-justify">
+
     <br>
 
     <h1 class="text-xs-center">AVISO DE PRIVACIDAD Y CONFIDENCIALIDAD DE DATOS PERSONALES</h1>
