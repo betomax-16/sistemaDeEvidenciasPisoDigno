@@ -3,7 +3,13 @@
 <link rel="stylesheet" type="text/css" href="{{asset('css/textoPresentacion.css')}}" />
 <link rel="stylesheet" href="{{asset('css/style1.css')}}">
 <link rel="stylesheet" href="{{asset('css/Estadisticas.css')}}">
-
+<style media="screen">
+@media (max-width: 575px) {
+  .odometer-digit{
+    font-size: 65%;
+  }
+}
+</style>
 <link rel="stylesheet" href="{{asset('css/general.css')}}"> @endsection @section('content')
 <div class="bak">
     <section class="Bienvenidos">
@@ -158,7 +164,7 @@
 
     <section class="lo-que-hacemos p-a-1">
 
-        <div class="container-fluid">
+        <div class="container">
             <br>
             <br>
             <h2 class="titulo text-xs-center subtitulo1">¿Qué es lo <span>que hacemos?</span></h2>
@@ -231,7 +237,7 @@
     <section class="Beneficiados">
         <div class="container">
             <div class="row CJ text-xs-center">
-                <div class="cajas col-xs-6 col-md-3">
+                <div class="cajas col-xs-6 col-md-4">
                     <div class="icono">
                         <img src="{{asset('imagenes/aplicacion/Educacion.svg')}}" alt="Educacion">
                     </div>
@@ -242,7 +248,7 @@
                         <p>Campaas Ganadas</p>
                     </div>
                 </div>
-                <div class="cajas col-xs-6  col-md-3 offset-md-0">
+                <div class="cajas col-xs-6  col-md-4">
                     <div class="icono">
                         <img src="{{asset('imagenes/aplicacion/Educacion.svg')}}" alt="Educacion">
                     </div>
@@ -254,7 +260,7 @@
                     </div>
                 </div>
                 <br>
-                <div class="cajas col-xs-6 col-md-3">
+                <div class="cajas col-xs-6 col-md-4">
                     <div class="icono">
                         <img src="{{asset('imagenes/aplicacion/Educacion.svg')}}" alt="Educacion">
                     </div>
@@ -265,13 +271,35 @@
                         <p>Campaas Ganadas</p>
                     </div>
                 </div>
-                <div class="cajas col-xs-6 col-md-3 offset-md-0">
+                <div class="cajas col-xs-6 col-md-4">
                     <div class="icono">
                         <img src="{{asset('imagenes/aplicacion/Educacion.svg')}}" alt="Educacion">
                     </div>
                     <br>
                     <div class="contenido">
                         <h2><span class="odometer" id="odometer4">0</span></h2>
+                        <br>
+                        <p>Campaas Ganadas</p>
+                    </div>
+                </div>
+                 <div class="cajas col-xs-6 col-md-4">
+                    <div class="icono">
+                        <img src="{{asset('imagenes/aplicacion/Educacion.svg')}}" alt="Educacion">
+                    </div>
+                    <br>
+                    <div class="contenido">
+                        <h2><span class="odometer" id="odometer5">0</span></h2>
+                        <br>
+                        <p>Campaas Ganadas</p>
+                    </div>
+                </div>
+                 <div class="cajas col-xs-6 col-md-4">
+                    <div class="icono">
+                        <img src="{{asset('imagenes/aplicacion/Educacion.svg')}}" alt="Educacion">
+                    </div>
+                    <br>
+                    <div class="contenido">
+                        <h2><span class="odometer" id="odometer6">0</span></h2>
                         <br>
                         <p>Campaas Ganadas</p>
                     </div>
@@ -336,6 +364,8 @@
                 $('#odometer2').html(35);
                 $('#odometer3').html(36);
                 $('#odometer4').html(37);
+                $('#odometer5').html(38);
+                $('#odometer6').html(309);
             }, 100);
             this.destroy();
         }, {

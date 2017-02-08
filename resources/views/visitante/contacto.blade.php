@@ -108,7 +108,7 @@
               </ul>
             </div>
             <div class="col-md-3 col-sm-4 col-xs-4 qr">
-              <img src="{{asset('imagenes/aplicacion/qr.jpg')}}" alt="" class="img-fluid">
+              <img src="{{asset('imagenes/aplicacion/qr.png')}}" alt="" class="img-fluid">
             </div>
           </div>
         </div>
