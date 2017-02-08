@@ -367,6 +367,7 @@ Beneficiados
                                     background: white;
                                     padding: 0 15px;
                                 }
+
                                 /*////////////
 Programas
 */
@@ -636,7 +637,8 @@ Media Querys
                                         display: -webkit-flex;
                                         display: -ms-flexbox;
                                         display: flex;
-                                        min-height: 7rem;
+                                        min-height: 8rem!important;
+                                        margin-bottom: 1rem;
                                     }
                                     .lo-que-hacemos ul img {
                                         text-align: center;
@@ -665,9 +667,16 @@ Media Querys
                                         margin-left: 1rem;
                                         margin-right: 1rem;
                                     }
+                                    .lo-que-hacemos ul h4{
+                                        text-align: left;
+                                    }
+                                    .lo-que-hacemos ul:first-child h4{
+                                      text-align: right !important;;
+                                    }
                                     .lo-que-hacemos ul li p {
                                         font-size: .85rem;
                                     }
+         
                                     .programas article {
                                         margin: 1rem 0;
                                         -webkit-box-orient: vertical;
@@ -998,7 +1007,7 @@ Pie De Pagina
                                 }
                                 .redes-sociales .btn {
                                     padding: 5px;
-                                    margin: auto !important;
+                                    margin: auto 
                                     font-size: 100%;
                                 }
                                 .redes-sociales .btn:hover {
