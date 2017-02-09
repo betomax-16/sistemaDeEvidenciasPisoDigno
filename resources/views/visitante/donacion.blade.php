@@ -103,17 +103,33 @@
               <button id="SPEI-button" type="button" name="button" class="btn red-inverse">Guardar</button>
             </center>
             <br>
-            <p>
-              Instrucciones:
-              <ol>
-                <li>Ve al portal de tu banco.</li>
-                <li>Entra a la sección para dar de alta una cuenta.</li>
-                <li>Busca en “Banco”: Sistemas de Transferencias y pagos o STP o Sist Transf y Pagos.</li>
-                <li>Da de alta la cuenta ingresando en el espacio de la CLABE la clave interbancaria que aparece en este recuadro.</li>
-                <li>Una vez que aparezca dentro de tus cuentas registradas, realiza el donativo a esa cuenta desde tu portal del banco</li>
-                <li>Espera 72 horas para que puedas generar tu recibo en esta página entrando a la sección de Mis Donaciones.</li>
-              </ol>
-            </p>
+            <div class="col-md-8">
+              <p>
+                Instrucciones:
+                <ol>
+                  <li>Ve al portal de tu banco.</li>
+                  <li>Entra a la sección para dar de alta una cuenta.</li>
+                  <li>Busca en “Banco”: Sistemas de Transferencias y pagos o STP o Sist Transf y Pagos.</li>
+                  <li>Da de alta la cuenta ingresando en el espacio de la CLABE la clave interbancaria que aparece en este recuadro.</li>
+                  <li>Una vez que aparezca dentro de tus cuentas registradas, realiza el donativo a esa cuenta desde tu portal del banco</li>
+                  <li>Espera 72 horas para que puedas generar tu recibo en esta página entrando a la sección de Mis Donaciones.</li>
+                </ol>
+              </p>
+            </div>
+            <div class="col-md-4">
+              <p>
+                <dl class="datos-spei">
+                  <dt>Cuentahabiente:</dt>
+                  <dd>Grupos Sociales Unidos por Puebla 13 de Noviembre A.C.</dd>
+                  <dt>Banco:</dt>
+                  <dd>BBVA Bancomer</dd>
+                  <dt>Número de cuenta:</dt>
+                  <dd>0105269997</dd>
+                  <dt>CLABE interbancaria:</dt>
+                  <dd>012650001052699974</dd>
+                </dl>
+              </p>
+            </div>
           </div>
           <div id="paypal-form" class="paypal">
             {!! Form::open(['route' => 'payment', 'method' => 'GET']) !!}

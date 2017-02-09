@@ -93,6 +93,15 @@ h1{
 .referencia-bancaria, .spei, .paypal{
   margin-bottom: 35px;
 }
+.spei dd{
+  margin-left: 5%;
+}
+.datos-spei{
+  padding: 5%;
+  border: 0;
+  border-left: 1px;
+  border-style: dashed;
+}
 .hidden{
   display: none;
 }
@@ -110,6 +119,12 @@ h1{
   .referencia-bancaria button{
     font-size: 100%;
   }
+  .datos-spei{
+    padding: 5%;
+    border: 0;
+    border-top: 1px;
+    border-style: dashed;
+  }
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
@@ -118,6 +133,12 @@ h1{
   }
   .container-fluid{
     margin-top: 0;
+  }
+  .datos-spei{
+    padding: 5%;
+    border: 0;
+    border-top: 1px;
+    border-style: dashed;
   }
 }
 

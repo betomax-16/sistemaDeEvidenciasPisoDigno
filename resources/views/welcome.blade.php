@@ -365,21 +365,40 @@
                 $('#odometer3').html(36);
                 $('#odometer4').html(37);
                 $('#odometer5').html(38);
-                $('#odometer6').html(309);
+                $('#odometer6').html(39);
             }, 100);
+            //seccion infinity
+            var LAG = 3000;
+            var odometer5val = 38;
+            var odometer6val = 39;
+            var odometer5 = new Odometer({
+              el: document.querySelector('#odometer5'),
+              value: odometer5val });
+            odometer5.render()
+            var odometer6 = new Odometer({
+              el: document.querySelector('#odometer6'),
+              value: odometer6val });
+            odometer6.render()
+            setInterval(function(){
+              odometer5.update(odometer5val++);
+              odometer6.update(odometer6val++);
+            }, LAG);
+            //--------
             this.destroy();
         }, {
             offset: '70%',
             triggerOnce: true
         });
         $(document).ready(function() {
+
+
+
             $('.ir-arriba').click(function() {
                 $('body, html').animate({
                     scrollTop: '0px'
                 }, 300);
             });
         });
-
     </script>
     <script type="text/javascript">
         $(document).ready(function() {
