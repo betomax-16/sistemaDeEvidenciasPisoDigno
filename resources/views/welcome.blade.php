@@ -239,36 +239,38 @@
             <div class="row CJ text-xs-center">
                 <div class="cajas col-xs-6 col-md-4">
                     <div class="icono">
-                        <img src="{{asset('imagenes/aplicacion/Educacion.svg')}}" alt="Educacion">
+                        <img src="{{asset('imagenes/aplicacion/Bivienda.svg')}}" alt="Educacion">
                     </div>
                     <br>
                     <div class="contenido">
                         <h2><span class="odometer" id="odometer1">0</span></h2>
                         <br>
-                        <p>Campaas Ganadas</p>
+                        <p>Que equivale a 327 familias poblanas apoyadas con alguno de nuestros programas. 
+                         </p>
+                         <br>
                     </div>
                 </div>
                 <div class="cajas col-xs-6  col-md-4">
                     <div class="icono">
-                        <img src="{{asset('imagenes/aplicacion/Educacion.svg')}}" alt="Educacion">
+                        <img src="{{asset('imagenes/aplicacion/despensa.svg')}}" alt="Educacion">
                     </div>
                     <br>
                     <div class="contenido">
                         <h2><span class="odometer" id="odometer2">0</span></h2>
                         <br>
-                        <p>Campaas Ganadas</p>
+                        <p>Cantidad que corresponde a 36 familias beneficiadas mensualmente con una despensa integral.</p>
                     </div>
                 </div>
                 <br>
                 <div class="cajas col-xs-6 col-md-4">
                     <div class="icono">
-                        <img src="{{asset('imagenes/aplicacion/Educacion.svg')}}" alt="Educacion">
+                        <img src="{{asset('imagenes/aplicacion/Salud.svg')}}" alt="Educacion">
                     </div>
                     <br>
                     <div class="contenido">
                         <h2><span class="odometer" id="odometer3">0</span></h2>
                         <br>
-                        <p>Campaas Ganadas</p>
+                        <p>Suma que representa el número de gestiones ante diversas instituciones de salud pública en el Estado de Puebla.</p>
                     </div>
                 </div>
                 <div class="cajas col-xs-6 col-md-4">
@@ -279,32 +281,35 @@
                     <div class="contenido">
                         <h2><span class="odometer" id="odometer4">0</span></h2>
                         <br>
-                        <p>Campaas Ganadas</p>
+                        <p>Lo cual equivale al número de instituciones educativas impactadas.</p>
                     </div>
                 </div>
                  <div class="cajas col-xs-6 col-md-4">
                     <div class="icono">
-                        <img src="{{asset('imagenes/aplicacion/Educacion.svg')}}" alt="Educacion">
+                        <img src="{{asset('imagenes/aplicacion/MedioAmbiente.svg')}}" alt="Educacion">
                     </div>
                     <br>
                     <div class="contenido">
                         <h2><span class="odometer" id="odometer5">0</span></h2>
                         <br>
-                        <p>Campaas Ganadas</p>
+                        <p>Próximamente estaremos implementando proyectos en tu entorno.</p>
                     </div>
                 </div>
                  <div class="cajas col-xs-6 col-md-4">
                     <div class="icono">
-                        <img src="{{asset('imagenes/aplicacion/Educacion.svg')}}" alt="Educacion">
+                        <img src="{{asset('imagenes/aplicacion/OS.svg')}}" alt="Educacion">
                     </div>
                     <br>
                     <div class="contenido">
                         <h2><span class="odometer" id="odometer6">0</span></h2>
                         <br>
-                        <p>Campaas Ganadas</p>
+                        <p>En breve gestaremos acciones en tu comunidad.</p>
+                        <br>
                     </div>
                 </div>
             </div>
+            <br>
+            <h6>Las cifras antes descritas corresponden al número de beneficiarios por eje de acción, contabilizado a partir del once de diciembre de dos mil quince, a la fecha.</h6>
         </div>
     </section>
 
@@ -360,12 +365,12 @@
     <script>
         $('.Beneficiados').waypoint(function() {
             setTimeout(function() {
-                $('#odometer1').html(34);
-                $('#odometer2').html(35);
-                $('#odometer3').html(36);
-                $('#odometer4').html(37);
-                $('#odometer5').html(38);
-                $('#odometer6').html(39);
+                $('#odometer1').html(1338);
+                $('#odometer2').html(177);
+                $('#odometer3').html(62);
+                $('#odometer4').html(9);
+                $('#odometer5').html(0);
+                $('#odometer6').html(0);
             }, 100);
             //seccion infinity
             var LAG = 3000;

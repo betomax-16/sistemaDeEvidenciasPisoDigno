@@ -367,6 +367,9 @@ Beneficiados
                                 background: white;
                                 padding: 0 15px;
                             }
+.Beneficiados h6{
+    text-align: center;
+}
 
                             /*////////////
 Programas
