@@ -64,7 +64,37 @@
                 <p>En el año 2022, GRUPOS SOCIALES UNIDOS POR PUEBLA 13 DE NOVIEMBRE A.C., será un referente entre las organizaciones de la sociedad civil en el Estado de Puebla, por su eficaz gestión y canalización de apoyos sociales; el impacto de sus acciones asistenciales en la calidad de vida de las familias poblanas beneficiadas; su intensa y continua labor en el área de orientación y capacitación; la transparente ejecución de los recursos económicos y materiales captados; y, por el alto sentido humano de todos los que la conforman.</p>
             </div>
         </div>
-
+    </section>
+    
+    <section class="Obj-Val text-justify">
+     <h1 class="text-xs-center">Objetivos</h1>
+      <div class="container Obj-Val2">
+           <div class="container col-xs-12">
+               <h4 class="text-xs-center">General</h4>
+               <p>Desarrollar, ejecutar e implementar programas, proyectos y actividades en materia de <spam>VIVIENDA</spam>, <spam>EDUCACIÓN</spam>, <spam>ALIMENTACIÓN</spam>, <spam>MEDIO AMBIENTE</spam>, <spam>SALUD</spam> y <spam>ORIENTACIÓN SOCIAL</spam>, encaminadas a mejorar la calidad de vida de todas las personas, sectores y regiones de escasos recursos en el Estado de Puebla, en especial, la de aquellos grupos vulnerables por edad, sexo o problemas de discapacidad.</p>
+           </div>
+            <div class="container col-xs-12 offset-md-1 col-md-10">
+             <h4 class="text-xs-center">Específicos</h4>
+               <h5 class="text-xs-center"> En atención a nuestras seis esferas de acción buscamos:</h5>
+               <div class="row OBJ-ESP">
+                <ol type="a">
+                   <div class="col-md-6 OBJ-ESP1">
+                    <li>Implementar acciones encaminadas a <spam>MEJORA</spam>R las condiciones de <spam>HABITABILIDAD</spam> en los hogares menos afortunados;</li>
+                    <li>Generar acciones y condiciones que garanticen una alimentación <spam>DISPONIBLE</spam>, <spam>ACCESIBLE</spam> y <spam>ADECUADA</spam> a las familias más necesitadas;</li>
+                    <li>Efectuar campañas de prevención y atención temprana que brinden un completo estado de <spam>BIENESTAR FÍSICO</spam>, <spam>MENTAL</spam> y <spam>SOCIAL</spam> a las personas más vulnerables;</li>
+                    
+                    </div>
+                    <div class="col-md-6 OBJ-ESP2">
+                    <li>Gestionar becas y patrocinios que permitan a nuestros niños y jóvenes continuar con el desarrollo de sus <spam>CAPACIDADES</spam> y <spam>TALENTOS</spam>;</li>
+                    <li>Fomentar iniciativas dirigidas a la <spam>PRESERVACIÓN</spam> y <spam>DESARROLLO SUSTENTABLE</spam> de los recursos naturales; y,</li>
+                    <li>Organizar a grupos de profesionales a efecto de proporcionar jornadas de <spam>CAPACITACIÓN</spam> y <spam>ASESORÍA</spam> sobre temas cotidianos, así como de asuntos muy particulares que aquejan a nuestros allegados.</li>
+                    <br>
+                    </div>
+            </ol>
+            
+            </div>
+            </div>
+        </div>
     </section>
 
 
@@ -373,9 +403,9 @@
                 $('#odometer6').html(0);
             }, 100);
             //seccion infinity
-            var LAG = 3000;
-            var odometer5val = 38;
-            var odometer6val = 39;
+            var LAG = 3;
+            var odometer5val = 10;
+            var odometer6val = 10;
             var odometer5 = new Odometer({
               el: document.querySelector('#odometer5'),
               value: odometer5val });
@@ -385,6 +415,8 @@
               value: odometer6val });
             odometer6.render()
             setInterval(function(){
+                odometer5val = (odometer5val == 99) ? 10 : odometer5val++;
+                odometer6val = (odometer6val == 99) ? 10 : odometer6val++;
               odometer5.update(odometer5val++);
               odometer6.update(odometer6val++);
             }, LAG);

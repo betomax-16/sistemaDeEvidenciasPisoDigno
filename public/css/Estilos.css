@@ -184,6 +184,29 @@ Mision y Vision
                                 background: rgba(1, 76, 140, 0.5);
                                 border-radius: 4px;
                             }
+
+
+/*Objetivo y valores*/
+.Obj-Val h1{
+    color: #7bcb17;
+}
+.Obj-Val2 {
+    background: rgba(123, 203, 23, .6);
+    border-radius: 4px;
+    padding: 1rem;
+    color: #fff;
+}
+.Obj-Val .OBJ-ESP2,
+.Obj-Val .OBJ-ESP1{
+    margin-left: 1rem;
+}
+.Obj-Val spam{
+    font-weight: bold;
+}
+
+
+
+
                             /*
 Nosotros
 */
@@ -561,6 +584,17 @@ Media Querys
                                     margin-bottom: 1rem;
                                     margin-top: 1rem;
                                 }
+                                .Obj-Val .OBJ-ESP1{
+                                    padding-right: 3rem;
+                                }
+                                .Obj-Val .OBJ-ESP2{
+                                    padding-left: 3rem;
+                                }
+                                .Obj-Val .OBJ-ESP2,
+                                .Obj-Val .OBJ-ESP1{
+                                    margin-left: 0!important;
+                                }
+
                             }
                             .somos .persona1,
                             .somos .persona2,
