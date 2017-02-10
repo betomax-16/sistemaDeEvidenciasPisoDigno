@@ -75,7 +75,6 @@
            </div>
             <div class="container col-xs-12 offset-md-1 col-md-10">
              <h4 class="text-xs-center">Específicos</h4>
-               <h5 class="text-xs-center"> En atención a nuestras seis esferas de acción buscamos:</h5>
                <div class="row OBJ-ESP">
                 <ol type="a">
                    <div class="col-md-6 OBJ-ESP1">
