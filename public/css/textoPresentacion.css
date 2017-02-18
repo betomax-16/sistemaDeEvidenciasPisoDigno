@@ -8,7 +8,6 @@ h1.main,p.demos {
 	animation-delay: 8s;
 }
 .sp-container {
-	width: 1200px;
 	height: 400px;
 	position: relative;
 	margin: auto;
@@ -26,16 +25,17 @@ h1.main,p.demos {
 	content: '';
 	width: 4px;
 	background: #000;
-	height: 100%;
+	height: 85%;
 	position: absolute;
 	left: 50%;
 }
 .sp-container h2 {
 	color: #000;
 	text-shadow: 0px 0px 1px rgba(0,0,0,0.9);
+	font-size: 150%;
 }
 .sp-wrap {
-	width: 600px;
+	width: 451px;
 	padding: 0px 25px;
 	height: 100%;
 	text-align: right;
@@ -49,7 +49,7 @@ h1.main,p.demos {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 	filter: alpha(opacity=0);
 	opacity: 0;
-	font-size: 56px;
+	font-size: 200%;
 }
 .sp-wrap span.sp-mid {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
@@ -63,7 +63,7 @@ h1.main,p.demos {
 .sp-wrap span.sp-mid {
 	font-family: 'CANDARA';
 	text-transform: uppercase;
-	font-size: 110px;
+	font-size: 300%;
 	line-height: 130px;
 	position: relative;
 }
@@ -131,7 +131,7 @@ h1.main,p.demos {
 	position: absolute;
 	top: 142px;
 	width: 900px;
-	left: 145px;
+	left: 0;
 	padding-left: 160px;
 	-webkit-animation: fadeIn 1s linear 6.6s backwards;
 	-moz-animation: fadeIn 1s linear 6.6s backwards;
@@ -146,7 +146,7 @@ h1.main,p.demos {
 	border-radius: 4px;
 	padding: 10px 40px;
 	display: inline-block;
-	font-size: 40px;
+	font-size: 200%;
 	margin-top: 21px;
 	margin-left: 220px;
 	-webkit-animation: zoomIn 0.7s ease-in-out 7s backwards;
@@ -160,7 +160,7 @@ h1.main,p.demos {
 	padding: 0px 0px 0px 0px;
 	float: left;
 	text-align: right;
-	font-size: 50px;
+	font-size: 280%;
 }
 .sp-full a:hover {
 	background: #fff;

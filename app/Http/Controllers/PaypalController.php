@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Sepomex;
+use Response;
 use Validator;
+use PDF;
 
 use PayPal\Rest\ApiContext;
 use PayPal\Auth\OAuthTokenCredential;
@@ -31,12 +34,21 @@ class PaypalController extends Controller
 
   public function postPayment(Request $request)
   {
+
     $rules = [
         'donativo' => 'required|regex:/^\d+(?:\.\d{2})?$/',
+        'nombre' => 'required|max:255',
+        'apellidoPaterno' => 'required|max:255',
+        'apellidoMaterno' => 'required|max:255',
+        'email' => 'required|email|max:255',
+        //'email' => 'required|email|max:255|unique:Usuarios',
     ];
     $validacion = Validator::make($request->all(), $rules);
 
     if ($validacion->fails()) {
+      if ($request->ajax()) {
+        return Response::json($validacion->errors());
+      }
       return redirect()->back()->withInput()->withErrors($validacion->errors());
     }
     $payer = new Payer();
@@ -114,23 +126,45 @@ $amount->setCurrency($currency)
 
 		// add payment ID to session
 		\Session::put('paypal_payment_id', $payment->getId());
+    //datos del donador
+    \Session::put('nombre', $request->nombre);
+    \Session::put('apellidoPaterno', $request->apellidoPaterno);
+    \Session::put('apellidoMaterno', $request->apellidoMaterno);
+    \Session::put('email', $request->email);
 
 		if(isset($redirect_url)) {
 			// redirect to paypal
-			return \Redirect::away($redirect_url);
+      if ($request->ajax()) {
+        return Response::json(['url' => $redirect_url]);
+      }
+      else {
+        return \Redirect::away($redirect_url);
+      }
 		}
 
-		return \Redirect::route('donacion')
-			->with('error', 'Ups! Error desconocido.');
+    if ($request->ajax()) {
+      return Response::json(['errorPaypal' => 'Ups! Error desconocido.']);
+    }
+    else{
+      return \Redirect::route('donacion')
+  			->with('error', 'Ups! Error desconocido.');
+    }
   }
 
   public function getPaymentStatus(Request $request)
 	{
 		// Get the payment ID before session clear
 		$payment_id = \Session::get('paypal_payment_id');
-
+    $nombre = \Session::get('nombre');
+    $apellidoPaterno = \Session::get('apellidoPaterno');
+    $apellidoMaterno = \Session::get('apellidoMaterno');
+    $email = \Session::get('email');
 		// clear the session payment ID
 		\Session::forget('paypal_payment_id');
+    \Session::forget('nombre');
+    \Session::forget('apellidoPaterno');
+    \Session::forget('apellidoMaterno');
+    \Session::forget('email');
 
 		//$payerId = \Input::get('PayerID');
     $payerId = $request->PayerID;
@@ -170,8 +204,82 @@ $amount->setCurrency($currency)
 			->with('message', 'La compra fue cancelada');
 	}
 
+  public function refereciaBancaria(Request $request)
+  {
+    $rules = [
+        'rfc' => 'required|regex:/^[A-Z,Ñ,&]{3,4}[0-9]{2}[0-1][0-9][0-3][0-9][A-Z,0-9]?[A-Z,0-9]?[0-9,A-Z]?$/',
+        'nombre' => 'required|max:255',
+        'apellidoPaterno' => 'required|max:255',
+        'apellidoMaterno' => 'required|max:255',
+        'email' => 'required|email|max:255',
+        'cp' => 'required|regex:/^[0-9]{5}$/|exists:sepomex',
+        'monto' => 'required|regex:/^\d+(?:\.\d{2})?$/',
+        'colonia' => 'required',
+        'calle' => 'required',
+    ];
+    $validacion = Validator::make($request->all(), $rules);
 
-	private function saveOrder($cart)
+    if ($validacion->fails()) {
+      if ($request->ajax()) {
+        return Response::json($validacion->errors());
+      }
+      return redirect()->back()->withInput()->withErrors($validacion->errors());
+    }
+    \Session::put('rfc', $request->rfc);
+    \Session::put('nombre', $request->nombre);
+    \Session::put('apellidoPaterno', $request->apellidoPaterno);
+    \Session::put('apellidoMaterno', $request->apellidoMaterno);
+    \Session::put('email', $request->email);
+    \Session::put('cp', $request->cp);
+    \Session::put('monto', $request->monto);
+    \Session::put('colonia', $request->colonia);
+    \Session::put('calle', $request->calle);
+    if ($request->ajax()) {
+      return Response::json(['status' => 'success', 'url' => \URL::route('pdf_rfc')]);
+    }
+  }
+
+  public function pdf_rfc()
+  {
+    $rfc = \Session::get('rfc');
+    $nombre = \Session::get('nombre');
+    $apellidoPaterno = \Session::get('apellidoPaterno');
+    $apellidoMaterno = \Session::get('apellidoMaterno');
+    $email = \Session::get('email');
+    $cp = \Session::get('cp');
+    $monto = \Session::get('monto');
+    $colonia = \Session::get('colonia');
+    $calle = \Session::get('calle');
+		// clear the session payment ID
+    \Session::forget('nombre');
+    \Session::forget('apellidoPaterno');
+    \Session::forget('apellidoMaterno');
+    \Session::forget('email');
+    \Session::forget('rfc');
+    \Session::forget('cp');
+    \Session::forget('monto');
+    \Session::forget('colonia');
+    \Session::forget('calle');
+
+    $registro = Sepomex::where('cp', '=', $cp)->first();
+    $edo = $registro->estado;
+    $mun = $registro->municipio;
+    if (strrpos($monto, ".") === false) {
+      $monto = $monto.'.00';
+    }
+    $pdf = PDF::loadView('pdf/referenciaBancaria',
+              ['rfc' => $rfc,
+               'nombre' => $nombre.' '.$apellidoPaterno.' '.$apellidoMaterno,
+               'cp' => $cp,
+               'monto' => $monto,
+               'edo' => $edo,
+               'mun' => $mun,
+               'col' => $colonia,
+               'calle' => $calle,
+             ]);
+    return $pdf->download('archivo.pdf');
+  }
+	/*private function saveOrder($cart)
 	{
 	    $subtotal = 0;
 	    foreach($cart as $item){
@@ -197,5 +305,5 @@ $amount->setCurrency($currency)
 			'product_id' => $item->id,
 			'order_id' => $order_id
 		]);
-	}
+	}*/
 }

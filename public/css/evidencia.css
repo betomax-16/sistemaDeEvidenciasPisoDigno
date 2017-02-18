@@ -15,7 +15,8 @@
 #evidencias{
   background: #F8F8F8;
   padding-top: 35px;
-  min-height: 300px;
+  height: 100%;
+  /*min-height: 300px;*/
 }
 #evidencias h1{
   margin-top: 7%;
@@ -109,4 +110,28 @@ a:link{
 }
 .image_wrapper .remove {
     right: 0px;
+}
+
+@media (max-width: 458px) {
+  #evidencias{
+    margin-bottom: 130px;
+  }
+}
+
+@media (min-width: 459px) and (max-width: 575px) {
+  #evidencias{
+    margin-bottom: 90px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  #evidencias{
+    margin-bottom: 60px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #evidencias{
+    min-height: 300px;
+  }
 }

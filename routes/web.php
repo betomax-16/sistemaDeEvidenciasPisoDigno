@@ -53,3 +53,6 @@ Route::get('download/{proyecto}/{anio}/{region}/{lugar}', 'EvidenciaController@e
 
 Route::get('payment', 'PaypalController@postPayment')->name('payment');
 Route::get('payment/status', 'PaypalController@getPaymentStatus')->name('payment.status');
+
+Route::post('rfc', 'PaypalController@refereciaBancaria')->name('rfc');
+Route::get('pdf_rfc', 'PaypalController@pdf_rfc')->name('pdf_rfc');

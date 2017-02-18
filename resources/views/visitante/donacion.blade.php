@@ -34,25 +34,37 @@
         <div class="row datos-personales">
           <div class="col-md-12">
             <hr>
+            <h1 class="titulo4 text-xs-center">Donar recurso</h1>
             <div class="donante">
-              <h1 class="titulo4 text-xs-center">Donar recurso</h1>
               <div class="form-group">
                 {!! Form::label('nombre', 'Nombre', ['class' => 'sr-only']) !!}
                 {!! Form::text('nombre', null, ['class' => 'form-control', 'autocomplete' => 'off', 'placeholder' => 'Nombre', 'autofocus']) !!}
+                <span class="form-control-feedback">
+                    <strong id="errornombre"></strong>
+                </span>
               </div>
               <div class="form-line">
                 <div class="form-group">
                   {!! Form::label('apellidoPaterno', 'Apellido Paterno', ['class' => 'sr-only']) !!}
                   {!! Form::text('apellidoPaterno', null, ['class' => 'form-control', 'autocomplete' => 'off', 'placeholder' => 'Apellido Paterno']) !!}
+                  <span class="form-control-feedback">
+                      <strong id="errorapellidoPaterno"></strong>
+                  </span>
                 </div>
                 <div class="form-group">
                   {!! Form::label('apellidoMaterno', 'Apellido Materno', ['class' => 'sr-only']) !!}
                   {!! Form::text('apellidoMaterno', null, ['class' => 'form-control', 'autocomplete' => 'off', 'placeholder' => 'Apellido Materno']) !!}
+                  <span class="form-control-feedback">
+                      <strong id="errorapellidoMaterno"></strong>
+                  </span>
                 </div>
               </div>
               <div class="form-group">
                 {!! Form::label('email', 'Email', ['class' => 'sr-only']) !!}
                 {!! Form::email('email', null, ['class' => 'form-control ', 'autocomplete' => 'off', 'placeholder' => 'Email']) !!}
+                <span class="form-control-feedback">
+                    <strong id="erroremail"></strong>
+                </span>
               </div>
             </div>
           </div>
@@ -70,39 +82,55 @@
           <div id="RFC-form" class="referencia-bancaria hidden">
             <div class="col-md-12">
               <div class="form-group">
-                {!! Form::label('rfc', 'RFC', ['class' => 'sr-only']) !!}
+                {!! Form::label('rfc', 'RFC') !!}
                 {!! Form::text('rfc', null, ['class' => 'form-control', 'autocomplete' => 'off', 'placeholder' => 'RFC']) !!}
+                <span class="form-control-feedback">
+                    <strong id="errorrfc"></strong>
+                </span>
               </div>
-              <div class="form-line">
-                <div class="form-group">
-                  {!! Form::select('estado', ['L' => 'Large', 'S' => 'Small'], null, ['class' => 'form-control', 'placeholder' => 'Selecciona un estado']) !!}
+              <div class="form-group">
+                {!! Form::label('colonia', 'Colonia') !!}
+                {!! Form::text('colonia', null, ['class' => 'form-control', 'autocomplete' => 'off', 'placeholder' => 'Colonia']) !!}
+                <span class="form-control-feedback">
+                    <strong id="errorcolonia"></strong>
+                </span>
+              </div>
+              <div class="form-group">
+                {!! Form::label('calle', 'Dirección (Calle y número)') !!}
+                {!! Form::text('calle', null, ['class' => 'form-control', 'autocomplete' => 'off', 'placeholder' => 'Calle y número']) !!}
+                <span class="form-control-feedback">
+                    <strong id="errorcalle"></strong>
+                </span>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    {!! Form::label('cp', 'C.P.') !!}
+                    {!! Form::number('cp', null, ['class' => 'form-control', 'placeholder' => 'C.P.', 'maxlength' => '5']) !!}
+                    <span class="form-control-feedback">
+                        <strong id="errorcp"></strong>
+                    </span>
+                  </div>
                 </div>
-                <div class="form-group">
-                  {!! Form::label('cp', 'C.P.', ['class' => 'sr-only']) !!}
-                  {!! Form::text('cp', null, ['class' => 'form-control', 'autocomplete' => 'off', 'placeholder' => 'C.P.']) !!}
+                <div class="col-md-8">
+                  {!! Form::label('monto', 'Monto') !!}
+                  <div class="input-group">
+                    <span class="input-group-addon" id="btnGroupAddon2">$</span>
+                    {!! Form::text('monto', null, ['class' => 'form-control', 'autocomplete' => 'off', 'placeholder' => '0.00', 'aria-describedby' => 'btnGroupAddon2']) !!}
+                  </div>
+                  <span class="form-control-feedback">
+                      <strong style="color:#d9534f;" id="errormonto"></strong>
+                  </span>
                 </div>
               </div>
               <center>
                 <span>Concepto:</span><br>
-                <h5>Donación GESUPPUEBLA</h5>
-                <button id="RFC-button" type="button" name="button" class="btn red-inverse">Generar Referencia Bancaria</button>
+                <h5>Donación GSUPPUEBLA</h5>
+                <button id="RFC-button" url="{{route('rfc')}}" type="button" name="button" class="btn red-inverse">Generar Referencia Bancaria</button>
               </center>
             </div>
           </div>
           <div id="SPEI-form" class="spei hidden">
-            <div class="form-line">
-              <div class="form-group">
-                {!! Form::select('estado', ['L' => 'Large', 'S' => 'Small'], null, ['class' => 'form-control', 'placeholder' => 'Selecciona un estado']) !!}
-              </div>
-              <div class="form-group">
-                {!! Form::label('cp', 'C.P.', ['class' => 'sr-only']) !!}
-                {!! Form::text('cp', null, ['class' => 'form-control', 'autocomplete' => 'off', 'placeholder' => 'C.P.']) !!}
-              </div>
-            </div>
-            <center>
-              <button id="SPEI-button" type="button" name="button" class="btn red-inverse">Guardar</button>
-            </center>
-            <br>
             <div class="col-md-8">
               <p>
                 Instrucciones:
@@ -132,19 +160,24 @@
             </div>
           </div>
           <div id="paypal-form" class="paypal">
-            {!! Form::open(['route' => 'payment', 'method' => 'GET']) !!}
-              <div class="form-group{{ $errors->has('donativo') ? ' has-danger' : '' }}">
-                {!! Form::text('donativo', old('donativo'), ['class' => 'form-control', 'placeholder' => 'Donativo $0.00']) !!}
-                @if ($errors->has('donativo'))
-                    <span class="form-control-feedback">
-                        <strong>{{ $errors->first('donativo') }}</strong>
-                    </span>
-                @endif
+            <div class="">
+              <div class="input-group{{ $errors->has('donativo') ? ' has-danger' : '' }}">
+                <span class="input-group-addon" id="btnGroupAddon2">$</span>
+                {!! Form::text('donativo', null, ['class' => 'form-control', 'placeholder' => '0.00', 'id' => 'donativo']) !!}
               </div>
-              <center>
-                <button id="btnPaypal" type="submit" name="button" class="btn green-inverse"><i class="fa fa-paypal" aria-hidden="true"></i>Donar</button>
-              </center>
-            {!! Form::close() !!}
+              @if ($errors->has('donativo'))
+                  <span class="form-control-feedback">
+                      <strong style="color:#d9534f;">{{ $errors->first('donativo') }}</strong>
+                  </span>
+              @endif
+              <span class="form-control-feedback">
+                  <strong style="color:#d9534f;" id="errordonativo"></strong>
+              </span>
+            </div>
+            <center>
+              <button id="btnPaypal" url="{{route('payment')}}" type="submit" name="button" class="btn green-inverse"><i class="fa fa-paypal" aria-hidden="true"></i>Donar</button>
+            </center>
+
 
             <!--<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
               <input type="hidden" name="cmd" value="_s-xclick">
@@ -165,8 +198,8 @@
     bootbox.alert("{{ \Session::get('message') }}");
   </script>
 	@endif
-<script src="{{asset('js/donaciones/donaciones.js')}}" charset="utf-8"></script>
 <script type="text/javascript">
   var token = '{{ Session::token() }}';
 </script>
+<script src="{{asset('js/donaciones/donaciones.js')}}" charset="utf-8"></script>
 @endsection

@@ -11,7 +11,7 @@
         </a>
         <div class="login-session">
           @if (Auth::guest())
-          <a href="{{ url('/login') }}" class="btn orange logout" data-toggle="tooltip" data-placement="top" title="Iniciar Sesión">            
+          <a href="{{ url('/login') }}" class="btn orange logout" data-toggle="tooltip" data-placement="top" title="Iniciar Sesión">
             <span class="fa fa-id-card" aria-hidden="true"></span>
           </a>
           @else
@@ -66,7 +66,7 @@
                   </ul>
               </li>
             @endif
-            <li id="donar"d><a href="{{route('donacion')}}"><i class="fa fa-heartbeat" aria-hidden="true"></i>Donar</a></li>
+            <li id="donar"d><a href="{{route('donacion')}}"><i class="fa fa-heart" aria-hidden="true"></i>Donar</a></li>
         </ul>
     </nav>
 </header>

@@ -16,18 +16,18 @@
         <div class="sp-container hidden-md-down" style="z-index:1;">
             <div class="sp-content">
                 <div class="sp-wrap sp-left">
-                    <h2>
-    					<span class="sp-top">cambiar el mundo es el resultado de la</span>
-    					<span class="sp-mid"><b>suma</b></span>
-    					<span class="sp-bottom">de todos nuestros pasos</span>
-    				</h2>
+                  <h2>
+          					<span class="sp-top">cambiar el mundo es el resultado de la</span>
+          					<span class="sp-mid"><b>suma</b></span>
+          					<span class="sp-bottom">de todos nuestros pasos</span>
+          				</h2>
                 </div>
                 <div class="sp-wrap sp-right">
-                    <h2>
-    					<span class="sp-top">en un minuto puedes cambiar de</span>
-    					<span class="sp-mid"><b>actitud<i>!</i><i></i></b></span>
-    					<span class="sp-bottom">y al mismo tiempo el dia entero</span>
-    				</h2>
+                  <h2>
+          					<span class="sp-top">en un minuto puedes cambiar de</span>
+          					<span class="sp-mid"><b>actitud<i>!</i><i></i></b></span>
+          					<span class="sp-bottom">y al mismo tiempo el día entero</span>
+          				</h2>
                 </div>
             </div>
             <div class="sp-full">
@@ -65,7 +65,7 @@
             </div>
         </div>
     </section>
-    
+
     <section class="Obj-Val text-justify">
      <h1 class="text-xs-center">Objetivos</h1>
       <div class="container Obj-Val2">
@@ -81,7 +81,7 @@
                     <li>Implementar acciones encaminadas a <spam>MEJORA</spam>R las condiciones de <spam>HABITABILIDAD</spam> en los hogares menos afortunados;</li>
                     <li>Generar acciones y condiciones que garanticen una alimentación <spam>DISPONIBLE</spam>, <spam>ACCESIBLE</spam> y <spam>ADECUADA</spam> a las familias más necesitadas;</li>
                     <li>Efectuar campañas de prevención y atención temprana que brinden un completo estado de <spam>BIENESTAR FÍSICO</spam>, <spam>MENTAL</spam> y <spam>SOCIAL</spam> a las personas más vulnerables;</li>
-                    
+
                     </div>
                     <div class="col-md-6 OBJ-ESP2">
                     <li>Gestionar becas y patrocinios que permitan a nuestros niños y jóvenes continuar con el desarrollo de sus <spam>CAPACIDADES</spam> y <spam>TALENTOS</spam>;</li>
@@ -90,7 +90,7 @@
                     <br>
                     </div>
             </ol>
-            
+
             </div>
             </div>
         </div>
@@ -274,7 +274,7 @@
                     <div class="contenido">
                         <h2><span class="odometer" id="odometer1">0</span></h2>
                         <br>
-                        <p>Que equivale a 327 familias poblanas apoyadas con alguno de nuestros programas. 
+                        <p>Que equivale a 327 familias poblanas apoyadas con alguno de nuestros programas.
                          </p>
                          <br>
                     </div>
