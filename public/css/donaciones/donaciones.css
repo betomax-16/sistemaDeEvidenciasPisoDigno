@@ -40,6 +40,13 @@ p{
 .imagen{
   padding: 0;
 }
+.datos-personales h1{
+  font-size: 55px;
+  font-weight: bold;
+}
+.datos-personales p{
+  font-size: 20px;
+}
 h1{
   margin-top: 2%;
 }
@@ -114,7 +121,6 @@ h1{
 .hidden{
   display: none;
 }
-
 @media (max-width: 575px) {
   .texto{
     padding: 3%;

@@ -1,0 +1,228 @@
+#donacionTiempo, #donacionEspecie{
+  display: flex;
+  flex-direction: column;
+}
+.title, .slider{
+  height: 500px;
+  width: 100%;
+}
+#donacionTiempo .title, #donacionEspecie .title{
+  color: #fff;
+  text-align: justify;
+  padding: 25px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-color: #464646;
+}
+#donacionEspecie .title{
+  background-image: url('../../imagenes/aplicacion/tiempo.jpg');
+}
+#donacionTiempo .title{
+  order: 0;
+  background-image: url('../../imagenes/aplicacion/tiempo.jpg');
+}
+#donacionTiempo .slider{
+  order: 1;
+}
+.title h4{
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+}
+.title .lastP{
+  margin-bottom: 2px;
+}
+.title .btn, .slider .btn{
+  border-radius: 50px;
+}
+.slider{
+  padding: 45px;
+  padding-bottom: 0;
+}
+/*medias especiales para la seccion de donacion de tiempo*/
+@media (max-width:323px) {
+  #donacionTiempo .title{
+    font-size: 13px;
+  }
+  #donacionTiempo .title .btn{
+    font-size: 15px;
+  }
+  #btnTranslados{
+    font-size: 15px;
+  }
+}
+@media (min-width:324px) and (max-width:369px) {
+  #donacionTiempo .title{
+    font-size: 13px;
+  }
+}
+/*------------------------------------------------------*/
+/*medias especiales para los botones de seleccion*/
+@media (max-width:291px) {
+  #donacionEspecie .active:after{
+    content: '';
+    width: 6%!important;
+  }
+}
+@media (min-width:292px) and (max-width:321px) {
+  #donacionEspecie .active:after{
+    content: '';
+    width: 7%!important;
+  }
+}
+/*------------------------------------------------------*/
+@media (max-width:321px) {
+  .slider ul li p{
+    font-size: 15px!important;
+  }
+}
+@media (min-width:576px) and (max-width:767px) {
+  .title .lastP{
+    margin-bottom: 15%;
+  }
+  .title p{
+    font-size: 20px!important;
+  }
+  .slider ul li{
+    margin: 30px!important;
+  }
+}
+@media (min-width:768px) and (max-width:991px) {
+  .title .lastP{
+    margin-bottom: 10%;
+    font-size: 15px;
+  }
+  .title h4{
+    text-align: center;
+    font-size: 55px;
+    font-weight: bold;
+  }
+  .title p{
+    font-size: 20px!important;
+  }
+  .slider ul li{
+    margin: 30px!important;
+  }
+}
+@media (min-width:992px) and (max-width:1199px) {
+  #donacionTiempo, #donacionEspecie{
+    flex-direction: row;
+  }
+  #donacionTiempo .title{
+    order: 1;
+  }
+  #donacionTiempo .slider{
+    order: 0;
+  }
+  .title{
+    padding: 50px;
+    background-size: cover;
+  }
+  .title, .slider{
+    width: 50%;
+  }
+  .title .lastP{
+    margin-bottom: 8%;
+    font-size: 15px;
+  }
+  .title h4{
+    text-align: center;
+    font-size: 55px;
+    font-weight: bold;
+  }
+  #donacionEspecie .title p{
+    font-size: 20px!important;
+  }
+  .slider ul li{
+    margin: 50px!important;
+  }
+}
+@media (min-width:1200px) {
+  #donacionTiempo, #donacionEspecie{
+    flex-direction: row;
+  }
+  #donacionTiempo .title{
+    order: 1;
+  }
+  #donacionTiempo .slider{
+    order: 0;
+  }
+  .title{
+    padding: 50px;
+    background-size: cover;
+  }
+  .title, .slider{
+    width: 50%;
+  }
+  .title .lastP{
+    margin-bottom: 15%;
+    font-size: 15px;
+  }
+  .title h4{
+    text-align: center;
+    font-size: 55px;
+    font-weight: bold;
+  }
+  #donacionEspecie .title p{
+    font-size: 20px!important;
+  }
+  .slider ul li{
+    margin: 50px!important;
+  }
+}
+/**/
+.slider ul{
+  list-style-type: none;
+  padding-left: 0;
+}
+.slider ul li{
+  margin-top: 15px;
+}
+.slider ul li h1{
+  font-size: 25px;
+  text-transform: uppercase;
+}
+.slider ul li p{
+  color: lightgray;
+  font-style: italic;
+  font-size: 20px;
+  text-align: justify;
+}
+.slider ul li hr{
+  border: 2px solid #f7931e;
+  width: 100px;
+  margin-left: 0;
+}
+
+.buttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.buttons a{
+  background: #e5e5e5;
+  width: 12px;
+  height: 12px;
+  border-radius: 50px;
+  margin-left: 10px;
+}
+.buttons a:hover{
+  background: #18afd3;
+}
+.buttons .active{
+  background: #18afd3;
+}
+.buttons .active:after{
+  content: '';
+  position: absolute;
+  margin-left: -11px;
+  margin-top: -5px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(87, 136, 245, 0.22);
+}
+.slider .hidden{
+  display: none;
+}
