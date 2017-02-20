@@ -125,15 +125,22 @@
 }
 
 .yellow-inverse{
-  background-color: #f1c40f;
+  background-color: #f0c64e;
   color: #fff
 }
 
 .yellow-inverse:hover{
   color: #fff;
-  background-color: #DBB004;
+  background-color: #f7b41e;
 }
-
+.special{
+  background-color: #727c71;
+  color: #fff
+}
+.special:hover{
+  background-color: #b48954;
+  color: #fff
+}
 .buttons {
   text-align: center;
 }

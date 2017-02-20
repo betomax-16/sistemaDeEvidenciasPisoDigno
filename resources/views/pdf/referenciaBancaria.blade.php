@@ -65,8 +65,8 @@
     @php($url2 = substr(dirname(__FILE__), 0, strrpos(dirname(__FILE__), $proyecto)+$len).'public\imagenes\aplicacion\bbva.jpg')
     <img src="{{$url1}}" alt="">
     <img id="logoBanco" src="{{$url2}}" alt="">
-    <!--<img src="{{asset('imagenes\aplicacion\Logo3.png')}}" alt="">
-    <img id="logoBanco" src="{{asset('imagenes\aplicacion\bbva.jpg')}}" alt="">-->
+    <!--<img src="{{asset('imagenes/aplicacion/Logo3.png')}}" alt="">
+    <img id="logoBanco" src="{{asset('imagenes/aplicacion/bbva.jpg')}}" alt="">-->
     <hr>
     <h3 class="title">LINEA DE CAPTURA PARA PAGO EN VENTANILLA BANCARIA</h3>
     <div class="contenedor">
