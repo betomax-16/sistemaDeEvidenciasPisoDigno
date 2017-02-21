@@ -14,7 +14,7 @@ class AlterProyectos extends Migration
     public function up()
     {
       Schema::table('Proyectos', function ($table) {
-        $table->enum('tipo', ['VIVIENDA', 'SALUD', 'ALIMENTOS', 'EDUCACION', 'MEDIO_AMBIENTE']);
+        $table->enum('tipo', ['VIVIENDA', 'SALUD', 'ALIMENTOS', 'EDUCACION', 'MEDIO_AMBIENTE', 'ORIENTACION_SOCIAL']);
       });
 
     }

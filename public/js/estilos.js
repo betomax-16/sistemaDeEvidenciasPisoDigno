@@ -24,9 +24,9 @@ $(document).ready(function () {
         var texto = $(this).children('p').html();
         var img = $(this).children('img').attr('src');
         var url = $(this).children('input').attr('value');
-        $('.modal-title').html(proyecto);
-        $('#modal-texto').html(texto);
-        $('#modal-img').prop('src', img);
-        $('#ir').prop('href', url);
+        $('#PisoD .modal-title').html(proyecto);
+        $('#PisoD #modal-texto').html(texto);
+        $('#PisoD #modal-img').prop('src', img);
+        $('#PisoD #ir').prop('href', url);
     });
 });

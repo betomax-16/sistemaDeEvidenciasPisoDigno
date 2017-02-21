@@ -41,6 +41,7 @@
                     <a href="{{route('proyectosPorPrograma','ALIMENTOS')}}"><li id="alimentos">Alimentos</li></a>
                     <a href="{{route('proyectosPorPrograma','EDUCACION')}}"><li id="educacion">Educación</li></a>
                     <a href="{{route('proyectosPorPrograma','MEDIO_AMBIENTE')}}"><li id="medio_ambiente">Medio Ambiente</li></a>
+                    <a href="{{route('proyectosPorPrograma','ORIENTACION_SOCIAL')}}"><li id="medio_ambiente">Orientación Social</li></a>
                 </ul>
             </li>
             <li id="contacto"><a href="{{route('contacto')}}"><i class="fa fa-coffee" aria-hidden="true"></i>Contacto</a></li>
