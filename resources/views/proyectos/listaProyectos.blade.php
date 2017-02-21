@@ -15,6 +15,8 @@
                 educación
               @elseif(strtolower($programa) == 'medio_ambiente')
                 medio ambiente
+              @elseif(strtolower($programa) == 'orientacion_social')
+                orientación social
               @else
                 {{$programa}}
               @endif

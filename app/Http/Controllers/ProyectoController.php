@@ -37,7 +37,7 @@ class ProyectoController extends Controller
       Session::forget('proyecto');
       Session::forget('estado');
       Session::put('programa', $programa);
-      $programas = ['VIVIENDA', 'SALUD', 'ALIMENTOS', 'EDUCACION', 'MEDIO_AMBIENTE'];
+      $programas = ['VIVIENDA', 'SALUD', 'ALIMENTOS', 'EDUCACION', 'MEDIO_AMBIENTE', 'ORIENTACION_SOCIAL'];
       if (in_array(strtoupper($programa), $programas)) {
         if (Auth::guest() || Auth::user()->role == 'ROLE_ADMIN') {
           $proyectos = Proyecto::where('tipo', '=', $programa)->paginate(10);

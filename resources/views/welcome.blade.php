@@ -3,6 +3,7 @@
 <link rel="stylesheet" type="text/css" href="{{asset('css/textoPresentacion.css')}}" />
 <link rel="stylesheet" href="{{asset('css/style1.css')}}">
 <link rel="stylesheet" href="{{asset('css/Estadisticas.css')}}">
+<link rel="stylesheet" href="{{asset('css/welcome/modalesProgramas.css')}}">
 <style media="screen">
 @media (max-width: 575px) {
   .odometer-digit{
@@ -31,7 +32,7 @@
                 </div>
             </div>
             <div class="sp-full">
-                <h2>Ayudanos a ayudar</h2>
+                <h2>Ayúdanos a ayudar</h2>
                 <a href="{{route('donacion')}}">Dona!</a>
             </div>
         </div>
@@ -197,15 +198,15 @@
             <br>
             <br>
             <h2 class="titulo text-xs-center subtitulo1">¿Qué es lo <span>que hacemos?</span></h2>
-            <h5 class="text-xs-center">Ayudanos a ayudar</h5>
+            <h5 class="text-xs-center">Ayúdanos a ayudar</h5>
 
             <div class="linea"></div>
             <br>
-            <div class="row">
+            <div class="row" id="programas">
 
                 <ul class="col-xs-6 col-lg-4 text-xs-center text-lg-left  wow bounceInLeft">
                     <li>
-                        <img src="{{asset('imagenes/aplicacion/Bivienda.svg')}}" class="img-fluid" alt="" aria-hidden="true">
+                        <img src="{{asset('imagenes/aplicacion/Bivienda.svg')}}" class="img-fluid" data-toggle="modal" data-target="#viviendaModal">
                         <div class="contenedor-eleccion">
                             <h4>Vivienda </h4>
                             <p class="hidden-md-down">Porque un HOGAR es más que un techo y cuatro paredes, implementamos acciones encaminadas a MEJORAR las condiciones de HABITABILIDAD en los hogares menos afortunados.</p>
@@ -213,7 +214,7 @@
                     </li>
                     <br>
                     <li>
-                        <img src="{{asset('imagenes/aplicacion/despensa.svg')}}" alt="">
+                        <img src="{{asset('imagenes/aplicacion/despensa.svg')}}" alt="" data-toggle="modal" data-target="#alimentacionModal">
                         <div class="contenedor-eleccion">
                             <h4>Alimentación </h4>
                             <p class="hidden-md-down">Buscamos generar acciones y condiciones que garanticen una alimentación DISPONIBLE, ACCESIBLE y ADECUADA a las familias más necesitadas.</p>
@@ -221,7 +222,7 @@
                     </li>
                     <br>
                     <li>
-                        <img src="{{asset('imagenes/aplicacion/Salud.svg')}}" alt="">
+                        <img src="{{asset('imagenes/aplicacion/Salud.svg')}}" alt="" data-toggle="modal" data-target="#saludModal">
                         <div class="contenedor-eleccion">
                             <h4>Salud</h4>
                             <p class="hidden-md-down">Dado que salud no es sólo la ausencia de enfermedades o afecciones, efectuamos campañas de prevención y atención temprana que permiten un completo estado de BIENESTAR FÍSICO, MENTAL y SOCIAL a las personas más vulnerables.</p>
@@ -235,7 +236,7 @@
 
                 <ul class="col-xs-6 col-lg-4 text-xs-center text-lg-right wow bounceInRight">
                     <li>
-                        <img src="{{asset('imagenes/aplicacion/Educacion.svg')}}" alt="" aria-hidden="true">
+                        <img src="{{asset('imagenes/aplicacion/Educacion.svg')}}" alt="" data-toggle="modal" data-target="#educacionModal">
                         <div class="contenedor-eleccion">
                             <h4>Educación </h4>
                             <p class="hidden-md-down">El estudio es una oportunidad para crecer en el mundo del saber, por eso gestionamos becas y patrocinios que permiten a nuestros niños y jóvenes continuar con el desarrollo de sus CAPACIDADES y TALENTOS.</p>
@@ -243,7 +244,7 @@
                     </li>
                     <br>
                     <li>
-                        <img src="{{asset('imagenes/aplicacion/MedioAmbiente.svg')}}" alt="">
+                        <img src="{{asset('imagenes/aplicacion/MedioAmbiente.svg')}}" alt="" data-toggle="modal" data-target="#medioAmbienteModal">
                         <div class="contenedor-eleccion">
                             <h4>Medio Ambiente </h4>
                             <p class="hidden-md-down">El planeta es nuestro hogar común y todos somos corresponsables de su cuidado, de ahí que fomentamos iniciativas dirigidas a la PRESERVACIÓN y DESARROLLO SUSTENTABLE de los recursos naturales.</p>
@@ -252,7 +253,7 @@
                     </li>
                     <br>
                     <li>
-                        <img src="{{asset('imagenes/aplicacion/OS.svg')}}" alt="">
+                        <img src="{{asset('imagenes/aplicacion/OS.svg')}}" alt="" data-toggle="modal" data-target="#orientacionSocialModal">
                         <div class="contenedor-eleccion">
                             <h4>Orientación Social</h4>
                             <p class="hidden-md-down">Todo problema tiene una solución, por eso organizamos a grupos de profesionales a efecto de brindar jornadas de CAPACITACIÓN y ASESORÍA sobre temas cotidianos, así como de asuntos muy particulares que aquejan a nuestros allegados.</p>
@@ -379,7 +380,14 @@
             @include('layouts/templates/Estadisticas')
         </div>
     </div>
-    @include('layouts/templates/modal') @include('layouts/menu/footer') @endsection @section('javascripts')
+    @include('layouts/templates/modal')
+    @include('layouts/templates/modalesProgramas/salud')
+    @include('layouts/templates/modalesProgramas/vivienda')
+    @include('layouts/templates/modalesProgramas/educacion')
+    @include('layouts/templates/modalesProgramas/alimentacion')
+    @include('layouts/templates/modalesProgramas/medioAmbiente')
+    @include('layouts/templates/modalesProgramas/orientacionSocial')
+    @include('layouts/menu/footer') @endsection @section('javascripts')
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
 
 
