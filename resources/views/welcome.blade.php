@@ -49,16 +49,35 @@
             <li><span>Image 03</span></li>
         </ul>
     </section>
+    
     <section class="container M-V text-justify">
 
-        <div class=" Mision col-xs-12 col-md-5">
+        <div class=" Mision col-xs-12 col-md-4">
             <h1>Misión</h1>
             <div class="Mision2">
                 <p>Consolidar de manera efectiva en los doscientos diecisiete municipios que conforman el Estado de Puebla, una red permanente de colaboradores, patrocinadores y voluntarios que contribuyan a generar, promover y capitalizar esfuerzos encaminados a remediar la brecha de desigualdad social que limita el desarrollo pleno de las familias poblanas más necesitadas.</p>
 
             </div>
         </div>
-        <div class=" Vision  col-xs-12 offset-md-2 col-md-5">
+        
+        <div class="Valores col-xs-12 col-md-4">
+            <h1>Valores</h1>
+            <div class="Valores2">
+                <ol  type="a">
+                    <li>Integridad</li>
+                    <li>Solidaridad</li>
+                    <li>Respeto</li>
+                    <li>Tolerancia</li>
+                    <li>Trabajo en equipo</li>
+                    <li>Servicio</li>
+                    <li>Compromiso</li>
+                    <li>Transparencia</li>
+                </ol>
+
+            </div>
+        </div>
+        
+        <div class=" Vision  col-xs-12  col-md-4">
             <h1 class="text-left	">Visión</h1>
             <div class="Vision2">
                 <p>En el año 2022, GRUPOS SOCIALES UNIDOS POR PUEBLA 13 DE NOVIEMBRE A.C., será un referente entre las organizaciones de la sociedad civil en el Estado de Puebla, por su eficaz gestión y canalización de apoyos sociales; el impacto de sus acciones asistenciales en la calidad de vida de las familias poblanas beneficiadas; su intensa y continua labor en el área de orientación y capacitación; la transparente ejecución de los recursos económicos y materiales captados; y, por el alto sentido humano de todos los que la conforman.</p>
@@ -66,7 +85,7 @@
         </div>
     </section>
     
-    <section class="Obj-Val text-justify">
+    <section class="container Obj-Val text-justify">
      <h1 class="text-xs-center">Objetivos</h1>
       <div class="container Obj-Val2">
            <div class="container col-xs-12">
@@ -118,8 +137,12 @@
                 <header class="text-xs-center col-xs-12 offset-md-1 col-md-5" style="z-index:1;">
                     <h1 class="NC2">Nuestra comunidad</h1>
                     <br>
-                    <h2><span><i class="fa fa-quote-right" aria-hidden="true"></i></span></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate harum adipisci et eos rerum consectetur, dolorem culpa. Dolor magnam fuga perspiciatis, beatae accusantium, labore similique, quisquam laudantium architecto, iure cumque.</p>
+                    <h2><span><i class="fa fa-quote-right " aria-hidden="true"></i></span></h2>
+                    
+<div class="scroll-left">
+<p>CSS scrolling text... </p>
+</div>
+                   
                 </header>
 
                 <div id="carouselExampleIndicators" class="carousel slide col-xs-12 offset-md-1 col-md-5" data-ride="carousel">
@@ -350,7 +373,7 @@
                 <article class="col-lg-4" href="#PisoD" data-toggle="modal" data-target="#PisoD">
                     <input type="hidden" name="ruta" value="{{route('evidencia.evidencias', ['piso digno', 21])}}">
                     <img src=" {{asset('imagenes/aplicacion/Bivienda.svg')}} " alt="LogoPiso Digno">
-                    <h3><a> Piso Digno</a></h3>
+                    <h3><a>Vivienda</a></h3>
                     <p class="hidden-md-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia natus asperiores quo eaque, reiciendis provident nobis voluptatem. Quos repellat excepturi cupiditate earum exercitationem porro tempore, odit consectetur fugit ipsa facere.</p>
                     <button class="btn blue-inverse hidden-md hidden-md-down">Más Información</button>
                 </article>
@@ -358,7 +381,7 @@
                 <article class="col-lg-4" data-toggle="modal" data-target="#PisoD">
                     <input type="hidden" name="ruta" value="#">
                     <img src="{{asset('imagenes/aplicacion/despensa.svg')}}" alt="LogoPiso Digno">
-                    <h3><a>Despensas</a></h3>
+                    <h3><a>Alimentación</a></h3>
                     <p class="hidden-md-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia natus asperiores quo eaque, reiciendis provident nobis voluptatem. Quos repellat excepturi cupiditate earum exercitationem porro tempore, odit consectetur fugit ipsa facere.</p>
                     <button class="btn green-inverse hidden-md hidden-md-down">Más Información</button>
                 </article>
