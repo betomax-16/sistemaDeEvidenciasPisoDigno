@@ -3,6 +3,8 @@
 <link rel="stylesheet" type="text/css" href="{{asset('css/textoPresentacion.css')}}" />
 <link rel="stylesheet" href="{{asset('css/style1.css')}}">
 <link rel="stylesheet" href="{{asset('css/Estadisticas.css')}}">
+<link rel="stylesheet" href="{{asset('css/welcome/modalesProgramas.css')}}">
+<link rel="stylesheet" href="{{asset('css/graficassvg.css')}}">
 <style media="screen">
 @media (max-width: 575px) {
   .odometer-digit{
@@ -16,22 +18,22 @@
         <div class="sp-container hidden-md-down" style="z-index:1;">
             <div class="sp-content">
                 <div class="sp-wrap sp-left">
-                    <h2>
-    					<span class="sp-top">cambiar el mundo es el resultado de la</span>
-    					<span class="sp-mid"><b>suma</b></span>
-    					<span class="sp-bottom">de todos nuestros pasos</span>
-    				</h2>
+                  <h2>
+          					<span class="sp-top">cambiar el mundo es el resultado de la</span>
+          					<span class="sp-mid"><b>suma</b></span>
+          					<span class="sp-bottom">de todos nuestros pasos</span>
+          				</h2>
                 </div>
                 <div class="sp-wrap sp-right">
-                    <h2>
-    					<span class="sp-top">en un minuto puedes cambiar de</span>
-    					<span class="sp-mid"><b>actitud<i>!</i><i></i></b></span>
-    					<span class="sp-bottom">y al mismo tiempo el dia entero</span>
-    				</h2>
+                  <h2>
+          					<span class="sp-top">en un minuto puedes cambiar de</span>
+          					<span class="sp-mid"><b>actitud<i>!</i><i></i></b></span>
+          					<span class="sp-bottom">y al mismo tiempo el día entero</span>
+          				</h2>
                 </div>
             </div>
             <div class="sp-full">
-                <h2>Ayudanos a ayudar</h2>
+                <h2>Ayúdanos a ayudar</h2>
                 <a href="{{route('donacion')}}">Dona!</a>
             </div>
         </div>
@@ -86,6 +88,7 @@
     </section>
     
     <section class="container Obj-Val text-justify">
+
      <h1 class="text-xs-center">Objetivos</h1>
       <div class="container Obj-Val2">
            <div class="container col-xs-12">
@@ -100,7 +103,7 @@
                     <li>Implementar acciones encaminadas a <spam>MEJORA</spam>R las condiciones de <spam>HABITABILIDAD</spam> en los hogares menos afortunados;</li>
                     <li>Generar acciones y condiciones que garanticen una alimentación <spam>DISPONIBLE</spam>, <spam>ACCESIBLE</spam> y <spam>ADECUADA</spam> a las familias más necesitadas;</li>
                     <li>Efectuar campañas de prevención y atención temprana que brinden un completo estado de <spam>BIENESTAR FÍSICO</spam>, <spam>MENTAL</spam> y <spam>SOCIAL</spam> a las personas más vulnerables;</li>
-                    
+
                     </div>
                     <div class="col-md-6 OBJ-ESP2">
                     <li>Gestionar becas y patrocinios que permitan a nuestros niños y jóvenes continuar con el desarrollo de sus <spam>CAPACIDADES</spam> y <spam>TALENTOS</spam>;</li>
@@ -109,7 +112,7 @@
                     <br>
                     </div>
             </ol>
-            
+
             </div>
             </div>
         </div>
@@ -140,7 +143,9 @@
                     <h2><span><i class="fa fa-quote-right " aria-hidden="true"></i></span></h2>
                     
 <div class="scroll-left">
-<p>CSS scrolling text... </p>
+<p>CSS scrolli 1 </p>
+<p>CSS ng text...2 1</p>
+<p>CSSt... 3 1</p>
 </div>
                    
                 </header>
@@ -154,7 +159,6 @@
                         <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="10"></li>
@@ -180,9 +184,6 @@
                         </div>
                         <div class="carousel-item">
                             <img class="d-block img-fluid" src="{{asset('imagenes/fotos/file6.jpg')}}" alt="Six slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block img-fluid" src="{{asset('imagenes/fotos/file7.jpg')}}" alt="Seven slide">
                         </div>
                         <div class="carousel-item">
                             <img class="d-block img-fluid" src="{{asset('imagenes/fotos/file8.jpg')}}" alt="Eight slide">
@@ -220,15 +221,15 @@
             <br>
             <br>
             <h2 class="titulo text-xs-center subtitulo1">¿Qué es lo <span>que hacemos?</span></h2>
-            <h5 class="text-xs-center">Ayudanos a ayudar</h5>
+            <h5 class="text-xs-center">Ayúdanos a ayudar</h5>
 
             <div class="linea"></div>
             <br>
-            <div class="row">
+            <div class="row" id="programas">
 
                 <ul class="col-xs-6 col-lg-4 text-xs-center text-lg-left  wow bounceInLeft">
                     <li>
-                        <img src="{{asset('imagenes/aplicacion/Bivienda.svg')}}" class="img-fluid" alt="" aria-hidden="true">
+                        <img src="{{asset('imagenes/aplicacion/Bivienda.svg')}}" class="img-fluid" data-toggle="modal" data-target="#viviendaModal">
                         <div class="contenedor-eleccion">
                             <h4>Vivienda </h4>
                             <p class="hidden-md-down">Porque un HOGAR es más que un techo y cuatro paredes, implementamos acciones encaminadas a MEJORAR las condiciones de HABITABILIDAD en los hogares menos afortunados.</p>
@@ -236,7 +237,7 @@
                     </li>
                     <br>
                     <li>
-                        <img src="{{asset('imagenes/aplicacion/despensa.svg')}}" alt="">
+                        <img src="{{asset('imagenes/aplicacion/despensa.svg')}}" alt="" data-toggle="modal" data-target="#alimentacionModal">
                         <div class="contenedor-eleccion">
                             <h4>Alimentación </h4>
                             <p class="hidden-md-down">Buscamos generar acciones y condiciones que garanticen una alimentación DISPONIBLE, ACCESIBLE y ADECUADA a las familias más necesitadas.</p>
@@ -244,7 +245,7 @@
                     </li>
                     <br>
                     <li>
-                        <img src="{{asset('imagenes/aplicacion/Salud.svg')}}" alt="">
+                        <img src="{{asset('imagenes/aplicacion/Salud.svg')}}" alt="" data-toggle="modal" data-target="#saludModal">
                         <div class="contenedor-eleccion">
                             <h4>Salud</h4>
                             <p class="hidden-md-down">Dado que salud no es sólo la ausencia de enfermedades o afecciones, efectuamos campañas de prevención y atención temprana que permiten un completo estado de BIENESTAR FÍSICO, MENTAL y SOCIAL a las personas más vulnerables.</p>
@@ -258,7 +259,7 @@
 
                 <ul class="col-xs-6 col-lg-4 text-xs-center text-lg-right wow bounceInRight">
                     <li>
-                        <img src="{{asset('imagenes/aplicacion/Educacion.svg')}}" alt="" aria-hidden="true">
+                        <img src="{{asset('imagenes/aplicacion/Educacion.svg')}}" alt="" data-toggle="modal" data-target="#educacionModal">
                         <div class="contenedor-eleccion">
                             <h4>Educación </h4>
                             <p class="hidden-md-down">El estudio es una oportunidad para crecer en el mundo del saber, por eso gestionamos becas y patrocinios que permiten a nuestros niños y jóvenes continuar con el desarrollo de sus CAPACIDADES y TALENTOS.</p>
@@ -266,7 +267,7 @@
                     </li>
                     <br>
                     <li>
-                        <img src="{{asset('imagenes/aplicacion/MedioAmbiente.svg')}}" alt="">
+                        <img src="{{asset('imagenes/aplicacion/MedioAmbiente.svg')}}" alt="" data-toggle="modal" data-target="#medioAmbienteModal">
                         <div class="contenedor-eleccion">
                             <h4>Medio Ambiente </h4>
                             <p class="hidden-md-down">El planeta es nuestro hogar común y todos somos corresponsables de su cuidado, de ahí que fomentamos iniciativas dirigidas a la PRESERVACIÓN y DESARROLLO SUSTENTABLE de los recursos naturales.</p>
@@ -275,7 +276,7 @@
                     </li>
                     <br>
                     <li>
-                        <img src="{{asset('imagenes/aplicacion/OS.svg')}}" alt="">
+                        <img src="{{asset('imagenes/aplicacion/OS.svg')}}" alt="" data-toggle="modal" data-target="#orientacionSocialModal">
                         <div class="contenedor-eleccion">
                             <h4>Orientación Social</h4>
                             <p class="hidden-md-down">Todo problema tiene una solución, por eso organizamos a grupos de profesionales a efecto de brindar jornadas de CAPACITACIÓN y ASESORÍA sobre temas cotidianos, así como de asuntos muy particulares que aquejan a nuestros allegados.</p>
@@ -296,8 +297,8 @@
                     <br>
                     <div class="contenido">
                         <h2><span class="odometer" id="odometer1">0</span></h2>
-                        <br>
-                        <p>Que equivale a 327 familias poblanas apoyadas con alguno de nuestros programas. 
+                        <h4 class="text-xs-center">Vivienda</h4>
+                        <p>Que equivale a 327 familias poblanas apoyadas con alguno de nuestros programas.
                          </p>
                          <br>
                     </div>
@@ -309,7 +310,7 @@
                     <br>
                     <div class="contenido">
                         <h2><span class="odometer" id="odometer2">0</span></h2>
-                        <br>
+                        <h4 class="text-xs-center">Alimentación</h4>
                         <p>Cantidad que corresponde a 36 familias beneficiadas mensualmente con una despensa integral.</p>
                     </div>
                 </div>
@@ -321,7 +322,7 @@
                     <br>
                     <div class="contenido">
                         <h2><span class="odometer" id="odometer3">0</span></h2>
-                        <br>
+                        <h4 class="text-xs-center">Salud</h4>
                         <p>Suma que representa el número de gestiones ante diversas instituciones de salud pública en el Estado de Puebla.</p>
                     </div>
                 </div>
@@ -332,7 +333,7 @@
                     <br>
                     <div class="contenido">
                         <h2><span class="odometer" id="odometer4">0</span></h2>
-                        <br>
+                        <h4 class="text-xs-center">Educación</h4>
                         <p>Lo cual equivale al número de instituciones educativas impactadas.</p>
                     </div>
                 </div>
@@ -343,7 +344,7 @@
                     <br>
                     <div class="contenido">
                         <h2><span class="odometer" id="odometer5">0</span></h2>
-                        <br>
+                        <h4 class="text-xs-center">Medio Ambiente</h4>
                         <p>Próximamente estaremos implementando proyectos en tu entorno.</p>
                     </div>
                 </div>
@@ -354,7 +355,7 @@
                     <br>
                     <div class="contenido">
                         <h2><span class="odometer" id="odometer6">0</span></h2>
-                        <br>
+                        <h4 class="text-xs-center">Orientación Social</h4>
                         <p>En breve gestaremos acciones en tu comunidad.</p>
                         <br>
                     </div>
@@ -402,7 +403,28 @@
             @include('layouts/templates/Estadisticas')
         </div>
     </div>
-    @include('layouts/templates/modal') @include('layouts/menu/footer') @endsection @section('javascripts')
+    
+  <div class="scrollmenu" >
+                      @include('layouts/templates/grafica1')
+                      @include('layouts/templates/grafica2')
+                      @include('layouts/templates/grafica3')
+                      @include('layouts/templates/grafica1')
+                      @include('layouts/templates/grafica1')
+                      @include('layouts/templates/grafica1')
+    
+
+                    
+</div>
+    
+    
+    @include('layouts/templates/modal')
+    @include('layouts/templates/modalesProgramas/salud')
+    @include('layouts/templates/modalesProgramas/vivienda')
+    @include('layouts/templates/modalesProgramas/educacion')
+    @include('layouts/templates/modalesProgramas/alimentacion')
+    @include('layouts/templates/modalesProgramas/medioAmbiente')
+    @include('layouts/templates/modalesProgramas/orientacionSocial')
+    @include('layouts/menu/footer') @endsection @section('javascripts')
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
 
 

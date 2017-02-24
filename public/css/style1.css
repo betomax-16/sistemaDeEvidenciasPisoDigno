@@ -23,11 +23,11 @@
     animation: imageAnimation 18s linear infinite 0s;
 }
 .cb-slideshow li:nth-child(1) span {
-    background-image: url(../imagenes/Scroll/ayuda1.jpg);
+    background-image: url(../imagenes/Scroll/fotocollage1.jpg);
     background-attachment: fixed;
 }
 .cb-slideshow li:nth-child(2) span {
-    background-image: url(../imagenes/Scroll/ayuda2.jpg);
+    background-image: url(../imagenes/Scroll/fotocollage2.jpg);
     background-attachment: fixed;
     animation-delay: 6s;
 }
