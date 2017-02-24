@@ -1,3 +1,9 @@
+#rfc{
+  text-transform: uppercase;
+}
+#monto, #donativo{
+  border-radius: 0 4px 4px 0;
+}
 #btnPaypal{
   background: #f0c64e;
 }
@@ -33,6 +39,13 @@ p{
 }
 .imagen{
   padding: 0;
+}
+.datos-personales h1{
+  font-size: 55px;
+  font-weight: bold;
+}
+.datos-personales p{
+  font-size: 20px;
 }
 h1{
   margin-top: 2%;
@@ -90,6 +103,9 @@ h1{
 .paypal{
   padding: 5px 0 5px 5px;
 }
+.paypal > div{
+  margin-bottom: 35px;
+}
 .referencia-bancaria, .spei, .paypal{
   margin-bottom: 35px;
 }
@@ -105,7 +121,6 @@ h1{
 .hidden{
   display: none;
 }
-
 @media (max-width: 575px) {
   .texto{
     padding: 3%;

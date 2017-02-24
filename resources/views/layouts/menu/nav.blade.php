@@ -11,7 +11,7 @@
         </a>
         <div class="login-session">
           @if (Auth::guest())
-          <a href="{{ url('/login') }}" class="btn orange logout" data-toggle="tooltip" data-placement="top" title="Iniciar Sesión">            
+          <a href="{{ url('/login') }}" class="btn orange logout" data-toggle="tooltip" data-placement="top" title="Iniciar Sesión">
             <span class="fa fa-id-card" aria-hidden="true"></span>
           </a>
           @else
@@ -41,6 +41,7 @@
                     <a href="{{route('proyectosPorPrograma','ALIMENTOS')}}"><li id="alimentos">Alimentos</li></a>
                     <a href="{{route('proyectosPorPrograma','EDUCACION')}}"><li id="educacion">Educación</li></a>
                     <a href="{{route('proyectosPorPrograma','MEDIO_AMBIENTE')}}"><li id="medio_ambiente">Medio Ambiente</li></a>
+                    <a href="{{route('proyectosPorPrograma','ORIENTACION_SOCIAL')}}"><li id="medio_ambiente">Orientación Social</li></a>
                 </ul>
             </li>
             <li id="contacto"><a href="{{route('contacto')}}"><i class="fa fa-coffee" aria-hidden="true"></i>Contacto</a></li>
@@ -66,7 +67,7 @@
                   </ul>
               </li>
             @endif
-            <li id="donar"d><a href="{{route('donacion')}}"><i class="fa fa-heartbeat" aria-hidden="true"></i>Donar</a></li>
+            <li id="donar"d><a href="{{route('donacion')}}"><i class="fa fa-heart" aria-hidden="true"></i>Donar</a></li>
         </ul>
     </nav>
 </header>
