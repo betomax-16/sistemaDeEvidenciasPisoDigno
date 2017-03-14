@@ -25,7 +25,7 @@ class ParticipanteController extends Controller
                          ->select('Usuarios.*')
                          ->whereNull('Usuarios_Proyectos.idUsuario')
                          ->where('Usuarios.role', '=', 'ROLE_PROVIDER')
-                         ->orWhere('Usuarios_Proyectos.proyecto', '<>', $project->nombre)
+                         ->orWhere('Usuarios_Proyectos.proyecto', '!=', $project->idProyecto)
                          ->groupBy('Usuarios.idUsuario')
                          ->get();
     }
@@ -48,7 +48,7 @@ class ParticipanteController extends Controller
                                     ->with('proyecto', $project)
                                     ->with('entidad', $estado)
                                     ->with('participantes', $participantes)
-                                    ->with('usuarios', $aux));        
+                                    ->with('usuarios', $aux));
     }
 
     /**
@@ -76,11 +76,19 @@ class ParticipanteController extends Controller
       $validacion = Validator::make($request->all(), $rules);
 
       if ($validacion->fails()) {
+        if ($request->ajax()) {
+          return response()->json(['errors' => $validacion->errors()]);
+        }
         return redirect()->back()->withInput()->withErrors($validacion->errors());
       }
 
       $usuario = Usuario::find($request->idUsuario);
-      $usuario->proyectos()->attach($proyecto);
+      if ($usuario->proyectos()->where('idProyecto', '=', $proyecto)->count() == 0) {
+        $usuario->proyectos()->attach($proyecto);
+      }
+      if ($request->ajax()) {
+        return response()->json(['id' => $usuario->idUsuario, 'nombre' => $usuario->nombreCompleto(), 'email' => $usuario->email]);
+      }
       return redirect()->route('participante.index', [$proyecto, $idEstado]);
     }
 

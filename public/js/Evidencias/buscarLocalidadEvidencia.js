@@ -62,8 +62,15 @@ $(document).ready(function(){
           var url = '../autocomplete';
 
           $.post(url, data, function(response) {
+            //alert(JSON.stringify(response.lugares));
+            var aux = JSON.stringify(response.lugares);
+            aux = aux.replace(/á/g, "a");
+            aux = aux.replace(/é/g, "e");
+            aux = aux.replace(/í/g, "i");
+            aux = aux.replace(/ó/g, "o");
+            aux = aux.replace(/ú/g, "u");
             $( "#nombreLugar" ).autocomplete({
-              source: response.lugares,
+              source: JSON.parse(aux),
               minLength: 2,
               select: function(event, ui) {
                 event.preventDefault();

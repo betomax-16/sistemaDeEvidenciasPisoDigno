@@ -2,6 +2,11 @@
 @section('styles')
 <link rel="stylesheet" href="{{asset('css/general.css')}}">
 <link rel="stylesheet" href="{{asset('css/proyectos/participantes.css')}}">
+<style media="screen">
+  #plantilla{
+    display: none;
+  }
+</style>
 @endsection
 @section('content')
 <div class="container espacioPagina marco">
@@ -36,7 +41,7 @@
                   </tbody>
                 </table>
               </div>
-              {!! Form::open(['route' => ['participante.destroy', 'ID_USUARIO', $proyecto->nombre], 'method' => 'DELETE', 'id' => 'form-delete']) !!}
+              {!! Form::open(['route' => ['participante.destroy', 'ID_USUARIO', $proyecto->idProyecto], 'method' => 'DELETE', 'id' => 'form-delete']) !!}
               {!! Form::close() !!}
               {!! $participantes->render() !!}
             </div>
@@ -46,18 +51,21 @@
           <h4 class="text-md-center">Agregar Participante</h4>
           <div id="addParticipante" class="card">
             <div class="card-block">
-              {!! Form::open(['route' => ['participante.store', $proyecto->nombre, $entidad->idEstado], 'method' => 'POST']) !!}
+              {!! Form::open(['route' => ['participante.store', $proyecto->idProyecto, $entidad->idEstado], 'method' => 'POST', 'id' => 'formAdd']) !!}
               <div class="form-group{{ $errors->has('idUsuario') ? ' has-danger' : '' }}">
                 {!! Form::label('usuario', 'Usuario') !!}
-                {!! Form::select('idUsuario', $usuarios, old('uidUsuariosuario'), ['class' => 'form-control', 'id' => 'selectUsuario']) !!}
+                {!! Form::select('idUsuario', $usuarios, old('idUsuariosuario'), ['class' => 'form-control', 'id' => 'selectUsuario']) !!}
                 @if ($errors->has('idUsuario'))
                     <span class="form-control-feedback">
                         <strong>{{ $errors->first('idUsuario') }}</strong>
                     </span>
                 @endif
+                <span class="form-control-feedback">
+                    <strong id="errorselectUsuario"></strong>
+                </span>
               </div>
               <div class="form-group">
-                {!! Form::submit('Guardar', ['class' => 'btn green-inverse', 'style' => 'width:100%']) !!}
+                {!! Form::submit('Guardar', ['class' => 'btn green-inverse', 'style' => 'width:100%', 'id' => 'btnGuardar']) !!}
               </div>
               {!! Form::close() !!}
             </div>
@@ -70,9 +78,10 @@
 @endsection
 @section('javascripts')
 <script type="text/javascript" src="{{asset('js/Usuarios/deleteParticipante.js')}}"></script>
+<script src="{{asset('js/Proyectos/asignarParticipante.js')}}" charset="utf-8"></script>
 <script type="text/javascript">
   var token = '{{ Session::token() }}';
-  var proyecto = '{{$proyecto->nombre}}';
+  var proyecto = '{{$proyecto->idProyecto}}';
 </script>
 <script type="text/javascript">
   $(document).ready(function () {

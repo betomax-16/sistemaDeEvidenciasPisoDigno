@@ -63,7 +63,7 @@
             </div>
             <div class="form-group">
               {!! Form::label('role', 'Rol') !!}
-              {!! Form::select('role', ['ROLE_PROVIDER' => 'Proveedor de Evidencias', 'ROLE_ADMIN' => 'Administrador'], 'ROLE_PROVIDER', ['class' => 'form-control']) !!}
+              {!! Form::select('role', ['ROLE_PROVIDER' => 'Proveedor de Evidencias', 'ROLE_ADMIN' => 'Administrador'], old('role'), ['class' => 'form-control']) !!}
             </div>
             <hr>
             <div class="">

@@ -1,13 +1,13 @@
 <div class="modal fade" id="medioAmbienteModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header" style="background:#8a6e50;">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title">Medio Ambiente</h4>
+                <h4 class="modal-title" style="color:#fff;">Medio Ambiente</h4>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" style="border:3px solid rgba(138, 110, 80, 0.28); color:#403020;">
               <div class="container">
                 <div class="row">
                   <div class="col-md-12">

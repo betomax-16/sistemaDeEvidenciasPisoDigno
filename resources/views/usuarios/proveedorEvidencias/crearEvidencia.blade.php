@@ -3,8 +3,39 @@
 <link rel="stylesheet" href="{{asset('jquery-ui/jquery-ui.min.css')}}">
 <link rel="stylesheet" href="{{asset('css/general.css')}}">
 <link rel="stylesheet" href="{{asset('css/evidencias/agregar.css')}}">
-<link rel="stylesheet" href="{{asset('css/fileInput/demo.css')}}">
-<link rel="stylesheet" href="{{asset('css/fileInput/component.css')}}">
+<link rel="stylesheet" href="{{asset('css/dropzone.css')}}">
+<style media="screen">
+  .addImage{
+    width: 120px;
+    height: 120px;
+    border: 3px dashed;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 4.5%;
+    font-size: 25px;
+    cursor:pointer;
+  }
+  .addImage:hover{
+    border-color: rgb(194, 194, 194);
+    color: rgb(121, 121, 121);
+  }
+  .ui-accordion .ui-accordion-content{
+    height: inherit !important;
+  }
+  .dropzone .dz-message{
+    margin: 0;
+  }
+  #windowLoad{
+    position:fixed;
+    top:0px;
+    left:0px;
+    z-index:3200;
+    filter:alpha(opacity=65);
+   -moz-opacity:65;
+    opacity:0.65;
+    background:#999;
+  }
+</style>
 @endsection
 @section('content')
 <div class="container espacioPagina marco">
@@ -25,18 +56,24 @@
                         <strong>{{ $errors->first('idMunicipio') }}</strong>
                     </span>
                 @endif
+                <span class="form-control-feedback">
+                    <strong id="errormunicipio"></strong>
+                </span>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group{{ $errors->has('idLocalidad') ? ' has-danger' : '' }}">
                 {!! Form::label('localidad', 'Localidad') !!}
-                {!! Form::text('localidad', old('localidad'), ['placeholder' => 'Localidad...', 'id' => 'localidad', 'class' => 'form-control', 'autocomplete' => 'off', 'disabled']) !!}
+                {!! Form::text('localidad', old('localidad'), ['placeholder' => 'Localidad...', 'id' => 'localidad', 'class' => 'form-control', 'autocomplete' => 'off']) !!}
                 {!! Form::hidden('idLocalidad', old('idLocalidad'), ['id' => 'idLocalidad']) !!}
                 @if ($errors->has('idLocalidad') || $errors->has('localidad'))
                     <span class="form-control-feedback">
                         <strong>{{ $errors->first('idLocalidad') }}</strong>
                     </span>
                 @endif
+                <span class="form-control-feedback">
+                    <strong id="errorlocalidad"></strong>
+                </span>
               </div>
             </div>
           </div>
@@ -51,6 +88,9 @@
                         <strong>{{ $errors->first('familia') }}</strong>
                     </span>
                 @endif
+                <span class="form-control-feedback">
+                    <strong id="errorfamilia"></strong>
+                </span>
               </div>
             </div>
           </div>
@@ -60,60 +100,41 @@
               <div id="acordion">
                 <h3>Foto 1</h3>
                 <div class="row">
-                  <div class="col-md-12 {{ $errors->has('foto1') ? ' has-danger' : '' }}">
-                    <center><img class="img-thumbnail img-fluid box" src="{{asset('imagenes/evidencias/foto.png')}}" alt="" id="img1"></center>
-                    {!! Form::file('foto1', ['id' => 'foto1', 'style' => 'display:none']) !!}
-                    @if ($errors->has('foto1'))
-                        <span class="form-control-feedback">
-                            <strong>{{ $errors->first('foto1') }}</strong>
-                        </span>
-                    @endif
+                  <div class="col-md-12">
+                    <div id="dropzoneFileUpload1" class="dropzone">
+                      <div id="addImage1" class="addImage dz-preview dz-image-preview">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <h3>Foto 2</h3>
                 <div class="row">
-                  <div class="col-md-12 {{ $errors->has('foto2') ? ' has-danger' : '' }}">
-                    <center><img class="img-thumbnail img-fluid box" src="{{asset('imagenes/evidencias/foto.png')}}" alt="" id="img2"></center>
-                    {!! Form::file('foto2', ['id' => 'foto2', 'style' => 'display:none']) !!}
-                    @if ($errors->has('foto2'))
-                        <span class="form-control-feedback">
-                            <strong>{{ $errors->first('foto2') }}</strong>
-                        </span>
-                    @endif
+                  <div class="col-md-12">
+                    <div id="dropzoneFileUpload2" class="dropzone">
+                      <div id="addImage2" class="addImage dz-preview dz-image-preview">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <h3>Foto 3</h3>
                 <div class="row">
-                  <div class="col-md-12 {{ $errors->has('foto3') ? ' has-danger' : '' }}">
-                    <center><img class="img-thumbnail img-fluid box" src="{{asset('imagenes/evidencias/foto.png')}}" alt="" id="img3"></center>
-                    {!! Form::file('foto3', ['id' => 'foto3', 'style' => 'display:none']) !!}
-                    @if ($errors->has('foto3'))
-                        <span class="form-control-feedback">
-                            <strong>{{ $errors->first('foto3') }}</strong>
-                        </span>
-                    @endif
+                  <div class="col-md-12">
+                    <div id="dropzoneFileUpload3" class="dropzone">
+                      <div id="addImage3" class="addImage dz-preview dz-image-preview">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <h3>Otras fotos</h3>
-                <div class="row {{ $errors->get('fotoN.*') ? ' has-danger' : '' }}">
-                  <div id="otros" class="row">
-                    <div class="col-md-4">
-                      <center>
-                        <img class="img-thumbnail img-fluid box" src="{{asset('imagenes/evidencias/foto.png')}}" alt="" id="imgN">
-                      </center>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                        {!! Form::file('fotoN[]', ['class' => 'inputfile inputfile-2', 'id' => 'fotoN', 'data-multiple-caption' => '{count} archivos seleccionados', 'style' => 'display:none', 'multiple']) !!}
-                        <label for="file-2" id="inputN"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>Selecciona un archivo&hellip;</span></label>
-                      @foreach($errors->get('fotoN.*') as $error)
-                        @foreach($error as $value)
-                          <span class="form-control-feedback">
-                              <strong>{{ $value }}</strong>
-                          </span>
-                        @endforeach
-                      @endforeach
+                <div class="row">
+                  <div class="col-md-12">
+                    <div id="dropzoneFileUpload4" class="dropzone">
+                      <div id="addImage4" class="addImage dz-preview dz-image-preview">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -123,7 +144,7 @@
           <hr>
           <div class="row">
             <div class="col-md-12">
-              <button id="btnGuardar" type="submit" class="btn green-inverse circle" style="width:100%"><i class="fa fa-share" aria-hidden="true"></i> Guardar</button>              
+              <button id="btnGuardar" type="submit" class="btn green-inverse circle" style="width:100%"><i class="fa fa-share" aria-hidden="true"></i> Guardar</button>
             </div>
           </div>
           {!! Form::close() !!}
@@ -132,13 +153,15 @@
 </div>
 @endsection
 @section('javascripts')
-<script type="text/javascript" src="{{asset('js/inputFile/jquery-v1.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('js/inputFile/jquery.custom-file-input.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/dropzone.js')}}"></script>
 <script type="text/javascript" src="{{asset('jquery-ui/jquery-ui.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/Evidencias/subirEvidencia.js')}}"></script>
 <script type="text/javascript">
   var token = '{{ Session::token() }}';
-  var imageDefault = '{{asset("imagenes/evidencias/foto.png")}}'
+  var urlSave = '{{route("evidencia.addImage")}}';
+  var urlDelete = '{{route("evidencia.removeImage")}}';
+  var urlSaveRecordig = '{{route("evidencia.store")}}';
+  var urlLoading = '{{asset("imagenes/aplicacion/loading.gif")}}';
 </script>
 <script type="text/javascript">
   $(document).ready(function () {

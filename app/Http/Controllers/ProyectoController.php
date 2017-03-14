@@ -77,7 +77,8 @@ class ProyectoController extends Controller
         return view('welcome');
       }
       $rules = [
-          'nombre' => 'required|max:255|unique:Proyectos',
+          'nombre' => 'required|max:255|unique:Proyectos,nombre',
+          'descripcion' => 'required|max:255',
           'tipo' => 'required',
       ];
 
@@ -115,7 +116,10 @@ class ProyectoController extends Controller
           return view('welcome');
         }
         $proyecto = Proyecto::find($id);
-        return $this->noGuardarCache(view('proyectos/editarProyecto')->with('proyecto', $proyecto));
+        if ($proyecto) {
+          return $this->noGuardarCache(view('proyectos/editarProyecto')->with('proyecto', $proyecto));
+        }
+        return view('welcome');
     }
 
     /**
@@ -131,8 +135,9 @@ class ProyectoController extends Controller
         return view('welcome');
       }
       $rules = [
-          'nombre' => 'required|max:255|unique:Proyectos',
-          'tipo' => 'required',
+        'nombre' => 'required|max:255|unique:Proyectos,nombre',
+        'descripcion' => 'required|max:255',
+        'tipo' => 'required',
       ];
 
       $validacion = Validator::make($request->all(), $rules);
@@ -142,9 +147,12 @@ class ProyectoController extends Controller
       }
 
       $proyecto = Proyecto::find($id);
-      $proyecto->nombre = $request->nombre;
-      $proyecto->save();
-      return redirect()->route('proyectosPorPrograma', Session::get('programa'));
+      if ($proyecto) {
+        $proyecto->nombre = $request->nombre;
+        $proyecto->save();
+        return redirect()->route('proyectosPorPrograma', Session::get('programa'));
+      }
+      return view('welcome');
     }
 
     /**

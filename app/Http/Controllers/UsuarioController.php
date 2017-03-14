@@ -91,7 +91,10 @@ class UsuarioController extends Controller
     public function edit($id)
     {
         $usuario = Usuario::find($id);
-        return $this->noGuardarCache(view('usuarios/administrado/editarUsuario')->with('usuario', $usuario));
+        if ($usuario) {
+          return $this->noGuardarCache(view('usuarios/administrado/editarUsuario')->with('usuario', $usuario));
+        }
+        return view('welcome');
     }
 
     /**
@@ -110,26 +113,29 @@ class UsuarioController extends Controller
       ];
 
       $usuario = Usuario::find($id);
-      if ($usuario->email != $request->email) {
-        $rules['email'] = 'required|email|max:255|unique:Usuarios';
-        $usuario->email = $request->email;
-      }
-      if ($request->password != '') {
-        $rules['password'] = 'required|min:6|confirmed';
-        $usuario->password = bcrypt($request->password);
-      }
-      $validacion = Validator::make($request->all(), $rules);
+      if ($usuario) {
+        if ($usuario->email != $request->email) {
+          $rules['email'] = 'required|email|max:255|unique:Usuarios';
+          $usuario->email = $request->email;
+        }
+        if ($request->password != '') {
+          $rules['password'] = 'required|min:6|confirmed';
+          $usuario->password = bcrypt($request->password);
+        }
+        $validacion = Validator::make($request->all(), $rules);
 
-      if ($validacion->fails()) {
-        return redirect()->back()->withInput()->withErrors($validacion->errors());
-      }
+        if ($validacion->fails()) {
+          return redirect()->back()->withInput()->withErrors($validacion->errors());
+        }
 
-      $usuario->nombre = $request->nombre;
-      $usuario->apellidoPaterno = $request->apellidoPaterno;
-      $usuario->apellidoMaterno = $request->apellidoMaterno;
-      $usuario->role = $request->role;
-      $usuario->save();
-      return redirect()->route('usuario.index');
+        $usuario->nombre = $request->nombre;
+        $usuario->apellidoPaterno = $request->apellidoPaterno;
+        $usuario->apellidoMaterno = $request->apellidoMaterno;
+        $usuario->role = $request->role;
+        $usuario->save();
+        return redirect()->route('usuario.index');
+      }
+      return view('welcome');
     }
 
     /**

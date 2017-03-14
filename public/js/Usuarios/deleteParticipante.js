@@ -10,8 +10,7 @@ $(document).ready(function(){
       });
     }
 
-    $('.btn-delete').click(function (e) {
-      e.preventDefault();
+    $('#tabla tbody').on('click', '.btn-delete', function () {
       var fila = $(this).parents('tr');
       var usuario = fila.attr('id');
       var form = $('#form-delete');
@@ -41,7 +40,6 @@ $(document).ready(function(){
           }
         }
       });
-
     });
 
 });

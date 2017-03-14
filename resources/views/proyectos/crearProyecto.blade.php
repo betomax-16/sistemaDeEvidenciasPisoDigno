@@ -15,9 +15,18 @@
             {!! Form::label('nombre', 'Proyecto') !!}
             {!! Form::text('nombre', old('nombre'), ['class' => 'form-control', 'placeholder' => 'Nombre de proyecto...', 'autocomplete' => 'off']) !!}
             {!! Form::hidden('tipo', Session::get('programa')) !!}
-            @if ($errors->has('nombre'))
+            @if ($errors->has('descripcion'))
                 <span class="form-control-feedback">
                     <strong>{{ $errors->first('nombre') }}</strong>
+                </span>
+            @endif
+          </div>
+          <div class="form-group{{ $errors->has('descripcion') ? ' has-danger' : '' }}">
+            {!! Form::label('descripcion', 'Descripción') !!}
+            {!! Form::text('descripcion', old('descripcion'), ['class' => 'form-control', 'placeholder' => 'Descripción de proyecto...', 'autocomplete' => 'off']) !!}
+            @if ($errors->has('nombre'))
+                <span class="form-control-feedback">
+                    <strong>{{ $errors->first('descripcion') }}</strong>
                 </span>
             @endif
           </div>

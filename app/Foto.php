@@ -14,7 +14,7 @@ class Foto extends Model
    * @var array
    */
   protected $fillable = [
-      'idHogar', 'nombreArchivo', 'tipo',
+      'idHogar', 'nombreArchivo', 'tipo', 'nombreSanitizado',
   ];
 
   public function beneficiado()

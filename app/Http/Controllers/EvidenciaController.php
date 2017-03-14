@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+//use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\DB;
 use App\Estado;
 use App\Proyecto;
 use App\Municipio;
 use App\Localidad;
 use App\Beneficiado;
+use App\ImagenTemporal;
 use App\Foto;
 use Validator;
 use Carbon\Carbon;
@@ -89,30 +92,191 @@ class EvidenciaController extends Controller
         return $this->noGuardarCache(view('usuarios/proveedorEvidencias/crearEvidencia'));
     }
 
-    private function guardarFoto($files, $path, Beneficiado $beneficiado, $tipo)
+    private function guardarFoto($fotos, $path, Beneficiado $beneficiado, $tipo)
     {
-      if (is_array($files)) {
-        foreach ($files as $file) {
-          $nombre = md5($file->getClientOriginalName()).'_'.time().'.'.$file->getClientOriginalExtension();
-          $file->move($path, $nombre);
-          $foto = new Foto();
-          $foto->idHogar = $beneficiado->idHogar;
-          $foto->nombreArchivo = $nombre;
-          $foto->tipo = $tipo;
-          $foto->save();
+      foreach ($fotos as $foto) {
+        $old_path = public_path().'/imagenes/temporalEvidencias/';
+        $new_path = $path;
+        $imagen = ImagenTemporal::where('nombreOriginal', 'like', $foto)->orderBy('nombreOriginal', 'asc')->first();
+        $old_path .= $imagen->nombreSanitizado;
+        $new_path .= $imagen->nombreSanitizado;
+        if (!File::exists( $new_path )) {
+          File::move($old_path, $new_path);
+          $f = new Foto();
+          $f->idHogar = $beneficiado->idHogar;
+          $f->nombreArchivo = $imagen->nombreOriginal;
+          $f->tipo = $tipo;
+          $f->nombreSanitizado = $imagen->nombreSanitizado;
+          $f->save();
+          $imagen->delete();
         }
-      }
-      else {
-        $nombre = md5($files->getClientOriginalName()).'_'.time().'.'.$files->getClientOriginalExtension();
-        $files->move($path, $nombre);
-        $foto = new Foto();
-        $foto->idHogar = $beneficiado->idHogar;
-        $foto->nombreArchivo = $nombre;
-        $foto->tipo = $tipo;
-        $foto->save();
+        else {
+          $file = pathinfo($new_path);
+          $extension = $file['extension'];
+          $filename = $file['filename'];
+          $newName = $filename.'.'.$extension;
+          while (File::exists($path.$newName)) {
+            $newName = $this->crearNombreUnico($path, $filename, $extension);
+          }
+          File::move($old_path, $path.$newName);
+          $f = new Foto();
+          $f->idHogar = $beneficiado->idHogar;
+          $f->nombreArchivo = $imagen->nombreOriginal;
+          $f->tipo = $tipo;
+          $f->nombreSanitizado = $newName;
+          $f->save();
+          $imagen->delete();
+        }
       }
     }
 
+    function sanitizar($string, $force_lowercase = true, $anal = false)
+    {
+        $strip = array("~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "=", "+", "[", "{", "]",
+            "}", "\\", "|", ";", ":", "\"", "'", "&#8216;", "&#8217;", "&#8220;", "&#8221;", "&#8211;", "&#8212;",
+            "â€”", "â€“", ",", "<", ".", ">", "/", "?");
+        $clean = trim(str_replace($strip, "", strip_tags($string)));
+        $clean = preg_replace('/\s+/', "-", $clean);
+        $clean = ($anal) ? preg_replace("/[^a-zA-Z0-9]/", "", $clean) : $clean ;
+
+        return ($force_lowercase) ?
+                  (function_exists('mb_strtolower')) ?
+                    mb_strtolower($clean, 'UTF-8') :
+                    strtolower($clean) :
+                $clean;
+    }
+
+    private function crearNombreUnico($path, $filename, $extension )
+    {
+        $path .= $filename . '.' . $extension;
+        if ( File::exists( $path ) )
+        {
+            // Generate token for image
+            $imageToken = substr(sha1(mt_rand()), 0, 5);
+            return $filename . '-' . $imageToken . '.' . $extension;
+        }
+
+        return $filename . '.' . $extension;
+    }
+
+    private function validarImagen(Request $request, $imagen, &$rules)
+    {
+      if ($request->hasFile($imagen)) {
+        $foto = count($request->$imagen) - 1;
+        foreach (range(0, $foto) as $index) {
+          $rules[$imagen.'.'.$index] = 'mimes:jpeg,png,jpg';
+        }
+      }
+    }
+
+    private function guardarImagen(Request $request, $imagen, &$fotos)
+    {
+      $path = public_path().'/imagenes/temporalEvidencias/';
+      if ($request->hasFile($imagen)) {
+        $files = $request->file($imagen);
+        foreach ($files as $file) {
+          $nombreOriginal = $file->getClientOriginalName();
+          $extension = $file->getClientOriginalExtension();
+          $nombreOriginalSinExtencion = substr($nombreOriginal, 0, strlen($nombreOriginal) - strlen($extension) - 1);
+          $filename = $this->sanitizar($nombreOriginalSinExtencion);
+          $allowed_filename = $this->crearNombreUnico($path, $filename, $extension );
+
+          $file->move($path, $allowed_filename);
+          $imgTemporal = new ImagenTemporal();
+          $imgTemporal->nombreSanitizado = $allowed_filename;
+          $imgTemporal->nombreOriginal = $nombreOriginal;
+          $imgTemporal->save();
+          array_push($fotos, $nombreOriginal);
+        }
+      }
+      return $fotos;
+    }
+
+    public function addImage(Request $request)
+    {
+      $rules = [];
+      $this->validarImagen($request, 'foto1', $rules);
+      $this->validarImagen($request, 'foto2', $rules);
+      $this->validarImagen($request, 'foto3', $rules);
+      $this->validarImagen($request, 'fotoN', $rules);
+
+      $validacion = Validator::make($request->all(), $rules);
+      if ($validacion->fails()) {
+        if ($request->ajax()) {
+          return response()->json(['errores' => $validacion->errors()]);
+        }
+        return redirect()->back()->withInput()->withErrors($validacion->errors());
+      }
+
+      $fotos = [];
+      $this->guardarImagen($request, 'foto1', $fotos);
+      $this->guardarImagen($request, 'foto2', $fotos);
+      $this->guardarImagen($request, 'foto3', $fotos);
+      $this->guardarImagen($request, 'fotoN', $fotos);
+
+      if ($request->ajax()) {
+          return response()->json(['info' => $fotos]);
+      }
+      else {
+        return $request->all();
+      }
+    }
+
+    public function removeImage(Request $request)
+    {
+      //$path = public_path().'/imagenes/temporalEvidencias/'.$request->id;
+
+      //CREO QUE SI SE DEJA ASI, A LA HORA DE REMOVER FOTOS EN LA SECCION DE CREACION DE EVIDENCIAS
+      //PROBABLEMENTE SE PODRIA ELEIMINAR UN ARCHIVO YA EXISTENTE EN LA CARPETA DE EVIDENCIAS
+      //MEJOR SOLO HACER EJECUTAR EL QUERY COMPLETO SI ES SE ENTRA EN LA PARTE DE EDICION DE EVIDENCIAS
+      $message = 'error';
+      //HACER COINCIDIR CON EL "ID DE LA EVICENCIA Y TIPO DE FOTO" PARA OBTENER LA IMAGEN QUE SE RELACIONA A ESA EVIDENCIA
+      if ($request->idBeneficiado) {
+        $tipo = ['dropzoneFileUpload1' => 'PISO_ORIGINAL',
+                 'dropzoneFileUpload2' => 'PISO_EN_PROCESO',
+                 'dropzoneFileUpload3' => 'PISO_TERMINADO',
+                 'dropzoneFileUpload4' => 'OTROS'];
+        $foto = Foto::where('nombreSanitizado', '=', $request->id)
+                    ->where('idHogar', '=', $request->idBeneficiado)
+                    ->where('tipo', '=', $tipo[$request->tipo])
+                    ->orderBy('nombreSanitizado', 'asc')->first();
+        if ($foto) {
+          $path = public_path().'/imagenes/evidencias/';
+          $file = $path.$foto->nombreSanitizado;
+          if (File::exists($file)) {
+            if (unlink($file)) {
+              $message = 'eliminado';
+              $foto->delete();
+            }
+          }
+        }
+        else {
+          $imagenTem = ImagenTemporal::where('nombreOriginal', 'like', $request->id)->orderBy('nombreOriginal', 'asc')->first();
+          if ($imagenTem) {
+            $path = public_path().'\imagenes\temporalEvidencias\\'.$imagenTem->nombreSanitizado;
+            if (File::exists($path)) {
+              if (unlink($path)) {
+                $message = 'eliminado';
+                $imagenTem->delete();
+              }
+            }
+          }
+        }
+      }
+      else {
+        $imagenTem = ImagenTemporal::where('nombreOriginal', 'like', $request->id)->orderBy('nombreOriginal', 'asc')->first();
+        if ($imagenTem) {
+          $path = public_path().'\imagenes\temporalEvidencias\\'.$imagenTem->nombreSanitizado;
+          if (File::exists($path)) {
+            if (unlink($path)) {
+              $message = 'eliminado';
+              $imagenTem->delete();
+            }
+          }
+        }
+      }
+      return $message;
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -121,7 +285,11 @@ class EvidenciaController extends Controller
      */
     public function store(Request $request)
     {
+      //return response()->json(['info' => $request->{$a}]);
         if (!(Session::has('proyecto') && Session::has('estado'))) {
+          if ($request->ajax()) {
+            return response()->json(['session' => 'false']);
+          }
           return view('welcome');
         }
         $rules = [
@@ -130,19 +298,45 @@ class EvidenciaController extends Controller
             'localidad' => 'required|max:255',
             'idLocalidad' => 'required|exists:Localidades',
             'familia' => 'required|max:255',
-            'foto1' => 'required|mimes:jpeg,png,jpg',
-            'foto2' => 'mimes:jpeg,png,jpg',
-            'foto3' => 'mimes:jpeg,png,jpg',
         ];
 
-        $fotoN = count($request->fotoN) - 1;
-        foreach (range(0, $fotoN) as $index) {
-          $rules['fotoN.'.$index] = 'mimes:jpeg,png,jpg';
+        if (!$request->fotos1) {
+          $rules['fotos1'] = 'required';
+        }
+        else {
+          if (strlen($request->fotos1[0]) <= 0) {
+            $rules['fotos1'] = 'max:255';
+          }
+        }
+
+        foreach ($request->all() as $key => $fotos) {
+          switch ($key) {
+            case 'fotos2':
+              if (strlen($request->{$key}[0]) <= 0) {
+                $rules[$key] = 'max:255';
+              }
+              break;
+            case 'fotos3':
+              if (strlen($request->{$key}[0]) <= 0) {
+                $rules[$key] = 'max:255';
+              }
+              break;
+            case 'fotos4':
+              foreach ($fotos as $foto) {
+                if (strlen($foto) <= 0) {
+                  $rules[$key] = 'max:255';
+                }
+              }
+              break;
+          }
         }
 
         $validacion = Validator::make($request->all(), $rules);
 
         if ($validacion->fails()) {
+          if ($request->ajax()) {
+            return response()->json(['errors'=>$validacion->errors()]);
+          }
           return redirect()->back()->withInput()->withErrors($validacion->errors());
         }
 
@@ -151,22 +345,26 @@ class EvidenciaController extends Controller
         $beneficiado->idLocalidad = $request->idLocalidad;
         $beneficiado->proyecto = Session::get('proyecto');
         $beneficiado->save();
-        $path = public_path().'/imagenes/evidencias';
-        if ($request->hasFile('foto1')) {
-          $file = $request->file('foto1');
-          $this->guardarFoto($file, $path, $beneficiado, 'PISO_ORIGINAL');
+        $path = public_path().'/imagenes/evidencias/';
+
+        if ($request->fotos1) {
+          $fotos = $request->fotos1;
+          $this->guardarFoto($fotos, $path, $beneficiado, 'PISO_ORIGINAL');
         }
-        if ($request->hasFile('foto2')) {
-          $file = $request->file('foto2');
-          $this->guardarFoto($file, $path, $beneficiado, 'PISO_EN_PROCESO');
+        if ($request->fotos2) {
+          $fotos = $request->fotos2;
+          $this->guardarFoto($fotos, $path, $beneficiado, 'PISO_EN_PROCESO');
         }
-        if ($request->hasFile('foto3')) {
-          $file = $request->file('foto3');
-          $this->guardarFoto($file, $path, $beneficiado, 'PISO_TERMINADO');
+        if ($request->fotos3) {
+          $fotos = $request->fotos3;
+          $this->guardarFoto($fotos, $path, $beneficiado, 'PISO_TERMINADO');
         }
-        if ($request->hasFile('fotoN')) {
-          $file = $request->file('fotoN');
-          $this->guardarFoto($file, $path, $beneficiado, 'OTROS');
+        if ($request->fotos4) {
+          $fotos = $request->fotos4;
+          $this->guardarFoto($fotos, $path, $beneficiado, 'OTROS');
+        }
+        if ($request->ajax()) {
+          return response()->json(['status' => 'success']);
         }
         return redirect()->route('evidencia.evidencias', [Session::get('proyecto'), Session::get('estado')]);
     }
@@ -204,14 +402,26 @@ class EvidenciaController extends Controller
           return view('welcome');
         }
         $beneficiado = Beneficiado::find($id);
-        $localidad = $beneficiado->localidad;
-        $municipio = $localidad->municipio;
-        $fotos = Foto::where('idHogar','=',$beneficiado->idHogar)->get();
-        return $this->noGuardarCache(view('usuarios/proveedorEvidencias/editarEvidencia')
-                                    ->with('beneficiado', $beneficiado)
-                                    ->with('municipio', $municipio)
-                                    ->with('localidad', $localidad)
-                                    ->with('fotos', $fotos));
+        if ($beneficiado) {
+          $localidad = $beneficiado->localidad;
+          $municipio = $localidad->municipio;
+          $fotos = Foto::where('idHogar','=',$beneficiado->idHogar)->get();
+          $imageAnswer = array();
+          foreach ($fotos as $foto) {
+            $imageAnswer[] = [
+                'original' => $foto->nombreArchivo,
+                'server' => $foto->nombreSanitizado,
+                'tipo' => $foto->tipo,
+                'size' => File::size(public_path('/imagenes/evidencias/' . $foto->nombreSanitizado))
+            ];
+          }
+          return $this->noGuardarCache(view('usuarios/proveedorEvidencias/editarEvidencia')
+                                      ->with('beneficiado', $beneficiado)
+                                      ->with('municipio', $municipio)
+                                      ->with('localidad', $localidad)
+                                      ->with('fotos', $imageAnswer));
+        }
+        return view('welcome');
     }
 
     private function eliminarFotos($path, $fotos, $tipo)
@@ -233,6 +443,9 @@ class EvidenciaController extends Controller
     public function update(Request $request, $id)
     {
       if (!(Session::has('proyecto') && Session::has('estado'))) {
+        if ($request->ajax()) {
+          return response()->json(['session' => 'false']);
+        }
         return view('welcome');
       }
       $rules = [
@@ -241,50 +454,97 @@ class EvidenciaController extends Controller
           'localidad' => 'required|max:255',
           'idLocalidad' => 'required|exists:Localidades',
           'familia' => 'required|max:255',
-          'foto1' => 'mimes:jpeg,png,jpg',
-          'foto2' => 'mimes:jpeg,png,jpg',
-          'foto3' => 'mimes:jpeg,png,jpg',
       ];
 
-      $fotoN = count($request->fotoN) - 1;
-      foreach (range(0, $fotoN) as $index) {
-        $rules['fotoN.'.$index] = 'mimes:jpeg,png,jpg';
+      if (!$request->fotos1) {
+        $rules['fotos1'] = 'required';
+      }
+      else {
+        if (strlen($request->fotos1[0]) <= 0) {
+          $rules['fotos1'] = 'max:255';
+        }
+      }
+
+      foreach ($request->all() as $key => $fotos) {
+        switch ($key) {
+          case 'fotos2':
+            if (strlen($request->{$key}[0]) <= 0) {
+              $rules[$key] = 'max:255';
+            }
+            break;
+          case 'fotos3':
+            if (strlen($request->{$key}[0]) <= 0) {
+              $rules[$key] = 'max:255';
+            }
+            break;
+          case 'fotos4':
+            foreach ($fotos as $foto) {
+              if (strlen($foto) <= 0) {
+                $rules[$key] = 'max:255';
+              }
+            }
+            break;
+        }
       }
 
       $validacion = Validator::make($request->all(), $rules);
 
       if ($validacion->fails()) {
+        if ($request->ajax()) {
+          return response()->json(['errors'=>$validacion->errors()]);
+        }
         return redirect()->back()->withInput()->withErrors($validacion->errors());
       }
 
-
-      $beneficiado = Beneficiado::find($id);
-      $beneficiado->idLocalidad = $request->idLocalidad;
+      $beneficiado = Beneficiado::find($request->idBeneficiado);
       $beneficiado->familia = $request->familia;
+      $beneficiado->idLocalidad = $request->idLocalidad;
+      $beneficiado->proyecto = Session::get('proyecto');
       $beneficiado->save();
-
-      $fotos = $beneficiado->fotos;
-      $path = public_path().'/imagenes/evidencias';
-
-      if ($request->hasFile('foto1')) {
-        $this->eliminarFotos($path, $fotos, 'PISO_ORIGINAL');
-        $file = $request->file('foto1');
-        $this->guardarFoto($file, $path, $beneficiado, 'PISO_ORIGINAL');
+      $path = public_path().'/imagenes/evidencias/';
+      $path_temporal = public_path().'/imagenes/temporalEvidencias/';
+      if ($request->fotos1) {
+        $fotos = $request->fotos1;
+        $auxFotos = [];
+        foreach ($fotos as $foto) {
+          if (File::exists($path_temporal.$foto)) {
+            array_push($auxFotos, $foto);
+          }
+        }
+        $this->guardarFoto($auxFotos, $path, $beneficiado, 'PISO_ORIGINAL');
       }
-      if ($request->hasFile('foto2')) {
-        $this->eliminarFotos($path, $fotos, 'PISO_EN_PROCESO');
-        $file = $request->file('foto2');
-        $this->guardarFoto($file, $path, $beneficiado, 'PISO_EN_PROCESO');
+      if ($request->fotos2) {
+        $fotos = $request->fotos2;
+        $auxFotos = [];
+        foreach ($fotos as $foto) {
+          if (File::exists($path_temporal.$foto)) {
+            array_push($auxFotos, $foto);
+          }
+        }
+        $this->guardarFoto($auxFotos, $path, $beneficiado, 'PISO_EN_PROCESO');
       }
-      if ($request->hasFile('foto3')) {
-        $this->eliminarFotos($path, $fotos, 'PISO_TERMINADO');
-        $file = $request->file('foto3');
-        $this->guardarFoto($file, $path, $beneficiado, 'PISO_TERMINADO');
+      if ($request->fotos3) {
+        $fotos = $request->fotos3;
+        $auxFotos = [];
+        foreach ($fotos as $foto) {
+          if (File::exists($path_temporal.$foto)) {
+            array_push($auxFotos, $foto);
+          }
+        }
+        $this->guardarFoto($auxFotos, $path, $beneficiado, 'PISO_TERMINADO');
       }
-      if ($request->hasFile('fotoN')) {
-        //$this->eliminarFotos($path, $fotos, 'OTROS');
-        $file = $request->file('fotoN');
-        $this->guardarFoto($file, $path, $beneficiado, 'OTROS');
+      if ($request->fotos4) {
+        $fotos = $request->fotos4;
+        $auxFotos = [];
+        foreach ($fotos as $foto) {
+          if (File::exists($path_temporal.$foto)) {
+            array_push($auxFotos, $foto);
+          }
+        }
+        $this->guardarFoto($auxFotos, $path, $beneficiado, 'OTROS');
+      }
+      if ($request->ajax()) {
+        return response()->json(['status' => 'success']);
       }
       return redirect()->route('evidencia.evidencias', [Session::get('proyecto'), Session::get('estado')]);
     }
@@ -301,7 +561,7 @@ class EvidenciaController extends Controller
         $path = public_path().'/imagenes/evidencias';
         $beneficiado = Beneficiado::find($id);
         foreach ($beneficiado->fotos as $foto) {
-          unlink($path.'/'.$foto->nombreArchivo);
+          unlink($path.'/'.$foto->nombreSanitizado);
         }
         $beneficiado->delete();
         return 'Evidencia eliminada exitosamente.';
@@ -359,6 +619,24 @@ class EvidenciaController extends Controller
       }
     }
 
+    public function outFocusMunicipio(Request $request)
+    {
+      if ($request->ajax()) {
+        $municipios = Municipio::where('nombre', '=', $request->place)->where('idEstado', '=', Session::get('estado'))->get();
+        $idMunicipio = $municipios->count() == 1 ? $municipios[0]->idMunicipio : null;
+        return response()->json(['idMunicipio' => $idMunicipio]);
+      }
+    }
+
+    public function outFocusLocalidad(Request $request)
+    {
+      if ($request->ajax()) {
+        $localidades = Localidad::where('nombre', '=', $request->place)->where('idMunicipio', '=', $request->idMunicipio)->get();
+        $idLocalidad = $localidades->count() == 1 ? $localidades[0]->idLocalidad : null;
+        return response()->json(['idLocalidad' => $idLocalidad]);
+      }
+    }
+
     public function municipioConMasBeneficiados(Request $request)
     {
       if ($request->ajax()) {
@@ -388,7 +666,8 @@ class EvidenciaController extends Controller
         elseif ($region == 'LOCALIDAD') {
           $beneficiados = $this->beneficiadosDeLocalidad($nombre, $proyecto, $anio);
           return response()->json([
-            view('layouts/templates/Evidencias', ['beneficiados'=> $beneficiados])->render()
+            'evidencias' => view('layouts/templates/Evidencias', ['beneficiados'=> $beneficiados])->render(),
+            'paginacion' => view('layouts/templates/pagination', ['beneficiados'=> $beneficiados])->render()
           ]);
         }
       }

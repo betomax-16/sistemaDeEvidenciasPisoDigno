@@ -348,7 +348,7 @@
         <div class="container">
             <div class="row" id="proyectos">
 
-                <article class="col-lg-4" href="#PisoD" data-toggle="modal" data-target="#PisoD">
+                <article id="PisoDigno" class="col-lg-4" href="#PisoD" data-toggle="modal" data-target="#PisoD">
                     <input type="hidden" name="ruta" value="{{route('evidencia.evidencias', ['piso digno', 21])}}">
                     <img src=" {{asset('imagenes/aplicacion/Bivienda.svg')}} " alt="LogoPiso Digno">
                     <h3><a> Piso Digno</a></h3>
@@ -356,7 +356,7 @@
                     <button class="btn blue-inverse hidden-md hidden-md-down">Más Información</button>
                 </article>
 
-                <article class="col-lg-4" data-toggle="modal" data-target="#PisoD">
+                <article id="Despensas" class="col-lg-4" data-toggle="modal" data-target="#PisoD">
                     <input type="hidden" name="ruta" value="#">
                     <img src="{{asset('imagenes/aplicacion/despensa.svg')}}" alt="LogoPiso Digno">
                     <h3><a>Despensas</a></h3>
@@ -364,7 +364,7 @@
                     <button class="btn green-inverse hidden-md hidden-md-down">Más Información</button>
                 </article>
 
-                <article class="col-lg-4" data-toggle="modal" data-target="#PisoD">
+                <article id="Salud" class="col-lg-4" data-toggle="modal" data-target="#PisoD">
                     <input type="hidden" name="ruta" value="#">
                     <img src="{{asset('imagenes/aplicacion/Salud.svg')}}" alt="LogoPiso Digno">
                     <h3><a>Salud</a></h3>

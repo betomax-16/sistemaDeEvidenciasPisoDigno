@@ -7,8 +7,7 @@ use App\Beneficiado;
 
 class Proyecto extends Model
 {
-    protected $primaryKey = 'nombre';
-    public $incrementing = false;
+    protected $primaryKey = 'idProyecto';
     protected $table = 'Proyectos';
 
     /**
@@ -17,7 +16,7 @@ class Proyecto extends Model
      * @var array
      */
     protected $fillable = [
-        'nombre', 'tipo',
+        'nombre', 'tipo', 'descripcion'
     ];
 
     public function miembros()
@@ -27,7 +26,7 @@ class Proyecto extends Model
 
     public function beneficiados()
     {
-      return $this->hasMany('App\Beneficiado', 'proyecto', 'nombre');
+      return $this->hasMany('App\Beneficiado', 'proyecto', 'idProyecto');
     }
 
     public function estados()

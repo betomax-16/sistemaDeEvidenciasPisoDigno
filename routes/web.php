@@ -26,6 +26,8 @@ Auth::routes();
 
 Route::group(['prefix' => 'proveedor', 'middleware' => 'auth'], function(){
   Route::resource('evidencia','EvidenciaController');
+  Route::post('evidencia/addImage', 'EvidenciaController@addImage')->name('evidencia.addImage');
+  Route::post('evidencia/removeImage', 'EvidenciaController@removeImage')->name('evidencia.removeImage');
   Route::resource('proyecto','ProyectoController');
   Route::resource('usuario','UsuarioController');
   Route::get('participante/{proyecto}/{idEstado}', 'ParticipanteController@index')->name('participante.index');
@@ -33,8 +35,12 @@ Route::group(['prefix' => 'proveedor', 'middleware' => 'auth'], function(){
   Route::delete('participante/destroy/{usuario}/{proyecto}', 'ParticipanteController@destroy')->name('participante.destroy');
   Route::post('participantes/{proyecto}', 'ParticipanteController@seleccionarUsuarios')->name('participantes');
 });
+
 Route::post('evidencias/autocompleteLocalidad', 'EvidenciaController@autocompleteLocalidadesDelMunicipio')->name('evidencia.autocompleteLocalidad');
 Route::post('evidencias/autocomplete', 'EvidenciaController@autocomplete')->name('evidencia.autocomplete');
+Route::post('evidencias/outFocusMunicipio', 'EvidenciaController@outFocusMunicipio')->name('evidencia.outFocusMunicipio');
+Route::post('evidencias/outFocusLocalidad', 'EvidenciaController@outFocusLocalidad')->name('evidencia.outFocusLocalidad');
+
 Route::post('evidencias/hogares', 'EvidenciaController@buscarHogares')->name('evidencia.hogares');
 Route::get('evidencias/{proyecto}/{idEstado}', 'EvidenciaController@evidencias')->name('evidencia.evidencias');
 Route::get('evidencias/{idEvidencia}', 'EvidenciaController@ver')->name('evidencia.ver');
@@ -50,9 +56,8 @@ Route::get('download/{proyecto}/{anio}/{region}/{lugar}', 'EvidenciaController@e
 
 
 //paypal
-
 Route::get('payment', 'PaypalController@postPayment')->name('payment');
 Route::get('payment/status', 'PaypalController@getPaymentStatus')->name('payment.status');
-
+//RFC
 Route::post('rfc', 'PaypalController@refereciaBancaria')->name('rfc');
 Route::get('pdf_rfc', 'PaypalController@pdf_rfc')->name('pdf_rfc');

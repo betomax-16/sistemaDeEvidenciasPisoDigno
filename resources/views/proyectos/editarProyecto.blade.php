@@ -10,7 +10,7 @@
           <a href="{{ URL::previous() }}" class="btn green btn-circle"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
           <h1 class="text-xs-center">Editar Proyecto</h1>
           <hr>
-          {!! Form::model($proyecto, ['route' => ['proyecto.update', $proyecto->nombre], 'method' => 'PUT', 'id' => 'form-edit']) !!}
+          {!! Form::model($proyecto, ['route' => ['proyecto.update', $proyecto->idProyecto], 'method' => 'PUT', 'id' => 'form-edit']) !!}
           <div class="form-group{{ $errors->has('nombre') ? ' has-danger' : '' }}">
             {!! Form::label('nombre', 'Proyecto') !!}
             {!! Form::text('nombre', old('nombre'), ['class' => 'form-control', 'placeholder' => 'Nombre de proyecto...', 'autocomplete' => 'off']) !!}
@@ -18,6 +18,15 @@
             @if ($errors->has('nombre'))
                 <span class="form-control-feedback">
                     <strong>{{ $errors->first('nombre') }}</strong>
+                </span>
+            @endif
+          </div>
+          <div class="form-group{{ $errors->has('descripcion') ? ' has-danger' : '' }}">
+            {!! Form::label('descripcion', 'Descripción') !!}
+            {!! Form::text('descripcion', old('descripcion'), ['class' => 'form-control', 'placeholder' => 'Descripción de proyecto...', 'autocomplete' => 'off']) !!}
+            @if ($errors->has('descripcion'))
+                <span class="form-control-feedback">
+                    <strong>{{ $errors->first('descripcion') }}</strong>
                 </span>
             @endif
           </div>

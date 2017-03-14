@@ -2,6 +2,7 @@ $(document).ready(function(){
 
     $('#bb-custom-grid').on( "click", ".remove", function(e) {
         e.preventDefault();
+        var me = $(this);
         var idHogar = $(this).attr('id');
         var url = $('#form-delete').attr('action').replace('ID_HOGAR',idHogar);
         var data = $('#form-delete').serialize();
@@ -20,7 +21,7 @@ $(document).ready(function(){
           callback: function (result) {
             if (result == true) {
               $.post(url, data, function(result){
-                $('#evidencia'+idHogar).fadeOut(300,function () { $(this).remove()});
+                me.parent().fadeOut(300,function () { $(this).remove()});
               }).fail(function(){
                 alert('ERROR');
                 $('#evidencia'+idHogar).show();

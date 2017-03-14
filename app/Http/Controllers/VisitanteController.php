@@ -51,7 +51,7 @@ class VisitanteController extends Controller
         Gmaps::add_marker($marker);
 
         $map = Gmaps::create_map();
-        
+
         //Devolver vista con datos del mapa
     return $this->noGuardarCache(view('visitante/contacto', compact('map')));
   }
@@ -60,7 +60,7 @@ class VisitanteController extends Controller
   {
     $rules = [
         'nombre' => 'required|max:255',
-        'telefono' => 'required',
+        'telefono' => 'required|regex:/^\d+$/',
         'email' => 'required|email|max:255',
         'asunto' => 'required|max:255',
         'mensaje' => 'required|max:255',

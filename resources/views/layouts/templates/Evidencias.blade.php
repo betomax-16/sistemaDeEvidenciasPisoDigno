@@ -13,7 +13,7 @@
             @endif
             <div class="bb-bookblock">
               @foreach($fotos as $foto)
-                <div class="bb-item"><a href="{{asset('imagenes/evidencias').'/'.$foto->nombreArchivo}}" data-lightbox="{{$foto->idHogar}}" data-title="{{$foto->created_at}}"><img src="{{asset('imagenes/evidencias').'/'.$foto->nombreArchivo}}" alt="{{$foto->tipo}}"/></a></div>
+                <div class="bb-item"><a href="{{asset('imagenes/evidencias').'/'.$foto->nombreSanitizado}}" data-lightbox="{{$foto->idHogar}}" data-title="{{$foto->created_at}}"><img src="{{asset('imagenes/evidencias').'/'.$foto->nombreSanitizado}}" alt="{{$foto->tipo}}"/></a></div>
               @endforeach
             </div>
             <nav>
