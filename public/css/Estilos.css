@@ -158,6 +158,7 @@ Mision y Vision
                                 display: flex;
                                 flex-wrap: wrap;
                             }
+                            .M-V .Valores,
                             .M-V .Mision,
                             .M-V .Vision {
                                 margin-top: 1rem;
@@ -170,18 +171,29 @@ Mision y Vision
                                 color: #014c8c;
                                 text-align: right;
                             }
+                            .M-V .Valores h1 {
+                                color: #f7931e;
+                                text-align: center;
+                            }
                             .M-V .Mision2 {
                                 padding: .5rem;
                                 color: #fff;
                                 background-color: #c10c2d;
-                                background: rgba(193, 12, 45, 0.5);
+                                background: rgba(193, 12, 45, 1);
                                 border-radius: 4px;
                             }
                             .M-V .Vision2 {
                                 padding: .5rem;
                                 color: #fff;
                                 background-color: #014c8c;
-                                background: rgba(1, 76, 140, 0.5);
+                                background: rgba(1, 76, 140, 1);
+                                border-radius: 4px;
+                            }
+                            .M-V .Valores2 {
+                                padding: .5rem .5rem .5rem 40%;
+                                color: #fff;
+                                background-color: #014c8c;
+                                background: rgba(247, 147, 30, 1);
                                 border-radius: 4px;
                             }
 
@@ -191,7 +203,7 @@ Mision y Vision
     color: #7bcb17;
 }
 .Obj-Val2 {
-    background: rgba(123, 203, 23, .6);
+    background: rgba(123, 203, 23, 1);
     border-radius: 4px;
     padding: 1rem;
     color: #fff;
@@ -857,6 +869,55 @@ Media Querys
                                 -webkit-transition-delay: 0s, 0.3s;
                                 transition-delay: 0s, 0.3s;
                             }
+
+
+.scroll-left {
+ height: 50px;	
+ overflow: hidden;
+ position: relative;
+    overflow: auto;
+    white-space: nowrap;
+}
+.scroll-left p {
+     display: inline-block;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+ width: 100%;
+ height: 100%;
+ margin: 0;
+ line-height: 50px;
+ text-align: center;
+ /* Starting position */
+ -moz-transform:translateX(100%);
+ -webkit-transform:translateX(100%);	
+ transform:translateX(100%);
+ /* Apply animation to this element */	
+ -moz-animation: scroll-left 10s linear infinite;
+ -webkit-animation: scroll-left 10s linear infinite;
+ animation: scroll-left 10s linear infinite;
+}
+/* Move it (define the animation) */
+@-moz-keyframes scroll-left {
+ 0%   { -moz-transform: translateX(100%); }
+ 100% { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes scroll-left {
+ 0%   { -webkit-transform: translateX(100%); }
+ 100% { -webkit-transform: translateX(-100%); }
+}
+@keyframes scroll-left {
+ 0%   { 
+ -moz-transform: translateX(100%); /* Browser bug fix */
+ -webkit-transform: translateX(100%); /* Browser bug fix */
+ transform: translateX(100%); 		
+ }
+ 100% { 
+ -moz-transform: translateX(-100%); /* Browser bug fix */
+ -webkit-transform: translateX(-100%); /* Browser bug fix */
+ transform: translateX(-100%); 
+ }
+}
                             /*
 Pie De Pagina
 */

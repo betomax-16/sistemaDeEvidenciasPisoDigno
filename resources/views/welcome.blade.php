@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="{{asset('css/style1.css')}}">
 <link rel="stylesheet" href="{{asset('css/Estadisticas.css')}}">
 <link rel="stylesheet" href="{{asset('css/welcome/modalesProgramas.css')}}">
+<link rel="stylesheet" href="{{asset('css/graficassvg.css')}}">
 <style media="screen">
 @media (max-width: 575px) {
   .odometer-digit{
@@ -50,24 +51,44 @@
             <li><span>Image 03</span></li>
         </ul>
     </section>
+    
     <section class="container M-V text-justify">
 
-        <div class=" Mision col-xs-12 col-md-5">
+        <div class=" Mision col-xs-12 col-md-4">
             <h1>Misión</h1>
             <div class="Mision2">
                 <p>Consolidar de manera efectiva en los doscientos diecisiete municipios que conforman el Estado de Puebla, una red permanente de colaboradores, patrocinadores y voluntarios que contribuyan a generar, promover y capitalizar esfuerzos encaminados a remediar la brecha de desigualdad social que limita el desarrollo pleno de las familias poblanas más necesitadas.</p>
 
             </div>
         </div>
-        <div class=" Vision  col-xs-12 offset-md-2 col-md-5">
+        
+        <div class="Valores col-xs-12 col-md-4">
+            <h1>Valores</h1>
+            <div class="Valores2">
+                <ol  type="a">
+                    <li>Integridad</li>
+                    <li>Solidaridad</li>
+                    <li>Respeto</li>
+                    <li>Tolerancia</li>
+                    <li>Trabajo en equipo</li>
+                    <li>Servicio</li>
+                    <li>Compromiso</li>
+                    <li>Transparencia</li>
+                </ol>
+
+            </div>
+        </div>
+        
+        <div class=" Vision  col-xs-12  col-md-4">
             <h1 class="text-left	">Visión</h1>
             <div class="Vision2">
                 <p>En el año 2022, GRUPOS SOCIALES UNIDOS POR PUEBLA 13 DE NOVIEMBRE A.C., será un referente entre las organizaciones de la sociedad civil en el Estado de Puebla, por su eficaz gestión y canalización de apoyos sociales; el impacto de sus acciones asistenciales en la calidad de vida de las familias poblanas beneficiadas; su intensa y continua labor en el área de orientación y capacitación; la transparente ejecución de los recursos económicos y materiales captados; y, por el alto sentido humano de todos los que la conforman.</p>
             </div>
         </div>
     </section>
+    
+    <section class="container Obj-Val text-justify">
 
-    <section class="Obj-Val text-justify">
      <h1 class="text-xs-center">Objetivos</h1>
       <div class="container Obj-Val2">
            <div class="container col-xs-12">
@@ -119,8 +140,14 @@
                 <header class="text-xs-center col-xs-12 offset-md-1 col-md-5" style="z-index:1;">
                     <h1 class="NC2">Nuestra comunidad</h1>
                     <br>
-                    <h2><span><i class="fa fa-quote-right" aria-hidden="true"></i></span></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate harum adipisci et eos rerum consectetur, dolorem culpa. Dolor magnam fuga perspiciatis, beatae accusantium, labore similique, quisquam laudantium architecto, iure cumque.</p>
+                    <h2><span><i class="fa fa-quote-right " aria-hidden="true"></i></span></h2>
+                    
+<div class="scroll-left">
+<p>CSS scrolli 1 </p>
+<p>CSS ng text...2 1</p>
+<p>CSSt... 3 1</p>
+</div>
+                   
                 </header>
 
                 <div id="carouselExampleIndicators" class="carousel slide col-xs-12 offset-md-1 col-md-5" data-ride="carousel">
@@ -132,7 +159,6 @@
                         <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="10"></li>
@@ -158,9 +184,6 @@
                         </div>
                         <div class="carousel-item">
                             <img class="d-block img-fluid" src="{{asset('imagenes/fotos/file6.jpg')}}" alt="Six slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block img-fluid" src="{{asset('imagenes/fotos/file7.jpg')}}" alt="Seven slide">
                         </div>
                         <div class="carousel-item">
                             <img class="d-block img-fluid" src="{{asset('imagenes/fotos/file8.jpg')}}" alt="Eight slide">
@@ -274,7 +297,7 @@
                     <br>
                     <div class="contenido">
                         <h2><span class="odometer" id="odometer1">0</span></h2>
-                        <br>
+                        <h4 class="text-xs-center">Vivienda</h4>
                         <p>Que equivale a 327 familias poblanas apoyadas con alguno de nuestros programas.
                          </p>
                          <br>
@@ -287,7 +310,7 @@
                     <br>
                     <div class="contenido">
                         <h2><span class="odometer" id="odometer2">0</span></h2>
-                        <br>
+                        <h4 class="text-xs-center">Alimentación</h4>
                         <p>Cantidad que corresponde a 36 familias beneficiadas mensualmente con una despensa integral.</p>
                     </div>
                 </div>
@@ -299,7 +322,7 @@
                     <br>
                     <div class="contenido">
                         <h2><span class="odometer" id="odometer3">0</span></h2>
-                        <br>
+                        <h4 class="text-xs-center">Salud</h4>
                         <p>Suma que representa el número de gestiones ante diversas instituciones de salud pública en el Estado de Puebla.</p>
                     </div>
                 </div>
@@ -310,7 +333,7 @@
                     <br>
                     <div class="contenido">
                         <h2><span class="odometer" id="odometer4">0</span></h2>
-                        <br>
+                        <h4 class="text-xs-center">Educación</h4>
                         <p>Lo cual equivale al número de instituciones educativas impactadas.</p>
                     </div>
                 </div>
@@ -321,7 +344,7 @@
                     <br>
                     <div class="contenido">
                         <h2><span class="odometer" id="odometer5">0</span></h2>
-                        <br>
+                        <h4 class="text-xs-center">Medio Ambiente</h4>
                         <p>Próximamente estaremos implementando proyectos en tu entorno.</p>
                     </div>
                 </div>
@@ -332,7 +355,7 @@
                     <br>
                     <div class="contenido">
                         <h2><span class="odometer" id="odometer6">0</span></h2>
-                        <br>
+                        <h4 class="text-xs-center">Orientación Social</h4>
                         <p>En breve gestaremos acciones en tu comunidad.</p>
                         <br>
                     </div>
@@ -351,7 +374,7 @@
                 <article id="PisoDigno" class="col-lg-4" href="#PisoD" data-toggle="modal" data-target="#PisoD">
                     <input type="hidden" name="ruta" value="{{route('evidencia.evidencias', ['piso digno', 21])}}">
                     <img src=" {{asset('imagenes/aplicacion/Bivienda.svg')}} " alt="LogoPiso Digno">
-                    <h3><a> Piso Digno</a></h3>
+                    <h3><a>Vivienda</a></h3>
                     <p class="hidden-md-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia natus asperiores quo eaque, reiciendis provident nobis voluptatem. Quos repellat excepturi cupiditate earum exercitationem porro tempore, odit consectetur fugit ipsa facere.</p>
                     <button class="btn blue-inverse hidden-md hidden-md-down">Más Información</button>
                 </article>
@@ -359,7 +382,7 @@
                 <article id="Despensas" class="col-lg-4" data-toggle="modal" data-target="#PisoD">
                     <input type="hidden" name="ruta" value="#">
                     <img src="{{asset('imagenes/aplicacion/despensa.svg')}}" alt="LogoPiso Digno">
-                    <h3><a>Despensas</a></h3>
+                    <h3><a>Alimentación</a></h3>
                     <p class="hidden-md-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia natus asperiores quo eaque, reiciendis provident nobis voluptatem. Quos repellat excepturi cupiditate earum exercitationem porro tempore, odit consectetur fugit ipsa facere.</p>
                     <button class="btn green-inverse hidden-md hidden-md-down">Más Información</button>
                 </article>
@@ -380,6 +403,20 @@
             @include('layouts/templates/Estadisticas')
         </div>
     </div>
+    
+  <div class="scrollmenu" >
+                      @include('layouts/templates/grafica1')
+                      @include('layouts/templates/grafica2')
+                      @include('layouts/templates/grafica3')
+                      @include('layouts/templates/grafica1')
+                      @include('layouts/templates/grafica1')
+                      @include('layouts/templates/grafica1')
+    
+
+                    
+</div>
+    
+    
     @include('layouts/templates/modal')
     @include('layouts/templates/modalesProgramas/salud')
     @include('layouts/templates/modalesProgramas/vivienda')
