@@ -405,20 +405,19 @@
     </div>
     
   <div class="scrollmenu" >
-                      @include('layouts/templates/grafica1')
-                      @include('layouts/templates/grafica2')
-                      @include('layouts/templates/grafica3')
-                      @include('layouts/templates/grafica1')
-                      @include('layouts/templates/grafica1')
-                      @include('layouts/templates/grafica1')
-    
+        @include('layouts/templates/grafica1')   
+        @include('layouts/templates/grafica2')
+        @include('layouts/templates/grafica1') 
+        @include('layouts/templates/grafica1')
+        @include('layouts/templates/grafica1')   
+        @include('layouts/templates/grafica1')     
 
-                    
 </div>
     
     
     @include('layouts/templates/modal')
     @include('layouts/templates/modalesProgramas/salud')
+    <br>
     @include('layouts/templates/modalesProgramas/vivienda')
     @include('layouts/templates/modalesProgramas/educacion')
     @include('layouts/templates/modalesProgramas/alimentacion')
