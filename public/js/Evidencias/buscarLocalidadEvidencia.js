@@ -16,11 +16,14 @@ $(document).ready(function(){
     });
 
     $('#btnExcel').click(function (e) {
-      if ($('#evidencias').find('.evidencia').length > 0) {
+      if ($('#evidencias').find('li').length > 0) {
         var aux = download;
         aux = aux.replace('PROYECTO',proyecto);
         aux = aux.replace('ANIO',año);
         aux = aux.replace('REGION',region);
+        if (lugar == '') {
+          lugar = 'SD';
+        }
         aux = aux.replace('LUGAR',lugar);
         $(this).prop('href',aux);
       }

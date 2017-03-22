@@ -11,7 +11,7 @@
             <a href="{{ URL::previous() }}" class="btn green btn-circle"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
             <h1 class="text-xs-center">Editar Usuario</h1>
             <hr>
-            {!! Form::model($usuario, ['route' => ['usuario.update', $usuario->idUsuario], 'method' => 'PUT']) !!}
+            {!! Form::model($usuario, ['route' => ['usuario.update', $usuario->idUsuario], 'method' => 'PUT', 'id' => 'form-update']) !!}
             <div class="form-group{{ $errors->has('nombre') ? ' has-danger' : '' }}">
               {!! Form::label('nombre', 'Nombre') !!}
               {!! Form::text('nombre', old('nombre'), ['class' => 'form-control', 'placeholder' => 'Nombre...', 'autocomplete' => 'off']) !!}
@@ -20,6 +20,9 @@
                       <strong>{{ $errors->first('nombre') }}</strong>
                   </span>
               @endif
+              <span class="form-control-feedback">
+                  <strong id="errornombre"></strong>
+              </span>
             </div>
             <div class="form-group{{ $errors->has('apellidoPaterno') ? ' has-danger' : '' }}">
               {!! Form::label('apellidoPaterno', 'Apellido Paterno') !!}
@@ -29,6 +32,9 @@
                       <strong>{{ $errors->first('apellidoPaterno') }}</strong>
                   </span>
               @endif
+              <span class="form-control-feedback">
+                  <strong id="errorapellidoPaterno"></strong>
+              </span>
             </div>
             <div class="form-group{{ $errors->has('apellidoMaterno') ? ' has-danger' : '' }}">
               {!! Form::label('apellidoMaterno', 'Apellido Materno') !!}
@@ -38,6 +44,9 @@
                       <strong>{{ $errors->first('apellidoMaterno') }}</strong>
                   </span>
               @endif
+              <span class="form-control-feedback">
+                  <strong id="errorapellidoMaterno"></strong>
+              </span>
             </div>
             <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
               {!! Form::label('email', 'Email') !!}
@@ -47,6 +56,9 @@
                       <strong>{{ $errors->first('email') }}</strong>
                   </span>
               @endif
+              <span class="form-control-feedback">
+                  <strong id="erroremail"></strong>
+              </span>
             </div>
             <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
               {!! Form::label('password', 'Contraseña') !!}
@@ -56,10 +68,13 @@
                       <strong>{{ $errors->first('password') }}</strong>
                   </span>
               @endif
+              <span class="form-control-feedback">
+                  <strong id="errorpassword"></strong>
+              </span>
             </div>
             <div class="form-group">
               {!! Form::label('password', 'Confirmar contraseña') !!}
-              {!! Form::password('password_confirmation', ['class' => 'form-control', 'placeholder' => 'Contraseña...', 'autocomplete' => 'off']) !!}
+              {!! Form::password('password_confirmation', ['class' => 'form-control', 'placeholder' => 'Contraseña...', 'autocomplete' => 'off', 'id' => 'password_confirmation']) !!}
             </div>
             <div class="form-group">
               {!! Form::label('role', 'Rol') !!}
@@ -75,6 +90,11 @@
 </div>
 @endsection
 @section('javascripts')
+<script type="text/javascript">
+  var token = '{{ Session::token() }}';
+  var redirect = '{{route("usuario.index")}}';
+</script>
+<script type="text/javascript" src="{{asset('js/Usuarios/updateUsuario.js')}}"></script>
 <script type="text/javascript">
   $(document).ready(function () {
     $('#usuarios').addClass('active');

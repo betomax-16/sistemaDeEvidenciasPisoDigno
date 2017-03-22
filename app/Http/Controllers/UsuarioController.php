@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Response;
 use App\Usuario;
 use Validator;
@@ -25,7 +26,8 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $usuarios = Usuario::paginate(10);
+        $me = Auth::user();
+        $usuarios = Usuario::where('idUsuario', '!=', $me->idUsuario)->paginate(10);
         return $this->noGuardarCache(view('usuarios/administrado/listaUsuarios')->with('usuarios', $usuarios));
     }
 
@@ -57,6 +59,9 @@ class UsuarioController extends Controller
       $validacion = Validator::make($request->all(), $rules);
 
       if ($validacion->fails()) {
+        if ($request->ajax()) {
+          return response()->json(['errors' => $validacion->errors()]);
+        }
         return redirect()->back()->withInput()->withErrors($validacion->errors());
       }
 
@@ -68,6 +73,9 @@ class UsuarioController extends Controller
       $usuario->password = bcrypt($request->password);
       $usuario->role = $request->role;
       $usuario->save();
+      if ($request->ajax()) {
+        return response()->json(['status' => 'success']);
+      }
       return redirect()->route('usuario.index');
     }
 
@@ -125,6 +133,9 @@ class UsuarioController extends Controller
         $validacion = Validator::make($request->all(), $rules);
 
         if ($validacion->fails()) {
+          if ($request->ajax()) {
+            return response()->json(['errors' => $validacion->errors()]);
+          }
           return redirect()->back()->withInput()->withErrors($validacion->errors());
         }
 
@@ -133,6 +144,9 @@ class UsuarioController extends Controller
         $usuario->apellidoMaterno = $request->apellidoMaterno;
         $usuario->role = $request->role;
         $usuario->save();
+        if ($request->ajax()) {
+          return response()->json(['status' => 'success']);
+        }
         return redirect()->route('usuario.index');
       }
       return view('welcome');

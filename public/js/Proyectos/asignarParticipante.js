@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+  var bandera = true;
   limpiarValidacion($('#selectUsuario'));
 
   $('#btnGuardar').click(function (event) {
@@ -15,19 +15,23 @@ $(document).ready(function () {
       idUsuario: $('#selectUsuario').val(),
       _token : token
     };
-    $.post(url, data, function (response) {
-      if (response.errors != undefined) {
-        validar($('#selectUsuario'), response.errors.idUsuario);
-      }
-      else {
-        var aux = plantilla.replace('{ID_USUARIO}', response.id);
-        aux = aux.replace('{NOMBRE}', response.nombre);
-        aux = aux.replace('{EMAIL}', response.email);
-        $('#tabla tbody').append(aux);
+    if (bandera) {
+      bandera = false;
+      $.post(url, data, function (response) {
+        if (response.errors != undefined) {
+          validar($('#selectUsuario'), response.errors.idUsuario);
+        }
+        else {
+          var aux = plantilla.replace('{ID_USUARIO}', response.id);
+          aux = aux.replace('{NOMBRE}', response.nombre);
+          aux = aux.replace('{EMAIL}', response.email);
+          $('#tabla tbody').append(aux);
 
-        $('#selectUsuario option[value='+response.id+']').remove();
-      }
-    });
+          $('#selectUsuario option[value='+response.id+']').remove();
+          bandera=true;
+        }
+      });
+    }
   });
 });
 

@@ -31,7 +31,7 @@
     height: inherit !important;
   }
   .dropzone{
-    display: flex;
+    /*display: flex;*/
   }
   .dropzone .dz-message{
     margin: 0;
@@ -53,7 +53,7 @@
     <div class="row">
         <div class="col-md-12">
           <a href="{{ URL::previous() }}" class="btn green btn-circle"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
-          <h1 class="text-xs-center">Editar Evidencia Para: <span>{{Session::get('proyecto')}}</span></h1>
+          <h1 class="text-xs-center">Editar Evidencia Para: <span>{{App\Proyecto::find(Session::get('proyecto'))->nombre}}</span></h1>
           <hr>
           {!! Form::open(['route' => ['evidencia.update', $beneficiado->idHogar], 'method' => 'PUT', 'files' => true]) !!}
           <div class="row">

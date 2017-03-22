@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Sepomex;
+use App\Donacion;
 use Response;
 use Validator;
 use PDF;
@@ -131,6 +132,7 @@ $amount->setCurrency($currency)
     \Session::put('apellidoPaterno', $request->apellidoPaterno);
     \Session::put('apellidoMaterno', $request->apellidoMaterno);
     \Session::put('email', $request->email);
+    \Session::put('monto', $total);
 
 		if(isset($redirect_url)) {
 			// redirect to paypal
@@ -159,12 +161,14 @@ $amount->setCurrency($currency)
     $apellidoPaterno = \Session::get('apellidoPaterno');
     $apellidoMaterno = \Session::get('apellidoMaterno');
     $email = \Session::get('email');
+    $monto = \Session::get('monto');
 		// clear the session payment ID
 		\Session::forget('paypal_payment_id');
     \Session::forget('nombre');
     \Session::forget('apellidoPaterno');
     \Session::forget('apellidoMaterno');
     \Session::forget('email');
+    \Session::forget('monto');
 
 		//$payerId = \Input::get('PayerID');
     $payerId = $request->PayerID;
@@ -190,12 +194,14 @@ $amount->setCurrency($currency)
 		//echo '<pre>';print_r($result);echo '</pre>';exit; // DEBUG RESULT, remove it later
 
 		if ($result->getState() == 'approved') { // payment made
-			// Registrar el pedido --- ok
-			// Registrar el Detalle del pedido  --- ok
-			// Eliminar carrito
-			// Enviar correo a user
-			// Enviar correo a admin
-			// Redireccionar
+
+      $donacion = new Donacion();
+      $donacion->nombre = $nombre;
+      $donacion->apellidoPaterno = $apellidoPaterno;
+      $donacion->apellidoMaterno = $apellidoMaterno;
+      $donacion->email = $email;
+      $donacion->monto = $monto;
+      $donacion->save();
 
 			return \Redirect::route('donacion')
 				->with('message', 'Compra realizada de forma correcta');
@@ -234,6 +240,19 @@ $amount->setCurrency($currency)
     \Session::put('monto', $request->monto);
     \Session::put('colonia', $request->colonia);
     \Session::put('calle', $request->calle);
+
+    $donacion = new Donacion();
+    $donacion->nombre = $request->nombre;
+    $donacion->apellidoPaterno = $request->apellidoPaterno;
+    $donacion->apellidoMaterno = $request->apellidoMaterno;
+    $donacion->email = $request->email;
+    $donacion->cp = $request->cp;
+    $donacion->monto = $request->monto;
+    $donacion->colonia = $request->colonia;
+    $donacion->direccion = $request->calle;
+    $donacion->rfc = $request->rfc;
+    $donacion->save();
+
     if ($request->ajax()) {
       return Response::json(['status' => 'success', 'url' => \URL::route('pdf_rfc')]);
     }

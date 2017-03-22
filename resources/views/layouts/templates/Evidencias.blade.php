@@ -1,6 +1,9 @@
 
       @if(count($beneficiados) > 0)
         @foreach($beneficiados as $beneficiado)
+          @php($localidad = App\Localidad::find($beneficiado->idLocalidad))
+          @php($municipio = App\Municipio::find($localidad->idMunicipio))
+          @php($count=0)
           @php($fotos = $beneficiado->fotos)
           <li>
             @if(!Auth::guest())
@@ -13,15 +16,22 @@
             @endif
             <div class="bb-bookblock">
               @foreach($fotos as $foto)
-                <div class="bb-item"><a href="{{asset('imagenes/evidencias').'/'.$foto->nombreSanitizado}}" data-lightbox="{{$foto->idHogar}}" data-title="{{$foto->created_at}}"><img src="{{asset('imagenes/evidencias').'/'.$foto->nombreSanitizado}}" alt="{{$foto->tipo}}"/></a></div>
+                <div class="bb-item">
+                  <a href="{{asset('imagenes/evidencias').'/'.$foto->nombreSanitizado}}" data-lightbox="{{$foto->idHogar}}" data-title="{{'Municipio: '.$municipio->nombre.' / Localidad: '.$localidad->nombre.' / '.$foto->created_at}}">
+                    <img src="{{asset('imagenes/evidencias').'/'.$foto->nombreSanitizado}}" alt="{{$foto->tipo}}"/>
+                  </a>
+                </div>
               @endforeach
             </div>
             <nav>
               @foreach($fotos as $foto)
-                @if($foto->tipo == 'PISO_ORIGINAL')
-                  <span class="bb-current"></span>
-                @else
-                  <span></span>
+                @php($count++)
+                @if($count < 5)
+                  @if($foto->tipo == 'PISO_ORIGINAL')
+                    <span class="bb-current"></span>
+                  @else
+                    <span></span>
+                  @endif
                 @endif
               @endforeach
             </nav>

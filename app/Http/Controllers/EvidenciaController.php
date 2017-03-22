@@ -70,9 +70,12 @@ class EvidenciaController extends Controller
       $fechaActual = Carbon::now();
       $anio = $fechaActual->format('Y');
       $beneficiados = null;
-      if ($municipio) {
+      /*if ($municipio) {
         $beneficiados = $this->beneficiadosDelMunicipio($municipio->nombre, $proyecto->nombre, $anio);
-      }
+      }*/
+      $beneficiados = Beneficiado::where('Beneficiados.proyecto', '=', $proyecto->idProyecto)
+                                 ->where(DB::raw('year(Beneficiados.created_at)'), '=', $anio)
+                                 ->paginate(12);
       return $this->noGuardarCache(view('usuarios/proveedorEvidencias/buscarEvidencias')
                                    ->with('proyecto', $proyecto)
                                    ->with('estado', $estado)
@@ -98,34 +101,36 @@ class EvidenciaController extends Controller
         $old_path = public_path().'/imagenes/temporalEvidencias/';
         $new_path = $path;
         $imagen = ImagenTemporal::where('nombreOriginal', 'like', $foto)->orderBy('nombreOriginal', 'asc')->first();
-        $old_path .= $imagen->nombreSanitizado;
-        $new_path .= $imagen->nombreSanitizado;
-        if (!File::exists( $new_path )) {
-          File::move($old_path, $new_path);
-          $f = new Foto();
-          $f->idHogar = $beneficiado->idHogar;
-          $f->nombreArchivo = $imagen->nombreOriginal;
-          $f->tipo = $tipo;
-          $f->nombreSanitizado = $imagen->nombreSanitizado;
-          $f->save();
-          $imagen->delete();
-        }
-        else {
-          $file = pathinfo($new_path);
-          $extension = $file['extension'];
-          $filename = $file['filename'];
-          $newName = $filename.'.'.$extension;
-          while (File::exists($path.$newName)) {
-            $newName = $this->crearNombreUnico($path, $filename, $extension);
+        if ($imagen) {
+          $old_path .= $imagen->nombreSanitizado;
+          $new_path .= $imagen->nombreSanitizado;
+          if (!File::exists( $new_path )) {
+            File::move($old_path, $new_path);
+            $f = new Foto();
+            $f->idHogar = $beneficiado->idHogar;
+            $f->nombreArchivo = $imagen->nombreOriginal;
+            $f->tipo = $tipo;
+            $f->nombreSanitizado = $imagen->nombreSanitizado;
+            $f->save();
+            $imagen->delete();
           }
-          File::move($old_path, $path.$newName);
-          $f = new Foto();
-          $f->idHogar = $beneficiado->idHogar;
-          $f->nombreArchivo = $imagen->nombreOriginal;
-          $f->tipo = $tipo;
-          $f->nombreSanitizado = $newName;
-          $f->save();
-          $imagen->delete();
+          else {
+            $file = pathinfo($new_path);
+            $extension = $file['extension'];
+            $filename = $file['filename'];
+            $newName = $filename.'.'.$extension;
+            while (File::exists($path.$newName)) {
+              $newName = $this->crearNombreUnico($path, $filename, $extension);
+            }
+            File::move($old_path, $path.$newName);
+            $f = new Foto();
+            $f->idHogar = $beneficiado->idHogar;
+            $f->nombreArchivo = $imagen->nombreOriginal;
+            $f->tipo = $tipo;
+            $f->nombreSanitizado = $newName;
+            $f->save();
+            $imagen->delete();
+          }
         }
       }
     }
@@ -168,7 +173,7 @@ class EvidenciaController extends Controller
         }
       }
     }
-
+    //trabaja con las imagenes que se almacenan como temporales
     private function guardarImagen(Request $request, $imagen, &$fotos)
     {
       $path = public_path().'/imagenes/temporalEvidencias/';
@@ -505,43 +510,19 @@ class EvidenciaController extends Controller
       $path_temporal = public_path().'/imagenes/temporalEvidencias/';
       if ($request->fotos1) {
         $fotos = $request->fotos1;
-        $auxFotos = [];
-        foreach ($fotos as $foto) {
-          if (File::exists($path_temporal.$foto)) {
-            array_push($auxFotos, $foto);
-          }
-        }
-        $this->guardarFoto($auxFotos, $path, $beneficiado, 'PISO_ORIGINAL');
+        $this->guardarFoto($fotos, $path, $beneficiado, 'PISO_ORIGINAL');
       }
       if ($request->fotos2) {
         $fotos = $request->fotos2;
-        $auxFotos = [];
-        foreach ($fotos as $foto) {
-          if (File::exists($path_temporal.$foto)) {
-            array_push($auxFotos, $foto);
-          }
-        }
-        $this->guardarFoto($auxFotos, $path, $beneficiado, 'PISO_EN_PROCESO');
+        $this->guardarFoto($fotos, $path, $beneficiado, 'PISO_EN_PROCESO');
       }
       if ($request->fotos3) {
         $fotos = $request->fotos3;
-        $auxFotos = [];
-        foreach ($fotos as $foto) {
-          if (File::exists($path_temporal.$foto)) {
-            array_push($auxFotos, $foto);
-          }
-        }
-        $this->guardarFoto($auxFotos, $path, $beneficiado, 'PISO_TERMINADO');
+        $this->guardarFoto($fotos, $path, $beneficiado, 'PISO_TERMINADO');
       }
       if ($request->fotos4) {
         $fotos = $request->fotos4;
-        $auxFotos = [];
-        foreach ($fotos as $foto) {
-          if (File::exists($path_temporal.$foto)) {
-            array_push($auxFotos, $foto);
-          }
-        }
-        $this->guardarFoto($auxFotos, $path, $beneficiado, 'OTROS');
+        $this->guardarFoto($fotos, $path, $beneficiado, 'OTROS');
       }
       if ($request->ajax()) {
         return response()->json(['status' => 'success']);
@@ -656,6 +637,15 @@ class EvidenciaController extends Controller
         $region = $request->area;
         $anio = $request->year;
         $proyecto = $request->project;
+        if ($nombre == '') {
+          $beneficiados = Beneficiado::where('Beneficiados.proyecto', '=', $proyecto)
+                                     ->where(DB::raw('year(Beneficiados.created_at)'), '=', $anio)
+                                     ->paginate(12);
+          return response()->json([
+            'evidencias' => view('layouts/templates/Evidencias', ['beneficiados'=> $beneficiados])->render(),
+            'paginacion' => view('layouts/templates/pagination', ['beneficiados'=> $beneficiados])->render()
+          ]);
+        }
         if ($region == 'MUNICIPIO') {
           $beneficiados = $this->beneficiadosDelMunicipio($nombre, $proyecto, $anio);
           return response()->json([
@@ -685,22 +675,31 @@ class EvidenciaController extends Controller
     public function excel($proyecto, $año, $region, $lugar)
     {
       $beneficiados = null;
-      if ($region == 'MUNICIPIO') {
+      if ($lugar == 'SD') {
         $beneficiados = Beneficiado::join('Localidades', 'Beneficiados.idLocalidad', '=', 'Localidades.idLocalidad')
-                                  ->join('Municipios', 'Localidades.idMunicipio', '=', 'Municipios.idMunicipio')
-                                  ->select('Beneficiados.*','Localidades.idMunicipio','Localidades.nombre')
-                                  ->where('Municipios.nombre', '=', $lugar)
-                                  ->where('Beneficiados.proyecto', '=', $proyecto)
-                                  ->where(DB::raw('year(Beneficiados.created_at)'), '=', $año)
-                                  ->get();
-      }
-      elseif ($region == 'LOCALIDAD') {
-        $beneficiados = Beneficiado::join('Localidades', 'Beneficiados.idLocalidad', '=', 'Localidades.idLocalidad')
-                                   ->select('Beneficiados.*','Localidades.idMunicipio','Localidades.nombre')
-                                   ->where('Localidades.nombre', '=', $lugar)
+                                   ->join('Municipios', 'Localidades.idMunicipio', '=', 'Municipios.idMunicipio')
                                    ->where('Beneficiados.proyecto', '=', $proyecto)
                                    ->where(DB::raw('year(Beneficiados.created_at)'), '=', $año)
                                    ->get();
+      }
+      else {
+        if ($region == 'MUNICIPIO') {
+          $beneficiados = Beneficiado::join('Localidades', 'Beneficiados.idLocalidad', '=', 'Localidades.idLocalidad')
+                                    ->join('Municipios', 'Localidades.idMunicipio', '=', 'Municipios.idMunicipio')
+                                    ->select('Beneficiados.*','Localidades.idMunicipio','Localidades.nombre')
+                                    ->where('Municipios.nombre', '=', $lugar)
+                                    ->where('Beneficiados.proyecto', '=', $proyecto)
+                                    ->where(DB::raw('year(Beneficiados.created_at)'), '=', $año)
+                                    ->get();
+        }
+        elseif ($region == 'LOCALIDAD') {
+          $beneficiados = Beneficiado::join('Localidades', 'Beneficiados.idLocalidad', '=', 'Localidades.idLocalidad')
+                                     ->select('Beneficiados.*','Localidades.idMunicipio','Localidades.nombre')
+                                     ->where('Localidades.nombre', '=', $lugar)
+                                     ->where('Beneficiados.proyecto', '=', $proyecto)
+                                     ->where(DB::raw('year(Beneficiados.created_at)'), '=', $año)
+                                     ->get();
+        }
       }
       $this->crearExcel($region, $lugar, $beneficiados, $proyecto);
     }

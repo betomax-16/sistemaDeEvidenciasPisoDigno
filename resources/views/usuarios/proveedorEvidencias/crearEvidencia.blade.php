@@ -42,7 +42,7 @@
     <div class="row">
         <div class="col-md-12">
           <a href="{{ URL::previous() }}" class="btn green btn-circle"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
-          <h1 class="text-xs-center">Nueva Evidencia Para: <span>{{Session::get('proyecto')}}</span></h1>
+          <h1 class="text-xs-center">Nueva Evidencia Para: <span>{{App\Proyecto::find(Session::get('proyecto'))->nombre}}</span></h1>
           <hr>
           {!! Form::open(['route' => 'evidencia.store', 'method' => 'POST', 'files' => true]) !!}
           <div class="row">

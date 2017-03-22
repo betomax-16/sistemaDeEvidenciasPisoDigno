@@ -22,7 +22,14 @@ $(document).ready(function(){
         callback: function (result) {
           if (result == true) {
             $.post(url, data, function(result){
-              fila.fadeOut(300,function () { $(this).remove()});
+              fila.fadeOut(300,function () {
+                $(this).remove();
+                var countLista = $('.listaProyectos li').size();
+                if (countLista == 0) {
+                  $('.listaProyectos').remove();
+                  $('#mensajes').html('<h1 class="display-4 text-md-center" style="color:#B8B7B7;">Sin proyectos activos</h1>');
+                }
+              });
             }).fail(function(){
               alert('ERROR');
               fila.show();

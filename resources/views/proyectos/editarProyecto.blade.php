@@ -14,12 +14,15 @@
           <div class="form-group{{ $errors->has('nombre') ? ' has-danger' : '' }}">
             {!! Form::label('nombre', 'Proyecto') !!}
             {!! Form::text('nombre', old('nombre'), ['class' => 'form-control', 'placeholder' => 'Nombre de proyecto...', 'autocomplete' => 'off']) !!}
-            {!! Form::hidden('tipo', Session::get('programa')) !!}
+            {!! Form::hidden('tipo', Session::get('programa'), ['id' => 'tipo']) !!}
             @if ($errors->has('nombre'))
                 <span class="form-control-feedback">
                     <strong>{{ $errors->first('nombre') }}</strong>
                 </span>
             @endif
+            <span class="form-control-feedback">
+                <strong id="errornombre"></strong>
+            </span>
           </div>
           <div class="form-group{{ $errors->has('descripcion') ? ' has-danger' : '' }}">
             {!! Form::label('descripcion', 'Descripción') !!}
@@ -29,6 +32,9 @@
                     <strong>{{ $errors->first('descripcion') }}</strong>
                 </span>
             @endif
+            <span class="form-control-feedback">
+                <strong id="errordescripcion"></strong>
+            </span>
           </div>
           <div class="">
             <button id="btnGuardar" type="submit" class="btn green-inverse circle" style="width:100%"><i class="fa fa-share" aria-hidden="true"></i> Guardar</button>
@@ -41,6 +47,10 @@
 @section('javascripts')
 <script type="text/javascript" src="{{asset('js/bootbox.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/Proyectos/updateProyecto.js')}}"></script>
+<script type="text/javascript">
+  var token = '{{ Session::token() }}';
+  var redirect = '{{route("proyectosPorPrograma", $proyecto->tipo)}}';
+</script>
 <script type="text/javascript">
   $(document).ready(function () {
     $('#programas').addClass('active');

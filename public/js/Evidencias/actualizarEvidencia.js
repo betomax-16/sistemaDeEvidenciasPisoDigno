@@ -7,18 +7,6 @@ $(document).ready(function () {
   $( "#acordion" ).accordion();
 
   /*
-    EVENTO PARA ABRIR VENTANA DE SELECCION DE ARCHIVOS
-    A PARTIR DE UN CLICK EN UNA IMAGEN EN VEZ DE
-    DAR CLICK EN EL INPUT FILE
-  */
-  $('img').click(function () {
-    var input = $(this).attr('id').replace('img','foto');
-    if (input != 'fotoN') {
-        $('#'+input).trigger('click');
-    }
-  });
-
-  /*
     EVENTOS QUE SE EJECUTAN AL PERDER EL FOCO DEL CAMPO "municipio" o "localidad"
     PARA EVALUAR QUE EL NOMBRE DE DICHO MUNICIPIO O LOCALIDAD EXISTA EN LA BASE DE DATOS
   */
@@ -167,6 +155,7 @@ $(document).ready(function () {
         url: urlSaveRecordig,
         data: info
       }).done(function (response) {
+        //alert(JSON.stringify(response));
         setTimeout(function () {
           $("#windowLoad").remove();
           if (response.session != undefined) {
@@ -311,7 +300,7 @@ function crearDropzone(parametro, idClickable, maxFiles, paralelos) {
           if (file.type != 'image/png' && file.type != 'image/jpg' && file.type != 'image/jpeg') {
             bootbox.alert('no valido');
             this.removeFile(file);
-          }          
+          }
           if (id != 'dropzoneFileUpload4' && arrayFotos[id] != undefined && arrayFotos[id] != '') {
             this.removeFile(file);
           }

@@ -74,6 +74,9 @@ class ProyectoController extends Controller
     public function store(Request $request)
     {
       if (!Session::has('programa')) {
+        if ($response->ajax()) {
+          return response()->json(['session' => 'false']);
+        }
         return view('welcome');
       }
       $rules = [
@@ -85,11 +88,17 @@ class ProyectoController extends Controller
       $validacion = Validator::make($request->all(), $rules);
 
       if ($validacion->fails()) {
+        if ($request->ajax()) {
+          return response()->json(['errors' => $validacion->errors()]);
+        }
         return redirect()->back()->withInput()->withErrors($validacion->errors());
       }
 
       $proyecto = new Proyecto($request->all());
       $proyecto->save();
+      if ($request->ajax()) {
+        return response()->json(['status' => 'success']);
+      }
       return redirect()->route('proyectosPorPrograma', Session::get('programa'));
     }
 
@@ -132,24 +141,38 @@ class ProyectoController extends Controller
     public function update(Request $request, $id)
     {
       if (!Session::has('programa')) {
+        if ($response->ajax()) {
+          return response()->json(['session' => 'false']);
+        }
         return view('welcome');
       }
       $rules = [
-        'nombre' => 'required|max:255|unique:Proyectos,nombre',
         'descripcion' => 'required|max:255',
         'tipo' => 'required',
       ];
+      $proyecto = Proyecto::find($id);
+      if ($proyecto) {
+        if ($proyecto->nombre != $request->nombre || $request->nombre == '') {
+          $rules['nombre'] = 'required|max:255|unique:Proyectos,nombre';
+        }
+      }
 
       $validacion = Validator::make($request->all(), $rules);
 
       if ($validacion->fails()) {
+        if ($request->ajax()) {
+          return response()->json(['errors' => $validacion->errors()]);
+        }
         return redirect()->back()->withInput()->withErrors($validacion->errors());
       }
 
-      $proyecto = Proyecto::find($id);
       if ($proyecto) {
         $proyecto->nombre = $request->nombre;
+        $proyecto->descripcion = $request->descripcion;
         $proyecto->save();
+        if ($request->ajax()) {
+          return response()->json(['status' => 'success']);
+        }
         return redirect()->route('proyectosPorPrograma', Session::get('programa'));
       }
       return view('welcome');
