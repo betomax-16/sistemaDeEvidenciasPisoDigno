@@ -1,3 +1,4 @@
+
 #Capa_1 #Grafica1 #Def1{
     transform: translateY(550px);
       transition: all 1000ms cubic-bezier(0.615, 1.025, 0.745, 1.270); /* custom */
@@ -28,5 +29,3 @@ div.scrollmenu svg {
       width: 26rem;
     height: 20rem;
 }
-
-

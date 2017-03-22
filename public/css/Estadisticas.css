@@ -1,7 +1,7 @@
 #bandera_2_,
 #bandera_1_,
 #bandera_3_,
-#bandera {
+#bandera_4_ {
     -webkit-transition: all 0.8s cubic-bezier(0.25, 0.25, 0.64, 1.425);
     transition: all 0.8s cubic-bezier(0.25, 0.25, 0.64, 1.425);
     -webkit-transform: translateX(-380px);
@@ -14,7 +14,7 @@
 #B1_3_:hover #bandera_3_,
 #B2_1_:hover #bandera_1_,
 #B3_1_:hover #bandera_2_,
-#B4_1_:hover #bandera {
+#B4_1_:hover #bandera_4_ {
     -webkit-transform-origin: 50% 50%;
     -ms-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
@@ -37,5 +37,10 @@
 .estadisticas svg {
     margin-top: 1rem;
 }
+.svge svg a:link{
+    text-decoration: underline;
+    
+}
+
 
 /*# sourceMappingURL=Estadisticas.css.map */
