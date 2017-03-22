@@ -137,18 +137,7 @@
                         <spam> GRUPOS SOCIALES UNIDOS POR PUEBLA 13 DE NOVIEMBRE A.C.,</spam> representa un esfuerzo más que se suma a labor diaria de personas como tú, esto es, de seres humanos con la firme convicción de abonar al porvenir de sus semejantes.
                     </p>
                 </article>
-                <header class="text-xs-center col-xs-12 offset-md-1 col-md-5" style="z-index:1;">
-                    <h1 class="NC2">Nuestra comunidad</h1>
-                    <br>
-                    <h2><span><i class="fa fa-quote-right " aria-hidden="true"></i></span></h2>
-                    
-<div class="scroll-left">
-<p>CSS scrolli 1 </p>
-<p>CSS ng text...2 1</p>
-<p>CSSt... 3 1</p>
-</div>
-                   
-                </header>
+
 
                 <div id="carouselExampleIndicators" class="carousel slide col-xs-12 offset-md-1 col-md-5" data-ride="carousel">
                     <ol class="carousel-indicators">
