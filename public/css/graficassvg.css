@@ -29,3 +29,7 @@ div.scrollmenu svg {
       width: 26rem;
     height: 20rem;
 }
+.scrollmenu svg a:link{
+    text-decoration: underline;
+    
+}

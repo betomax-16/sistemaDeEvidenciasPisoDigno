@@ -396,10 +396,10 @@
   <div class="scrollmenu" >
         @include('layouts/templates/grafica1')   
         @include('layouts/templates/grafica2')
-        @include('layouts/templates/grafica1') 
-        @include('layouts/templates/grafica1')
-        @include('layouts/templates/grafica1')   
-        @include('layouts/templates/grafica1')     
+        @include('layouts/templates/grafica3') 
+        @include('layouts/templates/grafica4')
+        @include('layouts/templates/grafica5')   
+        @include('layouts/templates/grafica6')     
 
 </div>
     
