@@ -20,6 +20,17 @@ use Excel;
 
 class EvidenciaController extends Controller
 {
+    private $ruta;
+    private $arrayFotosAEliminar;
+    function __construct()
+    {
+      $this->ruta = public_path();
+      $this->arrayFotosAEliminar = array();
+      //\Session::put('fotosAEliminar', $this->arrayFotosAEliminar);
+
+      //$this->ruta = substr(base_path(),0,strlen(base_path())-10);
+    }
+
     private function noGuardarCache($view)
     {
       $response = response($view, 200);
@@ -35,7 +46,17 @@ class EvidenciaController extends Controller
      */
     public function index()
     {
-      dd('hola');
+        $f = Foto::where('nombreSanitizado', '=', '1660292514778889755560104580804337242768801n.jpg')
+                  ->where('idHogar', '=', 36)
+                  ->where('tipo', '=', 'PISO_ORIGINAL')
+                  ->orderBy('nombreSanitizado', 'asc')->first();
+        $arrayName = array();
+        array_push($arrayName, $f);
+        foreach ($arrayName as $key => $fto) {
+          $fto->delete();
+        }
+        //\Session::forget('fotos');
+        dd($arrayName);
     }
 
     private function beneficiadosDelMunicipio($municipio, $proyecto, $anio)
@@ -98,7 +119,7 @@ class EvidenciaController extends Controller
     private function guardarFoto($fotos, $path, Beneficiado $beneficiado, $tipo)
     {
       foreach ($fotos as $foto) {
-        $old_path = public_path().'/imagenes/temporalEvidencias/';
+        $old_path = $this->ruta.'/imagenes/temporalEvidencias/';
         $new_path = $path;
         $imagen = ImagenTemporal::where('nombreOriginal', 'like', $foto)->orderBy('nombreOriginal', 'asc')->first();
         if ($imagen) {
@@ -176,7 +197,7 @@ class EvidenciaController extends Controller
     //trabaja con las imagenes que se almacenan como temporales
     private function guardarImagen(Request $request, $imagen, &$fotos)
     {
-      $path = public_path().'/imagenes/temporalEvidencias/';
+      $path = $this->ruta.'/imagenes/temporalEvidencias/';
       if ($request->hasFile($imagen)) {
         $files = $request->file($imagen);
         foreach ($files as $file) {
@@ -246,19 +267,24 @@ class EvidenciaController extends Controller
                     ->where('tipo', '=', $tipo[$request->tipo])
                     ->orderBy('nombreSanitizado', 'asc')->first();
         if ($foto) {
-          $path = public_path().'/imagenes/evidencias/';
+          array_push($this->arrayFotosAEliminar, $foto);
+          Session::forget('arrayFotosAEliminar');
+          Session::put('arrayFotosAEliminar', $this->arrayFotosAEliminar);
+          $message = 'eliminado';
+          //--------------------------------------------
+          /*$path = $this->ruta.'/imagenes/evidencias/';
           $file = $path.$foto->nombreSanitizado;
           if (File::exists($file)) {
             if (unlink($file)) {
               $message = 'eliminado';
               $foto->delete();
             }
-          }
+          }*/
         }
         else {
           $imagenTem = ImagenTemporal::where('nombreOriginal', 'like', $request->id)->orderBy('nombreOriginal', 'asc')->first();
           if ($imagenTem) {
-            $path = public_path().'\imagenes\temporalEvidencias\\'.$imagenTem->nombreSanitizado;
+            $path = $this->ruta.'\imagenes\temporalEvidencias\\'.$imagenTem->nombreSanitizado;
             if (File::exists($path)) {
               if (unlink($path)) {
                 $message = 'eliminado';
@@ -271,7 +297,7 @@ class EvidenciaController extends Controller
       else {
         $imagenTem = ImagenTemporal::where('nombreOriginal', 'like', $request->id)->orderBy('nombreOriginal', 'asc')->first();
         if ($imagenTem) {
-          $path = public_path().'\imagenes\temporalEvidencias\\'.$imagenTem->nombreSanitizado;
+          $path = $this->ruta.'\imagenes\temporalEvidencias\\'.$imagenTem->nombreSanitizado;
           if (File::exists($path)) {
             if (unlink($path)) {
               $message = 'eliminado';
@@ -350,7 +376,7 @@ class EvidenciaController extends Controller
         $beneficiado->idLocalidad = $request->idLocalidad;
         $beneficiado->proyecto = Session::get('proyecto');
         $beneficiado->save();
-        $path = public_path().'/imagenes/evidencias/';
+        $path = $this->ruta.'/imagenes/evidencias/';
 
         if ($request->fotos1) {
           $fotos = $request->fotos1;
@@ -417,7 +443,7 @@ class EvidenciaController extends Controller
                 'original' => $foto->nombreArchivo,
                 'server' => $foto->nombreSanitizado,
                 'tipo' => $foto->tipo,
-                'size' => File::size(public_path('/imagenes/evidencias/' . $foto->nombreSanitizado))
+                'size' => File::size($this->ruta.'/imagenes/evidencias/' . $foto->nombreSanitizado)
             ];
           }
           return $this->noGuardarCache(view('usuarios/proveedorEvidencias/editarEvidencia')
@@ -506,8 +532,19 @@ class EvidenciaController extends Controller
       $beneficiado->idLocalidad = $request->idLocalidad;
       $beneficiado->proyecto = Session::get('proyecto');
       $beneficiado->save();
-      $path = public_path().'/imagenes/evidencias/';
-      $path_temporal = public_path().'/imagenes/temporalEvidencias/';
+
+      $path = $this->ruta.'/imagenes/evidencias/';
+      if (Session::has('arrayFotosAEliminar')) {
+        foreach (Session::get('arrayFotosAEliminar') as $key => $foto) {
+          $file = $path.$foto->nombreSanitizado;
+          if (File::exists($file)) {
+            if (unlink($file)) {
+              $foto->delete();
+            }
+          }
+        }
+      }
+      $path_temporal = $this->ruta.'/imagenes/temporalEvidencias/';
       if ($request->fotos1) {
         $fotos = $request->fotos1;
         $this->guardarFoto($fotos, $path, $beneficiado, 'PISO_ORIGINAL');
@@ -539,7 +576,7 @@ class EvidenciaController extends Controller
     public function destroy(Request $request, $id)
     {
       if ($request->ajax()) {
-        $path = public_path().'/imagenes/evidencias';
+        $path = $this->ruta.'/imagenes/evidencias';
         $beneficiado = Beneficiado::find($id);
         foreach ($beneficiado->fotos as $foto) {
           unlink($path.'/'.$foto->nombreSanitizado);

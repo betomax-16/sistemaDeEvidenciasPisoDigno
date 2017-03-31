@@ -1,5 +1,10 @@
 var arrayFotos = new Array();
 var banderaGuardar = true;
+var arrayStatus = new Array();
+arrayStatus['dropzoneFileUpload1'] = true;
+arrayStatus['dropzoneFileUpload2'] = true;
+arrayStatus['dropzoneFileUpload3'] = true;
+arrayStatus['dropzoneFileUpload4'] = true;
 $(document).ready(function () {
   /*
     MUESTRA ACORDION DE JQUERY UI
@@ -133,64 +138,75 @@ $(document).ready(function () {
 
   $('#btnGuardar').click(function (event) {
     event.preventDefault();
-    if (banderaGuardar) {
-      banderaGuardar = false;
-      jsShowWindowLoad();
-      var url = urlSaveRecordig;
-      var info = {
-        municipio : $('#municipio').val(),
-        idMunicipio : $('#idMunicipio').val(),
-        localidad : $('#localidad').val(),
-        idLocalidad : $('#idLocalidad').val(),
-        familia : $('#familia').val(),
-        idBeneficiado: idHogar,
-        fotos1 : arrayFotos['dropzoneFileUpload1'],
-        fotos2 : arrayFotos['dropzoneFileUpload2'],
-        fotos3 : arrayFotos['dropzoneFileUpload3'],
-        fotos4 : arrayFotos['dropzoneFileUpload4'],
-        _token : token,
-      };
-      $.ajax({
-        method: 'put',
-        url: urlSaveRecordig,
-        data: info
-      }).done(function (response) {
-        //alert(JSON.stringify(response));
-        setTimeout(function () {
-          $("#windowLoad").remove();
-          if (response.session != undefined) {
-            location.reload(true);
-          }
-          else if (response.errors != undefined) {
-            banderaGuardar = true;
-            if (response.errors.municipio != undefined) {
-              validar($('#municipio'), response.errors.municipio);
+    var count = 0;
+    for (var status in arrayStatus) {
+      if (arrayStatus[status]) {
+        count++;
+      }
+    }
+    if (count == 4) {
+      if (banderaGuardar) {
+        banderaGuardar = false;
+        jsShowWindowLoad();
+        var url = urlSaveRecordig;
+        var info = {
+          municipio : $('#municipio').val(),
+          idMunicipio : $('#idMunicipio').val(),
+          localidad : $('#localidad').val(),
+          idLocalidad : $('#idLocalidad').val(),
+          familia : $('#familia').val(),
+          idBeneficiado: idHogar,
+          fotos1 : arrayFotos['dropzoneFileUpload1'],
+          fotos2 : arrayFotos['dropzoneFileUpload2'],
+          fotos3 : arrayFotos['dropzoneFileUpload3'],
+          fotos4 : arrayFotos['dropzoneFileUpload4'],
+          _token : token,
+        };
+        $.ajax({
+          method: 'put',
+          url: urlSaveRecordig,
+          data: info
+        }).done(function (response) {
+          alert(JSON.stringify(response));
+          setTimeout(function () {
+            $("#windowLoad").remove();
+            if (response.session != undefined) {
+              location.reload(true);
             }
-            if (response.errors.localidad != undefined) {
-              validar($('#localidad'), response.errors.localidad);
+            else if (response.errors != undefined) {
+              banderaGuardar = true;
+              if (response.errors.municipio != undefined) {
+                validar($('#municipio'), response.errors.municipio);
+              }
+              if (response.errors.localidad != undefined) {
+                validar($('#localidad'), response.errors.localidad);
+              }
+              if (response.errors.familia != undefined) {
+                validar($('#familia'), response.errors.familia);
+              }
+              if (response.errors.fotos1 != undefined) {
+                bootbox.alert(response.errors.fotos1[0]);
+              }
             }
-            if (response.errors.familia != undefined) {
-              validar($('#familia'), response.errors.familia);
+            else if (response.status != undefined) {
+              if (response.status == 'success') {
+                bootbox.alert('Información alamacenada exitosamente.');
+              }
+              else {
+                //mostrar error
+                bootbox.alert('ocurrio algún problema');
+              }
+              setTimeout(function () {
+                //REDIRECCIONAR A EVIDENCIAS
+                window.location=redirect;
+              }, 2000);
             }
-            if (response.errors.fotos1 != undefined) {
-              bootbox.alert(response.errors.fotos1[0]);
-            }
-          }
-          else if (response.status != undefined) {
-            if (response.status == 'success') {
-              bootbox.alert('Información alamacenada exitosamente.');
-            }
-            else {
-              //mostrar error
-              bootbox.alert('ocurrio algún problema');
-            }
-            setTimeout(function () {
-              //REDIRECCIONAR A EVIDENCIAS
-              window.location=redirect;
-            }, 2000);
-          }
-        }, 5000);
-      });
+          }, 5000);
+        });
+      }
+    }
+    else {
+      alert('no se han terminado de subir las imagenes');
     }
   });
 });
@@ -300,6 +316,7 @@ function crearDropzone(parametro, idClickable, maxFiles, paralelos) {
           if (file.type != 'image/png' && file.type != 'image/jpg' && file.type != 'image/jpeg') {
             bootbox.alert('no valido');
             this.removeFile(file);
+            arrayStatus[id] = false;
           }
           if (id != 'dropzoneFileUpload4' && arrayFotos[id] != undefined && arrayFotos[id] != '') {
             this.removeFile(file);
@@ -313,6 +330,7 @@ function crearDropzone(parametro, idClickable, maxFiles, paralelos) {
             aux.push(response.info[i]);
           }
           arrayFotos[idDrop] = aux;
+          arrayStatus[idDrop] = true;
           //alert(arrayFotos[idDrop]);
           //alert(JSON.stringify(response));
         });

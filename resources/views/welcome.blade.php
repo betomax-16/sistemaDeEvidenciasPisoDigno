@@ -51,7 +51,7 @@
             <li><span>Image 03</span></li>
         </ul>
     </section>
-    
+
     <section class="container M-V text-justify">
 
         <div class=" Mision col-xs-12 col-md-4">
@@ -61,7 +61,7 @@
 
             </div>
         </div>
-        
+
         <div class="Valores col-xs-12 col-md-4">
             <h1>Valores</h1>
             <div class="Valores2">
@@ -78,7 +78,7 @@
 
             </div>
         </div>
-        
+
         <div class=" Vision  col-xs-12  col-md-4">
             <h1 class="text-left	">Visión</h1>
             <div class="Vision2">
@@ -86,7 +86,7 @@
             </div>
         </div>
     </section>
-    
+
     <section class="container Obj-Val text-justify">
 
      <h1 class="text-xs-center">Objetivos</h1>
@@ -392,18 +392,18 @@
             @include('layouts/templates/Estadisticas')
         </div>
     </div>
-    
+
   <div class="scrollmenu" >
-        @include('layouts/templates/grafica1')   
+        @include('layouts/templates/grafica1')
         @include('layouts/templates/grafica2')
-        @include('layouts/templates/grafica3') 
+        @include('layouts/templates/grafica3')
         @include('layouts/templates/grafica4')
-        @include('layouts/templates/grafica5')   
-        @include('layouts/templates/grafica6')     
+        @include('layouts/templates/grafica5')
+        @include('layouts/templates/grafica6')
 
 </div>
-    
-    
+
+
     @include('layouts/templates/modal')
     @include('layouts/templates/modalesProgramas/salud')
     <br>

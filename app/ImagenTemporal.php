@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ImagenTemporal extends Model
 {
-  protected $table = 'ImagenesTemporales';
+  protected $table = 'Imagenestemporales';
   /**
    * The attributes that are mass assignable.
    *
