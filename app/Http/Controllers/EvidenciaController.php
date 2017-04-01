@@ -268,7 +268,7 @@ class EvidenciaController extends Controller
                     ->orderBy('nombreSanitizado', 'asc')->first();
         if ($foto) {
           array_push($this->arrayFotosAEliminar, $foto);
-          Session::forget('arrayFotosAEliminar');
+          //Session::forget('arrayFotosAEliminar');
           Session::put('arrayFotosAEliminar', $this->arrayFotosAEliminar);
           $message = 'eliminado';
           //--------------------------------------------
@@ -429,6 +429,9 @@ class EvidenciaController extends Controller
      */
     public function edit($id)
     {
+      if (Session::has('arrayFotosAEliminar')) {
+        Session::forget('arrayFotosAEliminar');
+      }
         if (!(Session::has('proyecto') && Session::has('estado'))) {
           return view('welcome');
         }
@@ -543,6 +546,7 @@ class EvidenciaController extends Controller
             }
           }
         }
+        Session::forget('arrayFotosAEliminar');
       }
       $path_temporal = $this->ruta.'/imagenes/temporalEvidencias/';
       if ($request->fotos1) {

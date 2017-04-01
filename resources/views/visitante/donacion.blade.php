@@ -17,7 +17,7 @@
           En este sentido, y en aras de favorecer la implementación de nuestros programas,
           agradecemos de antemano nos puedas apoyar con cualquiera de los siguientes insumos:
         </p>
-        <center><a href="{{route('contacto')}}" class="btn special">DONAR EN ESPECIE</a></center>
+        <center><a href="{{route('contacto')}}" class="btn purple-inverse">DONAR EN ESPECIE</a></center>
       </div>
       <div class="col-md-6 slider">
         <ul>
@@ -125,7 +125,7 @@
           que día a día ejecutamos para dar vida a esta tu asociación.
         </p>
         <p class="lastP">Así también, puedes donar parte de tu tiempo y tu corazón en alguna de las siguientes actividades permanentes:</p>
-        <center><a href="{{route('contacto')}}" class="btn special">DONAR TIEMPO Y TALENTO</a></center>
+        <center><a href="{{route('contacto')}}" class="btn yellow-inverse">DONAR TIEMPO Y TALENTO</a></center>
       </div>
     </div>
     <div class="row recurso">

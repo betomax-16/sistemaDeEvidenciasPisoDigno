@@ -1,6 +1,5 @@
 $(document).ready(function () {
-  $('#donar').addClass('active');
-
+  $('#donar').addClass('active');  
   $('.menu-recurso li').click(function (event) {
     event.preventDefault();
     var current = $(this);

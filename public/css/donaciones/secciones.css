@@ -7,7 +7,7 @@
   width: 100%;
 }
 #donacionTiempo .title, #donacionEspecie .title{
-  color: #fff;
+  color: #000;
   text-align: justify;
   padding: 25px;
   background-repeat: no-repeat;
@@ -20,7 +20,7 @@
 }
 #donacionTiempo .title{
   order: 0;
-  background-image: url('../../imagenes/aplicacion/tiempo.jpg');
+  background-image: url('../../imagenes/aplicacion/especie.jpg');
 }
 #donacionTiempo .slider{
   order: 1;
@@ -35,6 +35,7 @@
 }
 .title .btn, .slider .btn{
   border-radius: 50px;
+  margin-top: 2%;
 }
 .slider{
   padding: 45px;
@@ -79,7 +80,7 @@
 }
 @media (min-width:576px) and (max-width:767px) {
   .title .lastP{
-    margin-bottom: 15%;
+    margin-bottom: 1%;
   }
   .title p{
     font-size: 20px!important;
@@ -90,7 +91,7 @@
 }
 @media (min-width:768px) and (max-width:991px) {
   .title .lastP{
-    margin-bottom: 10%;
+    margin-bottom: 1%;
     font-size: 15px;
   }
   .title h4{
@@ -123,7 +124,7 @@
     width: 50%;
   }
   .title .lastP{
-    margin-bottom: 8%;
+    margin-bottom: 1%;
     font-size: 15px;
   }
   .title h4{
@@ -156,8 +157,8 @@
     width: 50%;
   }
   .title .lastP{
-    margin-bottom: 15%;
-    font-size: 15px;
+    margin-bottom: 1%;
+    /*font-size: 15px;*/
   }
   .title h4{
     text-align: center;
@@ -184,13 +185,13 @@
   text-transform: uppercase;
 }
 .slider ul li p{
-  color: lightgray;
+  color: #373a3c;
   font-style: italic;
   font-size: 20px;
   text-align: justify;
 }
 .slider ul li hr{
-  border: 2px solid #f7931e;
+  border: 4px solid #f7931e;
   width: 100px;
   margin-left: 0;
 }

@@ -207,7 +207,7 @@ $(document).ready(function () {
                 location.reload(true);
               }, 2000);
             }
-          }, 5000);
+          }, 2000);
         });
       }
     }
@@ -284,6 +284,7 @@ function crearDropzone(parametro, idClickable, maxFiles, paralelos) {
       //previewTemplate: document.querySelector('#preview-template').innerHTML,
       init:function () {
         var myDropzone = this;
+        $('.dz-message').css('display', 'none');
         this.on('removedfile', function (file) {
           var idDrop = this.element.id;
           var data = {

@@ -11,6 +11,16 @@
   display: inline-block;
   background-color: #fff;
 }
+.btn-primary{
+  color: #fff;
+  background-color: #0275d8;
+  border-color: #0275d8;
+}
+.btn-primary:hover{
+  color: #fff;
+  background-color: #025aa5;
+  border-color: #01549b;
+}
 .circle{
   border-radius: 100px;
 }

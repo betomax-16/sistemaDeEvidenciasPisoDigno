@@ -167,7 +167,7 @@ $(document).ready(function () {
           url: urlSaveRecordig,
           data: info
         }).done(function (response) {
-          alert(JSON.stringify(response));
+          //alert(JSON.stringify(response));
           setTimeout(function () {
             $("#windowLoad").remove();
             if (response.session != undefined) {
@@ -201,7 +201,7 @@ $(document).ready(function () {
                 window.location=redirect;
               }, 2000);
             }
-          }, 5000);
+          }, 2000);
         });
       }
     }
@@ -278,6 +278,7 @@ function crearDropzone(parametro, idClickable, maxFiles, paralelos) {
       //previewTemplate: document.querySelector('#preview-template').innerHTML,
       init:function () {
         var myDropzone = this;
+        $('.dz-message').css('display', 'none');
         switch (myDropzone.element.id) {
           case 'dropzoneFileUpload1':
             cargarImagenes(fotosObject, myDropzone, 'PISO_ORIGINAL');

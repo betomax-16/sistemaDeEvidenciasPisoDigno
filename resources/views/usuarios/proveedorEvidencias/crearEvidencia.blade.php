@@ -11,13 +11,18 @@
     border: 3px dashed;
     border-radius: 10px;
     text-align: center;
-    padding-top: 4.5%;
     font-size: 25px;
     cursor:pointer;
   }
   .addImage:hover{
     border-color: rgb(194, 194, 194);
     color: rgb(121, 121, 121);
+  }
+  .addImage .addContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
   }
   .ui-accordion .ui-accordion-content{
     height: inherit !important;
@@ -35,13 +40,23 @@
     opacity:0.65;
     background:#999;
   }
+  @media (max-width: 530px) {
+    .dropzone{
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+    .ui-accordion .ui-accordion-content{
+      padding: 1em 1.2em;
+    }
+  }
 </style>
 @endsection
 @section('content')
 <div class="container espacioPagina marco">
     <div class="row">
         <div class="col-md-12">
-          <a href="{{ URL::previous() }}" class="btn green btn-circle"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+          <a href="{{ route('evidencia.evidencias',[Session::get('proyecto'), Session::get('estado')]) }}" class="btn green btn-circle"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
           <h1 class="text-xs-center">Nueva Evidencia Para: <span>{{App\Proyecto::find(Session::get('proyecto'))->nombre}}</span></h1>
           <hr>
           {!! Form::open(['route' => 'evidencia.store', 'method' => 'POST', 'files' => true]) !!}
@@ -103,7 +118,9 @@
                   <div class="col-md-12">
                     <div id="dropzoneFileUpload1" class="dropzone">
                       <div id="addImage1" class="addImage dz-preview dz-image-preview">
-                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        <div class="addContent">
+                          <i class="fa fa-plus" aria-hidden="true"></i>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -113,7 +130,9 @@
                   <div class="col-md-12">
                     <div id="dropzoneFileUpload2" class="dropzone">
                       <div id="addImage2" class="addImage dz-preview dz-image-preview">
-                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        <div class="addContent">
+                          <i class="fa fa-plus" aria-hidden="true"></i>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -123,7 +142,9 @@
                   <div class="col-md-12">
                     <div id="dropzoneFileUpload3" class="dropzone">
                       <div id="addImage3" class="addImage dz-preview dz-image-preview">
-                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        <div class="addContent">
+                          <i class="fa fa-plus" aria-hidden="true"></i>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -133,7 +154,9 @@
                   <div class="col-md-12">
                     <div id="dropzoneFileUpload4" class="dropzone">
                       <div id="addImage4" class="addImage dz-preview dz-image-preview">
-                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        <div class="addContent">
+                          <i class="fa fa-plus" aria-hidden="true"></i>
+                        </div>
                       </div>
                     </div>
                   </div>
