@@ -224,6 +224,25 @@
   border-radius: 50%;
   background: rgba(87, 136, 245, 0.22);
 }
+.buttons .botonEspecial{
+  background: #c10c2d;
+}
+.buttons .botonEspecial:hover{
+  background: #ff002f;
+}
+.buttons .botonEspecial.active{
+  background: #ff002f;
+}
+.buttons .botonEspecial.active:after{
+  content: '';
+  position: absolute;
+  margin-left: -11px;
+  margin-top: -5px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(245, 87, 94, 0.22);
+}
 .slider .hidden{
   display: none;
 }

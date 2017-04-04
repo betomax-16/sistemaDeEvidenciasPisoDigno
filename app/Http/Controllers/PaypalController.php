@@ -74,7 +74,7 @@ $item2->setName('Granola bars')
 $itemList = new ItemList();
 $itemList->setItems(array($item1, $item2));*/
 $item = new Item();
-$item->setName('Donaciona a GSUPPuebla')
+$item->setName('Donación a GSUPPuebla')
      ->setCurrency($currency)
      ->setQuantity(1)
      ->setPrice($total);
@@ -93,7 +93,7 @@ $amount->setCurrency($currency)
     $transaction = new Transaction();
     $transaction->setAmount($amount)
         ->setItemList($itemList)
-        ->setDescription("Donacion prueba")
+        ->setDescription("Donación a GSUPPuebla")
         ->setInvoiceNumber(uniqid());
 
 		$redirect_urls = new RedirectUrls();

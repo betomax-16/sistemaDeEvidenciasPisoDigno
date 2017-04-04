@@ -78,7 +78,7 @@
           <a href="#" targetItem="item8"></a>
           <a href="#" targetItem="item9"></a>
           <a href="#" targetItem="item10"></a>
-          <a href="#" targetItem="item11"></a>
+          <a class="botonEspecial" href="#" targetItem="item11"></a>
         </div>
       </div>
     </div>
@@ -112,7 +112,7 @@
           <a href="#" targetItem="item2"></a>
           <a href="#" targetItem="item3"></a>
           <a href="#" targetItem="item4"></a>
-          <a href="#" targetItem="item5"></a>
+          <a class="botonEspecial" href="#" targetItem="item5"></a>
         </div>
       </div>
       <div class="col-md-6 title">

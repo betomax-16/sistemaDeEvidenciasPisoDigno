@@ -137,10 +137,20 @@
                         <spam> GRUPOS SOCIALES UNIDOS POR PUEBLA 13 DE NOVIEMBRE A.C.,</spam> representa un esfuerzo más que se suma a labor diaria de personas como tú, esto es, de seres humanos con la firme convicción de abonar al porvenir de sus semejantes.
                     </p>
                 </article>
+                <article class="text-xs-center col-xs-12 offset-md-1 col-md-5 SlideNosotros"style="z-index:1;">
+                     <h1 class="NC2">Nuestra comunidad</h1>
+                     <br>
+                    <h2><span><i class="fa fa-quote-right" aria-hidden="true"></i></span></h2>
+                    <div>
+                      <p class="item-1">“Un hombre sólo tiene derecho a mirar a otro hacia abajo, cuando ha de ayudarle a levantarse.”</p>
+                      <p class="item-2">“En cuanto a la adversidad, difícilmente la soportarías si no tuvieras un amigo que sufriese por ti más que tú mismo.”</p>
+                      <p class="item-3">“El que no vive para servir, no sirve para vivir.”</p>
+                    </div>
+                 </article >
 
 
                 <div id="carouselExampleIndicators" class="carousel slide col-xs-12 offset-md-1 col-md-5" data-ride="carousel">
- 
+
                     <div class="carousel-inner" role="listbox">
                         <div class="carousel-item active">
                             <img class="d-block img-fluid" src="{{asset('imagenes/fotos/file1.jpg')}}" alt="First slide">

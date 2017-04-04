@@ -28,7 +28,7 @@ class EvidenciaController extends Controller
       $this->arrayFotosAEliminar = array();
       //\Session::put('fotosAEliminar', $this->arrayFotosAEliminar);
 
-      //$this->ruta = substr(base_path(),0,strlen(base_path())-10);
+      //$this->ruta = substr(base_path(),0,strlen(base_path())-10).'/public_html';
     }
 
     private function noGuardarCache($view)
