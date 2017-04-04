@@ -138,13 +138,57 @@
                     </p>
                 </article>
                 <article class="text-xs-center col-xs-12 offset-md-1 col-md-5 SlideNosotros"style="z-index:1;">
+                    <br>
                      <h1 class="NC2">Nuestra comunidad</h1>
                      <br>
-                    <h2><span><i class="fa fa-quote-right" aria-hidden="true"></i></span></h2>
+                    <h2><i aria-hidden="true"></i></h2>
                     <div>
-                      <p class="item-1">“Un hombre sólo tiene derecho a mirar a otro hacia abajo, cuando ha de ayudarle a levantarse.”</p>
-                      <p class="item-2">“En cuanto a la adversidad, difícilmente la soportarías si no tuvieras un amigo que sufriese por ti más que tú mismo.”</p>
-                      <p class="item-3">“El que no vive para servir, no sirve para vivir.”</p>
+                      <p class="item-1">“Un hombre sólo tiene derecho a mirar a otro hacia abajo, cuando ha de ayudarle a levantarse.” <br> <span>GABRIEL GARCÍA MÁRQUEZ</span></p>
+                      <p class="item-2">“En cuanto a la adversidad, difícilmente la soportarías si no tuvieras un amigo que sufriese por ti más que tú mismo.” <br> <span>CICERÓN</span></p>
+                      <p class="item-3">“El que no vive para servir, no sirve para vivir.”<br><span>MADRE TERESA DE CALCUTA</span></p>
+                      <p class="item-4">“El amor es el olvido del yo.”<br><span>HENRI-FRÉDÉRIC AMIEL</span></p>
+                      <p class="item-5">“En la medida en que el sufrimiento de los niños está permitido, no existe amor verdadero en este mundo.”<br><span>ISADORA DUNCAN</span></p>
+                      <p class="item-6">“La manera de dar vale más que lo que se da.”<br><span>PIERRE CORNEILLE</span></p>
+                      <p class="item-7">“Si ayudo a una sola persona a tener esperanza, no habré vivido en vano.”<br><span>MARTIN LUTHER KING</span></p>
+                      <p class="item-8">“Cuando mi amigo está infeliz, voy a su encuentro; cuando está feliz, espero que me encuentre.”<br><span>HENRI-FRÉDÉRIC AMIEL</span></p>
+                      <p class="item-9">“El amor vive más de lo que da que de lo que recibe.”<br><span>CONCEPCIÓN ARENAL</span></p>
+                      <p class="item-10">“Los hombres olvidan con mayor rapidez la muerte de su padre que la pérdida de su patrimonio.”<br><span>NICOLÁS MAQUIAVELO</span></p>
+                      <p class="item-11">“Si una sociedad libre no puede ayudar a sus muchos pobres, tampoco podrá salvar a sus pocos ricos.”<br><span>JOHN FITZGERALD KENNEDY</span></p>
+                      <p class="item-12">“Ayuda a tus semejantes a levantar su carga, pero no te consideres obligado a llevársela.”<br><span>PITÁGORAS</span></p>
+                      <p class="item-13">“Si precisas una mano, recuerda que yo tengo dos.”<br><span>SAN AGUSTÍN</span></p>
+                      <p class="item-14">“Toma problemas prestados, si te lo dicta tu naturaleza, pero no los prestes a tus vecinos.”<br><span>RUDYARD KIPLING</span></p>
+                      <p class="item-15">“El orgullo es una forma de egoísmo.”<br><span>DAVID HERBERT LAWRENCE</span></p>
+                      <p class="item-16">“En las cosas necesarias, la unidad; en las dudosas, la libertad; y en todas, la caridad.”<br><span>SAN AGUSTÍN</span></p>
+                      <p class="item-17">“No hay bien alguno que nos deleite si no lo compartimos.”<br><span>LUCIO ANNEO SÉNECA</span></p>
+                      <p class="item-18">“El egoísmo es el único ateísmo verdadero.”<br><span>ISRAEL ZANGWILL</span></p>
+                      <p class="item-19">“El amigo ha de ser como la sangre, que acude luego a la herida sin esperar a que le llamen.”<br><span>FRANCISCO DE QUEVEDO</span></p>
+                      <p class="item-20">“Hay tanta justicia en la caridad y tanta caridad en la justicia que no parece loca la esperanza de que llegue el día en que se confundan.”<br><span>CONCEPCIÓN ARENAL</span></p>
+                      <p class="item-21">“Lo mejor que podemos hacer por otro no es sólo compartir con él nuestras riquezas, sino mostrarle las suyas.”<br><span>BENJAMIN DISRAELI</span></p>
+                      <p class="item-22">“No basta levantar al débil, hay que sostenerlo después.”<br><span>WILLIAM SHAKESPEARE</span></p>
+                      <p class="item-23">“No esperes que tu amigo venga a descubrirte su necesidad; ayúdale antes.”<br><span>LLUÍS VIVES</span></p>
+                      <p class="item-24">“Sólo el motivo constituye el mérito de las acciones; y el desinterés les da la perfección."<br><span>JEAN DE LA BRUYERE</span></p>
+                      <p class="item-25">“El socorro en la necesidad, aunque sea poco, ayuda mucho.”<br><span>MATEO ALEMÁN</span></p>
+                      <p class="item-26">“Todas las buenas maneras tienen que principiar compartiendo alguna cosa con sencillez. Dos hombres tienen que compartir un paraguas; si no tienen un paraguas, tendrán por lo menos que compartir la lluvia, con todas sus ricas posibilidades de humor y de filosofía.”<br><span>GILBERT KEITH CHESTERTON</span></p>
+                      <p class="item-27">“La caridad es la única virtud que precisa de la injusticia.”<br><span>JAUME PERICH</span></p>
+                      <p class="item-28">“El mejor servicio que podemos prestar a los afligidos no es quitarles la carga, sino infundirles la necesaria energía para sobrellevarla.”<br><span>PHILLIPS BROOKS</span></p>
+                      <p class="item-29">“Quien toma bienes de los pobres es un asesino de la caridad. Quien a ellos ayuda, es un virtuoso de la justicia.”<br><span>SAN AGUSTÍN</span></p>
+                      <p class="item-30">“Es amigo mío aquel que me socorre, no el que me compadece.”<br><span>THOMAS FULLER</span></p>
+                      <p class="item-31">“He sido un ser egoísta toda mi vida, no en teoría, pero sí en la práctica.”<br><span>JANE AUSTEN</span></p>
+                      <p class="item-32">“La vida real del hombre es feliz principalmente porque siempre está esperando que ha de serlo pronto.”<br><span>EDGAR ALLAN POE</span></p>
+                      <p class="item-33">“La mayor rémora de la vida es la espera del mañana y la pérdida del día de hoy.”<br><span>LUCIO ANNEO SÉNECA</span></p>
+                      <p class="item-34">“La esperanza le pertenece a la vida, es la vida misma defendiéndose.”<br><span>JULIO CORTÁZAR</span></p>
+                      <p class="item-35">“Es intentando lo imposible como se realiza lo posible.”<br><span>HENRI BARBUSSE</span></p>
+                      <p class="item-36">“Hay grandes hombres que hacen a todos los demás sentirse pequeños. Pero la verdadera grandeza consiste en hacer que todos se sientan grandes.”<br><span>CHARLES DICKENS</span></p>
+                      <p class="item-37">“Nada es tan bajo y vil como ser altivo con el humilde.”<br><span>LUCIO ANNEO SÉNECA</span></p>
+                      <p class="item-38">“El hombre que ha empezado a vivir seriamente por dentro, empieza a vivir más sencillamente por fuera.”<br><span>ERNEST HEMINGWAY</span></p>
+                      <p class="item-39">“Un gran hombre demuestra su grandeza por la forma en que trata a los pequeños.”<br><span>THOMAS CARLYLE</span></p>
+                      <p class="item-40">“El secreto de la felicidad es tener gustos sencillos y una mente compleja, el problema es que a menudo la mente es sencilla y los gustos son complejos.”<br><span>FERNANDO SAVATER</span></p>
+                      <p class="item-41">“Todas las acciones cumplidas sin ostentación y sin testigos me parecen más loables.”<br><span>CICERÓN</span></p>
+                      <p class="item-42">“El verdadero progreso social no consiste en aumentar las necesidades, sino en reducirlas voluntariamente; pero para eso hace falta ser humildes.”<br><span>GANDHI</span></p>
+                      <p class="item-43">“El amor es la fuerza más humilde, pero la más poderosa de que dispone el mundo.”<br><span>GANDHI</span></p>
+                      <p class="item-44">“Tengo tres perros peligrosos: la ingratitud, la soberbia y la envidia. Cuando muerden dejan una herida profunda.”<br><span>MARTIN LUTERO</span></p>
+                    
+                      
                     </div>
                  </article >
 
