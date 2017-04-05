@@ -139,7 +139,7 @@
                 </article>
                 <article class="text-xs-center col-xs-12 offset-md-1 col-md-5 SlideNosotros"style="z-index:1;">
                     <br>
-                     <h1 class="NC2">Nuestra comunidad</h1>
+                     <h1 class="NC2">Nuestra comunidad</h1><hr>
                      <br>
                     <h2><i aria-hidden="true"></i></h2>
                     <div>
@@ -187,8 +187,8 @@
                       <p class="item-42">“El verdadero progreso social no consiste en aumentar las necesidades, sino en reducirlas voluntariamente; pero para eso hace falta ser humildes.”<br><span>GANDHI</span></p>
                       <p class="item-43">“El amor es la fuerza más humilde, pero la más poderosa de que dispone el mundo.”<br><span>GANDHI</span></p>
                       <p class="item-44">“Tengo tres perros peligrosos: la ingratitud, la soberbia y la envidia. Cuando muerden dejan una herida profunda.”<br><span>MARTIN LUTERO</span></p>
-                    
-                      
+
+
                     </div>
                  </article >
 

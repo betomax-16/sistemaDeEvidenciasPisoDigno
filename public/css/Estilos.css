@@ -239,8 +239,8 @@ Nosotros
                                 text-transform: uppercase;
                                 z-index:9991;
                             }
-                                              
-                            
+
+
                             .Nosotros .NC {
                                 -webkit-flex-wrap: wrap;
                                 -ms-flex-wrap: wrap;
@@ -252,13 +252,53 @@ Nosotros
                             }
 
                             .Nosotros .SlideNosotros{
-                                background: #555a61;
-                                border-radius: 0px 0px 9px 9px;
-                             
+                                /*background: #555a61;*/
+                                background: #1d4077;
+                                border-radius: 5px 5px 9px 9px;
+                                padding-bottom: 10px;
                                 z-index: -9999991;
 
                             }
+                            .Nosotros .SlideNosotros h1{
+                              color: #fff;
+                            }
+                            .Nosotros .SlideNosotros hr{
+                              border-color: #fff;
+                              margin-top: -8px;
+                            }
+                            .Nosotros .SlideNosotros div{
+                              height: 270px;
+                            }
+                            .Nosotros .SlideNosotros div p span{
+                              font-weight: bold;
+                            }
+                            @media (max-width: 575px) {
+                              .Nosotros .SlideNosotros div{
+                                height: 300px !important;
+                              }
+                            }
 
+                            @media (min-width: 576px) and (max-width: 767px) {
+                              .item-1, .item-2, .item-3, .item-4, .item-5, .item-6, .item-7, .item-8, .item-9, .item-10, .item-11, .item-12, .item-13, .item-14, .item-15, .item-16,
+                              .item-17, .item-18, .item-19, .item-20, .item-21, .item-22, .item-23, .item-24, .item-25, .item-26, .item-27, .item-28, .item-29, .item-30,
+                              .item-31, .item-32, .item-33, .item-34, .item-35, .item-36, .item-37, .item-38, .item-39,.item-40, .item-41, .item-42, .item-43, .item-44{
+                                margin-top: 2rem !important;
+                              }
+                              .Nosotros .SlideNosotros div{
+                                height: 170px !important;
+                              }
+                            }
+
+                            @media (min-width: 992px){
+                              .item-1, .item-2, .item-3, .item-4, .item-5, .item-6, .item-7, .item-8, .item-9, .item-10, .item-11, .item-12, .item-13, .item-14, .item-15, .item-16,
+                              .item-17, .item-18, .item-19, .item-20, .item-21, .item-22, .item-23, .item-24, .item-25, .item-26, .item-27, .item-28, .item-29, .item-30,
+                              .item-31, .item-32, .item-33, .item-34, .item-35, .item-36, .item-37, .item-38, .item-39,.item-40, .item-41, .item-42, .item-43, .item-44{
+                                margin-top: 2rem !important;
+                              }
+                              .Nosotros .SlideNosotros div{
+                                height: 170px !important;
+                              }
+                            }
 .item-1,
 .item-2,
 .item-3,
@@ -313,9 +353,9 @@ margin-top: 4.5rem;
 
   font-size: 1em;
               z-index: -99999;
-	-webkit-animation-duration: 10s;
+	-webkit-animation-duration: 500s;
 
-	        animation-duration: 10s;
+	        animation-duration: 500s;
 	-webkit-animation-timing-function: ease-in-out;
 	        animation-timing-function: ease-in-out;
 	-webkit-animation-iteration-count: infinite;
