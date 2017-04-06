@@ -257,11 +257,13 @@ Nosotros
                                 border-radius: 5px 5px 9px 9px;
                                 padding-bottom: 10px;
                                 z-index: -9999991;
+                                text-align: right!important;
 
                             }
                             .Nosotros .SlideNosotros h1{
                               color: #fff;
                             }
+                            
                             .Nosotros .SlideNosotros hr{
                               border-color: #fff;
                               margin-top: -8px;
@@ -271,6 +273,7 @@ Nosotros
                             }
                             .Nosotros .SlideNosotros div p span{
                               font-weight: bold;
+                            
                             }
                             @media (max-width: 575px) {
                               .Nosotros .SlideNosotros div{

@@ -12,7 +12,7 @@
 	.stC6{fill:#DEDEDE;}
 	.stC7{fill:#791582;}
 	.stC8{fill:#898989;}
-	.stC9{font-family:'Candara-BoldItalic';}
+	.stC9{font-family:'Candara-Bold';}
 	.stC10{font-size:36px;}
 	.stC11{font-size:102px;}
 	.stC12{fill:#942BA3;}

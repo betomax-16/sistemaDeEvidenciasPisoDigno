@@ -16,7 +16,7 @@
 	.stA10{fill:#C5C5C7;}
 	.stA11{fill:#A8A8A6;}
 	.stA12{fill:#DEDEDE;}
-	.stA13{font-family:'Candara-BoldItalic';}
+	.stA13{font-family:'Candara-Bold';}
 	.stA14{font-size:102px;}
 	.stA15{fill:#898989;}
 	.stA16{font-size:36px;}

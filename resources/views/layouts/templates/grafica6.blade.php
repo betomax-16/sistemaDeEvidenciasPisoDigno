@@ -14,7 +14,7 @@
 	.stF9{fill:#6F3533;}
 	.stF10{fill:#DEDEDE;}
 	.stF11{fill:#5271B3;}
-	.stF12{font-family:'Candara-BoldItalic';}
+	.stF12{font-family:'Candara-Bold';}
 	.stF13{font-size:100px;}
 	.stF14{fill:#898989;}
 	.stF15{font-size:36px;}
