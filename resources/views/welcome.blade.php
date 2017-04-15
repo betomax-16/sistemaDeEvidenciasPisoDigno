@@ -402,24 +402,24 @@
                     <input type="hidden" name="ruta" value="{{route('evidencia.evidencias', ['piso digno', 21])}}">
                     <img src=" {{asset('imagenes/aplicacion/Bivienda.svg')}} " alt="LogoPiso Digno">
                     <h3><a>Vivienda</a></h3>
-                    <p class="hidden-md-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia natus asperiores quo eaque, reiciendis provident nobis voluptatem. Quos repellat excepturi cupiditate earum exercitationem porro tempore, odit consectetur fugit ipsa facere.</p>
-                    <button class="btn blue-inverse hidden-md hidden-md-down">Más Información</button>
+                    <p class="hidden-md-down">Al momento hemos ejecutado acciones encaminadas a dignificar los hogares de familias poblanas en los municipios de: San Andrés Cholula, Puebla, Amozoc, Juan C. Bonilla, Ixtacamaxtitlán, Tecamachalco y Cuautlancingo.</p>
+                    <button class="btn blue-inverse hidden-md hidden-md-down">Evidencias</button>
                 </article>
 
                 <article id="Despensas" class="col-lg-4" data-toggle="modal" data-target="#PisoD">
                     <input type="hidden" name="ruta" value="#">
                     <img src="{{asset('imagenes/aplicacion/despensa.svg')}}" alt="LogoPiso Digno">
                     <h3><a>Alimentación</a></h3>
-                    <p class="hidden-md-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia natus asperiores quo eaque, reiciendis provident nobis voluptatem. Quos repellat excepturi cupiditate earum exercitationem porro tempore, odit consectetur fugit ipsa facere.</p>
-                    <button class="btn green-inverse hidden-md hidden-md-down">Más Información</button>
+                    <p class="hidden-md-down">Logramos brindar mensualmente una despensa integral a más de 36 familias pertenecientes a los municipios de San Andrés Cholula, Puebla e Ixtacamaxtitlán en el Estado de Puebla.</p>
+                    <button class="btn green-inverse hidden-md hidden-md-down">Evidencias</button>
                 </article>
 
                 <article id="Salud" class="col-lg-4" data-toggle="modal" data-target="#PisoD">
                     <input type="hidden" name="ruta" value="#">
                     <img src="{{asset('imagenes/aplicacion/Salud.svg')}}" alt="LogoPiso Digno">
                     <h3><a>Salud</a></h3>
-                    <p class="hidden-md-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia natus asperiores quo eaque, reiciendis provident nobis voluptatem. Quos repellat excepturi cupiditate earum exercitationem porro tempore, odit consectetur fugit ipsa facere.</p>
-                    <button class="btn red-inverse hidden-md hidden-md-down">Más Información</button>
+                    <p class="hidden-md-down">Además de las diversas gestiones hospitalarias en todo el Estado, adquirimos diversas órtesis, prótesis y medicamentos para amigos poblanos en estado de necesidad.</p>
+                    <button class="btn red-inverse hidden-md hidden-md-down">Evidencias</button>
                 </article>
             </div>
         </div>
