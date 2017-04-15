@@ -18,7 +18,7 @@
 
 })();
 
-$(document).ready(function () {
+/*$(document).ready(function () {
   var article;
     $('#proyectos').on('click', 'article', function () {
         article = $(this).attr('id');
@@ -72,4 +72,4 @@ $(document).ready(function () {
 
       }
     });
-});
+});*/
