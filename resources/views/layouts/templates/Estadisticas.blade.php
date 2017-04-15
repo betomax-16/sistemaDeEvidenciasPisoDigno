@@ -32,7 +32,7 @@
 	.st19{letter-spacing:10;}
 	.st20{letter-spacing:1;}
 	.st21{letter-spacing:6;}
-	.st22{fill:url(#SVGID_1_);}
+	.st22{fill:url(#SVGID_21_);}
 	.st23{fill:#2C778C;}
 	.st24{font-size:14.4658px;}
 	.st25{font-size:9.3602px;}
@@ -51,7 +51,7 @@
 	.st38{fill:#EBEAEC;}
 	.st39{fill:#CD5983;}
 	.st40{fill:#B7D4DA;}
-	.st41{fill:url(#SVGID_2_);}
+	.st41{fill:url(#SVGID_22_);}
 	.st42{fill:#1F7523;}
 	.st43{fill:#00BB17;}
 	.st44{fill:#E7A500;}
@@ -66,7 +66,7 @@
 	.st53{fill:#CD9971;}
 	.st54{fill:#2F2424;}
 	.st55{fill:#2E2324;}
-	.st56{fill:url(#SVGID_3_);}
+	.st56{fill:url(#SVGID_23_);}
 	.st57{fill:#A0300D;}
 	.st58{fill:#FF4F17;}
 	.st59{fill:#E9AD68;}
@@ -84,7 +84,7 @@
 	.st71{fill:#51514F;}
 	.st72{fill:#343434;}
 	.st73{fill:#29292A;}
-	.st74{fill:url(#SVGID_4_);}
+	.st74{fill:url(#SVGID_24_);}
 	.st75{fill:#561466;}
 	.st76{font-size:8.5093px;}
 	.st77{fill:#BC4FD3;}
@@ -152,7 +152,7 @@
 	<g id="B4_1_">
 		<g id="bandera_4_">
 			
-				<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="163.1025" y1="984.275" x2="478.8962" y2="984.275" gradientTransform="matrix(1 0 0 1 0 -442)">
+				<linearGradient id="SVGID_21_" gradientUnits="userSpaceOnUse" x1="163.1025" y1="984.275" x2="478.8962" y2="984.275" gradientTransform="matrix(1 0 0 1 0 -442)">
 				<stop  offset="3.370800e-02" style="stop-color:#42AEB8"/>
 				<stop  offset="1" style="stop-color:#64D5E3"/>
 			</linearGradient>
@@ -318,7 +318,7 @@
 	<g id="B3_1_">
 		<g id="bandera_2_">
 			
-				<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="94.1831" y1="1425.1" x2="330.524" y2="1425.1" gradientTransform="matrix(1 0 0 1 0 -1030)">
+				<linearGradient id="SVGID_22_" gradientUnits="userSpaceOnUse" x1="94.1831" y1="1425.1" x2="330.524" y2="1425.1" gradientTransform="matrix(1 0 0 1 0 -1030)">
 				<stop  offset="3.370800e-02" style="stop-color:#00750C"/>
 				<stop  offset="1" style="stop-color:#00BB17"/>
 			</linearGradient>
@@ -400,7 +400,7 @@
 	<g id="B2_1_">
 		<g id="bandera_1_">
 			
-				<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="94.0247" y1="1280.2001" x2="330.3655" y2="1280.2001" gradientTransform="matrix(1 0 0 1 0 -1030)">
+				<linearGradient id="SVGID_23_" gradientUnits="userSpaceOnUse" x1="94.0247" y1="1280.2001" x2="330.3655" y2="1280.2001" gradientTransform="matrix(1 0 0 1 0 -1030)">
 				<stop  offset="3.370800e-02" style="stop-color:#A93B0C"/>
 				<stop  offset="1" style="stop-color:#FF4F17"/>
 			</linearGradient>
@@ -622,7 +622,7 @@
 	<g id="B1_3_">
 		<g id="bandera_3_">
 			
-				<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="163.8259" y1="547.1841" x2="479.6195" y2="547.1841" gradientTransform="matrix(1 0 0 1 0 -442)">
+				<linearGradient id="SVGID_24_" gradientUnits="userSpaceOnUse" x1="163.8259" y1="547.1841" x2="479.6195" y2="547.1841" gradientTransform="matrix(1 0 0 1 0 -442)">
 				<stop  offset="3.370800e-02" style="stop-color:#9F3DB7"/>
 				<stop  offset="1" style="stop-color:#BC4FD3"/>
 			</linearGradient>

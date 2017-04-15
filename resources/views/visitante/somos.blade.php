@@ -26,66 +26,57 @@
     <h1>Los miembros que actualmente encabezan esta noble labor son:
     </h1>
     <div class="persona1 wow fadeIn">
-        <div class=" col-xs-12 col-md-5">
-            <img class="img-fluid" src="{{asset('imagenes/somos/persona1.jpg')}}" alt="">
+        <div class=" col-xs-12 col-md-5 text-xs-center">
+            <img class="img-fluid" src="{{asset('imagenes/somos/Recurso1.png')}}" alt="">
         </div>
         <div class="citas col-xs-12 offset-md-1 col-md-6">
-            <h2>Diseñador Web</h2>
+            <spam><h2>Presidente</h2></spam>
             <br>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus animi provident quibusdam ex magnam, inventore incidunt libero, sint quos pariatur itaque voluptates voluptatem dolor. Rerum nesciunt suscipit, beatae cum eius!</p>
+            <p>“Al final, lo único que importa es trascender por vía de nuestros actos, no importa que tan grandes sean estos, siempre y cuando reflejen absoluta gratitud hacia los demás”.</p>
 
         </div>
     </div>
     <div class="persona2 wow fadeIn">
-        <div class="imagen col-xs-12 offset-md-1 col-md-5">
-            <img class="img-fluid" src="{{asset('imagenes/somos/persona1.jpg')}}" alt="">
+        <div class="imagen col-xs-12 offset-md-1 col-md-5 text-xs-center">
+            <img class="img-fluid" src="{{asset('imagenes/somos/Recurso2.png')}}" alt="">
         </div>
         <div class="citas col-xs-12 col-md-6">
-            <h2>Apoderado Legal y Director General de Proyectos</h2>
+            <spam><h2>Coordinadora de Proyectos</h2></spam>
             <br>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus animi provident quibusdam ex magnam, inventore incidunt libero, sint quos pariatur itaque voluptates voluptatem dolor. Rerum nesciunt suscipit, beatae cum eius!</p>
+            <p>“Servir al prójimo es una bendición que nutre la inmortalidad del alma”.</p>
         </div>
     </div>
     <div class="persona3 wow fadeIn">
-        <div class="col-xs-12 col-md-5">
-            <img class="img-fluid" src="{{asset('imagenes/somos/persona1.jpg')}}" alt="">
+        <div class="col-xs-12 col-md-5 text-xs-center">
+            <img class="img-fluid" src="{{asset('imagenes/somos/Recurso3.png')}}" alt="">
         </div>
         <div class="citas col-xs-12 offset-md-1 col-md-6">
-            <h2>Coordinadora de Gestión y Enlace con Dependencias y Organismos del Sector Público</h2>
+            <h2>Apoderado Legal y Director General de Proyectos</h2>
             <br>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus animi provident quibusdam ex magnam, inventore incidunt libero, sint quos pariatur itaque voluptates voluptatem dolor. Rerum nesciunt suscipit, beatae cum eius!</p>
+            <p>“Poco a poco, pequeños actos de humanidad que parecían agotarse en un instante, se vuelven enormes bendiciones que transforman toda una vida”.</p>
         </div>
     </div>
     <div class="imagen persona4 wow fadeIn">
-        <div class="imagen col-xs-12 offset-md-1 col-md-5">
+        <div class="imagen col-xs-12 offset-md-1 col-md-5 text-xs-center">
             <img class="img-fluid" src="{{asset('imagenes/somos/persona1.jpg')}}" alt="">
         </div>
         <div class="citas col-xs-12 col-md-6">
-            <h2>Coordinadora de Proyectos</h2>
+            <h2>Coordinadora de Gestión y Enlace con Dependencias y Organismos del Sector Público</h2>
             <br>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus animi provident quibusdam ex magnam, inventore incidunt libero, sint quos pariatur itaque voluptates voluptatem dolor. Rerum nesciunt suscipit, beatae cum eius!</p>
+            <p>“Una vida sin servir al prójimo, es una vida que, sin duda, no ha alcanzado la plenitud”.</p>
         </div>
     </div>
     <div class="persona5 wow fadeIn">
-        <div class="col-xs-12 col-md-5">
-            <img class="img-fluid" src="{{asset('imagenes/somos/persona1.jpg')}}" alt="">
+        <div class="col-xs-12 col-md-5 text-xs-center">
+            <img class="img-fluid" src="{{asset('imagenes/somos/Recurso5.png')}}" alt="">
         </div>
         <div class="citas col-xs-12 offset-md-1 col-md-6">
-            <h2>Coordinadora de Proyectos</h2>
+            <h2>Coordinador de Proyectos</h2>
             <br>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus animi provident quibusdam ex magnam, inventore incidunt libero, sint quos pariatur itaque voluptates voluptatem dolor. Rerum nesciunt suscipit, beatae cum eius!</p>
+            <p>“Servir, virtud que enaltece el espíritu y nos acerca a Dios”.</p>
         </div>
     </div>
-    <div class="imagen persona6 wow fadeIn">
-        <div class="imagen col-xs-12 offset-md-1 col-md-5">
-            <img class="img-fluid" src="{{asset('imagenes/somos/persona1.jpg')}}" alt="">
-        </div>
-        <div class="citas col-xs-12 col-md-6">
-            <h2>Coordinadora de Proyectos</h2>
-            <br>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus animi provident quibusdam ex magnam, inventore incidunt libero, sint quos pariatur itaque voluptates voluptatem dolor. Rerum nesciunt suscipit, beatae cum eius!</p>
-        </div>
-    </div>
+    
 </section>
 @include('layouts/templates/modal') @include('layouts/menu/footer') @endsection @section('javascripts')
 <script type="text/javascript">

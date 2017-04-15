@@ -215,9 +215,17 @@ Mision y Vision
 .Obj-Val spam{
     font-weight: bold;
 }
+/*
+Carousel
+*/
 
 
-
+.carousel-control.left {
+    margin-left: 1rem;
+}
+.carousel-control.right{
+    margin-right: 1rem;
+}
 
                             /*
 Nosotros
@@ -257,7 +265,6 @@ Nosotros
                                 border-radius: 5px 5px 9px 9px;
                                 padding-bottom: 10px;
                                 z-index: -9999991;
-                                text-align: right!important;
 
                             }
                             .Nosotros .SlideNosotros h1{
@@ -1359,6 +1366,7 @@ Media Querys
                                     border-bottom: 4px solid #31B500;
                                     ;
                                     border-radius: 4px;
+            
                                 }
                                 .somos .persona2 .citas {
                                     border-left: 4px solid #ff8500;
@@ -1432,32 +1440,32 @@ Media Querys
                             .somos .persona1 {
                                 border: 4px solid #ff6262;
                                 border-radius: 3px;
-                                margin-bottom: 2rem;
-                                margin-top: 2rem;
+                                margin-bottom: 3rem;
+                                margin-top: 3rem;
                             }
                             .somos .persona2 {
                                 border: 4px solid #ff8500;
                                 border-radius: 3px;
-                                margin-bottom: 2rem;
-                                margin-top: 2rem;
+                                margin-bottom: 3rem;
+                                margin-top: 3rem;
                             }
                             .somos .persona3 {
                                 border: 4px solid #fffa8c;
                                 border-radius: 3px;
-                                margin-bottom: 2rem;
-                                margin-top: 2rem;
+                                margin-bottom: 3rem;
+                                margin-top: 3rem;
                             }
                             .somos .persona4 {
                                 border: 4px solid #0053a0;
                                 border-radius: 3px;
-                                margin-bottom: 2rem;
-                                margin-top: 2rem;
+                                margin-bottom: 3rem;
+                                margin-top: 3rem;
                             }
                             .somos .persona5 {
                                 border: 4px solid #31B500;
                                 border-radius: 3px;
-                                margin-bottom: 2rem;
-                                margin-top: 2rem;
+                                margin-bottom: 5rem;
+                                margin-top: 3rem;
                             }
                             .somos .persona6 {
                                 border: 4px solid #8934B8;

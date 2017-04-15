@@ -20,8 +20,8 @@
 	.stE15{fill:#898989;}
 	.stE16{font-size:36px;}
 	.stE17{opacity:0.62;fill:url(#SVGID_1_);}
-	.stE18{opacity:0.62;fill:url(#SVGID_2_);}
-	.stE19{opacity:0.62;fill:url(#SVGID_3_);}
+	.stE18{opacity:0.62;fill:url(#SVGID_12_);}
+	.stE19{opacity:0.62;fill:url(#SVGID_13_);}
 	.stE20{fill:#FFFFFF;}
 	.stE21{fill:none;}
 	.stE22{fill:#848484;}
@@ -141,7 +141,7 @@
 			</radialGradient>
 			<path class="stE17" d="M261,120.2l-12.1,30.3c-2.2,5.6,4.1,8.1,6.3,2.5l12.1-30.3C269.5,117.2,263.2,114.7,261,120.2z"/>
 			
-				<radialGradient id="SVGID_2_" cx="203.1426" cy="136.9916" r="11.2459" gradientTransform="matrix(0.9837 0.495 -0.2287 1.1388 34.1336 -123.28)" gradientUnits="userSpaceOnUse">
+				<radialGradient id="SVGID_12_" cx="203.1426" cy="136.9916" r="11.2459" gradientTransform="matrix(0.9837 0.495 -0.2287 1.1388 34.1336 -123.28)" gradientUnits="userSpaceOnUse">
 				<stop  offset="0.1001" style="stop-color:#F1EC02"/>
 				<stop  offset="0.1769" style="stop-color:#F1ED0B"/>
 				<stop  offset="0.302" style="stop-color:#F3EE23"/>
@@ -152,7 +152,7 @@
 			</radialGradient>
 			<path class="stE18" d="M196.2,117.9l6.3,32.1c1.1,5.9,7.8,4.6,6.7-1.3l-6.3-32.1C201.7,110.7,195,112,196.2,117.9z"/>
 			
-				<radialGradient id="SVGID_3_" cx="231.649" cy="132.8769" r="11.2459" gradientTransform="matrix(0.8617 0.6857 -0.4569 1.0679 92.263 -171.254)" gradientUnits="userSpaceOnUse">
+				<radialGradient id="SVGID_13_" cx="231.649" cy="132.8769" r="11.2459" gradientTransform="matrix(0.8617 0.6857 -0.4569 1.0679 92.263 -171.254)" gradientUnits="userSpaceOnUse">
 				<stop  offset="0.1001" style="stop-color:#F1EC02"/>
 				<stop  offset="0.1769" style="stop-color:#F1ED0B"/>
 				<stop  offset="0.302" style="stop-color:#F3EE23"/>
